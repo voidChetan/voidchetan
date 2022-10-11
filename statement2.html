@@ -74,30 +74,39 @@
             </div>
             <div class="row">
                 <div class="col-md-2">
-                    <label for="">Product Name</label>
-                    <input type="text" name="" class="form-control" placeholder="Name">
+                    <label for="">From Station</label>
+                    <select class="form-control">
+                        <option> Select Station</option>
+                        <option> Nagpur</option>
+                        <option> Pune</option>
+                        <option> Mumbai</option>
+                        <option> Solapur</option>
+                        <option> Kolhapur</option>
+                    </select>
                 </div>
                 <div class="col-md-2">
-                    <label for="">Select Category</label>
+                    <label for="">To Station </label>
                     <select class="form-control">
-                        <option> Select Categpory</option>
-                        <option> Laptop</option>
-                        <option> Mobile</option>
-                        <option> Desktop PC</option>
+                        <option> Select Station</option>
+                        <option> Nagpur</option>
+                        <option> Pune</option>
+                        <option> Mumbai</option>
+                        <option> Solapur</option>
+                        <option> Kolhapur</option>
                     </select>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-2">
-                    <label for="">Product Origin Price</label>
-                    <input type="text" name="" id="txtOPRice" class="form-control">
+                    <label for="">Select Travel Date</label>
+                    <input type="date" name="" id="txtOPRice" class="form-control">
                 </div>
                 <div class="col-md-2 p-2">
-                    <div for="">Is Discount</div>
-                    <input type="checkbox" onchange="onDiscountChange()" name="" id="chkDiscount">
+                    <div for="">Is Return Train Booked</div>
+                    <input type="checkbox" onchange="onDiscountChange()" name="" id="chkReturnTrain">
                 </div>
-                <div class="col-md-2 Discount nodisplay"  >
-                    <label for="">Enter Discount in Amt</label>
+                <div class="col-md-2 nodisplay"  >
+                    <label for="">Enter Train No & Date</label>
                     <input type="text" name="" id="txtDiscount" class="form-control">
                 </div>
                 <div class="col-md-2 FinalPrice nodisplay">
