@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Variables and Events</title>
+    <script>
+        $(document).ready(function () {
+            $("#btnPrint").click(function () {
+                $("#paraName").html($("#txtName").val());
+            });
+            $("#btnCity").click(function () {
+                $("#paraCity").html($("#dplCity").val());
+            });
+            $("#btnGender").click(function () {
+                $("#paraGender").html($("input[name='gender']:checked").val());
+            });
+            $("#btnIndian").click(function () {
+                if ($('#chkIndian').is(":checked")) {
+                    $("#paraIndian").html("Yes");
+                } else {
+                    $("#paraIndian").html("No");
+                }
+            });
+            $("#btnFullName").click(function () {
+                const fName = $("#txtFName").val();
+                const Mname = $("#txtMName").val();
+                const LName = $("#txtLName").val();
+                $("#txtFullName").val(fName +' '+Mname+' '+LName);
+            });
+            $("#btnPrintCategory").click(function () {
+              switch ($("#txtFruit").val()) {
+                  case 'oil':
+                  $("#paraCatageory").html("Oil");
+                      break;
+                      case 'fruits':
+                  $("#paraCatageory").html("Fruits");
+                      break;
+                      case 'vegetables':
+                  $("#paraCatageory").html("Vegetables");
+                      break;
+                  default:
+                      break;
+              }
+            });
+        });
+    </script>
+</head>
+
+<body class="container">
+    <div class="mt-2 p-3 bg-secondary text-white rounded text-center">
+        <h2>Assignment on element reading and printing.</h2>
+        <p>Topic used: if else, switch case, document.getElementById, variable declaration.</p>
+    </div>
+    <div class="row pt-4">
+        <div class="col-md-4">
+            <input type="text" id="txtName" placeholder="Name" class="form-control">
+        </div>
+        <div class="col-md-4">
+            <button id="btnPrint" class="btn btn-sm btn-warning">Print Value</button><br><small>(print value from the
+                text box in paragraph)</small>
+        </div>
+        <div class="col-md-4">
+            Text box value = <strong id="paraName"></strong>
+        </div>
+    </div>
+    <div class="row pt-3">
+        <div class="col-md-4">
+            <select id="dplCity" class="form-control">
+                <option>Pune</option>
+                <option>Nagpur</option>
+                <option>Mumbai</option>
+                <option>Satara</option>
+                <option>Nashik</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <button id="btnCity" class="btn btn-sm btn-warning">Print City</button><br><small>(print selected city from
+                dropdrown in paragraph)</small>
+        </div>
+        <div class="col-md-4">
+            Dropdown selected value = <strong id="paraCity"></strong>
+        </div>
+    </div>
+    <div class="row pt-3">
+        <div class="col-md-4">
+            <input type="radio" name="gender" value="Male">Male
+            <input type="radio" name="gender" value="Female">Female
+        </div>
+        <div class="col-md-4">
+            <button id="btnGender" class="btn btn-sm btn-warning">Print Gender</button><br><small>(print selected gender
+                value from the radio button in paragraph)</small>
+        </div>
+        <div class="col-md-4">
+            Selected gender = <strong id="paraGender"></strong>
+        </div>
+    </div>
+    <div class="row pt-3">
+        <div class="col-md-4">
+            <input type="checkbox" id="chkIndian"> isIndian
+        </div>
+        <div class="col-md-4">
+            <button id="btnIndian" class="btn btn-sm btn-warning">Print Value</button><br><small>(If checkbox is
+                selected then print yes otherwise no)</small>
+        </div>
+        <div class="col-md-4">
+            Is Indian = <strong id="paraIndian"></strong>
+        </div>
+    </div>
+    <div class="row pt-3">
+        <div class="col-md-2">
+            <input type="text" id="txtFName" placeholder="First Name" class="form-control">
+        </div>
+        <div class="col-md-2">
+            <input type="text" id="txtMName" placeholder="Middle Name" class="form-control">
+        </div>
+        <div class="col-md-2">
+            <input type="text" id="txtLName" placeholder="Last Name" class="form-control">
+        </div>
+        <div class="col-md-3">
+            <button id="btnFullName" class="btn btn-sm btn-warning">Generate Full Name</button><br><small>(generate full
+                name seprated by space and show it in the textbox)</small>
+        </div>
+        <div class="col-md-3">
+            <input type="text" id="txtFullName" placeholder="Full Name" readonly class="form-control">
+        </div>
+    </div>
+    <div class="row pt-4">
+        <div class="col-md-4">
+            <select id="txtFruit" class="form-control">
+                <option>Select</option>
+                <option value="oil">Gemeni oil</option>
+                <option  value="oil">Sunflower oil</option>
+                <option  value="oil">Soyabin Oil</option>
+                <option  value="fruits">Apple</option>
+                <option value="fruits">Mango</option>
+                <option value="fruits">Watermelon</option>
+                <option value="vegetables">Cauliflower</option>
+                <option value="vegetables">Cabbage</option>
+                <option value="vegetables">Capsicum</option>
+                <option value="vegetables">Carrot</option>
+            </select>
+            <br><small>(On select of food item show category in paragraph on button click )</small>
+            <ul>
+                <li>Oil</li>
+                <li>Fruits</li>
+                <li>Vegitables</li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <button id="btnPrintCategory" class="btn btn-sm btn-warning">Print Category</button>
+        </div>
+        <div class="col-md-4">
+            Selected Category <strong id="paraCatageory"></strong>
+        </div>
+    </div>
+</body>
+
+</html>
