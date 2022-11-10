@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Variables and Events</title>
+    <script>
+        $(document).ready(function () {
+            $("#dpdlColor").change(function () {
+                $("#selectedColor").html($("#dpdlColor").val());
+                $("#colorDiv").css('background-color', $("#dpdlColor").val());
+            });
+            $("#btnReset").click(function () {
+                $("#txtUserNmae").val('');
+                $("#txtPassword").val('');
+            });
+            $("#btnLogin").click(function () {
+                if($("#txtUserNmae").val() == '' || $("#txtPassword").val() == '') {
+                    $("#txtUserNmae").css('border-color', 'red');
+                    $("#txtPassword").css('border-color', 'red');
+                    $("#errUser").show();
+                    $("#errPass").show();
+                } else {
+                    $("#txtUserNmae").css('border-color', 'grey');
+                    $("#txtPassword").css('border-color', 'grey');
+                    $("#errUser").hide();
+                    $("#errPass").hide();
+                }
+                //
+            });
+        });
+    </script>
+</head>
+
+<body class="container">
+    <div class="mt-2 p-3 bg-secondary text-white rounded text-center">
+        <h2>Assignment on element reading and printing.</h2>
+        <p>Topic used: if else, switch case, document.getElementById, variable declaration.</p>
+    </div>
+    <div class="row pt-4">
+        <div class="col-md-4">
+            <label class="label-for">Choose Color</label>
+            <select class="form-control" id="dpdlColor">
+                <option>Select Color</option>
+                <option>red</option>
+                <option>green</option>
+                <option>pink</option>
+                <option>blue</option>
+                <option>yellow</option>
+                <option>grey</option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <div style="width: 300px;height: 40px;" id="colorDiv" class="pt-2">
+                <p>Selected Background Color: <span id="selectedColor"></span></p>
+            </div>
+        </div>
+    </div>
+    <div class="row pt-3">
+        <div class="col-md-6 pt-2"  style="height: 155px;border: 1px solid;">
+            <div class="row">
+                <div class="col-md-6">
+                    <input type="text" id="txtUserNmae" placeholder="User Name" class="form-control">
+                    <span id="errUser" style="display: none;color: red;">Enter User Name</span>
+                </div>
+                <div class="col-md-6">
+                    <input type="text" id="txtPassword" placeholder="Password" class="form-control">
+                    <span id="errPass" style="display: none;color: red;">Enter Password</span>
+                </div>
+            </div>
+            <div class="row pt-3 text-center">
+                <div class="col-md-12">
+                    <button id="btnLogin" class="btn btn-sm btn-success">Login</button> &nbsp;
+                    <button id="btnReset" class="btn btn-sm btn-danger">Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
