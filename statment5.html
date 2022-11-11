@@ -19,7 +19,7 @@
                 $("#txtPassword").val('');
             });
             $("#btnLogin").click(function () {
-                if($("#txtUserNmae").val() == '' || $("#txtPassword").val() == '') {
+                if ($("#txtUserNmae").val() == '' || $("#txtPassword").val() == '') {
                     $("#txtUserNmae").css('border-color', 'red');
                     $("#txtPassword").css('border-color', 'red');
                     $("#errUser").show();
@@ -31,6 +31,16 @@
                     $("#errPass").hide();
                 }
                 //
+            });
+            $("#btnGrid").click(function () {
+                $("#gridView").show();
+                $("#listView").hide();
+              
+            });
+            $("#btnList").click(function () {
+                $("#listView").show();
+                $("#gridView").hide();
+               
             });
         });
     </script>
@@ -61,7 +71,7 @@
         </div>
     </div>
     <div class="row pt-3">
-        <div class="col-md-6 pt-2"  style="height: 155px;border: 1px solid;">
+        <div class="col-md-6 pt-2" style="height: 155px;border: 1px solid;">
             <div class="row">
                 <div class="col-md-6">
                     <input type="text" id="txtUserNmae" placeholder="User Name" class="form-control">
@@ -80,6 +90,68 @@
             </div>
         </div>
     </div>
+    <div class="row pt-3">
+        <div class="col-md-12 pt-2">
+            <button id="btnList" class="btn btn-sm btn-warning">List View</button> &nbsp;
+            <button id="btnGrid" class="btn btn-sm btn-warning" >Grid View</button> &nbsp;
+            <div id="listView" class="pt-3">
+                <table class="table table-bordered">
+                    <thead>
+                        <th>Name</th>
+                        <th>City</th>
+                        <th>Mobile</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mrudun</td>
+                            <td>Nagpur</td>
+                            <td>1234567890</td>
+                        </tr>
+                        <tr>
+                            <td>Parshul</td>
+                            <td>Pune</td>
+                            <td>09876544321</td>
+                        </tr>
+                        <tr>
+                            <td>Raja</td>
+                            <td>Mumbai</td>
+                            <td>1234567890</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="display: none;" id="gridView" class="pt-3">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Mrudun</h5>
+                                <p class="card-text">Nagpur</p>
+                                <a>1234567890</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Parshul</h5>
+                                <p class="card-text">Pune</p>
+                                <a>09876544321</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Raja</h5>
+                                <p class="card-text">Mumbai</p>
+                                <a>1234567890</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
-
 </html>
