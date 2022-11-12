@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <script>
+        var fname = "Shankar";
+        var rollNo = 123;
+        var currentDate = new Date();
+        var isIndian = true;
+
+
+        var fnmRoll = fname + '-' + rollNo;
+        console.log(fnmRoll);
+
+        function printNamenRoll () {
+            var fullName = fname + '--'+ rollNo;
+            console.log('Full Name :'+ fullName);
+        }
+       
+        var fff =  printNamenRoll();
+        console.log('fff'+fff);
+        function add(num1,num2){
+            return num1+ num2;
+        }
+        var result = add(5,8);
+        var result1 = add(45,5);
+        console.log(result);
+        console.log(result1); 
+
+        for(var i = 0; i <= 10; i++){ 
+            console.log(i);
+        }
+        
+        function onFromChange(){
+            var from = document.getElementById('dpdlFrom').value;
+            var to = document.getElementById('dpdlTo').value;
+            if(from == to){
+                alert('From n To cant be same');
+                document.getElementById('dpdlFrom').value ='' ;
+                document.getElementById('dpdlTo').value ='' ;
+            }
+            debugger
+        }
+        function checkLoginDetails() {
+            var userName = document.getElementById('txtUserNmae').value;
+            var Password = document.getElementById('txtPassword').value;
+            // if (userName == "" || Password == ""){
+            //     alert('Please Enter Values ');
+            //     document.getElementById('txtUserNmae').style.borderColor="red";
+            //     document.getElementById('txtPassword').style.borderColor="red"
+            // }
+            if (userName == ""){
+                document.getElementById('txtUserNmae').style.borderColor="red";
+                document.getElementById('errUser').style.display ='block'
+            } else {
+                document.getElementById('txtUserNmae').style.borderColor="grey";
+                document.getElementById('errUser').style.display ='none'
+            }
+            if (Password == ""){ 
+                document.getElementById('txtPassword').style.borderColor="red";
+                document.getElementById('errPass').style.display ='block'
+            } else {
+                document.getElementById('txtPassword').style.borderColor="grey";
+                document.getElementById('errPass').style.display ='none'
+            }
+        }
+        function reset(){
+            document.getElementById('txtUserNmae').value =""; 
+            document.getElementById('txtPassword').value =""; 
+        }
+        function changeBackColor(){
+            debugger;
+            var selectedColor = document.getElementById('dpdlColor').value;
+            document.getElementById('divMain').style.backgroundColor = selectedColor;
+            document.getElementById('selectedColor').innerText=selectedColor;
+        }
+
+    </script>
+       <div class="container">
+        <div class="row pt-3">
+            <div class="col-md-6 pt-2" id='divMain' style="height: 255px;margin:10px;border: 1px solid;">
+                <div class="row">
+                    <div class="col-md-6">
+                        <select class="form-control" id='dpdlColor' onchange="changeBackColor()">
+                            <option>red</option>
+                            <option>green</option>
+                            <option>yellow</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" id="txtUserNmae" placeholder="User Name" class="form-control">
+                        <span id="errUser" style="display: none;color: red;">Enter User Name</span>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" id="txtPassword" placeholder="Password" class="form-control">
+                        <span id="errPass" style="display: none;color: red;">Enter Password</span>
+                    </div>
+                </div>
+                <div>
+                    selectd color is : <span id='selectedColor'></span>
+                </div>
+                <div class="row pt-3 text-center">
+                    <div class="col-md-12">
+                        <button onclick="checkLoginDetails()" id="btnLogin" class="btn btn-sm btn-success">Login</button> &nbsp;
+                        <button onclick="reset()" id="btnReset" class="btn btn-sm btn-danger">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-2 p-3 bg-secondary text-white rounded text-center">
+            <h2>Train Booking</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <label for="">From Station</label>
+                <select class="form-control" id="dpdlFrom" onchange="onFromChange()">
+                    <option> Select Station</option>
+                    <option> Nagpur</option>
+                    <option> Pune</option>
+                    <option> Mumbai</option>
+                    <option> Solapur</option>
+                    <option> Kolhapur</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label for="">To Station </label>
+                <select class="form-control" id="dpdlTo"  onchange="onFromChange()">
+                    <option> Select Station</option>
+                    <option> Nagpur</option>
+                    <option> Pune</option>
+                    <option> Mumbai</option>
+                    <option> Solapur</option>
+                    <option> Kolhapur</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <label for="">Select Travel Date</label>
+                <input type="date" name="" id="txtOPRice" class="form-control">
+            </div>
+            <div class="col-md-2 p-2">
+                <div for="">Is Return Train Booked</div>
+                <input type="checkbox" onchange="onDiscountChange()" name="" id="chkReturnTrain">
+            </div>
+            <div class="col-md-2 nodisplay"  >
+                <label for="">Enter Train No & Date</label>
+                <input type="text" name="" id="txtDiscount" class="form-control">
+            </div>
+            <div class="col-md-2 FinalPrice nodisplay">
+                <label for="">Final Price</label>
+                <input type="text" name="" id="txtFinal" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <div for="">Is Product Washable with warm water</div>
+                <input type="radio" name="washable" id="" value="yes"> Yes
+                <input type="radio" name="washable" id="" value="no"> No
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 bg-secondary  text-white m-2 washableDiv nodisplay">
+               <p>Product Is washable with warn water only</p> 
+                <p>Do Not Rinse and dry it is inside </p>
+            </div>
+            <div class="col-md-6 bg-danger text-white m-2 NotwashableDiv nodisplay">
+                <p>Product can't be  washed</p> 
+                <p>Just Dry it and clean it  </p>
+            </div>
+        </div>
+        <div class="row"> 
+            <div class="col-md-6">
+                Colors Available
+            </div>
+        </div>
+        <div class="row"> 
+            <div class="col-md-3">
+                <label for="">Select Color</label>
+                <select id="dpdlColor" class="form-control">
+                    <option value=""> Select Color</option>
+                    <option value="bg-danger"> Red</option>
+                    <option value="bg-primary"> Blue</option>
+                    <option value="bg-success"> Green</option>
+                    <option value="bg-secondary"> Gray </option>
+                </select>
+            </div>
+            <div class="col-md-2"> 
+                 <button style="margin-top: 23px;" class="btn btn-sm btn-success" id="btnAdd">Add</button>
+            </div>
+        </div>
+        <div class="row colorDiv mt-2"> 
+            
+        </div>
+    </div>
+</body>
+</html>
