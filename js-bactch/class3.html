@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <td id="tdFirst">
+                <input type="text" placeholder="Enter Name"
+                 name="studName" class="formtext" value="abc" id="txtName">
+            </td>
+            <td>
+                <button id="btnGetVal" class="btn-read">Read Value</button>
+            </td>
+            <td>
+                <button id="btnGetVal" class="btn-read">Read Value</button>
+            </td>
+            <td>
+                <button id="btnGetVal" class="btn-read">Read Value</button>
+            </td>
+        </tr>
+
+    </table>
+    <div id="divProduct" class="btn-read">
+        <P>para</P>
+      this is demo `12123123
+    </div>
+    <div>
+        <img id="imgAmazon"  
+        src="https://techcrunch.com/wp-content/uploads/2020/11/GettyImages-1211125072.jpg?w=730&crop=1" 
+        alt="Amazon Logo">
+    </div>
+    <script>
+        console.log(document.getElementsByClassName('btn-read'))
+        console.log(document.getElementsByClassName('btn-read')[3].innerHTML)
+        console.log(document.getElementById('btnGetVal'))
+        // console.log(document.getElementById('btnGetVal').className);
+        // console.log(document.getElementById('tdFirst').innerHTML);
+        // console.log(document.getElementById('txtName').value);
+        // console.log(document.getElementById('btnGetVal').className);
+        // console.log('text'+document.getElementById('divProduct').innerText);
+        // console.log('innerhtml '+document.getElementById('divProduct').innerHTML);
+        // console.log(document.getElementById('imgAmazon').src);
+     </script>
+</body>
+</html>

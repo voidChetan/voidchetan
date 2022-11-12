@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+<body>
+    <script>
+        debugger;
+        var firtName="Shankar";
+        var lastName="Bokde";
+        var fullName = "";
+
+        function createFullName() {
+            debugger;
+            fullName= firtName+ " "+ lastName;
+        }
+        
+        function getFullName(str1,str2){
+            return str1+" "+ str2;
+        }
+        var myname = getFullName('Angular','Demo');
+        showAlert(myname);
+
+        var num1= 12;
+        var num2= 12;
+
+        function addTwoNo(number1,number2){
+            debugger;
+            createFullName();
+            return number1 + number2;
+        }
+        debugger;
+        var addition = addTwoNo(num1,num2);
+        console.log(addition);
+
+        var addition2 = addTwoNo(23,56);
+        console.log(addition2);
+        showAlert(addition2);
+        var addition3 = addTwoNo("shankar",56);
+        console.log(addition3);
+        showAlert(addition3);
+        function addThreeNo(num1,num2,num3){
+           console.log(num1+ num2+ num3);
+        }
+        addThreeNo();
+       function showAlert(data){
+        alert(data);
+       }
+         
+
+    </script>
+    
+</body>
+</html>
