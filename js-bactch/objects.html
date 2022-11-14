@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <script>
+        function readData() {
+            var fName = document.getElementById("txtFName").value;
+            var mName = document.getElementById("txtMName").value;
+            var lName = document.getElementById("txtLName").value;
+            console.log(fName + " -" + mName + "-" + lName); 
+            var employeeObj = {
+                firstName: fName,
+                middleName: document.getElementById("txtMName").value,
+                lastName: lName
+            };
+            debugger;
+            console.log('Obj last'+ employeeObj.lastName);
+            console.log('Obj middle'+ employeeObj.middleName);
+            console.log('Obj fir'+ employeeObj.firstName);
+        }    
+        function readStudentData(){
+            var studentObj = {
+                name: document.getElementById("txtName").value,
+                contact:document.getElementById("txtContact").value,
+                email: document.getElementById("txtEmail").value
+            }; 
+            console.log('emial '+studentObj.email); //read value using . operator
+            console.log('contact '+studentObj['contact']); //read value using  [ ' field name' ]
+            studentObj.city = 'Nagpur';
+            debugger
+            studentObj.state = 'Mah';
+            studentObj.state = 'Goa';
+            studentObj.name = "ABC";
+            studentObj.dob = new Date();
+            studentObj.isIndian = true;
+            studentObj['EmpId'] = 11332;
+
+        }
+    </script>
+    <div class="container">
+        <div class="row pt-3">
+            <div class="col-md-3 col-sm-3 col-3">
+                <input type="text" id="txtFName" placeholder="F Name" class="form-control">
+            </div>
+            <div class="col-md-3 col-sm-3 col-3">
+                <input type="text" id="txtMName" placeholder="M Name" class="form-control">
+            </div>
+            <div class="col-md-3 col-sm-3 col-3">
+                <input type="text" id="txtLName" placeholder="L Name  " class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <button class="btn btn-success" onclick="readData()">Get Data</button>
+            </div>
+        </div>
+    </div>
+    <div class="container pt-3">
+        <div class="row pt-3">
+            <div class="col-md-3 col-sm-3 col-3">
+                <input type="text" id="txtName" placeholder="Studet Name" class="form-control">
+            </div>
+            <div class="col-md-3 col-sm-3 col-3">
+                <input type="text" id="txtContact" placeholder="Contact No" class="form-control">
+            </div>
+            <div class="col-md-3 col-sm-3 col-3">
+                <input type="text" id="txtEmail" placeholder="Email" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <button class="btn btn-success" onclick="readStudentData()">Get Data</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
