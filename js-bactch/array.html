@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //how to create array of string and numbers
+    var rollNoList = [112,113,114,115];
+    var cityArray = ['Nagpur','Pune','Solapur','Dhule','Panji'];
+    var dateeArr = [new Date(),new Date(),new Date()];
+    debugger; 
+    console.log('Roll No Arr'+ rollNoList);
+    console.log('City Arr'+ cityArray);
+    //Accessing element using it index
+    console.log('element at 0th index '+ rollNoList[3]);
+    console.log('element at 2nd index '+ rollNoList[2]);
+    console.log('element at 3rd index '+ cityArray[3]); 
+    //check array length
+    var rollLength = rollNoList.length;
+    var cityLength = cityArray.length;
+    console.log('roll length '+ rollLength + ' City length = '+cityLength);
+    // push new element to array at last position
+    rollNoList.push(116);
+    rollNoList.push(117);
+    rollNoList.push(118);
+    console.log('Updated Roll No Arr'+ rollNoList);
+    cityArray.push('Mumbai');
+    console.log('City Arr'+ cityArray);
+    // remove element from array at last position
+    rollNoList.pop();
+    // push new element to array at first position
+    rollNoList.unshift(111);
+    cityArray.shift();
+    //rollNoList = []; // empty array
+   // rollNoList.splice(2,1); // remove 2nd element only
+   // rollNoList.splice(2,3); // remove 3 element from 2nd index
+   //print array
+    for (let index = 0; index < rollNoList.length; index++) {  
+        console.log(rollNoList[index]) 
+    }
+    var multplyArr = [];
+    //add element to array using for loop
+    for (let index = 1; index <= 10; index++) {
+        var result = index*2;
+        multplyArr.push(result); 
+    }
+    debugger;
+
+    </script>
+  
+
+</body>
+</html>
