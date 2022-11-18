@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $("#timeAvatar").hide();
+            $("#timeDiaHard").hide();
+            $("#timeInception").hide();
+            $("#dpdlMovie").change(function () {
+                const dropdownValue = $("#dpdlMovie").val();
+                if (dropdownValue == 'Avatar') {
+                    $("#timeDiaHard").hide();
+                    $("#timeAvatar").show();
+                    $("#timeInception").hide();
+                } else if (dropdownValue == 'Dia Hard') {
+                    $("#timeDiaHard").show();
+                    $("#timeAvatar").hide();
+                    $("#timeInception").hide();
+                } else if (dropdownValue == 'Inception') {
+                    $("#timeDiaHard").hide();
+                    $("#timeAvatar").hide();
+                    $("#timeInception").show();
+                }
+            });
+            $("#txtNoOfTicket").blur(function () {
+                debugger
+                var ticket = Number($("#txtNoOfTicket").val()) ;
+                 
+                if ($("#dpdlMovie").val() == 'Avatar') {
+                    $("#txtAmount").val(ticket* 200);
+                } else if ($("#dpdlMovie").val() == 'Dia Hard') {
+                    $("#txtAmount").val(ticket *150);
+                } else if ($("#dpdlMovie").val() == 'Inception') {
+                    $("#txtAmount").val(ticket*300);
+                }
+               
+            });
+        })
+
+    </script>
+</head>
+
+<body>
+    <form>
+        <div class="row">
+            <div class="col-md-2">
+                <label class="">Select Movie</label>
+                <select class="form-control" id="dpdlMovie">
+                    <option>Select Movie</option>
+                    <option value="Avatar">Avatar ($200)</option>
+                    <option value="Dia Hard">Dia Hard ($150)</option>
+                    <option value="Inception">Inception ($300)</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group" id="timeAvatar">
+                    <label class="" for="product_name">Select Time Slot</label>
+                    <select class="form-control">
+                        <option>Select Time Slot</option>
+                        <option>9 AM - 12 AM</option>
+                    </select>
+                </div>
+                <div class="form-group" id="timeDiaHard">
+                    <label class="" for="product_name">Select Time Slot</label>
+                    <select class="form-control" id="">
+                        <option>Select Time Slot</option>
+                        <option>12 AM - 3 PM</option>
+                        <option>3 PM - 6 PM</option>
+                    </select>
+                </div>
+                <div class="form-group" id="timeInception">
+                    <label class="" for="product_name">Select Time Slot</label>
+                    <select class="form-control" id="timeInception">
+                        <option>Select Time Slot</option>
+                        <option>6 PM - 9 PM</option>
+                        <option>9 PM - 11 PM</option>
+                    </select>
+                </div>
+            </div>
+        </div> 
+        <div class="row">
+            <div class="col-md-2">
+                <label class="" for="product_id">No Of Tickets</label>
+                <input id="txtNoOfTicket" name="product_id"   placeholder="No Of Tickets" class="form-control input-md"
+                    required="" type="text">
+            </div> 
+            <div class="col-md-2">
+                <label class="" for="product_id">Total Amount</label>
+                <input id="txtAmount" name="product_id" disabled placeholder="No Of Tickets" class="form-control input-md"
+                    required="" type="text">
+            </div>
+        </div>
+        
+        <div class="row pt-3">
+            <div class="col-3 text-center">
+                <button class="btn btn-danger">Reset</button>
+            </div>
+            <div class="col-6">
+                <button class="btn btn-success">Book Ticket</button> 
+               
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <p>On Click of Book Store the data in local storage in form of array. For this first you have to read data from locastorage if data ticket is already there.
+                    you need to push data to array and store it..if not create empty array and push and store.
+                </p>
+            </div>
+        </div>
+        <!-- Text input-->
+
+
+        <!-- Text input-->
+    </form>
+</body>
+
+</html>
