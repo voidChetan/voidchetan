@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $("#product_id").blur(function () {
+                if ($(this).val().length > 6) {
+                    alert('sku should be max 6 char');
+                    $(this).val('');
+                }
+            });
+            $(".name").blur(function () {
+                var fullname = $("#product_id").val() + "-" + $("#product_name").val()
+                $("#fullName").val(fullname);
+            });
+
+            $(".btnClose").click(function () {
+                $("#divMain").removeClass("col-md-8");
+                $("#divMain").addClass("col-md-12");
+                $("#divSide").hide();
+            });
+
+            $("#dpodlCategory").change(function () {
+               const dropdownValue =  $("#dpodlCategory").val();
+               if(dropdownValue == 'Other') {
+                $("#divOther").show();
+               } else {
+                $("#divOther").hide();
+               }
+            });
+            $("#txtAfterDiscountPrice").blur(function () {
+                debugger
+               var afterDiscount =  $("#txtAfterDiscountPrice").val();
+               var productPrice =  $("#txtProductPrice").val();
+               var discount =  $("#txtMaxDiscount").val();
+               afterDiscount = Number(productPrice) - Number(discount);
+               $("#txtAfterDiscountPrice").val(afterDiscount);
+            });
+        })
+
+    </script>
+</head>
+
+<body>
+    <form>
+        <div class="row">
+            <div class="col-md-2">
+                <label class="" for="product_id" data-bs-toggle="tooltip"
+                    title="on Save if sku lenght is greater than 6 show alert as sku should be max 6 char">PRODUCT
+                    SKU</label>
+                <input id="product_id" name="product_id" placeholder="PRODUCT SKU" class="form-control input-md name"
+                    required="" type="text">
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="" for="product_name">PRODUCT NAME</label>
+                    <input id="product_name" name="product_name" placeholder="PRODUCT NAME"
+                        class="form-control input-md name" required="" type="text">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <label class="" for="product_id">Full Product Name </label>
+                <input id="fullName" name="product_id" disabled placeholder="PRODUCT SKU" class="form-control input-md"
+                    required="" type="text">
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <label class="" for="product_id">Select Category</label>
+                <select class="form-control input-md" id="dpodlCategory">
+                    <option value="">Select Category</option>
+                    <option>Laptop</option>
+                    <option>Shirts Mens</option>
+                    <option>Desktops</option>
+                    <option>Other</option>
+                </select>
+            </div>
+            <div class="col-md-3" id="divOther" style="display: none">
+                <div class="form-group">
+                    <label class="" for="product_name">Enter Other Category</label>
+                    <input id="divOther" name="product_name" placeholder="PRODUCT NAME" class="form-control input-md"
+                        required="" type="text">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <label class="" for="product_id" data-bs-toggle="tooltip">Enter Price</label>
+                <input id="txtProductPrice" name="product_id" placeholder="PRODUCT Price" class="form-control input-md"
+                    required="" type="number">
+            </div>
+            <div class="col-md-2">
+                <label class="" for="product_id" data-bs-toggle="tooltip">Enter Max Discount</label>
+                <input id="txtMaxDiscount" name="product_id" placeholder="Max Discount" class="form-control input-md"
+                    required="" type="number">
+            </div>
+            <div class="col-md-2">
+                <label class="" for="product_id" data-bs-toggle="tooltip">After Disount Price</label>
+                <input id="txtAfterDiscountPrice" name="product_id" placeholder="Max Discount"
+                    class="form-control input-md" required="" type="number" readonly>
+            </div>
+        </div>
+        <div class="row pt-3">
+            <div class="col-3 text-center">
+                <button class="btn btn-danger">Reset</button>
+            </div>
+            <div class="col-6">
+                <button class="btn btn-success">Save Product</button><br>
+                <strong>On Click of save Store the data in local storage.</strong>
+            </div>
+        </div>
+        <!-- Text input-->
+
+
+        <!-- Text input-->
+    </form>
+</body>
+
+</html>
