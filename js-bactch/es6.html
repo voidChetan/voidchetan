@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var firstName = 'Demo'; //global scope
+        // var firstName = 'Demo 2';
+
+        // function printName() {
+        //     let middleName = 'Demo2';
+        //     const lastName = 'Demo 3';
+        //     const studentObj = {
+        //         name: 'ABC',
+        //         city: 'Nagpur'
+        //     }; 
+
+        //     const studentArr = [
+        //         {
+        //             name: 'ABC',
+        //             city: 'Nagpur'
+        //         },
+        //         {
+        //             name: 'ABC',
+        //             city: 'Nagpur'
+        //         }
+        //     ]; 
+        //     studentObj.city = 'Mumbai';
+        //     console.log(studentObj.city);
+        //     //  lastName = 'Demmo 4';
+
+        //     console.log(firstName);
+        //     var firstName = "Innder Demo";
+        // }
+        // printName();
+
+        // function add(num1,num2) {
+        //     return num1+ num2;
+        // }
+        // let getAddition = (num1,num2) => num1 + num2;
+
+        // console.log('arraow additon'+ getAddition(4,4));
+
+        // var getSum = (num1,num2) => {
+        //     console.log(num1+num2);
+        // }
+        // getSum(2,3);
+
+        // var name = "Nikhil";
+
+        // var person = {
+        //     name: "Hemant",
+        //     age: 30,
+        //     getDetailNormal: function () {
+        //         console.log('get Detail ' + this.name);
+        //     },
+        //     getNameArrow: () => {
+        //         console.log('get Name ' + this.name);
+        //     }
+        // }
+
+        // person.getDetailNormal();
+        // person.getNameArrow();
+
+        // function myData(){
+        //     var name = "Demo";
+        //     person.getNameArrow();
+        // }
+        // myData();
+
+        let nume1 = [1, 2, 3];
+        let num2 = [4, 5, ...nume1, 6];
+        console.log(num2);
+        const myVehicle = {
+            brand: 'Ford',
+            model: 'Mustang',
+            color: 'red'
+        }
+        const updateMyVehicle = {
+            type: 'car',
+            year: 2021,
+            color: 'yellow'
+        }
+        const myUpdatedVehicle = {...myVehicle, ...updateMyVehicle}
+        console.log(myUpdatedVehicle);
+    </script>
+</body>
+
+</html>

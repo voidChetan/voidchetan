@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Revise</title>
+</head>
+<body>
+    <script>
+        var name= "Shankar";
+        var rollno =123;
+        var curretDate = new Date();
+        var lastMonthDate =curretDate.setMonth(-1);
+        var lastDate = new Date(lastMonthDate);
+
+        debugger;
+        var isIndidan = true;
+        var city = "Nagpur";
+        var mobile= "99887766";
+
+        var studentObj = {
+            name: "Shankar",
+            city: "Nagpur",
+            mobile: "9988776655"
+        };
+         var employeeObj = {
+            name:'ABC',
+            city: 'Pune',
+            state: 'Mah',
+            officeDetails : {
+                designation:'Senior Soft Eng',
+                department: 'IT',
+                salary: 20000,
+                priojectDetails: {
+                    projectName:'ERP',
+                    teamLead: 'EDFYG',
+                    teamSize: 5
+                }
+            },
+            contactNos: [
+                '998877665',
+                '889765453',
+                '0712432423'
+            ]           
+         };
+         console.log(employeeObj.officeDetails.priojectDetails.projectName);
+
+        var city1 = "Pune";
+        var city2= "Mnumbai";
+        var city3= "Solapur";
+
+        var cityList = [ 'Pune','Mumbai','Solapaur','Nagpur'];
+         debugger;
+        for(var i =0; i<cityList.length;i++) {
+            console.log(cityList[i]);
+        }
+        
+        var rollNoList = [123,124,125,126,127];
+        var studentList = [
+            {
+                studName: 'abc',
+                mobile: '9988766',
+                age: 12 
+            },
+            {
+                studName: 'aaa',
+                mobile: '9988766',
+                age: 13
+            },
+            {
+                studName: 'nmm',
+                mobile: '96653663',
+                age: 15
+            },
+            {
+                studName: 'MNO',
+                mobile: '112344',
+                age: 18
+            }
+        ];
+        debugger;
+        for(var index= 0;index<studentList.length;index++){
+            console.log(studentList[index].studName)
+        }
+        console.log('rev str')
+        for(var index = studentList.length-1;index>=0;index--){
+            console.log(studentList[index].studName)
+        }
+        debugger;
+        var strArr = JSON.stringify(studentList);
+
+        var ddta = JSON.stringify(studentList);
+        localStorage.setItem('studList',ddta);
+        localStorage.setItem('userRole','admin');
+        sessionStorage.setItem('userRole','emp');
+        //alert(localStorage.getItem('userRole'));
+       // alert(sessionStorage.getItem('userRole'));
+        var localData = JSON.parse(localStorage.getItem('studList'))
+       // alert(localData[0].studName);
+
+       function printName() {
+        console.log('nnnnn'+studentList[0].studName);
+       }
+       printName();
+       function printMyName(name) {
+        console.log('para ' + name);
+       }
+
+       printMyName('Shankar');
+       function getName() {
+        return 'ABC';
+       }
+       var nnnn = getName();
+       console.log('from fun ' + nnnn)
+
+    </script>
+</body>
+</html>
