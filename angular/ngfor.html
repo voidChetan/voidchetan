@@ -12,6 +12,16 @@
     <link rel="stylesheet" href="../custom.css">
     <script>
          $(document).ready(function () {
+
+            var lanArr = ['Html','Css','JavaScript','Angular','React'];
+            lanArr.forEach(element => {
+                const btn = "<button class='btn btnLang btn-sm btn-primary mx-1'>"+element+"</button>"
+                $('#divLanguage').append(btn);
+            });
+            $('#divLanguage').on('click', '.btn-sm', function () { 
+                 $(".btnLang").removeClass('btn-success');
+                 $(this).addClass('btn-success');
+             });
             $("#btnAddCity").click(function () {
                 debugger;
                 if($("#myCity").val() != '' && $("#dpdlCity option[value='"+$("#myCity").val()+"']").length == 0) {
@@ -24,7 +34,20 @@
                         alert($("#myCity").val()+" Already Added In Dropdown")
                     }
                 }
-            })
+            });
+            $("#btnPrintTable").click(function () {
+                 const val = $("#myNumber").val();
+                 if (val !== "") {
+                     for (let index = 1; index < 11; index++) { 
+                        const tr= "<tr> <td> "+val+"  *  " +index+"  =  " +Number(val) * index+" </td></tr>"
+                        $("#tbl tbody").append(tr);
+                    }
+                 } else {
+                    alert("Enter A Number")
+                 }
+
+             });
+
          })
     </script>
 </head>
@@ -71,12 +94,24 @@
         </div>
     </nav>
     <div class="container pt-2">
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Angular</li>
+              <li class="breadcrumb-item active" aria-current="page">ng-For Task</li>
+            </ol>
+          </nav>
         <div class="row">
             <div class="col-4 ">
                 <div class="myBox"> 
+                    <div class="text-center">
+                        <h3>Task 1</h3>
+                    </div>
+                   
                     <ul>
-                        <li> on add btn Entered City Should be added to dropdwon</li>
-                        <li> after city added to dropdown - textbox Should be ste empty</li>
+                        <li> on add btn click Entered City Should be added to dropdown option</li>
+                        <li> after adding city - textbox Should be empty</li>
+                        <li> Show count of Added Cities beside dropdown</li>
                         <li class="text-danger"> if Entered city is already added in dropdown show error that city already present</li>
                     </ul> 
                     <div class="row">
@@ -95,19 +130,54 @@
                         </div>
                         <div class="col-6">
                             Total City Added: <strong id="totCity"></strong>
-                        </div>
-                         
+                        </div> 
                     </div>
                 </div> 
             </div>
             <div class="col-4 ">
                 <div class="myBox">
+                    <div class="text-center">
+                        <h3>Task 2</h3>
+                    </div>
+                    <ul>
+                        <li>Create an Array of string for Languages with 5 Langugaes</li>
+                        <li>using ngfor show languages in button</li>
+                        <li>on click of that button make it selected and add green color</li>
+                    </ul>
+                    <div class="row">
+                        <div class="col-12" id="divLanguage">
 
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-4 ">
                 <div class="myBox">
+                    <div class="text-center">
+                        <h3>Task 3</h3>
+                    </div>
+                    <ul>
+                        <li>on Print btn click Show table of entered No into html table like below</li>
+                        <li>If textbox is empty show alert To Enter Value</li>
+                    </ul>
+                    <div class="row">
+                        <div class="col-6">
+                            <input type="text" id="myNumber" class="form-control" placeholder="Enter Number">
+                        </div>
+                        <div class="col-6">
+                            <button class="btn btn-sm btn-success" id="btnPrintTable">Add City</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <table id="tbl" class="table table-sm table-bordered">
+                                <tbody>
 
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                     
                 </div>
             </div>
         </div>

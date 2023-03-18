@@ -4,5 +4,8 @@
 .myBox {
     border: 1px solid teal;
     padding: 10px;
-    height: 400px;
+    height: 450px;
+}
+.table-sm>:not(caption)>*>* {
+    padding: 0;
 }
