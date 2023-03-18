@@ -1,0 +1,8 @@
+.navbar-nav .nav-link.active, .navbar-nav .show>.nav-link {
+     font-weight: 700;;
+}
+.myBox {
+    border: 1px solid teal;
+    padding: 10px;
+    height: 400px;
+}
