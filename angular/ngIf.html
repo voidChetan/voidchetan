@@ -13,16 +13,62 @@
     <link rel="stylesheet" href="../custom.css">
     <title>Ng-IF</title>
     <script>
+        var isHide = true;
         $(document).ready(function () {
-            $("#btnContinue").click(function () {
-                var radio1Value = $('input:radio[name=radioCheck]:checked').val();
-                if (radio1Value == undefined) {
-                    alert('Selct at least one option');
+            $("#btnDiv1Show").click(function () {
+                $("#div1").show();
+            });
+            $("#btnDiv1Hide").click(function () {
+                $("#div1").hide();
+            });
+            $("#btnDiv2Toggle").click(function () {
+                if (isHide) {
+                    $("#div2").show();
                 } else {
-                    //  document.getElementById(selectedValue).style.display = 'block';
-                    $("#selectedPlan").text(radio1Value);
+                    $("#div2").hide();
+                }
+                isHide = !isHide;
+            });
+            $("#txtNum1").on('input', function () {
+                if ($("#txtNum1").val() == $("#txtNum2").val()) {
+                    $("#div3").hide();
+                } else {
+                    $("#div3").show();
                 }
             });
+            $("#txtNum2").on('input', function () {
+                if ($("#txtNum1").val() == $("#txtNum2").val()) {
+                    $("#div3").hide();
+                } else {
+                    $("#div3").show();
+                }
+            });
+             $("#txtFName").on('input', function () { 
+                 $("#txtFullName").val($("#txtFName").val()+" " + $("#txtLName").val())
+            });
+            $("#txtLName").on('input', function () { 
+                 $("#txtFullName").val($("#txtFName").val()+" " + $("#txtLName").val())
+            });
+            $("#invalidCheck2").on('input', function () { 
+                 if($(this.))
+            });
+            
+            $("#divOtherState").hide();
+            $("#divOtherCity").hide();
+            $("#dpdlState").click(function() {
+                if($(this).val() =="Other") {
+                    $("#divOtherState").show();
+                } else {
+                    $("#divOtherState").hide();
+                }
+            })
+            $("#dpdlCity").click(function() {
+                if($(this).val() =="Other") {
+                    $("#divOtherCity").show();
+                } else {
+                    $("#divOtherCity").hide();
+                }
+            })
         })
     </script>
 </head>
@@ -86,63 +132,126 @@
                 <div class="myBox" style="position: relative;">
                     <div class="text-center">
                         <h3>Task 1</h3>
-                    </div> 
+                    </div>
                     <ul>
-                        <li> on continue show alert if no plan Selected</li>
-                        <li> Show Selected Plan below Continue</li>
-                         
+                        <li> show hide div1 on click of show & hide button</li>
+                        <li> show hide div2 on click of toggle button</li>
+                        <li> if we enter same value in both textbox hide div3 else show</li>
+
                     </ul>
-                    <div class="h6">Select Plan</div>
-                    <div class="row text-center">
-                        <div class="col-md-3">
-                            <label>Broadband</label> <br/>
-                            <input type="radio" name="radioCheck" id="radio1" value="Broadband">
-                        </div>
-                        <div class="col-md-3">
-                            <label>Broadband n Tv</label><br/>
-                            <input type="radio" name="radioCheck" id="radio2" value="Broadband n Tv">
-                        </div>
-                        <div class="col-md-3">
-                            <label>Fibre Optics </label><br/>
-                            <input type="radio" name="radioCheck" id="radio3" value="Fibre Optics">
-                        </div>
-                        <div class="col-md-3">
-                            <label>Mobile Plan </label><br/>
-                            <input type="radio" name="radioCheck" id="radio4" value="Mobile Plan">
-                        </div>
-                    </div>
                     <div class="row">
-                        <div class="col-12 text-center">
-                            <button class="btn btn-success btn-sm" id="btnContinue"> Continue</button>
+                        <div class="col-4">
+                            <div class="bg-success p-4 rounded" id="div1">
+                                Div 1
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="bg-secondary p-4 rounded" id="div2">
+                                Div 2
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="bg-primary p-4 rounded" id="div3">
+                                Div 3
+                            </div>
                         </div>
                     </div>
-                    <div class="row" style="position: absolute;bottom: 0;">
-                        <div class="col-12 text-center">
-                            <p>Selected Plan is : <strong id="selectedPlan"></strong> </p>
+                    <div class="row pt-4 text-center">
+                        <div class="col-4">
+                            <button class="btn btn-success btn-sm" id="btnDiv1Show">Show </button>
+                            <button class="btn btn-danger btn-sm" id="btnDiv1Hide"> Hide </button>
+                        </div>
+                        <div class="col-4">
+                            <button class="btn btn-success btn-sm" id="btnDiv2Toggle">Show / Hide </button>
+                        </div>
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col-6">
+                                    <input type="text" class="form-control" id="txtNum1" placeholder="Enter Num1">
+                                </div>
+                                <div class="col-6">
+                                    <input type="text" class="form-control" id="txtNum2" placeholder="Enter Num2">
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-6">
                 <div class="myBox">
-
+                    <form class="row g-3">
+                        <div class="col-md-4">
+                            <label for="validationDefault01" class="form-label">First name</label>
+                            <input type="text" class="form-control" id="txtFName"  required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="validationDefault02" class="form-label">Last name</label>
+                            <input type="text" class="form-control" id="txtLName"  required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="validationDefault02" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="txtFullName"  disabled>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="validationDefault04" class="form-label">State</label>
+                            <select class="form-select" id="dpdlState" required>
+                                <option selected disabled value="">Choose...</option>
+                                <option value="Maharashtra">Maharashtra</option>
+                                <option value="Goa">Goa</option>
+                                <option value="Gujrat">Gujrat</option>
+                                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2" id="divOtherState">
+                            <label for="validationDefault02" class="form-label"> State</label>
+                            <input type="text" class="form-control" id="txtState"   >
+                        </div>
+                        <div class="col-md-4">
+                            <label for="validationDefault04" class="form-label">City</label>
+                            <select class="form-select" id="dpdlCity" required>
+                                <option selected disabled value="">Choose...</option>
+                                <option value="Nagpur">Nagpur</option>
+                                <option value="Mumbai">Mumbai</option>
+                                <option value="Pune">Pune</option>
+                                <option value="Solapur">Solapur</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2" id="divOtherCity">
+                            <label for="validationDefault02" class="form-label">Other</label>
+                            <input type="text" class="form-control" id="txtCity"   >
+                        </div>  
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                                <label class="form-check-label" for="invalidCheck2">
+                                    Agree to terms and conditions
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary" type="submit">Submit form</button>
+                        </div>
+                    </form>
                 </div>
             </div>
-            
+
         </div>
 
     </div>
     <script type="text/javascript" src="../menu.js"> </script>
-        <script> 
-            angularMenuArray.forEach(element => {
-                const link = " <li><a class='dropdown-item' href='" + element.url + "'>" + element.text + "</a></li>";
-                $("#angularUl ul").append(link);
-            });
-            logicalMenuArray.forEach(element => {
-                const link = " <li><a class='dropdown-item' href='" + element.url + "'>" + element.text + "</a></li>";
-                $("#logicalUl ul").append(link);
-            }); 
-        </script>
+    <script>
+        angularMenuArray.forEach(element => {
+            const link = " <li><a class='dropdown-item' href='" + element.url + "'>" + element.text + "</a></li>";
+            $("#angularUl ul").append(link);
+        });
+        logicalMenuArray.forEach(element => {
+            const link = " <li><a class='dropdown-item' href='" + element.url + "'>" + element.text + "</a></li>";
+            $("#logicalUl ul").append(link);
+        }); 
+    </script>
 
 </body>
 
