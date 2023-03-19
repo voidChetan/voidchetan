@@ -23,25 +23,18 @@
                 $("#div1").removeClass('bg-success');
                 $("#div1").addClass('bg-danger')
             });
+            $("#btnCircle").click(function () {
+                debugger;
+                $("#div2").css('width',$("#txtWidth").val());
+                $("#div2").css('height',$("#txtHeight").val());
+                $("#div2").css('border-radius',$("#txtRadius").val());
+                $("#div2").css('background-color',$("#txtBgColor").val());
+            });
+
+            $('#txtPer').on('input', function() {
+                $('.progress-bar').css('width',  $('#txtPer').val() + '%')
+            });
             
-            $('#divLanguages').on('click', '.btnLang', function () {
-                $('#divLanguages .btnLang').each(function (idx, itm) {
-                    $(itm).removeClass('btn-success');
-                });
-                $(this).addClass('btn-success');
-            });
-            $("#btnAdd").click(function () {
-                debugger;
-                $("#mainDiv").removeClass('col-12');
-                $("#mainDiv").addClass('col-7'); 
-                $("#sideDiv").show(); 
-            });
-            $("#btnClose").click(function () {
-                debugger;
-                $("#mainDiv").removeClass('col-7');
-                $("#mainDiv").addClass('col-12'); 
-                $("#sideDiv").hide(); 
-            }); 
         })
     </script>
 </head>
@@ -97,7 +90,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Angular</li>
-                <li class="breadcrumb-item active" aria-current="page">ng-Class Task</li>
+                <li class="breadcrumb-item active" aria-current="page">ng-For Task</li>
             </ol>
         </nav>
         <div class="row">
@@ -108,7 +101,8 @@
                     </div>
                     <ul>
                         <li> on success btn click add bg-success class & on danger add bg-danger</li>
-                        <li> add button with some languages -on click of language make it selected</li> 
+                        <li> on Circle btn add dynaic class with</li>
+                        <li> Show count of Added Cities beside dropdown</li>
                     </ul>
                     <div class="row">
                         <div class="col-4">
@@ -116,16 +110,50 @@
                                 Div - 1
                             </div>
                         </div>
-                        <div class="col-8" id="divLanguages">
-                             
-                        </div> 
+                        <div class="col-4">
+                            <div class="p-4" id="div2">
+                                Div - 2
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="p-4 rounded" id="div3">
+
+                            </div>
+                        </div>
                     </div>
                     <div class="row pt-2">
                         <div class="col-4">
                             <button class="btn btn-sm btn-success" id="btnSuccess"> success</button>
                             <button class="btn btn-sm btn-danger" id="btnDanger"> danger</button>
                         </div>
-                        
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col-6">
+                                    <input type="text" id="txtWidth" class="form-control" placeholder="Width">
+                                </div>
+                                <div class="col-6">
+                                    <input type="text" id="txtHeight" class="form-control" placeholder="Height">
+                                </div>
+                            </div>
+                            <div class="row pt-1">
+                                <div class="col-6">
+                                    <input type="text" id="txtRadius" class="form-control" placeholder="Radius">
+                                </div>
+                                <div class="col-6">
+                                    <input type="color" id="txtBgColor" class="form-control" placeholder="Bg-Color">
+                                </div>
+                            </div>
+                            <div class="row pt-1">
+                                <div class="col-12 text-center">
+                                    <button class="btn btn-sm btn-success" id="btnCircle">Create Circle</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="p-4" id="div3">
+
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -136,45 +164,22 @@
                         <h3>Task 2</h3>
                     </div>
                     <ul>
-                        <li> on add btn add col-7 class to first div & show 2nd div</li>
-                        <li> on close btn add class col-12 to first div and hide 2nd div </li> 
+                        <li> create bootstrap progress bar</li>
+                        <li> add width dynamic to progress bar by reading value from textbox</li> 
                     </ul>
-                     <div class="row">
-                        <div class="col-7" id="mainDiv">
-                            <div class="card">
-                                <div class="card-header bg-success">
-                                    <div class="row">
-                                        <div class="col-6">
-                                            Main Panel
-                                        </div>
-                                        <div class="col-6 text-end">
-                                            <button class="btn btn-sm btn-secondary" id="btnAdd">Add</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body p-4">
-                                    Main Panel Content
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-5" id="sideDiv">
-                            <div class="card">
-                                <div class="card-header bg-success">
-                                    <div class="row">
-                                        <div class="col-6">
-                                            Side Panel
-                                        </div>
-                                        <div class="col-6 text-end">
-                                            <button class="btn btn-sm btn-secondary" id="btnClose">Close</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body p-4">
-                                    Side Panel Content
-                                </div>
-                            </div>
-                        </div>
-                     </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="progress" style="height:20px">
+                                <div class="progress-bar" style="height:20px"></div>
+                              </div>
+                        </div> 
+                    </div>
+                    <div class="row pt-2">  
+                        <div class="col-6">
+                            <input type="text" id="txtPer" class="form-control" placeholder="Enter % value">
+                        </div> 
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -182,10 +187,6 @@
     </div>
     <script type="text/javascript" src="../menu.js"> </script>
     <script>
-        languageArray.forEach(element => {
-            const link = "<button class='btn btn-secondary mx-2 mb-1 btnLang' >"+element+" </button>";
-            $("#divLanguages").append(link);
-        });
         angularMenuArray.forEach(element => {
             const link = " <li><a class='dropdown-item' href='" + element.url + "'>" + element.text + "</a></li>";
             $("#angularUl ul").append(link);

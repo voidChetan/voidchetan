@@ -49,8 +49,41 @@
             $("#txtLName").on('input', function () { 
                  $("#txtFullName").val($("#txtFName").val()+" " + $("#txtLName").val())
             });
-            $("#invalidCheck2").on('input', function () { 
-                 if($(this.))
+            $("#divTeacher").hide()
+            $("#chckTeacher").on('input', function () { 
+                $("#divSport").hide(); 
+                $("#divMusician").hide(); 
+                if($(this).is(":checked")) {
+                    $("#divTeacher").show();
+                    $('#chkSport').prop('checked', false);
+                    $('#chkMusician').prop('checked', false);
+                } else {
+                    $("#divTeacher").hide();  
+                } 
+            });
+            $("#divSport").hide();  
+            $("#chkSport").on('input', function () { 
+                $("#divTeacher").hide(); 
+                $("#divMusician").hide(); 
+                if($(this).is(":checked")) {
+                    $("#divSport").show();
+                    $('#chckTeacher').prop('checked', false);
+                    $('#chkMusician').prop('checked', false);
+                } else {
+                    $("#divSport").hide();  
+                } 
+            });
+            $("#divMusician").hide();
+            $("#chkMusician").on('input', function () { 
+                $("#divTeacher").hide()
+                $("#divSport").hide();  
+                if($(this).is(":checked")) {
+                    $("#divMusician").show();
+                    $('#chkSport').prop('checked', false);
+                    $('#chckTeacher').prop('checked', false);
+                } else {
+                    $("#divMusician").hide();  
+                } 
             });
             
             $("#divOtherState").hide();
@@ -124,7 +157,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Angular</li>
-                <li class="breadcrumb-item active" aria-current="page">ng-For Task</li>
+                <li class="breadcrumb-item active" aria-current="page">ng-IF Task</li>
             </ol>
         </nav>
         <div class="row">
@@ -180,6 +213,9 @@
             </div>
             <div class="col-6">
                 <div class="myBox">
+                    <div class="text-center">
+                        <h3>User Entry Form</h3>
+                    </div>
                     <form class="row g-3">
                         <div class="col-md-4">
                             <label for="validationDefault01" class="form-label">First name</label>
@@ -223,14 +259,77 @@
                             <label for="validationDefault02" class="form-label">Other</label>
                             <input type="text" class="form-control" id="txtCity"   >
                         </div>  
-                        <div class="col-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
-                                <label class="form-check-label" for="invalidCheck2">
-                                    Agree to terms and conditions
-                                </label>
+                        <div class="row">
+                            <div class="col-12 text-center">
+                               What Are You ..?
                             </div>
                         </div>
+                        <div class="row pt-2">
+                            <div class="col-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="chckTeacher" required>
+                                    <label class="form-check-label" for="invalidCheck2">
+                                       Teacher
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="chkSport" required>
+                                    <label class="form-check-label" for="invalidCheck2">
+                                        Sport Person
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="chkMusician" required>
+                                    <label class="form-check-label" for="invalidCheck2">
+                                       Musician
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" id="divTeacher">
+                            <div class="col-5">
+                                <label for=""> Subjects You Can Teach</label>
+                                <textarea class="form-control"></textarea>
+                            </div>
+                            <div class="col-5">
+                                <label for="">Highest Education</label>
+                                <input type="text" class="form-control" id=""   >
+                            </div>
+                            <div class="col-2">
+                                <label for="">Age</label>
+                                <input type="text" class="form-control" id=""   >
+                            </div>
+                        </div>
+                        <div class="row" id="divSport">
+                            <div class="col-6">
+                                <label for=""> Sports u r Good At</label>
+                                <textarea class="form-control"></textarea>
+                            </div>
+                            <div class="col-3">
+                                <label for=""> Height</label>
+                                <input type="text" class="form-control" id=""   >
+                            </div>
+                            <div class="col-3">
+                                <label for="">Weight</label>
+                                <input type="text" class="form-control" id=""   >
+                            </div>
+                        </div>
+                        <div class="row" id="divMusician">
+                            <div class="col-6">
+                                <label for=""> Instrument You Play</label>
+                                <textarea class="form-control"></textarea>
+                            </div>
+                            <div class="col-6">
+                                <label for=""> Any Major Achivement </label>
+                                <textarea class="form-control"></textarea>
+                            </div>
+                             
+                        </div>
+                        
                         <div class="col-12">
                             <button class="btn btn-primary" type="submit">Submit form</button>
                         </div>

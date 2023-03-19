@@ -10,6 +10,10 @@ var angularMenuArray = [
     {
         url:'../angular/ngclass.html',
         text: 'ngClass'
+    } ,
+    {
+        url:'../angular/ngStyle.html',
+        text: 'ngStyle'
     } 
 ];
 
@@ -27,6 +31,11 @@ var logicalMenuArray = [
         text: 'Movie-Booking'
     } 
 ];
+
+var languageArray = [
+    "Html",
+    "CSS","Java-Script","JQuery","Angular","React","Dot Net","Java"
+]
 
 var movieArray = [
     {

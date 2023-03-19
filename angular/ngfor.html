@@ -13,7 +13,7 @@
     <script>
         $(document).ready(function () {
 
-            var lanArr = ['Html', 'Css', 'JavaScript', 'Angular', 'React']; 
+            var lanArr = ['Html', 'Css', 'JavaScript', 'Angular', 'React'];
             lanArr.forEach(element => {
                 const btn = "<button class='btn btnLang btn-sm btn-primary mx-1'>" + element + "</button>"
                 $('#divLanguage').append(btn);
@@ -202,7 +202,7 @@
                     <ul>
                         <li>Create City Array Bind that to Dropdown</li>
                     </ul>
-                    <div class="row"> 
+                    <div class="row">
                         <div class="col-6">
                             <label for="">Select From Station</label>
                             <select name="" id="dpdlFrom" class="form-control">
@@ -219,7 +219,29 @@
                 </div>
             </div>
             <div class="col-4">
-
+                <div class="myBox">
+                    <div class="text-center">
+                        <h3>Task 5</h3>
+                    </div>
+                    <ul>
+                        <li>create array of object with fields URL, Text use ngFor to Display records in table </li>
+                        <li>show Sr No in 1st TD by using index property from ngFor</li>
+                        <li class="text-danger">add bg-success class to 1st record using first property from ngFor</li>
+                        <li class="text-danger">add bg-danger class to last record using last property from ngFor</li>
+                    </ul>
+                    <table class="table table-bordered" id="tbl-data">
+                        <thead>
+                            <tr>
+                                <th>Sr No</th>
+                                <th>Page Url</th>
+                                <th>Link Text</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                
             </div>
             <div class="col-4">
 
@@ -228,9 +250,26 @@
     </div>
     <script type="text/javascript" src="../menu.js"> </script>
     <script>
+        var index = 1;
         angularMenuArray.forEach(element => {
             const link = " <li><a class='dropdown-item' href='" + element.url + "'>" + element.text + "</a></li>";
             $("#angularUl ul").append(link);
+            if (index == 1) {
+                const tr = "<tr class='bg-success'><td>" + index + "</td><td>" + element.url + "</td><td>" + element.text + "</td></tr>";
+                $("#tbl-data tbody").append(tr);
+            } else {
+                if (angularMenuArray.length == index) {
+                    const tr = "<tr class='bg-danger'><td>" + index + "</td><td>" + element.url + "</td><td>" + element.text + "</td></tr>";
+                    $("#tbl-data tbody").append(tr);
+                } else {
+                    const tr = "<tr ><td>" + index + "</td><td>" + element.url + "</td><td>" + element.text + "</td></tr>";
+                    $("#tbl-data tbody").append(tr);
+                }
+            }
+
+
+            index++;
+
         });
         logicalMenuArray.forEach(element => {
             const link = " <li><a class='dropdown-item' href='" + element.url + "'>" + element.text + "</a></li>";
