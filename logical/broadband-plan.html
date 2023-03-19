@@ -11,18 +11,29 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="../custom.css">
-    <title>Ng-IF</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Scenario - 1</title>
     <script>
         $(document).ready(function () {
-            $("#btnContinue").click(function () {
-                var radio1Value = $('input:radio[name=radioCheck]:checked').val();
-                if (radio1Value == undefined) {
-                    alert('Selct at least one option');
-                } else {
-                    //  document.getElementById(selectedValue).style.display = 'block';
-                    $("#selectedPlan").text(radio1Value);
-                }
+            $("#divMobile").hide();
+            $("#divFiber").hide();
+            $("#divBusiness").hide();
+            $("#btnMobile").click(function () {
+                $("#divMobile").show();
+                $("#divFiber").hide();
+                $("#divBusiness").hide();
             });
+            $("#btnFiber").click(function () {
+                $("#divMobile").hide();
+                $("#divFiber").show();
+                $("#divBusiness").hide();
+            });
+            $("#btnBusiness").click(function () {
+                $("#divMobile").hide();
+                $("#divFiber").hide();
+                $("#divBusiness").show();
+            });
+
         })
     </script>
 </head>
@@ -50,8 +61,8 @@
                             Angular
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item active" href="/angular/ngIf.html">ng-If</a></li>
-                            <li><a class="dropdown-item " href="/angular/ngfor.html">ng-For</a></li>
+                            <li><a class="dropdown-item active" href="../angular/ngIf.html">ng-If</a></li>
+                            <li><a class="dropdown-item " href="../angular/ngfor.html">ng-For</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -64,7 +75,7 @@
                             Logical
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="/logical/scenario1.html">Scenario-1</a></li>
+                            <li><a class="dropdown-item" href="./logical/scenario1.html">ng-If</a></li>
                             <li><a class="dropdown-item" href="./logical/scenario1.html">ng-If</a></li>
                             <li><a class="dropdown-item" href="./logical/scenario1.html">ng-If</a></li>
                         </ul>
@@ -93,34 +104,38 @@
                 <div class="myBox" style="position: relative;">
                     <div class="text-center">
                         <h3>Task 1</h3>
-                    </div> 
+                    </div>
                     <ul>
                         <li> on continue show alert if no plan Selected</li>
                         <li> Show Selected Plan below Continue</li>
-                         
+                        <li> on Reset - deSelect selected Radio Button</li>
+                        <li> on Reset - Add text No Selected Plan at bottom</li>
                     </ul>
                     <div class="h6">Select Plan</div>
                     <div class="row text-center">
                         <div class="col-md-3">
-                            <label>Broadband</label> <br/>
+                            <label>Broadband</label> <br />
                             <input type="radio" name="radioCheck" id="radio1" value="Broadband">
                         </div>
                         <div class="col-md-3">
-                            <label>Broadband n Tv</label><br/>
+                            <label>Broadband n Tv</label><br />
                             <input type="radio" name="radioCheck" id="radio2" value="Broadband n Tv">
                         </div>
                         <div class="col-md-3">
-                            <label>Fibre Optics </label><br/>
+                            <label>Fibre Optics </label><br />
                             <input type="radio" name="radioCheck" id="radio3" value="Fibre Optics">
                         </div>
                         <div class="col-md-3">
-                            <label>Mobile Plan </label><br/>
+                            <label>Mobile Plan </label><br />
                             <input type="radio" name="radioCheck" id="radio4" value="Mobile Plan">
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-12 text-center">
+                        <div class="col-6 text-end">
                             <button class="btn btn-success btn-sm" id="btnContinue"> Continue</button>
+                        </div>
+                        <div class="col-6 ">
+                            <button class="btn btn-danger btn-sm" id="btnReset"> Reset</button>
                         </div>
                     </div>
                     <div class="row" style="position: absolute;bottom: 0;">
@@ -132,10 +147,48 @@
             </div>
             <div class="col-6">
                 <div class="myBox">
+                    <div class="row text-center pb-5">
+                        <div class="col-4">
+                            <div>
+                                <i style="font-size: 150px;" class="fa fa-mobile" aria-hidden="true"></i><br>
+                                Mobile
+                            </div>
+                            <button class="btn btn-primary mt-4" id="btnMobile">Find More</button>
 
+                        </div>
+                        <div class="col-4">
+                            <div>
+                                <i style="font-size: 150px;" class="fa fa-home" aria-hidden="true"></i><br>
+                                JioFiber
+                            </div>
+                            <button class="btn btn-primary mt-4" id="btnFiber">Find More</button>
+
+                        </div>
+                        <div class="col-4">
+                            <div>
+                                <i style="font-size: 150px;" class="fa fa-id-badge" aria-hidden="true"></i><br>
+                                Business
+                            </div>
+                            <button class="btn btn-primary mt-4" id="btnBusiness">Find More</button>
+
+                        </div>
+                    </div>
+                    <div class="row pt-5">
+                        <div class="c0l-12">
+                            <div class="text-center" id="divMobile">
+                                <p>Free SIM, calls, and SMS with invaluable digital experiences.</p>
+                            </div>
+                            <div class="text-center" id="divFiber">
+                                <p> Connected living experiences with superfast home internet.</p>
+                            </div>
+                            <div class="text-center" id="divBusiness">
+                                <p>Enterprise-grade digital services to meet all your business needs.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            
+
         </div>
 
     </div>

@@ -11,18 +11,42 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="../custom.css">
-    <title>Ng-IF</title>
+    <title>Train Booking - 1</title>
     <script>
         $(document).ready(function () {
-            $("#btnContinue").click(function () {
-                var radio1Value = $('input:radio[name=radioCheck]:checked').val();
-                if (radio1Value == undefined) {
-                    alert('Selct at least one option');
-                } else {
-                    //  document.getElementById(selectedValue).style.display = 'block';
-                    $("#selectedPlan").text(radio1Value);
-                }
+            var cityArray = ['Pune', 'Mumbai', 'Jalgao', 'Nagpur', 'Thane'];
+            cityArray.forEach(element => {
+                const opt = "<option value='" + element + "'> " + element + "</option>"
+                $('#dpdlFrom').append(opt);
+                $('#dpdlTo').append(opt);
             });
+            $(".journey").hide();
+
+            $("#btnClear").click(function () {
+                $("#dpdlFrom").val('');
+                $("#dpdlTo").val('');
+                $("#txtDate").val('');
+                $(".journey").hide();
+            })
+            $("#btnSearch").click(function () {
+                const from = $("#dpdlFrom").val();
+                const to = $("#dpdlTo").val();
+                const date = $("#txtDate").val();
+                if (from != '' && to != '' && date != '') {
+                    if (from == to) {
+                        alert("From n To Can't Be Same");
+                        $(".journey").hide();
+                    } else {
+                        $("#dateText").text(date);
+                        $("#fromText").text(from);
+                        $("#toText").text(to);
+                        $(".journey").show();
+                    }
+                } else {
+                    alert("Enter Journey Details");
+                }
+
+            })
         })
     </script>
 </head>
@@ -50,8 +74,8 @@
                             Angular
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item active" href="/angular/ngIf.html">ng-If</a></li>
-                            <li><a class="dropdown-item " href="/angular/ngfor.html">ng-For</a></li>
+                            <li><a class="dropdown-item active" href="../angular/ngIf.html">ng-If</a></li>
+                            <li><a class="dropdown-item " href="../angular/ngfor.html">ng-For</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -64,7 +88,7 @@
                             Logical
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="/logical/scenario1.html">Scenario-1</a></li>
+                            <li><a class="dropdown-item" href="./logical/scenario1.html">ng-If</a></li>
                             <li><a class="dropdown-item" href="./logical/scenario1.html">ng-If</a></li>
                             <li><a class="dropdown-item" href="./logical/scenario1.html">ng-If</a></li>
                         </ul>
@@ -89,53 +113,60 @@
             </ol>
         </nav>
         <div class="row">
-            <div class="col-6">
-                <div class="myBox" style="position: relative;">
+            <div class="col-8">
+                <div class="myBox">
                     <div class="text-center">
-                        <h3>Task 1</h3>
+                        <h3>Train Booking Form</h3>
                     </div> 
                     <ul>
-                        <li> on continue show alert if no plan Selected</li>
-                        <li> Show Selected Plan below Continue</li>
-                         
+                        <li>Create City Array Bind that to Dropdown</li>
+                        <li>on Search - if From n To are not selected show alert to Enter Booking Details</li>
+                        <li>on Search - if From n To City are Same Show Alert</li> 
+                        <li>on Search - show Selected Details in below Box</li>
+                        <li>  on Clear  - Clear Booking Form n Hide Journey Detaisl Info</li>
                     </ul>
-                    <div class="h6">Select Plan</div>
-                    <div class="row text-center">
-                        <div class="col-md-3">
-                            <label>Broadband</label> <br/>
-                            <input type="radio" name="radioCheck" id="radio1" value="Broadband">
-                        </div>
-                        <div class="col-md-3">
-                            <label>Broadband n Tv</label><br/>
-                            <input type="radio" name="radioCheck" id="radio2" value="Broadband n Tv">
-                        </div>
-                        <div class="col-md-3">
-                            <label>Fibre Optics </label><br/>
-                            <input type="radio" name="radioCheck" id="radio3" value="Fibre Optics">
-                        </div>
-                        <div class="col-md-3">
-                            <label>Mobile Plan </label><br/>
-                            <input type="radio" name="radioCheck" id="radio4" value="Mobile Plan">
-                        </div>
-                    </div>
                     <div class="row">
-                        <div class="col-12 text-center">
-                            <button class="btn btn-success btn-sm" id="btnContinue"> Continue</button>
+                        <div class="col-3">
+                            <label for="">Journey Date</label>
+                            <input type="date" id="txtDate" class="form-control">
+                        </div>
+                        <div class="col-3">
+                            <label for=""> From Station</label>
+                            <select name="" id="dpdlFrom" class="form-control">
+                                <option value="">From Station</option>
+                            </select>
+                        </div>
+                        <div class="col-3">
+                            <label for=""> To Station</label>
+                            <select name="" id="dpdlTo" class="form-control">
+                                <option value="">To Station</option>
+                            </select>
+                        </div>
+                        <div class="col-3">
+                            <button class="btn btn-sm btn-primary mt-4" id="btnSearch">Search</button>
+                            <button class="btn btn-sm btn-success mt-4" id="btnClear">Clear</button>
                         </div>
                     </div>
-                    <div class="row" style="position: absolute;bottom: 0;">
-                        <div class="col-12 text-center">
-                            <p>Selected Plan is : <strong id="selectedPlan"></strong> </p>
+                    <div class="row pt-5 journey">
+                        <div class="col-8">
+                            <h4>Selected Journey Details</h4>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="myBox">
+                    <div class="row journey">
+                        <div class="col-4">
+                            Journey Date: <strong id="dateText"></strong>
+                        </div>
+                        <div class="col-4">
+                            From: <strong id="fromText"></strong>
+                        </div>
+                        <div class="col-4">
+                            From: <strong id="toText"></strong>
+                        </div>
 
+                    </div>
                 </div>
             </div>
-            
+
         </div>
 
     </div>
