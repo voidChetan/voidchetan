@@ -13,15 +13,16 @@
     <script>
         $(document).ready(function () {
 
-            var lanArr = ['Html', 'Css', 'JavaScript', 'Angular', 'React'];
-            var cityArray = ['Pune', 'Mumbai', 'Jalgao', 'Nagpur', 'Thane']; 
+            var lanArr = ['Html', 'Css', 'JavaScript', 'Angular', 'React']; 
             lanArr.forEach(element => {
                 const btn = "<button class='btn btnLang btn-sm btn-primary mx-1'>" + element + "</button>"
                 $('#divLanguage').append(btn);
             });
+            var cityArray = ['Pune', 'Mumbai', 'Jalgao', 'Nagpur', 'Thane'];
             cityArray.forEach(element => {
-                const opt = "<option value='" + $("#myCity").val() + "'> " + $("#myCity").val() + "</option>"
-                $('#divLanguage').append(btn);
+                const opt = "<option value='" + element + "'> " + element + "</option>"
+                $('#dpdlFrom').append(opt);
+                $('#dpdlTo').append(opt);
             });
             $('#divLanguage').on('click', '.btn-sm', function () {
                 $(".btnLang").removeClass('btn-success');
@@ -74,29 +75,22 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Link</a>
                     </li>
-                    <li class="nav-item dropdown ">
+                    <li class="nav-item dropdown " id="angularUl">
                         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Angular
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="../angular/ngIf.html">ng-If</a></li>
-                            <li><a class="dropdown-item active" href="../angular/ngfor.html">ng-For</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="/angular/ngclass.html">ng-Class</a></li>
+
                         </ul>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown" id="logicalUl">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Logical
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="./logical/scenario1.html">ng-If</a></li>
-                            <li><a class="dropdown-item" href="./logical/scenario1.html">ng-If</a></li>
-                            <li><a class="dropdown-item" href="./logical/scenario1.html">ng-If</a></li>
+
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -202,22 +196,22 @@
         <div class="row">
             <div class="col-4">
                 <div class="myBox">
-                    <div class="row">
-                        <div class="col-4">
-                            <label for="">Journey Date</label>
-                            <select name="" id="dpdlTo"  class="form-control">
-                                <option value="">To Stattion</option>
-                            </select>
-                        </div>
-                        <div class="col-4">
+                    <div class="text-center">
+                        <h3>Task 4</h3>
+                    </div>
+                    <ul>
+                        <li>Create City Array Bind that to Dropdown</li>
+                    </ul>
+                    <div class="row"> 
+                        <div class="col-6">
                             <label for="">Select From Station</label>
-                            <select name="" id="dpdlFrom"  class="form-control">
+                            <select name="" id="dpdlFrom" class="form-control">
                                 <option value="">From Stattion</option>
                             </select>
                         </div>
-                        <div class="col-4">
+                        <div class="col-6">
                             <label for="">Select To Station</label>
-                            <select name="" id="dpdlTo"  class="form-control">
+                            <select name="" id="dpdlTo" class="form-control">
                                 <option value="">To Stattion</option>
                             </select>
                         </div>
@@ -232,6 +226,17 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="../menu.js"> </script>
+    <script>
+        angularMenuArray.forEach(element => {
+            const link = " <li><a class='dropdown-item' href='" + element.url + "'>" + element.text + "</a></li>";
+            $("#angularUl ul").append(link);
+        });
+        logicalMenuArray.forEach(element => {
+            const link = " <li><a class='dropdown-item' href='" + element.url + "'>" + element.text + "</a></li>";
+            $("#logicalUl ul").append(link);
+        }); 
+    </script>
 </body>
 
 </html>

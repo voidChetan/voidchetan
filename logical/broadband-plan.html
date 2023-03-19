@@ -13,11 +13,30 @@
     <link rel="stylesheet" href="../custom.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Scenario - 1</title>
+    <script type="text/javascript" src="../menu.js"> </script>
+    <script src="../menu.js"></script>
     <script>
         $(document).ready(function () {
             $("#divMobile").hide();
             $("#divFiber").hide();
             $("#divBusiness").hide();
+
+            $("#btnContinue").click(function () {
+                var radio1Value = $('input:radio[name=radioCheck]:checked').val();
+                if (radio1Value == undefined) {
+                    alert('Selct at least one option');
+                } else {
+                    $("#selectedPlan").text(radio1Value);
+                }
+            });
+
+            $("#btnReset").click(function () {
+                $("input:radio[name='radioCheck']").each(function (i) {
+                    this.checked = false;
+                });
+                $("#selectedPlan").text('');
+            });
+
             $("#btnMobile").click(function () {
                 $("#divMobile").show();
                 $("#divFiber").hide();
@@ -55,29 +74,22 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Link</a>
                     </li>
-                    <li class="nav-item dropdown ">
+                    <li class="nav-item dropdown " id="angularUl">
                         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Angular
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item active" href="../angular/ngIf.html">ng-If</a></li>
-                            <li><a class="dropdown-item " href="../angular/ngfor.html">ng-For</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="/angular/ngclass.html">ng-Class</a></li>
+
                         </ul>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown" id="logicalUl">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Logical
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="./logical/scenario1.html">ng-If</a></li>
-                            <li><a class="dropdown-item" href="./logical/scenario1.html">ng-If</a></li>
-                            <li><a class="dropdown-item" href="./logical/scenario1.html">ng-If</a></li>
+
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -102,8 +114,8 @@
         <div class="row">
             <div class="col-6">
                 <div class="myBox" style="position: relative;">
-                    <div class="text-center">
-                        <h3>Task 1</h3>
+                    <div class="text-center pb-5">
+                        <h3>Plan Selection</h3>
                     </div>
                     <ul>
                         <li> on continue show alert if no plan Selected</li>
@@ -147,6 +159,9 @@
             </div>
             <div class="col-6">
                 <div class="myBox">
+                    <div class="text-center pb-5">
+                        <h3>Package Description</h3>
+                    </div>
                     <div class="row text-center pb-5">
                         <div class="col-4">
                             <div>
@@ -154,7 +169,6 @@
                                 Mobile
                             </div>
                             <button class="btn btn-primary mt-4" id="btnMobile">Find More</button>
-
                         </div>
                         <div class="col-4">
                             <div>
@@ -162,7 +176,6 @@
                                 JioFiber
                             </div>
                             <button class="btn btn-primary mt-4" id="btnFiber">Find More</button>
-
                         </div>
                         <div class="col-4">
                             <div>
@@ -170,19 +183,21 @@
                                 Business
                             </div>
                             <button class="btn btn-primary mt-4" id="btnBusiness">Find More</button>
-
                         </div>
                     </div>
-                    <div class="row pt-5">
-                        <div class="c0l-12">
+                    <div class="row pt-1">
+                        <div class="col-12">
                             <div class="text-center" id="divMobile">
                                 <p>Free SIM, calls, and SMS with invaluable digital experiences.</p>
+                                <p>2000/month</p>
                             </div>
                             <div class="text-center" id="divFiber">
                                 <p> Connected living experiences with superfast home internet.</p>
+                                <p>1500/month</p>
                             </div>
                             <div class="text-center" id="divBusiness">
                                 <p>Enterprise-grade digital services to meet all your business needs.</p>
+                                <p>4000/month</p>
                             </div>
                         </div>
                     </div>
@@ -192,7 +207,20 @@
         </div>
 
     </div>
+    <script>
+        
+        debugger;
+        angularMenuArray.forEach(element => {
+            const link = " <li><a class='dropdown-item' href='" + element.url + "'>" + element.text + "</a></li>";
+            $("#angularUl ul").append(link);
+        });
+        logicalMenuArray.forEach(element => {
+            const link = " <li><a class='dropdown-item' href='" + element.url + "'>" + element.text + "</a></li>";
+            $("#logicalUl ul").append(link);
+        });
 
+
+    </script> 
 </body>
 
 </html>

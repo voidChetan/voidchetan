@@ -68,29 +68,22 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Link</a>
                     </li>
-                    <li class="nav-item dropdown ">
+                    <li class="nav-item dropdown " id="angularUl">
                         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Angular
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item active" href="../angular/ngIf.html">ng-If</a></li>
-                            <li><a class="dropdown-item " href="../angular/ngfor.html">ng-For</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="/angular/ngclass.html">ng-Class</a></li>
+
                         </ul>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown" id="logicalUl">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Logical
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="./logical/scenario1.html">ng-If</a></li>
-                            <li><a class="dropdown-item" href="./logical/scenario1.html">ng-If</a></li>
-                            <li><a class="dropdown-item" href="./logical/scenario1.html">ng-If</a></li>
+
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -170,6 +163,17 @@
         </div>
 
     </div>
+    <script type="text/javascript" src="../menu.js"> </script>
+        <script> 
+            angularMenuArray.forEach(element => {
+                const link = " <li><a class='dropdown-item' href='" + element.url + "'>" + element.text + "</a></li>";
+                $("#angularUl ul").append(link);
+            });
+            logicalMenuArray.forEach(element => {
+                const link = " <li><a class='dropdown-item' href='" + element.url + "'>" + element.text + "</a></li>";
+                $("#logicalUl ul").append(link);
+            }); 
+        </script>
 
 </body>
 
