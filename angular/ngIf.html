@@ -109,7 +109,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="../index.html">taskS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -117,12 +117,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
+                   
                     <li class="nav-item dropdown " id="angularUl">
                         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -140,10 +135,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                         </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li>
+                    </li> 
                 </ul>
                 <form class="d-flex">
                     <a href="https://github.com/voidChetan" target="_blank" class="btn btn-outline-success">Examples</a>
@@ -215,7 +207,13 @@
                 <div class="myBox">
                     <div class="text-center">
                         <h3>User Entry Form</h3>
-                    </div>
+                    </div> 
+                    <ul>
+                        <li> create full name from first name & last name</li>
+                        <li> if state other selected -  show other textbox likewise city also</li>
+                        <li> on  checkbox check ..show selected div as per value selected</li> 
+                        <li> instead of checkbox you can use radio button as well</li> 
+                    </ul>
                     <form class="row g-3">
                         <div class="col-md-4">
                             <label for="validationDefault01" class="form-label">First name</label>
@@ -338,10 +336,65 @@
             </div>
 
         </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="myBox" style="position: relative;">
+                    <div class="text-center">
+                        <h3>Task 3</h3>
+                    </div> 
+                        <ul>
+                            <li> create student array with  name,age,attendance,gender,isIndian fields</li>
+                            <li> show data in table</li>
+                            <li> if age less than 50 show Low text , if gender is M show Male else FeMale, if isIndian true show Indian else Foreigner</li>   
+                        </ul> 
+                    <div class="row">
+                        <div class="col-12">
+                            <table class="table table-bordered" id="studTable">
+                                <thead>
+                                    <tr>
+                                        <th>Sr</th>
+                                        <th>Name</th>
+                                        <th>Age</th>
+                                        <th>Attendance</th>
+                                        <th>Is Indian</th>
+                                        <th>Gender</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="myBox">
+                    <div class="text-center">
+                        <h3>User Entry Form</h3>
+                    </div> 
+                    <ul>
+                        <li> create student array with  name,age,attendance,gender,isIndian fields</li>
+                        <li> show data in table</li>
+                        <li> if age less than 50 show Low text , if gender is M show Male else FeMale, if isIndian true show Indian else Foreigner</li> 
+
+                    </ul>
+                    
+                </div>
+            </div>
+
+        </div>
 
     </div>
     <script type="text/javascript" src="../menu.js"> </script>
     <script>
+        var index = 1;
+        studentArray.forEach(element => {
+            const tr = " <tr> <td>" + index+ "</td> <td>" + element.name + "</td> <td>" + element.age + "</td> <td>" +( element.attendance>50 ? element.attendance+'% -Low ': element.attendance+'% -Enough')+ "</td> <td>" +( element.isIndian ? 'Indian': 'Foreigner' )+ "</td> <td>" + (element.gender == 'M'? 'Male':'Fe-Male') + "</td> </tr>";
+            $("#studTable tbody").append(tr);
+            index++;
+        });
         angularMenuArray.forEach(element => {
             const link = " <li><a class='dropdown-item' href='" + element.url + "'>" + element.text + "</a></li>";
             $("#angularUl ul").append(link);

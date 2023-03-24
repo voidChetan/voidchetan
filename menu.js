@@ -1,34 +1,82 @@
 var angularMenuArray = [
     {
         url:'../angular/ngIf.html',
-        text: 'ngIf'
+        text: 'ngIf',
+        info: 'All Scenario on ngIf to Practice with examples',
+        imageUrl: 'https://i.stack.imgur.com/IQIbb.png'
     },
     {
         url:'../angular/ngfor.html',
-        text: 'ngFor'
+        text: 'ngFor',
+        info: 'multple wqays to uswe ngFor with examples',
+        imageUrl:'https://i.stack.imgur.com/CoXLh.png'
     },
     {
         url:'../angular/ngclass.html',
-        text: 'ngClass'
+        text: 'ngClass',
+        info: 'how to add dynammic class  in angular check examples',
+        imageUrl:'https://daily-dev-tips.com/images/31-03-2021.jpg'
     } ,
     {
         url:'../angular/ngStyle.html',
-        text: 'ngStyle'
+        text: 'ngStyle',
+        info: 'how to add dynamic css using ngStyle',
+        imageUrl:'https://dsinfosrl.files.wordpress.com/2019/07/image.png'
     } 
+];
+var studentArray = [
+    {
+        name:'Sachin tendulkar',
+        age: 53,
+        attendance: 50,
+        gender: 'M',
+        isIndian: true
+    },
+    {
+        name:'Rahul D',
+        age: 58,
+        attendance: 67,
+        gender: 'M',
+        isIndian: true
+    },
+    {
+        name:'Jesika Harries',
+        age: 33,
+        attendance: 70,
+        gender: 'F',
+        isIndian: false
+    },
+    {
+        name:'Json Born',
+        age: 23,
+        attendance: 30,
+        gender: 'M',
+        isIndian: false
+    },
+    {
+        name:'John Doe',
+        age: 34,
+        attendance: 70,
+        gender: 'M',
+        isIndian: false
+    },
 ];
 
 var logicalMenuArray = [
     {
         url:'../logical/broadband-plan.html',
-        text: 'Broadband-Plan'
+        text: 'Broadband-Plan',
+        info: 'Examples'
     },
     {
         url:'../logical/train-booking.html',
-        text: 'Train-Booking'
+        text: 'Train-Booking',
+        info: 'Examples'
     },
     {
         url:'../logical/movieBooking.html',
-        text: 'Movie-Booking'
+        text: 'Movie-Booking',
+        info: 'Examples'
     } 
 ];
 
