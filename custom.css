@@ -10,5 +10,15 @@
     padding: 0;
 }
 .card-img-top {
-    height: 145px;
+    height: 110px;
+}
+.card-body{
+    padding:5px;
+}
+p {
+    margin-top: 0;
+    margin-bottom: 0rem;
+}
+.card-title {
+    margin-bottom: 0;
 }

@@ -109,7 +109,12 @@
         </div>
     </nav>
     <div class="container pt-2">
+        <h4>Angular Basic Topics</h4>
         <div class="row" id="divCard">
+            
+        </div>
+        <h4>Angular Logical Scenarios</h4>
+        <div class="row" id="divCard2">
             
         </div>
     </div>
@@ -119,13 +124,13 @@
         angularMenuArray.forEach(element => {
             const link = " <li><a class='dropdown-item' href='" + element.url + "'>" + element.text + "</a></li>";
             $("#angularUl ul").append(link);
-            var dynamicCard = "<div class='col-3'>";
+            var dynamicCard = "<div class='col-3 pt-2'>";
                 dynamicCard = dynamicCard +"<div class='card' style='padding:0px'>";
                     dynamicCard = dynamicCard +"<img class='card-img-top' src='" + element.imageUrl + "' alt='Card image'>";
                     dynamicCard = dynamicCard +"<div class='card-body'>";
-                        dynamicCard = dynamicCard +"<h4 class='card-title'>" + element.text + "</h4>";
+                        dynamicCard = dynamicCard +"<h5 class='card-title'>" + element.text + "</h5>";
                         dynamicCard = dynamicCard +"<p class='card-text'>" + element.info + "</p>";
-                        dynamicCard = dynamicCard +"<a href='"+element.url+"' class='btn btn-primary'>See Tasks</a>";
+                        dynamicCard = dynamicCard +"<a href='"+element.url+"' class='btn btn-primary btn-sm'>See Tasks</a>";
                         dynamicCard = dynamicCard +"</div>";
                         dynamicCard = dynamicCard +"</div>";
  
@@ -134,6 +139,17 @@
         logicalMenuArray.forEach(element => {
             const link = " <li><a class='dropdown-item' href='" + element.url + "'>" + element.text + "</a></li>";
             $("#logicalUl ul").append(link);
+            var dynamicCard = "<div class='col-3 pt-2'>";
+                dynamicCard = dynamicCard +"<div class='card' style='padding:0px'>";
+                    dynamicCard = dynamicCard +"<img class='card-img-top' src='" + element.imageUrl + "' alt='Card image'>";
+                    dynamicCard = dynamicCard +"<div class='card-body'>";
+                        dynamicCard = dynamicCard +"<h5 class='card-title'>" + element.text + "</h5>";
+                        dynamicCard = dynamicCard +"<p class='card-text'>" + element.info + "</p>";
+                        dynamicCard = dynamicCard +"<a href='"+element.url+"' class='btn btn-secondary btn-sm'>See Tasks</a>";
+                        dynamicCard = dynamicCard +"</div>";
+                        dynamicCard = dynamicCard +"</div>";
+ 
+                    $("#divCard2").append(dynamicCard);
         }); 
 
         
