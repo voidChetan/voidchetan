@@ -22,6 +22,12 @@ var angularMenuArray = [
         text: 'ngStyle',
         info: 'how to add dynamic css using ngStyle',
         imageUrl:'https://dsinfosrl.files.wordpress.com/2019/07/image.png'
+    }  ,
+    {
+        url:'/angular/forms.html',
+        text: 'Forms',
+        info: 'how to add dynamic css using ngStyle',
+        imageUrl:'https://dsinfosrl.files.wordpress.com/2019/07/image.png'
     } 
 ];
 var studentArray = [

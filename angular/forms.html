@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="../custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Forms</title>
+    <script>
+        var isHide = true;
+        $(document).ready(function () {
+            var obj = {
+                name: '',
+                personType: '',
+                gender: '',
+                age: ''
+            }
+            $(".selectCard").click(function () {
+                $('.selectCard').each(function (idx, itm) {
+                    $(itm).removeClass('cardActive');
+                });
+                obj.personType = $(this).attr("data-name");
+                console.log(obj)
+                $(this).addClass('cardActive');
+            })
+            $(".genderselectCard").click(function () {
+                $('.genderselectCard').each(function (idx, itm) {
+                    $(itm).removeClass('cardActive');
+                });
+                obj.gender = $(this).attr("data-gender");
+                console.log(obj)
+                $(this).addClass('cardActive');
+            })
+            $(".fa-minus").click(function () {
+                obj.age--;
+                console.log(obj)
+                $(".text-primary").html(obj.age);
+            })
+            $(".fa-plus").click(function () {
+                obj.age++;
+                $(".text-primary").html(obj.age);
+                console.log(obj)
+            })
+            $("#btnPrint").click(function () {
+                obj.name = $("#txtName").val();
+                $("#divPrint").html(JSON.stringify(obj))
+            })
+            $("#btnReset").click(function () {
+                obj = {
+                    personType: '',
+                    gender: '',
+                    age: '0'
+                };
+                $('.selectCard').each(function (idx, itm) {
+                    $(itm).removeClass('cardActive');
+                });
+                $(".text-primary").html(obj.age);
+                $('.genderselectCard').each(function (idx, itm) {
+                    $(itm).removeClass('cardActive');
+                });
+            })
+           
+
+
+        })
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">taskS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item dropdown " id="angularUl">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Angular
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown" id="logicalUl">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Logical
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <a href="https://github.com/voidChetan" target="_blank" class="btn btn-outline-success">Examples</a>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container pt-2">
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+            aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Angular</li>
+                <li class="breadcrumb-item active" aria-current="page">ng-IF Task</li>
+            </ol>
+        </nav>
+        <div class="row">
+            <div class="col-12 col-md-8 col-lg-8 col-sm-12">
+                <div class="myBox" style="position: relative;">
+                    <div class="text-center">
+                        <h3>Task - 1</h3>
+                    </div>
+                    <ul>
+                         
+                        <li> create object with fields name, personType, gender, age </li>
+                        <li> on print btn click we have to provide value to all fields based on button selection</li>
+                        <li> on Reset form should reset</li>
+                    </ul>
+                    <div class="row">
+                        <div class="col-2">
+                            <label for="">Your Name</label>
+                            <input type="text" class="form-control" id="txtName">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <h6>Who Are You</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="selectCard" data-name="Sport Person">
+                                <div class="row row-nopad">
+                                    <div class="col-4">
+                                        <i class="fa fa-bicycle fa-2x"></i>
+                                    </div>
+                                    <div class="col-8">
+                                        Sport Person
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="selectCard" data-name="Teacher">
+                                <div class="row row-nopad">
+                                    <div class="col-5">
+                                        <i class="fa  fa-id-card fa-2x"></i>
+                                    </div>
+                                    <div class="col-7">
+                                        Teacher
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-3">
+                            <div class="selectCard" data-name="Banker">
+                                <div class="row row-nopad">
+                                    <div class="col-5">
+                                        <i class="fa fa-university fa-2x"></i>
+                                    </div>
+                                    <div class="col-7">
+                                        Banker
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="selectCard" data-name="Musician">
+                                <div class="row row-nopad">
+                                    <div class="col-5">
+                                        <i class="fa fa-video-camera fa-2x"></i>
+                                    </div>
+                                    <div class="col-7">
+                                        Musician
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <h6>Gender</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="genderselectCard" data-gender="Male">
+                                <div class="row row-nopad text-center">
+                                    <div class="col-6">
+                                        <i class="fa fa-male fa-2x"></i>
+                                    </div>
+                                    <div class="col-6">
+                                        Male
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="genderselectCard" data-gender="FeMale">
+                                <div class="row row-nopad text-center">
+                                    <div class="col-6 ">
+                                        <i class="fa fa-female fa-2x"></i>
+                                    </div>
+                                    <div class="col-6">
+                                        Male
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <h6>Your Age</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="row">
+                                <div class="col-2 text-center">
+                                    <i class="fa fa-minus fa-2x"></i>
+                                </div>
+                                <div class="col-2">
+                                    <h3 class="text-primary">0</h3>
+                                </div>
+                                <div class="col-2 text-center">
+                                    <i class="fa fa-plus fa-2x"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <button class="btn btn-secondary" id="btnReset">Reset</button>
+                        </div>
+                        <div class="col-6">
+                            <button class="btn btn-success" id="btnPrint">Print Object</button>
+                        </div>
+                    </div>
+                    <div class="row"><div class="col-12" id="divPrint"></div></div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script type="text/javascript" src="../menu.js"> </script>
+    <script>
+        var index = 1;
+        studentArray.forEach(element => {
+            const tr = " <tr> <td>" + index + "</td> <td>" + element.name + "</td> <td>" + element.age + "</td> <td>" + (element.attendance > 50 ? element.attendance + '% -Low ' : element.attendance + '% -Enough') + "</td> <td>" + (element.isIndian ? 'Indian' : 'Foreigner') + "</td> <td>" + (element.gender == 'M' ? 'Male' : 'Fe-Male') + "</td> </tr>";
+            $("#studTable tbody").append(tr);
+            index++;
+        });
+        angularMenuArray.forEach(element => {
+            const link = " <li><a class='dropdown-item' href='" + element.url + "'>" + element.text + "</a></li>";
+            $("#angularUl ul").append(link);
+        });
+        logicalMenuArray.forEach(element => {
+            const link = " <li><a class='dropdown-item' href='" + element.url + "'>" + element.text + "</a></li>";
+            $("#logicalUl ul").append(link);
+        }); 
+    </script>
+
+</body>
+
+</html>

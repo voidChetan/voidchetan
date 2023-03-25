@@ -4,7 +4,40 @@
 .myBox {
     border: 1px solid teal;
     padding: 10px;
-    height: 450px;
+    min-height: 500px;
+    height: max-content;
+}
+.selectCard { 
+        background: #fff;
+        border: 1px solid gray;
+        border-radius: 6px; 
+        padding-inline: 14px;
+        position: relative; 
+        padding: 5px;
+}
+.genderselectCard { 
+    background: #fff;
+    border: 1px solid gray;
+    border-radius: 6px; 
+    padding-inline: 14px;
+    position: relative; 
+    padding: 5px;
+}
+.cardActive{
+    background: rgb(59, 136, 59);
+    color: white;
+}
+.selectCard:hover {
+    box-shadow: 0 2px 2px rgba(47, 47, 226, 0.25); 
+}
+.row {
+    padding-top: 10px;
+}
+.row-nopad {
+    padding-top: 0px;
+}
+.form-label {
+    margin-bottom: 0 !important;
 }
 .table-sm>:not(caption)>*>* {
     padding: 0;
