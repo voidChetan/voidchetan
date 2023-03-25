@@ -1,24 +1,24 @@
 var angularMenuArray = [
     {
-        url:'../angular/ngIf.html',
+        url:'/angular/ngIf.html',
         text: 'ngIf',
         info: 'All Scenario on ngIf to Practice with examples',
         imageUrl: 'https://i.stack.imgur.com/IQIbb.png'
     },
     {
-        url:'../angular/ngfor.html',
+        url:'/angular/ngfor.html',
         text: 'ngFor',
         info: 'multple wqays to uswe ngFor with examples',
         imageUrl:'https://i.stack.imgur.com/CoXLh.png'
     },
     {
-        url:'../angular/ngclass.html',
+        url:'/angular/ngclass.html',
         text: 'ngClass',
         info: 'how to add dynammic class  in angular check examples',
         imageUrl:'https://daily-dev-tips.com/images/31-03-2021.jpg'
     } ,
     {
-        url:'../angular/ngStyle.html',
+        url:'/angular/ngStyle.html',
         text: 'ngStyle',
         info: 'how to add dynamic css using ngStyle',
         imageUrl:'https://dsinfosrl.files.wordpress.com/2019/07/image.png'
@@ -64,19 +64,19 @@ var studentArray = [
 
 var logicalMenuArray = [
     {
-        url:'../logical/broadband-plan.html',
+        url:'/logical/broadband-plan.html',
         text: 'Plan Selection',
         info: 'All Scenario on ngIf to Practice with examples',
         imageUrl: 'https://i.pinimg.com/originals/65/70/92/657092222f678a4e905a03715f1726d8.png'
     },
     {
-        url:'../logical/train-booking.html',
+        url:'/logical/train-booking.html',
         text: 'Train-Booking',
         info: 'All Scenario on ngIf to Practice with examples',
         imageUrl: 'https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2020/05/irctc-special-trains-1589168982.jpg'
     },
     {
-        url:'../logical/movieBooking.html',
+        url:'/logical/movieBooking.html',
         text: 'Movie-Booking',
         info: 'All Scenario on ngIf to Practice with examples',
         imageUrl: 'https://xdfile.com/wp-content/uploads/2020/01/movie-ticket-app-free-download-758x569.jpg'

@@ -124,7 +124,7 @@
         angularMenuArray.forEach(element => {
             const link = " <li><a class='dropdown-item' href='" + element.url + "'>" + element.text + "</a></li>";
             $("#angularUl ul").append(link);
-            var dynamicCard = "<div class='col-3 pt-2'>";
+            var dynamicCard = "<div class='col-6 col-md-3 col-sm-4 col-lg-3 pt-2'>";
                 dynamicCard = dynamicCard +"<div class='card' style='padding:0px'>";
                     dynamicCard = dynamicCard +"<img class='card-img-top' src='" + element.imageUrl + "' alt='Card image'>";
                     dynamicCard = dynamicCard +"<div class='card-body'>";
@@ -139,7 +139,7 @@
         logicalMenuArray.forEach(element => {
             const link = " <li><a class='dropdown-item' href='" + element.url + "'>" + element.text + "</a></li>";
             $("#logicalUl ul").append(link);
-            var dynamicCard = "<div class='col-3 pt-2'>";
+            var dynamicCard = "<div class='col-6 col-md-3 col-sm-4 col-lg-3 pt-2'>";
                 dynamicCard = dynamicCard +"<div class='card' style='padding:0px'>";
                     dynamicCard = dynamicCard +"<img class='card-img-top' src='" + element.imageUrl + "' alt='Card image'>";
                     dynamicCard = dynamicCard +"<div class='card-body'>";
