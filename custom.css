@@ -4,7 +4,7 @@
 .myBox {
     border: 1px solid teal;
     padding: 10px;
-    min-height: 500px;
+    min-height:300px;
     height: max-content;
 }
 .selectCard { 

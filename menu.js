@@ -1,30 +1,30 @@
 var angularMenuArray = [
     {
-        url:'angular/ngIf.html',
+        url:'https://voidchetan.github.io/voidchetan/angular/ngIf.html',
         text: 'ngIf',
         info: 'All Scenario on ngIf to Practice with examples',
         imageUrl: 'https://i.stack.imgur.com/IQIbb.png'
     },
     {
-        url:'angular/ngfor.html',
+        url:'https://voidchetan.github.io/voidchetan/angular/ngfor.html',
         text: 'ngFor',
         info: 'multple wqays to uswe ngFor with examples',
         imageUrl:'https://i.stack.imgur.com/CoXLh.png'
     },
     {
-        url:'angular/ngclass.html',
+        url:'https://voidchetan.github.io/voidchetan/angular/ngclass.html',
         text: 'ngClass',
         info: 'how to add dynammic class  in angular check examples',
         imageUrl:'https://daily-dev-tips.com/images/31-03-2021.jpg'
     } ,
     {
-        url:'angular/ngStyle.html',
+        url:'https://voidchetan.github.io/voidchetan/angular/ngStyle.html',
         text: 'ngStyle',
         info: 'how to add dynamic css using ngStyle',
         imageUrl:'https://dsinfosrl.files.wordpress.com/2019/07/image.png'
     }  ,
     {
-        url:'angular/forms.html',
+        url:'https://voidchetan.github.io/voidchetan/angular/forms.html',
         text: 'Forms',
         info: 'how to add dynamic css using ngStyle',
         imageUrl:'https://dsinfosrl.files.wordpress.com/2019/07/image.png'
@@ -70,19 +70,19 @@ var studentArray = [
 
 var logicalMenuArray = [
     {
-        url:'logical/broadband-plan.html',
+        url:'https://voidchetan.github.io/voidchetan/logical/broadband-plan.html',
         text: 'Plan Selection',
         info: 'All Scenario on ngIf to Practice with examples',
         imageUrl: 'https://i.pinimg.com/originals/65/70/92/657092222f678a4e905a03715f1726d8.png'
     },
     {
-        url:'logical/train-booking.html',
+        url:'https://voidchetan.github.io/voidchetan/logical/train-booking.html',
         text: 'Train-Booking',
         info: 'All Scenario on ngIf to Practice with examples',
         imageUrl: 'https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2020/05/irctc-special-trains-1589168982.jpg'
     },
     {
-        url:'logical/movieBooking.html',
+        url:'https://voidchetan.github.io/voidchetan/logical/movieBooking.html',
         text: 'Movie-Booking',
         info: 'All Scenario on ngIf to Practice with examples',
         imageUrl: 'https://xdfile.com/wp-content/uploads/2020/01/movie-ticket-app-free-download-758x569.jpg'
@@ -90,7 +90,7 @@ var logicalMenuArray = [
 ];
 var javascriptMenueArray = [
     {
-        url:'/javscript/variables.html',
+        url:'https://voidchetan.github.io/voidchetan//javscript/variables.html',
         text: 'Variables',
         info: 'All Scenario on ngIf to Practice with examples',
         imageUrl: 'https://i.pinimg.com/originals/65/70/92/657092222f678a4e905a03715f1726d8.png'
