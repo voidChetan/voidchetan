@@ -57,7 +57,15 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                   
+                    <li class="nav-item dropdown" id="javascriptUl">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            JavaScript
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        </ul>
+                    </li> 
                     <li class="nav-item dropdown " id="angularUl">
                         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -178,14 +186,7 @@
             const link = "<button class='btn btn-secondary mx-2 mb-1 btnLang' >"+element+" </button>";
             $("#divLanguages").append(link);
         });
-        angularMenuArray.forEach(element => {
-            const link = " <li><a class='dropdown-item' href='" + element.url + "'>" + element.text + "</a></li>";
-            $("#angularUl ul").append(link);
-        });
-        logicalMenuArray.forEach(element => {
-            const link = " <li><a class='dropdown-item' href='" + element.url + "'>" + element.text + "</a></li>";
-            $("#logicalUl ul").append(link);
-        }); 
+        
     </script>
 </body>
 
