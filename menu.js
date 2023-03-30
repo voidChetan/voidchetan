@@ -90,7 +90,7 @@ var logicalMenuArray = [
 ];
 var javascriptMenueArray = [
     {
-        url: 'https://voidchetan.github.io/voidchetan/javscript/variables.html',
+        url: 'https://voidchetan.github.io/voidchetan/javascript/variables.html',
         text: 'Variables',
         info: 'All Scenario on ngIf to Practice with examples',
         imageUrl: 'https://i.pinimg.com/originals/65/70/92/657092222f678a4e905a03715f1726d8.png'
