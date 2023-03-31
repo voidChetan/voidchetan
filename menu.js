@@ -94,6 +94,12 @@ var javascriptMenueArray = [
         text: 'Variables',
         info: 'All Scenario on ngIf to Practice with examples',
         imageUrl: 'https://i.pinimg.com/originals/65/70/92/657092222f678a4e905a03715f1726d8.png'
+    },
+    {
+        url: 'https://voidchetan.github.io/voidchetan/javascript/operators.html',
+        text: 'Operators',
+        info: 'All Scenario on JavaScript Operators',
+        imageUrl: 'https://i.pinimg.com/originals/65/70/92/657092222f678a4e905a03715f1726d8.png'
     }
     // ,
     // {
