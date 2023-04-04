@@ -35,6 +35,33 @@
                 $("#selectedVal").html((one))
             });
         })
+        function onOperation(opt) {
+            debugger;
+            if (opt == 'add') {
+                const one = Number($("#txtNum1").val());
+                const two = Number($("#txtNum2").val());
+                const result = one + two;
+                $("#txtResult").val(result);
+            } else if (opt == 'sub') {
+                const one = Number($("#txtNum1").val());
+                const two = Number($("#txtNum2").val());
+                const result = one - two;
+                $("#txtResult").val(result);
+            } else if (opt == 'mul') {
+                const one = Number($("#txtNum1").val());
+                const two = Number($("#txtNum2").val());
+                const result = one * two;
+                $("#txtResult").val(result);
+            } else if (opt == 'div') {
+                const one = Number($("#txtNum1").val());
+                const two = Number($("#txtNum2").val());
+                const result = one / two;
+                $("#txtResult").val(result);
+            } else if (opt == 'address') {
+                var address =   $("#txtPlot").val() + ','+ $("#txtCity").val() + ','+  $("#txtState").val() + ','+$("#txtPin").val() + ','+$("#txtAddress").val();
+                $("#address").html(address);
+            } 
+        }
     </script>
 </head>
 
@@ -57,7 +84,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                         </ul>
-                    </li> 
+                    </li>
                     <li class="nav-item dropdown " id="angularUl">
                         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -75,7 +102,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                         </ul>
-                    </li> 
+                    </li>
                 </ul>
                 <form class="d-flex">
                     <a href="https://github.com/voidChetan" target="_blank" class="btn btn-outline-success">Examples</a>
@@ -84,7 +111,15 @@
         </div>
     </nav>
     <div class="container pt-2">
-        <div class="row">
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+            aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">JavaScript</li>
+                <li class="breadcrumb-item active" aria-current="page">Events</li>
+            </ol>
+        </nav>
+        <div class="row pb-3">
             <div class="col-12 col-md-4 col-lg-4 col-sm-6 ">
                 <div class="myBoxs">
                     <div class="text-center">
@@ -96,7 +131,7 @@
                             <button type="button" id="myBtn" class="btn btn-info btn-sm">Click Me</button>
                         </li>
                         <li>
-                            On the click on button showcase result in alert <strong>Hello Javascript</strong>
+                            On the click on button showcase alert with text <strong>Hello Javascript</strong>
                         </li>
                     </ul>
                 </div>
@@ -104,22 +139,20 @@
             <div class="col-12 col-md-4 col-lg-4 col-sm-6 ">
                 <div class="myBoxs">
                     <div class="text-center">
-                        <h4>Task 2 (Blur Event)</h4>
+                        <h4>Task 2 (onblur Event or onchange)</h4>
                     </div>
                     <ul>
                         <li>
                             Take a three textbox.
                         </li>
                         <li>
-                            Apply blur event on second textbox. apply readonly property on third textbox.
-                        </li>
-                        <li>
                             Do multiplicaton of textbox 1 nad 2 and store result in 3 textbox.
                         </li>
                     </ul>
-                    Example: <input type="text" id="txt1" style="width: 20%;" placeholder="Num 1"> &nbsp; <input
-                        type="text" placeholder="Num 2" id="txt2" class="onBlur" style="width: 20%;">&nbsp;
-                    <input type="text" id="txt3" readonly style="width: 20%;" placeholder="Result">
+                    Example:
+                    <br> <input type="text" id="txt1" style="width: 30%;" placeholder="Num 1"> &nbsp; <input type="text"
+                        placeholder="Num 2" id="txt2" class="onBlur" style="width: 30%;">&nbsp;
+                    <input type="text" id="txt3" disabled style="width: 20%;" placeholder="Result">
                 </div>
             </div>
             <div class="col-12 col-md-4 col-lg-4 col-sm-6 ">
@@ -136,7 +169,8 @@
                             pressed a key inside text input!).
                         </li>
                     </ul>
-                    example: <input type="text" onkeydown="alert('You have pressed a key inside text input!')">
+                    example:
+                    <br> <input type="text" onkeydown="alert('You have pressed a key inside text input!')">
                 </div>
             </div>
             <div class="col-12 col-md-4 col-lg-4 col-sm-6 ">
@@ -146,10 +180,16 @@
                     </div>
                     <ul>
                         <li>
-                            Take a one dropdown of fruits.
+                            Create a dropdown with options of fruits
                         </li>
                         <li>
-                            Select any option
+                            add on change event and show selected value in strong tag
+                        </li>
+
+                    </ul>
+                    example <br>
+                    <div class="row">
+                        <div class="col-6">
                             <select class="checkFruit" id="dplFruits">
                                 <option>Select Fruit</option>
                                 <option value="Mango">Mango</option>
@@ -157,27 +197,46 @@
                                 <option value="Orange">Orange</option>
                                 <option value="Watermelon">Watermelon</option>
                             </select>
-                        </li>
-                        <li>
-                            Slected option is <strong id="selectedVal" style="color:red"></strong>
-                        </li>
-                    </ul>
+                        </div>
+                        <div class="col-6">
+                            <strong id="selectedVal" style="color:red"></strong>
+                        </div>
+                    </div>
+
                 </div>
             </div>
             <div class="col-12 col-md-4 col-lg-4 col-sm-6 ">
                 <div class="myBoxs">
                     <div class="text-center">
-                        <h4>Task 5 (Focus Event)</h4>
+                        <h4>Calculator</h4>
                     </div>
-                    <ul>
-                        <li>
-                            Take a one textbox and just click on textbox print console by using focus event.
-                        </li>
-                        <li>
-                            <input type="text" onfocus="console.log('You have clicked on textbox')">
-                        </li>
-
-                    </ul>
+                    <div class="row">
+                        <div class="col-6">
+                            <input type="text" id="txtNum1" class="form-control" placeholder="Num 1">
+                        </div>
+                        <div class="col-6">
+                            <input type="text" id="txtNum2" class="form-control" placeholder="Num 1">
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-3">
+                            <button class="btn btn-sm btn-success" onclick="onOperation('add')"> + </button>
+                        </div>
+                        <div class="col-3">
+                            <button class="btn btn-sm btn-success" onclick="onOperation('sub')"> -</button>
+                        </div>
+                        <div class="col-3">
+                            <button class="btn btn-sm btn-success" onclick="onOperation('mul')">*</button>
+                        </div>
+                        <div class="col-3">
+                            <button class="btn btn-sm btn-success" onclick="onOperation('div')">/</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <input type="text" id="txtResult" disabled class="form-control" placeholder="Result">
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-12 col-md-4 col-lg-4 col-sm-6 ">
@@ -199,12 +258,50 @@
                     </ul>
                 </div>
             </div>
+            <div class="col-12 col-md-4 col-lg-4 col-sm-6 pt-2 ">
+                <div class="myBoxs">
+                    <div class="text-center">
+                        <h4>Calculator</h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <input type="text" id="txtPlot" class="form-control" placeholder="Plot No">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <input type="text" id="txtCity" class="form-control" placeholder="City">
+                        </div>
+                        <div class="col-4">
+                            <input type="text" id="txtState" class="form-control" placeholder="State">
+                        </div>
+                        <div class="col-4">
+                            <input type="text" id="txtPin" class="form-control" placeholder="Pin">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                           <textarea  id="txtAddress" class="form-control" placeholder="Address" rows="2"></textarea>
+                        </div> 
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-6">
+                            <button class="btn btn-sm btn-success" onclick="onOperation('address')"> Create Full Address </button>
+                        </div> 
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <p id="address"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     </div>
     <script type="text/javascript" src="../menu.js"> </script>
     <script>
-        
+
     </script>
 </body>
 
