@@ -112,6 +112,12 @@ var javascriptMenueArray = [
         text: 'elementAccess',
         info: 'All Scenario on Javascript Functions',
         imageUrl: 'https://i.pinimg.com/originals/65/70/92/657092222f678a4e905a03715f1726d8.png'
+    }, 
+    {
+        url: 'https://voidchetan.github.io/voidchetan/javascript/event.html',
+        text: 'Events',
+        info: 'All Scenario on Javascript Events',
+        imageUrl: 'https://i.pinimg.com/originals/65/70/92/657092222f678a4e905a03715f1726d8.png'
     }
     // ,
     // {
