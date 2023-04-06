@@ -124,6 +124,12 @@ var javascriptMenueArray = [
         text: 'Dynamic Css',
         info: 'All Scenario on How To Add dynamic css to Element',
         imageUrl: 'https://i.pinimg.com/originals/65/70/92/657092222f678a4e905a03715f1726d8.png'
+    }, 
+    {
+        url: 'https://voidchetan.github.io/voidchetan/javascript/if.html',
+        text: 'If Else Condition',
+        info: 'All Scenario on How To Add dynamic css to Element',
+        imageUrl: 'https://i.pinimg.com/originals/65/70/92/657092222f678a4e905a03715f1726d8.png'
     }
     // ,
     // {
