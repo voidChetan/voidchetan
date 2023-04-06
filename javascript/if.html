@@ -31,7 +31,82 @@
                }
 
             });
+            $("#txtNum11").on('input', function () {
+                if ($("#txtNum11").val() == $("#txtNum22").val()) {
+                    $("#div3").hide();
+                } else {
+                    $("#div3").show();
+                }
+            });
+            $("#txtNum22").on('input', function () {
+                if ($("#txtNum12").val() == $("#txtNum22").val()) {
+                    $("#div3").hide();
+                } else {
+                    $("#div3").show();
+                }
+            });
+            $("#btnCheck").click(function () { 
+                var val = Number($("#textNum").val());
+                if (val % 2 == 0) {
+                    $("#strResult").html(`${val} is a Even number`); 
+                }
+                else {
+                    $("#strResult").html(`${val} is a Odd number`); 
+                }
+            });
+            $("#btnResult").click(function () { 
+                var val = Number($("#txtSub1").val()) + Number($("#txtSub2").val()) + Number($("#txtSub3").val()) + Number($("#txtSub4").val()) + 
+                Number($("#txtSub5").val()) ;
+                if(val> 300) {
+                    alert($("#txtName").val() + '  Passed')
+                } else {
+                    alert($("#txtName").val() +'   Failed')
+                } 
+            });
+            $("#btnClear").click(function () { 
+                 $(".cls").val("");
+                 
+            });
+            
+            
+            
         })
+        var isDiv1Visible = true;
+        function btnDiv2Toggle() {
+            isDiv1Visible =! isDiv1Visible;
+            if(isDiv1Visible) {
+                $("#div2").show();
+            } else {
+                $("#div2").hide();
+            }
+        }
+        function onOperation(opt) {
+            debugger;
+            if (opt == 'add') {
+                const one = Number($("#txtNum1").val());
+                const two = Number($("#txtNum2").val());
+                const result = one + two;
+                $("#txtResult").val(result);
+            } else if (opt == 'sub') {
+                const one = Number($("#txtNum1").val());
+                const two = Number($("#txtNum2").val());
+                const result = one - two;
+                $("#txtResult").val(result);
+            } else if (opt == 'mul') {
+                const one = Number($("#txtNum1").val());
+                const two = Number($("#txtNum2").val());
+                const result = one * two;
+                $("#txtResult").val(result);
+            } else if (opt == 'div') {
+                const one = Number($("#txtNum1").val());
+                const two = Number($("#txtNum2").val());
+                const result = one / two;
+                $("#txtResult").val(result);
+            } else if (opt == 'address') {
+                var address =   $("#txtPlot").val() + ','+ $("#txtCity").val() + ','+  $("#txtState").val() + ','+$("#txtPin").val() + ','+$("#txtAddress").val();
+                $("#address").html(address);
+            } 
+        }
     </script>
 </head>
 
@@ -82,28 +157,164 @@
     </nav>
     <div class="container pt-2">
         <div class="row">
-            <div class="col-12 col-md-4 col-lg-4 col-sm-6 ">
-                <div class="myBoxs">
+            <div class="col-12 col-md-6 col-lg-6 col-sm-6">
+                <div class="myBox" style="position: relative;">
                     <div class="text-center">
-                        <h4>Task 1</h4>
+                        <h3>Task 1</h3>
                     </div>
-                    <ul>
-                        <li>
-                            Create two textbox and enter the value on text box.<br>
-                            <input type="text" id="txt1" placeholder="Num 1" style="width:40%"> &nbsp;
-                            <input type="text" id="txt2" placeholder="Num 2" style="width:40%">
-                        </li>
-                        <li>
-                            Create one button name is (Check Value).
-                            <button class="btn btn-sm btn-info" id="checkVal">Check Value</button>
-                        </li>
-                        <li>
-                            And click on button check which value is greater and showcase result in alert
-                           
-                        </li>
+                    <ul> 
+                         <li>create a texbox to Enter number</li>
+                         <li>create Button with name check - </li>
+                         <li>on btn click check if Entered no is even or odd</li>
+                         <li>Display result in strong tag beside button</li>
                     </ul>
+                    <div class="row"> 
+                        <div class="col-6">
+                             <input type="text" id="textNum" class="form-control" placeholder="Enter a Number">
+                        </div>
+                        <div class="col-6">
+                            <button class="btn btn-primary btn-sm" id="btnCheck">Check </button>
+                        </div>
+                    </div>
+                    <div class="row pt-4 text-center"> 
+                        <div class="col-12">
+                            <strong id="strResult" class="text-danger"></strong>
+                        </div> 
+                    </div>
                 </div>
             </div>
+            <div class="col-12 col-md-6 col-lg-6 col-sm-6">
+                <div class="myBox"  >
+                    <div class="text-center">
+                        <h3>Task 2</h3>
+                    </div>
+                    <ul> 
+                         <li>create below UI - to enter student Name and Subject marks</li>
+                         <li>on calculate result btn click - calculate sub of all subject marks</li>
+                         <li>If student has got more than 300 show Message in alert box as Student Passed</li>
+                         <li>If student has got less than 300 show Message in alert box as Student Failed</li>
+                         <li>on Clear btn clear textbox values</li>
+                    </ul>
+                    <div class="row"> 
+                        <div class="col-5">
+                             <input type="text" id="txtName" class="form-control cls" placeholder="Student Name">
+                        </div> 
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <input type="text" id="txtSub1" class="form-control cls" placeholder="Math">
+                        </div>
+                        <div class="col-2">
+                            <input type="text" id="txtSub2" class="form-control cls"  placeholder="English">
+                        </div>
+                        <div class="col-2">
+                            <input type="text" id="txtSub3" class="form-control cls" placeholder="Physics">
+                        </div>
+                        <div class="col-2">
+                            <input type="text" id="txtSub4" class="form-control cls" placeholder="Chemistry">
+                        </div>
+                        <div class="col-2">
+                            <input type="text" id="txtSub5" class="form-control cls" placeholder="History">
+                        </div>
+                    </div>
+                    <div class="row"> 
+                        <div class="col-5">
+                            <button class="btn btn-secondary btn-sm" id="btnClear">Clear </button>
+                        </div>
+                        <div class="col-6">
+                            <button class="btn btn-success btn-sm" id="btnResult">Calculate Result </button>
+                        </div>
+                    </div>
+                     
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-6 col-sm-6">
+                <div class="myBox" style="position: relative;">
+                    <div class="text-center">
+                        <h3>Task 3</h3>
+                    </div>
+                    <ul> 
+                        <li>create a varible isDiv1Visible assign value true to it</li>
+                        <li> on click of toggle btn chnage value of isDiv1Visible to false it true or viceversa </li>
+                        <li>if isDiv1Visible is true show div1 else Hide</li>
+                        <li> if we enter same value in both textbox hide div2 else show</li> 
+                    </ul>
+                    <div class="row"> 
+                        <div class="col-6">
+                            <div class="bg-secondary p-4 rounded" id="div2" style="display: none;">
+                                Div 1
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="bg-primary p-4 rounded" id="div3">
+                                Div 2
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pt-4 text-center">
+                        
+                        <div class="col-6">
+                            <button class="btn btn-success btn-sm" onclick="btnDiv2Toggle()">Toggle </button>
+                        </div>
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-6">
+                                    <input type="text" class="form-control" id="txtNum11" placeholder="Enter Num1">
+                                </div>
+                                <div class="col-6">
+                                    <input type="text" class="form-control" id="txtNum22" placeholder="Enter Num2">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-6 col-sm-6 ">
+                <div class="myBoxs">
+                    <div class="text-center">
+                        <h4>Task - 4</h4>
+                    </div>
+                    <ul>
+                        <li>create 2 textboxs to Enter numbers and 1 textbox to display result</li>
+                        <li>create 4 buttons with different with all Arthimatic Operators</li>
+                        <li>create only 1 function to perform all add, sub , multply, divide </li>
+                        <li>On All button call same function but you need to send parameter like add, sub, mul or divide </li>
+                        <li>then in function you need to write multple if statement to perform operation as per paramater</li>
+                    </ul>
+                    <div class="text-center">
+                        <h4>Calculator</h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <input type="text" id="txtNum1" class="form-control" placeholder="Num 1">
+                        </div>
+                        <div class="col-6">
+                            <input type="text" id="txtNum2" class="form-control" placeholder="Num 1">
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-3">
+                            <button class="btn btn-sm btn-success" onclick="onOperation('add')"> + </button>
+                        </div>
+                        <div class="col-3">
+                            <button class="btn btn-sm btn-success" onclick="onOperation('sub')"> -</button>
+                        </div>
+                        <div class="col-3">
+                            <button class="btn btn-sm btn-success" onclick="onOperation('mul')">*</button>
+                        </div>
+                        <div class="col-3">
+                            <button class="btn btn-sm btn-success" onclick="onOperation('div')">/</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <input type="text" id="txtResult" disabled class="form-control" placeholder="Result">
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
         </div>
     </div>
     <script type="text/javascript" src="../menu.js"> </script>
