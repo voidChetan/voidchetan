@@ -63,12 +63,22 @@
         })
         function clearEmpForm() {
             $("#strName").html(employeeObj.name);
-                $("#strContact").html(employeeObj.contactNo);
-                $("#strDept").html(employeeObj.deptName);
-                $("#strLeadName").html(employeeObj.teamLeadName);
-                $("#strTechnology").html(employeeObj.technology);
+            $("#strContact").html(employeeObj.contactNo);
+            $("#strDept").html(employeeObj.deptName);
+            $("#strLeadName").html(employeeObj.teamLeadName);
+            $("#strTechnology").html(employeeObj.technology);
         }
-    
+        var ticket = {
+            TicketNo:'0123',
+            CreatedBy: 'Chetan',
+            CreatedDate: '02-05-2023',
+            AssigntoEmployeeName: '',
+            TicketDescription: 'I Need New Laptop as old not working' 
+        }
+        function assignEmp() {
+            ticket.AssigntoEmployeeName = $("#dpdlEmp").val();
+            console.log(ticket);
+        }
 
     </script>
 </head>
@@ -128,28 +138,29 @@
             </ol>
         </nav>
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6">
+
+            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
                 <div class="myBox" style="position: relative;">
                     <div class="text-center">
                         <h3>Task 1</h3>
                     </div>
                     <ul>
-                         <li>Create a Object to store Product information</li>
-                         <li>Fields will be ProductName, Category, Price, Discount</li>
-                         <li>Print ProductName & Price in console</li>
-                    </ul> 
+                        <li>Create a Object to store Product information</li>
+                        <li>Fields will be ProductName, Category, Price, Discount</li>
+                        <li>Print ProductName & Price in console</li>
+                    </ul>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6">
+            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
                 <div class="myBox" style="position: relative;">
                     <div class="text-center">
                         <h3>Task 2</h3>
                     </div>
                     <ul>
-                         <li>Create a Object to store Train Ticket information</li>
-                         <li>Fields will be TrainName, TrainNo, NoOfPassinger, From, To, DateOfJourney</li>
-                         <li>Print whole Information in P tag like below</li>
-                    </ul> 
+                        <li>Create a Object to store Train Ticket information</li>
+                        <li>Fields will be TrainName, TrainNo, NoOfPassinger, From, To, DateOfJourney</li>
+                        <li>Print whole Information in P tag like below</li>
+                    </ul>
                     <div class="row">
                         <div class="col-12">
                             Traine Name: Vidarbah Express <br>
@@ -162,10 +173,52 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6">
+            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
                 <div class="myBox" style="position: relative;">
                     <div class="text-center">
                         <h3>Task 3</h3>
+                    </div>
+                    <ul>
+                        <li>Create a Object to Hold Information of School</li>
+                        <li>Fields will be SchoolName, PrincipleName, ContactNo, Address</li>
+                        <li>Print whole Object in console</li>
+                        <li>after that add one more Field SchoolEmail with some email</li>
+                        <li>again print updated object</li>
+                    </ul> 
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
+                <div class="myBox" style="position: relative;">
+                    <div class="text-center">
+                        <h3>Task 4</h3>
+                    </div>
+                    <ul>
+                        <li>Create Object to Hold SupportTicket data</li>
+                        <li>Properties will be TicketNo, CreatedBy, CreatedDate, AssigntoEmployeeName,TicketDescription just keep AssigntoEmployeeName filed with empty value</li>
+                        <li>Print a dropdown with Employee Name </li>
+                        <li>ON Assign Button add selected employee name to AssigntoEmployeeName</li>
+                        <li>Print Whole Object  afetr assigning employee in Console</li>
+                    </ul> 
+                    <div class="row">
+                        <div class="col-6">
+                            <select class="form-control" id="dpdlEmp">
+                                <option value="">Select Empoloyee</option>
+                                <option value="Sachin">Sachin</option>
+                                <option value="Aditya">Aditya</option>
+                                <option value="Omkar">Omkar</option>
+                                <option value="Punesh">Punesh</option>
+                            </select>
+                        </div>
+                        <div class="col-6">
+                            <button class="btn btn-sm btn-success" onclick="assignEmp()"> Assign Employee</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
+                <div class="myBox" style="position: relative;">
+                    <div class="text-center">
+                        <h3>Task 5</h3>
                     </div>
                     <ul>
                         <li>Create employee Object with fields name, contactNo, deptName, teamLeadName,technology</li>
