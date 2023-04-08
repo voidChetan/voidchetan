@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="../custom.css">
+    <style>
+        .myBoxs {
+            border: 1px solid teal;
+            padding: 10px;
+            max-height: 500px;
+            height: max-content;
+        }
+    </style>
+    <script>
+        var employeeObj = {
+            name: '',
+            contactNo: '',
+            deptName: '',
+            teamLeadName: '',
+            technology: ''
+        };
+
+        $(document).ready(function () {
+            $("#btnClear").click(function () {
+                debugger
+                employeeObj = {
+                    name: '',
+                    contactNo: '',
+                    deptName: '',
+                    teamLeadName: '',
+                    technology: ''
+                };
+                $("#txtName").val();
+                $("#txtContact").val();
+                $("#dpdlDept").val();
+                $("#txtLeadName").val();
+                $("#dpdlTechnology").val();
+                clearEmpForm();
+            });
+
+            $("#btnSave").click(function () {
+                debugger
+                employeeObj = {
+                    name: $("#txtName").val(),
+                    contactNo: $("#txtContact").val(),
+                    deptName: $("#dpdlDept").val(),
+                    teamLeadName: $("#txtLeadName").val(),
+                    technology: $("#dpdlTechnology").val()
+                };
+
+            });
+            $("#btnPrint").click(function () {
+                debugger
+                clearEmpForm();
+            });
+        })
+        function clearEmpForm() {
+            $("#strName").html(employeeObj.name);
+                $("#strContact").html(employeeObj.contactNo);
+                $("#strDept").html(employeeObj.deptName);
+                $("#strLeadName").html(employeeObj.teamLeadName);
+                $("#strTechnology").html(employeeObj.technology);
+        }
+    
+
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">taskS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown" id="javascriptUl">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            JavaScript
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown " id="angularUl">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Angular
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown" id="logicalUl">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Logical
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <a href="https://github.com/voidChetan" target="_blank" class="btn btn-outline-success">Examples</a>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container pt-2">
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+            aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">JavaScript</li>
+                <li class="breadcrumb-item active" aria-current="page">Objects</li>
+            </ol>
+        </nav>
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-6 col-sm-6">
+                <div class="myBox" style="position: relative;">
+                    <div class="text-center">
+                        <h3>Task 1</h3>
+                    </div>
+                    <ul>
+                        <li>Create employee Object with fields name, contactNo, deptName, teamLeadName,technology</li>
+                        <li>Create a form for above fileds like below</li>
+                        <li>on Save Button - add values to perticular field from textbox</li>
+                        <li> on Print button - print whole object into p tag</li>
+                        <li> on clear button - empty value of all fields from object and print updated Object again</li>
+                    </ul>
+                    <div class="row">
+                        <div class="col-6 pt-2">
+                            <input type="text" id="txtName" class="form-control" placeholder="Name">
+                        </div>
+                        <div class="col-6 pt-2">
+                            <input type="text" id="txtContact" class="form-control" placeholder="Contact No">
+                        </div>
+                        <div class="col-6 pt-2">
+                            <select class="form-control" id="dpdlDept">
+                                <option value="">Select Department</option>
+                                <option value="Sales">Sales</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="Development">Development</option>
+                                <option value="Testing">Testing</option>
+                            </select>
+                        </div>
+                        <div class="col-6 pt-2">
+                            <input type="text" id="txtLeadName" class="form-control" placeholder="Team Lead Name">
+                        </div>
+                        <div class="col-6 pt-2">
+                            <select class="form-control" id="dpdlTechnology">
+                                <option value="">Select Technology</option>
+                                <option value="Dot Net">Dot Net</option>
+                                <option value="UI Designing">UI Designing</option>
+                                <option value="Java">DeveloJavapment</option>
+                                <option value="Angular">Angular</option>
+                                <option value="React">React</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="row pt-4 text-center">
+                        <div class="col-4">
+                            <button class="btn btn-danger btn-sm" id="btnClear">Clear Object </button>
+                        </div>
+                        <div class="col-4">
+                            <button class="btn btn-primary btn-sm" id="btnSave">Save Object </button>
+                        </div>
+                        <div class="col-4">
+                            <button class="btn btn-success btn-sm" id="btnPrint">Print Object </button>
+                        </div>
+                    </div>
+                    <div class="row pt-4 text-center">
+                        <div class="col-12">
+                            <span>Name Is: <strong id="strName" class="text-danger"></strong>,</span>
+                            <span>Contact Is:<strong id="strContact" class="text-danger"></strong>,</span>
+                            <span>Dept Is:<strong id="strDept" class="text-danger"></strong>,</span>
+                            <span>LeadName Is:<strong id="strLeadName" class="text-danger"></strong>,</span>
+                            <span>Technology Is:<strong id="strTechnology" class="text-danger"></strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <script type="text/javascript" src="../menu.js"> </script>
+    <script>
+
+    </script>
+</body>
+
+</html>
