@@ -28,6 +28,7 @@
         };
 
         $(document).ready(function () {
+            
             $("#btnClear").click(function () {
                 debugger
                 employeeObj = {
@@ -60,11 +61,24 @@
                 debugger
                 clearEmpForm();
             });
+            var cityList = [];
+            debugger;
+            if(localStorage.getItem("cities") != null) {
+                cityList  = JSON.parse(localStorage.getItem("cities"));
+                cityList.forEach(element => {
+                    const opt = "<option value='" + element + "'> " + element + "</option>"
+                    $("#dpdlCity").append(opt);
+                });
+            }
+           
+
             $("#btnAddCity").click(function () {
                 debugger;
                 if ($("#myCity").val() != '' && $("#dpdlCity option[value='" + $("#myCity").val() + "']").length == 0) {
                     const opt = "<option value='" + $("#myCity").val() + "'> " + $("#myCity").val() + "</option>"
                     $("#dpdlCity").append(opt);
+                    cityList.push($("#myCity").val());
+                    localStorage.setItem("cities",JSON.stringify(cityList));
                     $("#myCity").val("");
                     $("#totCity").html($("#dpdlCity").children().length - 1);
                 } else {
@@ -82,11 +96,11 @@
             $("#strTechnology").html(employeeObj.technology);
         }
         var ticket = {
-            TicketNo:'0123',
+            TicketNo: '0123',
             CreatedBy: 'Chetan',
             CreatedDate: '02-05-2023',
             AssigntoEmployeeName: '',
-            TicketDescription: 'I Need New Laptop as old not working' 
+            TicketDescription: 'I Need New Laptop as old not working'
         }
         function assignEmp() {
             ticket.AssigntoEmployeeName = $("#dpdlEmp").val();
@@ -147,22 +161,71 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">JavaScript</li>
-                <li class="breadcrumb-item active" aria-current="page">Array</li>
+                <li class="breadcrumb-item active" aria-current="page">Storage</li>
             </ol>
         </nav>
-        <div class="row"> 
-
+        <div class="row">
             <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
                 <div class="myBox" style="position: relative;">
                     <div class="text-center">
-                        <h3>Task 1</h3>
+                        <h3>Task - 1</h3> 
                     </div>
                     <ul>
-                        <li>Create an array of Cities</li>
-                        <li>Print Length of City Array in console</li>
-                        <li>Print 3rd Element from array</li>
+                        <li>Create 3 textbox to Enter First, Middle & last Names</li>
+                        <li>Create a Button "Save Data" - on click of it Save all name into localStorage into different Variables</li>
+                        <li>Create a button "Print Data"  - read stored data from localStorage and print that in 3 labels</li>
                     </ul>
+                    <div class="row">
+                        <div class="col-4">
+                            <input type="text" id="txtFName" class="form-control" placeholder="First name">
+                        </div>
+                        <div class="col-4">
+                            <input type="text" id="txtMName" class="form-control" placeholder="Middle name">
+                        </div>
+                        <div class="col-4">
+                            <input type="text" id="txtLName" class="form-control" placeholder="Last name">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                           <button class="btn btn-sm btn-success" id="btnSave"> Save Data</button>
+                        </div>
+                        <div class="col-4">
+                            <button class="btn btn-sm btn-primary" id="btnPrint">Print Data</button>
+                        </div> 
+                        <div class="col-4">
+                           <label for="" id="lblFName"> </label> <br>
+                           <label for=""  id="lblMName"></label> <br>
+                           <label for="" id="lblLName"></label> 
+                        </div> 
+                    </div>
                 </div>
+                <script>
+
+                    $(document).ready(function () {
+                        $("#btnSave").click(function () {
+                            localStorage.setItem('fName', $("#txtFName").val())
+                            localStorage.setItem('mName', $("#txtMName").val())
+                            localStorage.setItem('lName', $("#txtLName").val())
+                        });
+                        $("#btnPrint").click(function () {
+                            $("#lblFName").html(localStorage.getItem("fName"))
+                            $("#lblMName").html(localStorage.getItem("fName"))
+                            $("#lblLName").html(localStorage.getItem("fName"))
+                        });
+
+                        $("#btnSaveEmp").click(function () {
+                            localStorage.setItem('name', $("#txtName").val())
+                            localStorage.setItem('city', $("#txtCity").val())
+                            localStorage.setItem('pin', $("#txtPin").val())
+                            localStorage.setItem('address', $("#txtAddress").val())
+                        });
+                        $("#txtName").val(localStorage.getItem("name"))
+                        $("#txtCity").val(localStorage.getItem("city"))
+                        $("#txtPin").val(localStorage.getItem("pin"))
+                        $("#txtAddress").val(localStorage.getItem("address")) 
+                    });
+                </script>
             </div>
             <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
                 <div class="myBox" style="position: relative;">
@@ -170,73 +233,44 @@
                         <h3>Task 2</h3>
                     </div>
                     <ul>
-                        <li>Create an array of RollNos</li>
-                        <li>Print Length of RollNos Array in Alert</li>
-                        <li>Print 2nd Element from array</li>
+                        <li>Create Employee Form to store Data like  Name, Address, City, Pin</li>
+                        <li>Create  butto to save data in localStorage</li>
+                        <li>On Reload set value reading from  localStorage and assign it to all textbox</li>
                     </ul>
-                    
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center">
-                        <h3>Task 3</h3>
+                    <div class="row">
+                        <div class="col-4">
+                            <input type="text" id="txtName" class="form-control" placeholder=" name">
+                        </div>
+                        <div class="col-4">
+                            <input type="text" id="txtCity" class="form-control" placeholder="City">
+                        </div>
+                        <div class="col-4">
+                            <input type="text" id="txtPin" class="form-control" placeholder="Pin">
+                        </div>
                     </div>
-                    <ul>
-                        <li>Create an array of StudentList</li>
-                        <li>Create A textbox to enter student name </li>
-                        <li>Create a button Add - on click of it push entered name into array using push method</li>
-                    </ul> 
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center">
-                        <h3>Task 4</h3>
+                    <div class="row">
+                        <div class="col-6">
+                           <textarea  id="txtAddress" class="form-control" placeholder="Address" rows="3"></textarea>
+                        </div> 
                     </div>
-                    <ul>
-                        <li>Create an array of Numbers</li>
-                        <li>Create 4 buttons Push, pop, shift & unShift </li>
-                        <li> on click of all button do add , remove elements from array</li>
-                    </ul>  
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center">
-                        <h3>Task 5</h3>
+                    <div class="row">
+                        <div class="col-12 tetx-center">
+                           <button class="btn btn-sm btn-success" id="btnSaveEmp"> Save Data</button>
+                        </div>
+                        
                     </div>
-                    <ul>
-                        <li>Create an array of RollNo </li>
-                        <li>Create a textbox - to eneter index number </li>
-                        <li>Create a button with name "Get Element Value"  - on click of it show Element From  array on entered index </li>
-                    </ul>   
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center">
-                        <h3>Task 6</h3>
-                    </div>
-                    <ul>
-                        <li>Create an array of RollNo </li>
-                        <li> Create a button "Print Length" </li>
-                        <li> on click ot it - print length of array in strong tag </li>
-                    </ul>   
                 </div>
             </div>
             <div class="col-12 col-md-4 col-lg-4 col-sm-6 pt-2">
                 <div class="myBox">
                     <div class="text-center">
-                        <h3>Task 1</h3>
-                    </div>
-
+                        <h3>Task 3</h3>
+                    </div> 
                     <ul>
                         <li> on add btn click Entered City Should be added to dropdown option</li>
-                        <li> after adding city - textbox Should be empty</li>
-                        <li> Show count of Added Cities beside dropdown</li>
-                        <li class="text-danger"> if Entered city is already added in dropdown show error that city
-                            already present</li>
+                        <li> after adding city - textbox Should be empty </li>
+                        <li> After Adding city - save array to Localstorage</li>
+                        <li class="text-danger"> on Page Load Read City Array From localStorage and assign it to Dropdown</li>
                     </ul>
                     <div class="row">
                         <div class="col-6">
@@ -251,10 +285,7 @@
                             <select name="" id="dpdlCity" class="form-control">
                                 <option value="">Select City</option>
                             </select>
-                        </div>
-                        <div class="col-6">
-                            Total City Added: <strong id="totCity"></strong>
-                        </div>
+                        </div> 
                     </div>
                 </div>
             </div>
