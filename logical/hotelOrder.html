@@ -14,27 +14,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Scenario - 1</title>
     <script type="text/javascript" src="../menu.js"> </script>
- 
-    <script>
-        $(document).ready(function () {
-            $("#divMobile").hide();
-            $("#divFiber").hide();
-            $("#divBusiness").hide();
-
-            $("#btnContinue").click(function () {
-                var radio1Value = $('input:radio[name=radioCheck]:checked').val();
-                if (radio1Value == undefined) {
-                    alert('Selct at least one option');
-                } else {
-                    $("#selectedPlan").text(radio1Value);
-                }
-            });
-            
 
 
-
-        })
-    </script>
     <style>
         .card {
             cursor: pointer !important;
@@ -61,7 +42,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                         </ul>
-                    </li> 
+                    </li>
                     <li class="nav-item dropdown " id="angularUl">
                         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -79,7 +60,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                         </ul>
-                    </li> 
+                    </li>
                 </ul>
                 <form class="d-flex">
                     <a href="https://github.com/voidChetan" target="_blank" class="btn btn-outline-success">Examples</a>
@@ -93,45 +74,146 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Angular</li>
-                <li class="breadcrumb-item active" aria-current="page">ng-For Task</li>
+                <li class="breadcrumb-item active" aria-current="page">Logical</li>
             </ol>
         </nav>
         <div class="row">
-            <div class="col-12">
+            <div class="col-6">
                 <div class="myBox">
                     <div class="text-center">
-                        <h3>CCD </h3>
+                        <h3>Hotel Order System </h3>
                     </div>
                     <ul>
-                        <li> create movie array with fileds movieName: string,description: string, ticketRate : string,
-                            shows - array of strings </li>
-                        <li> on Click of Movie Show Timing Below</li>
-                        <li> add green color to selected movie Header</li>
-                    </ul> 
-                    <div class="row text-center" id="divMovies">
+                        <li>Create Array of Itmes For Hotel Menu then Display Menu in dropdown</li>
+                        <li>Create a textbox to Enter Quantity </li> 
+                        <li>On Generate Bill- Calculate bill According TO Selected Item with quaitity and
+                            display bill Amount</li>
+                            <li>On Clear Clear all data as per ex</li>
+                    </ul>
+                    <div class="row text-center">
+                        <div class="col-4 bg-success p-2">
+                            <h4>Tea </h4>
+                            <p>(10 Rs)</p>
+                        </div>
+                        <div class="col-4 bg-secondary p-2">
+                            <h4>Coffee </h4>
+                            <p>(15 Rs)</p>
+                        </div>
+                        <div class="col-4 bg-primary p-2">
+                            <h4>Sandwich</h4>
+                            <p>(25 Rs)</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8 col-sm-8 col-md-8">
+                            <div class="row">
+                                <div class="col-5 col-md-5 col-sm-5 col-lg-5">
+                                    <Select id="dpdlItem" class="form-control">
+                                        <option value="">Select Item</option>
 
+                                    </Select>
+                                </div>
+                                <div class="col-5 col-md-5 col-sm-5 col-lg-5">
+                                    <input type="text" id="txtQuantity" class="form-control"
+                                        placeholder="Enter Quantity">
+                                </div>
+                                <div class="col-2  col-md-2 col-sm-2 col-lg-2">
+                                    <button class="btn btn-sm btn-success" id="btnAdd">Add </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 col-sm-4 col-md-4">
+                            <div class="row" id="divBill" style="background-color: lightgray;">
+                                <div class="col-12 text-center">
+                                    <strong>Total Bill Amount </strong> <br>
+                                    <span id="btnillAmt"></span>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
-                    <hr>
-                    <h5>Available shows</h5>
-                    <div class="row" id="divShows">
+                    <div class="row">
+                        <div class="col-12">
+                            <ul id="ulItems">
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-4">
+                            <button class="btn btn-danger" id="btnClear">Clear</button>
+                        </div>
+                        <div class="col-4">
+                            <button class="btn btn-success" id="btnCalCulate">Calculate Bill</button>
+                        </div>
 
                     </div>
+                    <script>
 
+                    </script>
+                    <script>
 
+                        var items = [
+                            { itemName: 'Tea', cost: 10 },
+                            { itemName: 'Coffee', cost: 15 },
+                            { itemName: 'Sandwich', cost: 25 }
+                        ];
+                        var selectdeItems = []
+                        $(document).ready(function () { 
+                            items.forEach(element => {
+                                var li = "<option value='" + element.cost + "'>" + element.itemName + " </option>";
+                                $("#dpdlItem").append(li);
+                            }); 
+
+                            $("#btnAdd").click(function () {
+                                if($("#dpdlItem").val() != ""  && $("#txtQuantity").val() != "") {
+                                    $("#ulItems").html("");
+                                selectdeItems.push(
+                                    { itemName: $("#dpdlItem :selected").text(), cost: $("#dpdlItem").val(), quantity: $("#txtQuantity").val() },
+                                )
+                                selectdeItems.forEach(element => {
+                                    var li = "<li>" + element.itemName + "- Qty( " + element.quantity + " )</li>";
+                                    $("#ulItems").append(li);
+                                });
+                                $("#dpdlItem").val("");
+                                $("#txtQuantity").val("");
+                                } else {
+                                    alert("Select Item n Quantity")
+                                }
+                               
+                            });
+
+                            $("#btnCalCulate").click(function () {
+                                var tot = 0;
+                                selectdeItems.forEach(element => {
+                                    tot = tot + Number(element.cost) * Number(element.quantity);
+                                });
+                                $("#btnillAmt").html(tot);
+                                $("#divBill").show();
+                            });
+                            $("#divBill").hide();
+                            $("#btnClear").click(function () {
+                                $("#dpdlItem").val("");
+                                $("#txtQuantity").val("");
+                                $("#btnillAmt").html("");
+                                $("#divBill").hide();
+                                $("#ulItems").html("");
+                            });
+
+                        })
+                    </script>
                 </div>
+
+
             </div>
 
-
         </div>
+        <script type="text/javascript" src="../menu.js"> </script>
+        <script>
 
-    </div>
-    <script type="text/javascript" src="../menu.js"> </script>
-    <script>
+            debugger;
 
-        debugger;
-        
-    </script>
+        </script>
 </body>
 
 </html>
