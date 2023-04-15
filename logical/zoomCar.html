@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="../custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Scenario - 1</title>
+    <script type="text/javascript" src="../menu.js"> </script>
+
+
+    <style>
+        .card {
+            cursor: pointer !important;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">taskS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown" id="javascriptUl">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            JavaScript
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown " id="angularUl">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Angular
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown" id="logicalUl">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Logical
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <a href="https://github.com/voidChetan" target="_blank" class="btn btn-outline-success">Examples</a>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container pt-1">
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+            aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Angular</li>
+                <li class="breadcrumb-item active" aria-current="page">Logical</li>
+            </ol>
+        </nav>
+        <div class="row">
+            <div class="col-12">
+                <div class="myBox">
+                    <div class="text-center">
+                        <h3>Zoom Car Rental System</h3>
+                    </div>
+                    <ul>
+                        <li>See Below Example And try to create same with Same set of rules</li>
+                        
+                    </ul>
+                    
+                    <div class="row">
+                        <div class="col-6" style="background-color: lightgray;">
+                            <div class="row  text-center">
+                                <div class="col-12">
+                                    <h6>Admin Panel</h6>
+                                    <p>Add Cars Details</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-3 col-md-3 col-sm-3 col-lg-3">
+                                    <input type="text" id="txtCarName" class="form-control" placeholder="Car Name">
+                                </div>
+                                <div class="col-3 col-md-3 col-sm-3 col-lg-3">
+                                    <input type="text" id="txtRatePerHr" class="form-control" placeholder="Rate/hr">
+                                </div>
+                                <div class="col-3 col-md-3 col-sm-3 col-lg-3">
+                                    <input type="text" id="txtRatePerDay" class="form-control" placeholder="Rate/Day">
+                                </div>
+                                <div class="col-3 col-md-3 col-sm-3 col-lg-3">
+                                    <button class="btn btn-sm btn-success" id="btnAdd">Add Car </button>
+                                </div>
+                            </div>
+                            <table class="table table-bordered table-success" id="tblCars">
+                                <thead>
+                                    <tr>
+                                        <th>Sr No</th>
+                                        <th>Car </th>
+                                        <th class='text-end'>Rate / Hr</th>
+                                        <th class='text-end'>Rate / Day</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+
+                            </table>
+                        </div>
+                        <div class="col-6">
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-6 col-md-6 col-sm-6 col-lg-6">
+                                        <Select id="dpdlCar" class="form-control">
+                                            <option value="">Select Car</option>
+                                        </Select>
+                                    </div>
+                                    <div class="col-6 col-md-6 col-sm-6 col-lg-6">
+                                        <Select id="type" class="form-control">
+                                            <option value="">Select Rent Type</option>
+                                            <option value="Per Day">Per Day</option>
+                                            <option value="Per Hr">Per Hr</option>
+                                        </Select>
+                                    </div>
+                                    <div class="col-4 col-md-4 col-sm-4 col-lg-4 pt-2">
+                                        <input type="text" class="form-control perDay" id="perQuantityDay"
+                                            placeholder="Enter Days">
+                                        <input type="text" class="form-control perHr" id="perQuantityHr"
+                                            placeholder="Enter Hrs">
+                                    </div>
+                                    <div class="col-4 col-md-4 col-sm-4 col-lg-4  pt-2">
+                                        <input type="text" class="form-control" id="txtQty" placeholder="No Of Cars">
+                                    </div>
+                                    <div class="col-4 col-md-4 col-sm-4 col-lg-4  pt-2">
+                                        <button class="btn btn-sm btn-success" id="btnAddCars">Add </button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <ul id="selectedCars">
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 pt-2">
+                                <button class="btn btn-sm btn-danger" id="btnClear">Clear</button>
+                                <button class="btn btn-sm btn-success" id="btnCal">Calculate Bill</button>
+                            </div>
+                            <div class="col-12 pt-2">
+                                <div class="row text-center" id="divBill" style="background-color: teal;">
+                                    <div class="col-12 text-center">
+                                        <strong>Total Bill Amount </strong> <br>
+                                        <span id="btnillAmt"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+
+                </script>
+                <script>
+
+                    var cars = [
+
+                    ];
+                    var selectdeItems = []
+                    $(document).ready(function () {
+                        $(".perDay").hide();
+                        $(".perHr").hide();
+                        $("#type").change(function () {
+                            if ($(this).val() == "Per Day") {
+                                $(".perDay").show();
+                                $(".perHr").hide();
+
+                            } else {
+                                $(".perDay").hide();
+                                $(".perHr").show();
+                            }
+                        })
+                        $("#tblCars tbody").append("<td class='text-center' colspan='4'> No Cars Added Yet</td>");
+                        $("#btnAdd").click(function () {
+                            if ($("#txtCarName").val() != "" && $("#txtRatePerHr").val() != "" && $("#txtRatePerDay").val()) {
+                                $("#tblCars tbody").html("");
+                                $("#dpdlCar").html("");
+                                $("#dpdlCar").append("<option value=''> Select Car</option>");
+                                cars.push(
+                                    { carName: $("#txtCarName").val(), perHr: $("#txtRatePerHr").val(), perDay: $("#txtRatePerDay").val() },
+                                )
+                                var index = 1;
+                                cars.forEach(element => {
+                                    debugger;
+                                    var car = "<tr><td>" + index + "</td><td>" + element.carName + "</td><td class='text-end'>" + element.perHr + "</td><td class='text-end'>" + element.perDay + "</td></tr>";
+                                    $("#tblCars tbody").append(car);
+                                    var car2 = "<option value='" + element.carName + "'> " + element.carName + "</option>";
+                                    $("#dpdlCar").append(car2);
+                                    index++;
+                                });
+                                $("#txtCarName").val("");
+                                $("#txtRatePerHr").val("");
+                                $("#txtRatePerDay").val("");
+                            } else {
+                                alert("Add Details")
+                            }
+                        });
+
+
+                        $("#btnAddCars").click(function () {
+                            if ($("#dpdlCar").val() != "" && $("#type").val() != "" && $("#txtQty").val() != "") {
+                                $("#selectedCars").html("");
+                                if($("#type").val() == "Per Day") {
+                                    selectdeItems.push(
+                                    { carName: $("#dpdlCar").val(), type: $("#type").val(), quantity: $("#txtQty").val(), perQuantity: $("#perQuantityDay").val() },
+                                )
+                                } else {
+                                    selectdeItems.push(
+                                    { carName: $("#dpdlCar").val(), type: $("#type").val(), quantity: $("#txtQty").val(), perQuantity: $("#perQuantityHr").val() },
+                                )
+                                }
+                                
+                                var index = 1;
+                                selectdeItems.forEach(element => {
+                                    debugger;
+                                    var li = "<li > " + element.carName + " - " + element.type + " for " + element.perQuantity + " & no oF Cars ( " + element.quantity + " )</option>";
+                                    $("#selectedCars").append(li);
+                                    index++;
+                                });
+                                $("#dpdlCar").val("");
+                                $("#type").val("");
+                                $("#txtQty").val("");
+                                $("#perQuantityDay").val("")
+                                $("#perQuantityHr").val("")
+                            } else {
+                                alert("Add Details")
+                            }
+                        });
+
+                        $("#btnCal").click(function () {
+                            if (selectdeItems.length !== 0) {
+                                var tot = 0;
+                                selectdeItems.forEach(element => {
+                                    const rec = cars.find(m => m.carName == element.carName);
+                                    if (rec != undefined) {
+                                        if (element.type == "Per Day") {
+                                            tot = tot + Number(rec.perDay) * Number(element.quantity) * Number(element.perQuantity);
+                                        } else {
+                                            tot = tot + Number(rec.perHr) * Number(element.quantity) * Number(element.perQuantity);
+                                        }
+                                    }
+                                });
+                                $("#btnillAmt").html(tot);
+                                $("#divBill").show();
+                            } else {
+                                alert("Select Car First")
+                            }
+                        });
+                        $("#divBill").hide();
+                        $("#btnClear").click(function () {
+                            selectdeItems = [];
+                            $("#dpdlCar").val("");
+                                $("#type").val("");
+                                $("#txtQty").val("");
+                                $("#perQuantityDay").val("")
+                                $("#perQuantityHr").val("")
+                            $("#divBill").hide();
+                            $("#selectedCars").html("");
+                        });
+
+                    })
+                </script>
+            </div>
+
+
+        </div>
+
+    </div>
+    <script type="text/javascript" src="../menu.js"> </script>
+    <script>
+
+        debugger;
+
+    </script>
+</body>
+
+</html>

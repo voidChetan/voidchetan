@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="../custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Scenario - 1</title>
+    <script type="text/javascript" src="../menu.js"> </script>
+
+
+    <style>
+        .calculadora {
+            margin-top: 40px;
+            border: solid 1px #000;
+            padding: 20px;
+            background-color: #c63232;
+            border-radius: 10px;
+            box-shadow: 1px 1px 5px #000;
+        }
+
+        .btn {
+            width: 60px;
+            height: 50px;
+            margin: 5px;
+            box-shadow: 1px 1px 1px #000;
+        }
+
+        .clear {
+            width: 130px;
+        }
+
+        .enter {
+            height: 110px;
+        }
+
+        .zero {
+            width: 130px;
+        }
+
+        .resultado {
+            text-align: right;
+            font-size: 20px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border: solid 1px #000;
+            box-shadow: 1px 1px 1px #000;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">taskS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown" id="javascriptUl">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            JavaScript
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown " id="angularUl">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Angular
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown" id="logicalUl">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Logical
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <a href="https://github.com/voidChetan" target="_blank" class="btn btn-outline-success">Examples</a>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container pt-1">
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+            aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Angular</li>
+                <li class="breadcrumb-item active" aria-current="page">Logical</li>
+            </ol>
+        </nav>
+        <div class="row">
+            <div class="col-6">
+                <div class="myBox">
+                    <div class="text-center">
+                        <h3>Calculator  </h3>
+                    </div>
+                    <ul>
+                        <li>Create UI design like below or Copy Paste UI</li>
+                        <li>use eval to calculate </li>
+                    </ul>
+                    <div class="container">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col d-flex justify-content-center">
+                                    <br />
+
+                                    <div class="calculadora">
+                                        <input type="text" id="resultado" class="form-control resultado" placeholder="0"
+                                            disabled="disabled" />
+
+                                        <div class="row">
+                                            <button onclick="calculator('action', 'c')" type="button"
+                                                class="btn btn-dark btn-lg clear font-weight-light">C</button>
+                                            <button onclick="calculator('action', '/')" type="button"
+                                                class="btn btn-dark btn-lg font-weight-light">/</button>
+                                            <button onclick="calculator('action', '*')" type="button"
+                                                class="btn btn-dark btn-lg font-weight-light">x</button>
+                                        </div>
+
+                                        <div class="row">
+                                            <button onclick="calculator('valor', 7)" type="button"
+                                                class="btn btn-dark btn-lg font-weight-light">7</button>
+                                            <button onclick="calculator('valor', 8)" type="button"
+                                                class="btn btn-dark btn-lg font-weight-light">8</button>
+                                            <button onclick="calculator('valor', 9)" type="button"
+                                                class="btn btn-dark btn-lg font-weight-light">9</button>
+                                            <button onclick="calculator('action', '-')" type="button"
+                                                class="btn btn-dark btn-lg font-weight-light">-</button>
+                                        </div>
+
+                                        <div class="row">
+                                            <button onclick="calculator('valor', 4)" type="button"
+                                                class="btn btn-dark btn-lg font-weight-light">4</button>
+                                            <button onclick="calculator('valor', 5)" type="button"
+                                                class="btn btn-dark btn-lg font-weight-light">5</button>
+                                            <button onclick="calculator('valor', 6)" type="button"
+                                                class="btn btn-dark btn-lg font-weight-light">6</button>
+                                            <button onclick="calculator('action', '+')" type="button"
+                                                class="btn btn-dark btn-lg font-weight-light">+</button>
+                                        </div>
+
+                                        <div class="row">
+                                            <button onclick="calculator('valor', 1)" type="button"
+                                                class="btn btn-dark btn-lg font-weight-light">1</button>
+                                            <button onclick="calculator('valor', 2)" type="button"
+                                                class="btn btn-dark btn-lg font-weight-light">2</button>
+                                            <button onclick="calculator('valor', 3)" type="button"
+                                                class="btn btn-dark btn-lg font-weight-light">3</button>
+                                            <button onclick="calculator('action', '=')" type="button"
+                                                class="btn btn-dark btn-lg enter">=</button>
+                                        </div>
+
+                                        <div class="row" style="margin-top: -60px">
+                                            <button onclick="calculator('valor', 0)" type="button"
+                                                class="btn btn-dark zero btn-lg font-weight-light">0</button>
+                                            <button onclick="calculator('action', '.')" type="button"
+                                                class="btn btn-dark btn-lg font-weight-light">.</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <script>
+                            function calculator(type, valor) {
+                                if (type === 'action') {
+                                    if (valor === 'c') {
+                                        //limpar o visor
+                                        document.getElementById('resultado').value = ''
+                                    }
+                                    if (valor === '+' || valor === '-' || valor === '*' || valor === '/' || valor === '.') {
+                                        document.getElementById('resultado').value += valor
+                                    }
+                                    if (valor === '=') {
+                                        var valor_campo = eval(document.getElementById('resultado').value)
+                                        document.getElementById('resultado').value = valor_campo
+                                    }
+                                } else if (type === 'valor') {
+
+                                    document.getElementById('resultado').value += valor
+                                }
+                            }
+                            // valor = value.  I couldn't use the same name for value as the value, so I used in Portuguese to work well.
+                            //using type as tipo worked fine as well
+                        </script>
+                    </div>
+                    <script>
+
+                    </script>
+                    
+                </div>
+
+
+            </div>
+
+        </div>
+        <script type="text/javascript" src="../menu.js"> </script>
+        <script>
+
+            debugger;
+
+        </script>
+</body>
+
+</html>
