@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="../custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Scenario - 1</title>
+    <script type="text/javascript" src="../menu.js"> </script>
+
+
+    <style>
+        ::selection {
+            color: #fff;
+            background: #3C87FF;
+        }
+
+        .wrapper {
+            max-width: 100%;
+            padding: 28px 0 30px; 
+            background: #fff;
+            border-radius: 7px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .task-input {
+            height: 52px;
+            padding: 0 25px;
+            position: relative;
+        }
+
+        .task-input i {
+            top: 50%;
+            position: absolute;
+            transform: translate(17px, -50%);
+        }
+
+        .task-input input {
+            height: 100%;
+            width: 100%;
+            outline: none;
+            font-size: 18px;
+            border-radius: 5px;
+            padding: 0 20px 0 53px;
+            border: 1px solid #999;
+        }
+
+        .task-input input:focus,
+        .task-input input.active {
+            padding-left: 52px;
+            border: 2px solid #3C87FF;
+        }
+
+        .task-input input::placeholder {
+            color: #bfbfbf;
+        }
+
+        .controls,
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .controls {
+            padding: 18px 25px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .filters span {
+            margin: 0 8px;
+            font-size: 17px;
+            color: #444444;
+            cursor: pointer;
+        }
+
+        .filters span:first-child {
+            margin-left: 0;
+        }
+
+        .filters span.active {
+            color: #3C87FF;
+        }
+
+        .controls .clear-btn {
+            border: none;
+            opacity: 0.6;
+            outline: none;
+            color: #fff;
+            cursor: pointer;
+            font-size: 13px;
+            padding: 7px 13px;
+            border-radius: 4px;
+            letter-spacing: 0.3px;
+            transition: transform 0.25s ease;
+            background: linear-gradient(135deg, #1798fb 0%, #2D5CFE 100%);
+        }
+
+        .clear-btn.active {
+            opacity: 0.9;
+            pointer-events: auto;
+        }
+
+        .clear-btn:active {
+            transform: scale(0.93);
+        }
+
+        .task-box {
+            margin-top: 20px;
+            margin-right: 5px;
+            padding: 0 20px 10px 25px;
+        }
+
+        .task-box.overflow {
+            overflow-y: auto;
+            max-height: 300px;
+        }
+
+        .task-box::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .task-box::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 25px;
+        }
+
+        .task-box::-webkit-scrollbar-thumb {
+            background: #e6e6e6;
+            border-radius: 25px;
+        }
+
+        .task-box .task {
+            list-style: none;
+            font-size: 17px;
+            margin-bottom: 18px;
+            padding-bottom: 16px;
+            align-items: flex-start;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .task-box .task:last-child {
+            margin-bottom: 0;
+            border-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .task-box .task label {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .task label input {
+            margin-top: 7px;
+            accent-color: #3C87FF;
+        }
+
+        .task label p {
+            user-select: none;
+            margin-left: 12px;
+            word-wrap: break-word;
+        }
+
+        .task label p.checked {
+            text-decoration: line-through;
+        }
+
+        .task-box .settings {
+            position: relative;
+        }
+
+        .settings :where(i, li) {
+            cursor: pointer;
+        }
+
+        .settings .task-menu {
+            z-index: 10;
+            right: -5px;
+            bottom: -65px;
+            padding: 5px 0;
+            background: #fff;
+            position: absolute;
+            border-radius: 4px;
+            transform: scale(0);
+            transform-origin: top right;
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+            transition: transform 0.2s ease;
+        }
+
+        .task-box .task:last-child .task-menu {
+            bottom: 0;
+            transform-origin: bottom right;
+        }
+
+        .task-box .task:first-child .task-menu {
+            bottom: -65px;
+            transform-origin: top right;
+        }
+
+        .task-menu.show {
+            transform: scale(1);
+        }
+
+        .task-menu li {
+            height: 25px;
+            font-size: 16px;
+            margin-bottom: 2px;
+            padding: 17px 15px;
+            cursor: pointer;
+            justify-content: flex-start;
+        }
+
+        .task-menu li:last-child {
+            margin-bottom: 0;
+        }
+
+        .settings li:hover {
+            background: #f5f5f5;
+        }
+
+        .settings li i {
+            padding-right: 8px;
+        }
+
+        @media (max-width: 400px) {
+            body {
+                padding: 0 10px;
+            }
+
+            .wrapper {
+                padding: 20px 0;
+            }
+
+            .filters span {
+                margin: 0 5px;
+            }
+
+            .task-input {
+                padding: 0 20px;
+            }
+
+            .controls {
+                padding: 18px 20px;
+            }
+
+            .task-box {
+                margin-top: 20px;
+                margin-right: 5px;
+                padding: 0 15px 10px 20px;
+            }
+
+            .task label input {
+                margin-top: 4px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">taskS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown" id="javascriptUl">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            JavaScript
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown " id="angularUl">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Angular
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown" id="logicalUl">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Logical
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <a href="https://github.com/voidChetan" target="_blank" class="btn btn-outline-success">Examples</a>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container pt-1">
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+            aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Angular</li>
+                <li class="breadcrumb-item active" aria-current="page">Logical</li>
+            </ol>
+        </nav>
+        <div class="row">
+            <div class="col-6">
+                <div class="myBox">
+                    <div class="text-center">
+                        <h3>To Do List App</h3>
+                    </div>
+                    <ul>
+                        <li>Create UI like Shown or Similar to this</li>
+                        <li>Create a textbox to Enter To Do Task </li>
+                        <li>On Add click Add task to Array and store Array in local Storage</li>
+                        <li>Display task in below List</li>
+                        <li>On Page load If Alreday To Do Items are there in local storage - show them</li>
+                    </ul> 
+                </div>
+
+
+            </div>
+            <div class="col-6">
+                <div class="myBox">
+                     
+                    <div class="container">
+                        <div class="wrapper">
+                            <div class="task-input">
+                               <i class="fa fa-bars"></i>
+                                <input type="text" id="txtName" placeholder="Add a new task">
+                            </div>
+                            <div class="controls">
+                                <button class="clear-btn">Add</button>
+                                
+                            </div>
+                            <ul class="task-box"></ul>
+                        </div>
+                    </div>
+
+                    <script>
+
+                    </script>
+                    <script>
+
+                        const taskInput = document.querySelector(".task-input input"),
+                            filters = document.querySelectorAll(".filters span"),
+                            clearAll = document.querySelector(".clear-btn"),
+                            taskBox = document.querySelector(".task-box");
+
+                        let editId,
+                            isEditTask = false,
+                            todos = JSON.parse(localStorage.getItem("todo-list"));
+
+                        filters.forEach(btn => {
+                            btn.addEventListener("click", () => {
+                                document.querySelector("span.active").classList.remove("active");
+                                btn.classList.add("active");
+                                showTodo(btn.id);
+                            });
+                        });
+
+                        function showTodo(filter) {
+                            let liTag = "";
+                            if (todos) {
+                                todos.forEach((todo, id) => {
+                                    let completed = todo.status == "completed" ? "checked" : "";
+                                    if (filter == todo.status || filter == "all") {
+                                        liTag += `<li class="task">
+                            <label for="${id}">
+                                <input onclick="updateStatus(this)" type="checkbox" id="${id}" ${completed}>
+                                <p class="${completed}">${todo.name}</p>
+                            </label>
+                            <div class="settings">
+                                <i onclick="showMenu(this)" class="uil uil-ellipsis-h"></i>
+                                <ul class="task-menu">
+                                    <li onclick='editTask(${id}, "${todo.name}")'><i class="uil uil-pen"></i>Edit</li>
+                                    <li onclick='deleteTask(${id}, "${filter}")'><i class="uil uil-trash"></i>Delete</li>
+                                </ul>
+                            </div>
+                        </li>`;
+                                    }
+                                });
+                            }
+                            taskBox.innerHTML = liTag || `<span>You don't have any task here</span>`;
+                            let checkTask = taskBox.querySelectorAll(".task");
+                            
+                        }
+                        showTodo("all");
+
+                        function showMenu(selectedTask) {
+                            let menuDiv = selectedTask.parentElement.lastElementChild;
+                            menuDiv.classList.add("show");
+                            document.addEventListener("click", e => {
+                                if (e.target.tagName != "I" || e.target != selectedTask) {
+                                    menuDiv.classList.remove("show");
+                                }
+                            });
+                        }
+
+                        function updateStatus(selectedTask) {
+                            let taskName = selectedTask.parentElement.lastElementChild;
+                            if (selectedTask.checked) {
+                                taskName.classList.add("checked");
+                                todos[selectedTask.id].status = "completed";
+                            } else {
+                                taskName.classList.remove("checked");
+                                todos[selectedTask.id].status = "pending";
+                            }
+                            localStorage.setItem("todo-list", JSON.stringify(todos))
+                        }
+
+                        function editTask(taskId, textName) {
+                            editId = taskId;
+                            isEditTask = true;
+                            taskInput.value = textName;
+                            taskInput.focus();
+                            taskInput.classList.add("active");
+                        }
+
+                        function deleteTask(deleteId, filter) {
+                            isEditTask = false;
+                            todos.splice(deleteId, 1);
+                            localStorage.setItem("todo-list", JSON.stringify(todos));
+                            showTodo(filter);
+                        }
+
+                         
+
+                        clearAll.addEventListener("click", e => {
+                            debugger;
+                            let userTask = document.getElementById("txtName").value; 
+                                if (!isEditTask) {
+                                    todos = !todos ? [] : todos;
+                                    let taskInfo = { name: userTask, status: "pending" };
+                                    todos.push(taskInfo);
+                                } else {
+                                    isEditTask = false;
+                                    todos[editId].name = userTask;
+                                }
+                                taskInput.value = "";
+                                localStorage.setItem("todo-list", JSON.stringify(todos));
+                                showTodo('all'); 
+                        });
+                    </script>
+                </div>
+
+
+            </div>
+        </div>
+        <script type="text/javascript" src="../menu.js"> </script>
+        <script>
+
+            debugger;
+
+        </script>
+</body>
+
+</html>

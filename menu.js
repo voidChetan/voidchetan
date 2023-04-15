@@ -110,6 +110,12 @@ var logicalMenuArray = [
         text: 'grocery-List',
         info: 'All Scenario on ngIf to Practice with examples',
         imageUrl: 'https://xdfile.com/wp-content/uploads/2020/01/movie-ticket-app-free-download-758x569.jpg'
+    },
+    {
+        url: 'https://voidchetan.github.io/voidchetan/logical/todo.html',
+        text: 'todo-App',
+        info: 'All Scenario on ngIf to Practice with examples',
+        imageUrl: 'https://xdfile.com/wp-content/uploads/2020/01/movie-ticket-app-free-download-758x569.jpg'
     }
 ];
 var javascriptMenueArray = [
