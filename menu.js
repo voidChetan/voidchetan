@@ -271,3 +271,12 @@ javascriptMenueArray.forEach(element => {
 
     $("#divCardJs").append(dynamicCard);
 }); 
+
+setTimeout(() => {
+    let ss = window.location.href;
+    debugger;
+    let lastPage = ss.split("/");
+    let last = lastPage[lastPage.length-1];
+    let title =  last.replace(".html","");
+    document.title = title;
+}, 2000);
