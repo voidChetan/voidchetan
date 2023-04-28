@@ -102,6 +102,38 @@
                     $("#divOtherCity").hide();
                 }
             })
+
+            $('input[type=radio][name=Gender]').change(function() {
+                debugger;
+                if (this.value == 'Male') {
+                $("#spanMale").show();
+                $("#spanfemale").hide();
+            } else {
+                $("#spanMale").hide();
+                $("#spanfemale").show();
+            }
+            
+        });
+        $(".catagory").click(function(){
+            debugger;
+            $("#mobDiv").hide();
+            $("#laptopDiv").hide();
+            $("#cameraDiv").hide();
+            if($(this).html().trim() =="Mobile") {
+                $("#mobDiv").show();
+            }
+            if($(this).html().trim() =="Laptop") {
+                $("#laptopDiv").show();
+            }
+            if($(this).html().trim() =="Camera") {
+                $("#cameraDiv").show();
+            }
+        })
+        $("#mobDiv").hide();
+            $("#laptopDiv").hide();
+            $("#cameraDiv").hide();
+        $("#spanMale").hide();
+                $("#spanfemale").hide();
         })
     </script>
 </head>
@@ -125,7 +157,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                         </ul>
-                    </li> 
+                    </li>
                     <li class="nav-item dropdown " id="angularUl">
                         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -143,7 +175,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                         </ul>
-                    </li> 
+                    </li>
                 </ul>
                 <form class="d-flex">
                     <a href="https://github.com/voidChetan" target="_blank" class="btn btn-outline-success">Examples</a>
@@ -161,6 +193,72 @@
             </ol>
         </nav>
         <div class="row">
+            <div class="col-12 col-md-6 col-lg-6 col-sm-6">
+                <div class=" myBox" style="position: relative;">
+                    <div class="text-center">
+                        <h3>Task 1</h3>
+                    </div>
+                    <ul>
+                        <li>Create 2 Radio Button for male & female</li>
+                      <li>If male selected Show  "You Have selected Male"</li>
+                      <li>If feMale selected Show  "You Have selected Female"</li>
+                    </ul>
+                    <div class="row">
+                        <div class="col-6">
+                            <input type="radio" name="Gender" value="Male"> Male
+               
+                            <input type="radio" name="Gender" value="Famale">Fe-Male
+                        </div>
+                        <div class="col-6">
+                            <span id="spanMale" class="text-primary"> You Have selected Male</span>
+                            <span id="spanfemale" class="text-success"> You Have selected Female</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-6 col-sm-6">
+                <div class=" myBox" style="position: relative;">
+                    <div class="text-center">
+                        <h3>Task 1</h3>
+                    </div>
+                    <ul>
+                      <li>Show Product Category in 3 Div</li>
+                      <li>On click of div - store selected category in a variable</li>
+                      <li>show selected Companies of selected category</li>
+                    </ul>
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="bg-success p-2 catagory">
+                                Mobile
+                            </div> 
+                        </div>
+                        <div class="col-4 ">
+                            <div class="bg-danger p-2 catagory">
+                                Laptop
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="bg-secondary p-2 catagory">
+                                Camera
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-12 text-center p-2" id="mobDiv">
+                            Samsumg, Sony, Motorola, Micromax
+                        </div>
+                        <div class="col-12 text-center p-2"  id="laptopDiv">
+                            Sony, Lenovo, Hp, Acer
+                        </div>
+                        <div class="col-12 text-center p-2"  id="cameraDiv">
+                            Sony, Philips
+                        </div>
+                    </div>
+
+                </div>
+            </div>
             <div class="col-12 col-md-6 col-lg-6 col-sm-6">
                 <div class="myBox" style="position: relative;">
                     <div class="text-center">
@@ -213,188 +311,190 @@
             </div>
             <div class="col-col-12 col-md-6 col-lg-6 col-sm-6">
                 <div class=" myBox" style="height: max-content;">
-                <div class="text-center">
-                    <h3>User Entry Form</h3>
+                    <div class="text-center">
+                        <h3>User Entry Form</h3>
+                    </div>
+                    <ul>
+                        <li> create full name from first name & last name</li>
+                        <li> if state other selected - show other textbox likewise city also</li>
+                        <li> on checkbox check ..show selected div as per value selected</li>
+                        <li> instead of checkbox you can use radio button as well</li>
+                    </ul>
+                    <form class="row g-3">
+                        <div class="col-md-4">
+                            <label for="validationDefault01" class="form-label">First name</label>
+                            <input type="text" class="form-control" id="txtFName" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="validationDefault02" class="form-label">Last name</label>
+                            <input type="text" class="form-control" id="txtLName" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="validationDefault02" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="txtFullName" disabled>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="validationDefault04" class="form-label">State</label>
+                            <select class="form-select" id="dpdlState" required>
+                                <option selected disabled value="">Choose...</option>
+                                <option value="Maharashtra">Maharashtra</option>
+                                <option value="Goa">Goa</option>
+                                <option value="Gujrat">Gujrat</option>
+                                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2" id="divOtherState">
+                            <label for="validationDefault02" class="form-label"> State</label>
+                            <input type="text" class="form-control" id="txtState">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="validationDefault04" class="form-label">City</label>
+                            <select class="form-select" id="dpdlCity" required>
+                                <option selected disabled value="">Choose...</option>
+                                <option value="Nagpur">Nagpur</option>
+                                <option value="Mumbai">Mumbai</option>
+                                <option value="Pune">Pune</option>
+                                <option value="Solapur">Solapur</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2" id="divOtherCity">
+                            <label for="validationDefault02" class="form-label">Other</label>
+                            <input type="text" class="form-control" id="txtCity">
+                        </div>
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                What Are You ..?
+                            </div>
+                        </div>
+                        <div class="row pt-2">
+                            <div class="col-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="chckTeacher" required>
+                                    <label class="form-check-label" for="invalidCheck2">
+                                        Teacher
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="chkSport" required>
+                                    <label class="form-check-label" for="invalidCheck2">
+                                        Sport Person
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="chkMusician" required>
+                                    <label class="form-check-label" for="invalidCheck2">
+                                        Musician
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" id="divTeacher">
+                            <div class="col-5">
+                                <label for=""> Subjects You Can Teach</label>
+                                <textarea class="form-control"></textarea>
+                            </div>
+                            <div class="col-5">
+                                <label for="">Highest Education</label>
+                                <input type="text" class="form-control" id="">
+                            </div>
+                            <div class="col-2">
+                                <label for="">Age</label>
+                                <input type="text" class="form-control" id="">
+                            </div>
+                        </div>
+                        <div class="row" id="divSport">
+                            <div class="col-6">
+                                <label for=""> Sports u r Good At</label>
+                                <textarea class="form-control"></textarea>
+                            </div>
+                            <div class="col-3">
+                                <label for=""> Height</label>
+                                <input type="text" class="form-control" id="">
+                            </div>
+                            <div class="col-3">
+                                <label for="">Weight</label>
+                                <input type="text" class="form-control" id="">
+                            </div>
+                        </div>
+                        <div class="row" id="divMusician">
+                            <div class="col-6">
+                                <label for=""> Instrument You Play</label>
+                                <textarea class="form-control"></textarea>
+                            </div>
+                            <div class="col-6">
+                                <label for=""> Any Major Achivement </label>
+                                <textarea class="form-control"></textarea>
+                            </div>
+
+                        </div>
+
+                        <div class="col-12">
+                            <button class="btn btn-primary" type="submit">Submit form</button>
+                        </div>
+                    </form>
                 </div>
-                <ul>
-                    <li> create full name from first name & last name</li>
-                    <li> if state other selected - show other textbox likewise city also</li>
-                    <li> on checkbox check ..show selected div as per value selected</li>
-                    <li> instead of checkbox you can use radio button as well</li>
-                </ul>
-                <form class="row g-3">
-                    <div class="col-md-4">
-                        <label for="validationDefault01" class="form-label">First name</label>
-                        <input type="text" class="form-control" id="txtFName" required>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="validationDefault02" class="form-label">Last name</label>
-                        <input type="text" class="form-control" id="txtLName" required>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="validationDefault02" class="form-label">Full Name</label>
-                        <input type="text" class="form-control" id="txtFullName" disabled>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="validationDefault04" class="form-label">State</label>
-                        <select class="form-select" id="dpdlState" required>
-                            <option selected disabled value="">Choose...</option>
-                            <option value="Maharashtra">Maharashtra</option>
-                            <option value="Goa">Goa</option>
-                            <option value="Gujrat">Gujrat</option>
-                            <option value="Madhya Pradesh">Madhya Pradesh</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </div>
-                    <div class="col-md-2" id="divOtherState">
-                        <label for="validationDefault02" class="form-label"> State</label>
-                        <input type="text" class="form-control" id="txtState">
-                    </div>
-                    <div class="col-md-4">
-                        <label for="validationDefault04" class="form-label">City</label>
-                        <select class="form-select" id="dpdlCity" required>
-                            <option selected disabled value="">Choose...</option>
-                            <option value="Nagpur">Nagpur</option>
-                            <option value="Mumbai">Mumbai</option>
-                            <option value="Pune">Pune</option>
-                            <option value="Solapur">Solapur</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </div>
-                    <div class="col-md-2" id="divOtherCity">
-                        <label for="validationDefault02" class="form-label">Other</label>
-                        <input type="text" class="form-control" id="txtCity">
-                    </div>
-                    <div class="row">
-                        <div class="col-12 text-center">
-                            What Are You ..?
-                        </div>
-                    </div>
-                    <div class="row pt-2">
-                        <div class="col-4">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="chckTeacher" required>
-                                <label class="form-check-label" for="invalidCheck2">
-                                    Teacher
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="chkSport" required>
-                                <label class="form-check-label" for="invalidCheck2">
-                                    Sport Person
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="chkMusician" required>
-                                <label class="form-check-label" for="invalidCheck2">
-                                    Musician
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row" id="divTeacher">
-                        <div class="col-5">
-                            <label for=""> Subjects You Can Teach</label>
-                            <textarea class="form-control"></textarea>
-                        </div>
-                        <div class="col-5">
-                            <label for="">Highest Education</label>
-                            <input type="text" class="form-control" id="">
-                        </div>
-                        <div class="col-2">
-                            <label for="">Age</label>
-                            <input type="text" class="form-control" id="">
-                        </div>
-                    </div>
-                    <div class="row" id="divSport">
-                        <div class="col-6">
-                            <label for=""> Sports u r Good At</label>
-                            <textarea class="form-control"></textarea>
-                        </div>
-                        <div class="col-3">
-                            <label for=""> Height</label>
-                            <input type="text" class="form-control" id="">
-                        </div>
-                        <div class="col-3">
-                            <label for="">Weight</label>
-                            <input type="text" class="form-control" id="">
-                        </div>
-                    </div>
-                    <div class="row" id="divMusician">
-                        <div class="col-6">
-                            <label for=""> Instrument You Play</label>
-                            <textarea class="form-control"></textarea>
-                        </div>
-                        <div class="col-6">
-                            <label for=""> Any Major Achivement </label>
-                            <textarea class="form-control"></textarea>
-                        </div>
-
-                    </div>
-
-                    <div class="col-12">
-                        <button class="btn btn-primary" type="submit">Submit form</button>
-                    </div>
-                </form>
             </div>
-        </div>
 
-    </div>
-    <div class="row">
-        <div class="col-12 col-md-6 col-lg-6 col-sm-6">
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-6 col-sm-6">
                 <div class=" myBox" style="position: relative;">
-            <div class="text-center">
-                <h3>Task 3</h3>
-            </div>
-            <ul>
-                <li> create student array with name,age,attendance,gender,isIndian fields</li>
-                <li> show data in table</li>
-                <li> if age less than 50 show Low text , if gender is M show Male else FeMale, if isIndian true show
-                    Indian else Foreigner</li>
-            </ul>
-            <div class="row">
-                <div class="col-12">
-                    <table class="table table-bordered" id="studTable">
-                        <thead>
-                            <tr>
-                                <th>Sr</th>
-                                <th>Name</th>
-                                <th>Age</th>
-                                <th>Attendance</th>
-                                <th>Is Indian</th>
-                                <th>Gender</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                    <div class="text-center">
+                        <h3>Task 3</h3>
+                    </div>
+                    <ul>
+                        <li> create student array with name,age,attendance,gender,isIndian fields</li>
+                        <li> show data in table</li>
+                        <li> if age less than 50 show Low text , if gender is M show Male else FeMale, if isIndian true
+                            show
+                            Indian else Foreigner</li>
+                    </ul>
+                    <div class="row">
+                        <div class="col-12">
+                            <table class="table table-bordered" id="studTable">
+                                <thead>
+                                    <tr>
+                                        <th>Sr</th>
+                                        <th>Name</th>
+                                        <th>Age</th>
+                                        <th>Attendance</th>
+                                        <th>Is Indian</th>
+                                        <th>Gender</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
 
-                        </tbody>
-                    </table>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-6 col-sm-6">
+                <div class=" myBox">
+                    <div class="text-center">
+                        <h3>User Entry Form</h3>
+                    </div>
+                    <ul>
+                        <li> create student array with name,age,attendance,gender,isIndian fields</li>
+                        <li> show data in table</li>
+                        <li> if age less than 50 show Low text , if gender is M show Male else FeMale, if isIndian true
+                            show Indian
+                            else Foreigner</li>
+
+                    </ul>
+
                 </div>
             </div>
 
         </div>
-    </div>
-    <div class="col-12 col-md-6 col-lg-6 col-sm-6">
-                <div class=" myBox">
-        <div class="text-center">
-            <h3>User Entry Form</h3>
-        </div>
-        <ul>
-            <li> create student array with name,age,attendance,gender,isIndian fields</li>
-            <li> show data in table</li>
-            <li> if age less than 50 show Low text , if gender is M show Male else FeMale, if isIndian true show Indian
-                else Foreigner</li>
-
-        </ul>
-
-    </div>
-    </div>
-
-    </div>
 
     </div>
     <script type="text/javascript" src="../menu.js"> </script>
@@ -405,7 +505,7 @@
             $("#studTable tbody").append(tr);
             index++;
         });
-        
+
     </script>
 
 </body>
