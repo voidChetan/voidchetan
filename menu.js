@@ -224,6 +224,42 @@ var movieArray = [
         shows: ['11.00 AM - 02.00 PM', '02.00 PM - 05.00 PM']
     }
 ]
+var cityArray = [
+    {
+        cityId: 1,
+        cityName: 'Nagpur'
+    },
+    {
+        cityId: 2,
+        cityName: 'Pune'
+    },
+    {
+        cityId: 3,
+        cityName: 'Mumbai'
+    },
+    {
+        cityId: 4,
+        cityName: 'Solapur'
+    },
+]
+var stateArray = [
+    {
+        stateId: 1,
+        stateName: 'Maharashtra'
+    },
+    {
+        stateId: 2,
+        stateName: 'Goa'
+    },
+    {
+        stateId: 3,
+        stateName: 'Punjab'
+    },
+    {
+        stateId: 4,
+        stateName: 'Delhi'
+    },
+]
 
 var index = 1;
 angularMenuArray.forEach(element => {

@@ -54,6 +54,13 @@
 
             });
 
+            $("#dpdlState2").change(function() {
+                $("#spanState").html($("#dpdlState2").val())
+            })
+            $("#dpdlCity2").change(function() {
+                $("#spanCity").html($("#dpdlCity2").val())
+            })
+
         })
     </script>
 </head>
@@ -177,7 +184,7 @@
                             <input type="text" id="myNumber" class="form-control" placeholder="Enter Number">
                         </div>
                         <div class="col-6">
-                            <button class="btn btn-sm btn-success" id="btnPrintTable">Add City</button>
+                            <button class="btn btn-sm btn-success" id="btnPrintTable">Print Table</button>
                         </div>
                     </div>
                     <div class="row">
@@ -218,7 +225,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-4 col-lg-4 col-sm-6 ">
+            <div class="col-12 col-md-8 col-lg-8 col-sm-8 ">
                 <div class="myBox">
                     <div class="text-center">
                         <h3>Task 5</h3>
@@ -242,17 +249,52 @@
                     </table>
                 </div>
                 
-            </div>
+            </div> 
+        </div>
+        <div class="row">
             <div class="col-12 col-md-4 col-lg-4 col-sm-6 ">
-
+                <div class="myBox">
+                    <div class="text-center">
+                        <h3>Task 5</h3>
+                    </div>
+                    <ul>
+                        <li>Create City And State Array Bind that to Dropdown</li>
+                        <li>City Array Fileds:  cityId, CityName & stateArray fileds stateId, StateName</li>
+                        <li>on Get Data btn click..show selected city and state id in span tag</li>
+                    </ul>
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="">Select State</label>
+                            <select name="" id="dpdlState2" class="form-control">
+                                <option value="">Select</option>
+                            </select>
+                        </div>
+                        <div class="col-6">
+                            <label for="">Select City</label>
+                            <select name="" id="dpdlCity2" class="form-control">
+                                <option value="">Select</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="">Selected State : <span id="spanState"></span> </label>
+                             
+                        </div>
+                        <div class="col-6">
+                            <label for="">Selected City :  <span id="spanCity"></span> </label>
+                            
+                        </div>
+                    </div>
+                </div>
             </div>
+             
         </div>
     </div>
     <script type="text/javascript" src="../menu.js"> </script>
     <script>
         var index = 1;
-        angularMenuArray.forEach(element => {
-            
+        angularMenuArray.forEach(element => { 
             if (index == 1) {
                 const tr = "<tr class='bg-success'><td>" + index + "</td><td>" + element.url + "</td><td>" + element.text + "</td></tr>";
                 $("#tbl-data tbody").append(tr);
@@ -264,12 +306,21 @@
                     const tr = "<tr ><td>" + index + "</td><td>" + element.url + "</td><td>" + element.text + "</td></tr>";
                     $("#tbl-data tbody").append(tr);
                 }
-            }
-
-
-            index++;
-
+            } 
+            index++; 
         });
+        cityArray.forEach(element => {
+                debugger
+                const tr = "<option value='" + element.cityId + "'>" + element.cityName + " </option>";
+                $("#dpdlCity2").append(tr);
+
+            });
+            stateArray.forEach(element => {
+                debugger
+                const tr = "<option value='" + element.stateId + "'>" + element.stateName + " </option>";
+                $("#dpdlState2").append(tr);
+
+            });
         
     </script>
 </body>
