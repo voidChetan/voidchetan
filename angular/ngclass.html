@@ -54,6 +54,13 @@
                 } 
                 isToggle =! isToggle;
             }); 
+            $("#tbl-data2 tr").click(function() {
+                debugger;
+                $('#tbl-data2 > tbody  > tr').each(function(index, tr) {
+                    tr.classList.remove("bg-secondary")
+                });
+                $(this).addClass("bg-secondary")
+            })
             
         })
     </script>
@@ -251,7 +258,36 @@
                    
                 </div>
             </div>
-            
+            <div class="col-12 col-md-6 col-lg-6 col-sm-6 ">
+                <div class="myBox">
+                    <div class="text-center">
+                        <h3>Task 5</h3>
+                    </div>
+                    <ul>
+                        <li>Create array of students with fields studId, name, isActive, gender,state</li>
+                        <li> using ngfor show array into table</li>
+                        <li>At a time Only One Row Shoube be selected-</li>
+                        <li>On click of TR we have to add "bg-secondary" class to that tr- See Ex below </li>
+                    </ul>
+                    <div class="row">
+                         <div class="col-12">
+                            <table class="table table-bordered" id="tbl-data2">
+                                <thead>
+                                    <tr>
+                                        <th>Sr No</th>
+                                        <th>Name</th>
+                                        <th>Gender</th>
+                                        <th>State</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                         </div>
+                    </div>
+                   
+                </div>
+            </div>
         </div>
 
     </div>
@@ -283,8 +319,13 @@
                     $("#tbl-data tbody").append(tr);
                 } 
             } 
+            const tr = "<tr class=''><td>" + element.studId + "</td><td>" +
+                         element.name + "</td><td class=''>" + element.gender + "</td><td>" + element.state + "</td></tr>";
+                    $("#tbl-data2").append(tr);
             index++; 
         });
+
+        
         
     </script>
 </body>
