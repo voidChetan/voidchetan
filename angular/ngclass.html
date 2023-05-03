@@ -42,6 +42,19 @@
                 $("#mainDiv").addClass('col-12'); 
                 $("#sideDiv").hide(); 
             }); 
+            var isToggle= true;
+            $("#toggleDiv").click(function () {
+                debugger;
+                $("#div2").removeClass('bg-success');
+                $("#div2").removeClass('bg-danger');
+                if(isToggle) {
+                    $("#div2").addClass('bg-success');
+                } else {
+                    $("#div2").addClass('bg-danger');
+                } 
+                isToggle =! isToggle;
+            }); 
+            
         })
     </script>
 </head>
@@ -101,10 +114,39 @@
             </ol>
         </nav>
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 ">
+            <div class="col-3 col-md-3 col-lg-3 col-sm-3 ">
                 <div class="myBox">
                     <div class="text-center">
                         <h3>Task 1</h3>
+                    </div>
+                    <ul>
+                       <li>create a varible and store class into it </li>
+                       <li>on page load add that class to a div tag</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-5 col-md-5 col-lg-5 col-sm-5 ">
+                <div class="myBox">
+                    <div class="text-center">
+                        <h3>Task 2</h3>
+                    </div>
+                    <ul>
+                       <li>create a varible and store class into it </li>
+                       <li>create 1 button with name toggle class </li>
+                       <li>on click of button add "bg-success" class to div and again if we click add "bg-danger" class</li>
+                    </ul>
+                    <div class="p-2" id="div2">
+                        MY Div Area
+                    </div>
+                    <button class="btn btn-success btn-sm" id="toggleDiv">Toggle Class</button>
+                </div>
+            </div> 
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-6 col-sm-6 ">
+                <div class="myBox">
+                    <div class="text-center">
+                        <h3>Task 3</h3>
                     </div>
                     <ul>
                         <li> on success btn click add bg-success class & on danger add bg-danger</li>
@@ -133,7 +175,7 @@
             <div class="col-12 col-md-6 col-lg-6 col-sm-6">
                 <div class="myBox">
                     <div class="text-center">
-                        <h3>Task 2</h3>
+                        <h3>Task 4</h3>
                     </div>
                     <ul>
                         <li> on add btn add col-7 class to first div & show 2nd div</li>
@@ -178,6 +220,39 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-6 col-sm-6 ">
+                <div class="myBox">
+                    <div class="text-center">
+                        <h3>Task 5</h3>
+                    </div>
+                    <ul>
+                        <li>Create array of students with fields studId, name, isActive, gender,state</li>
+                        <li> using ngfor show array into table</li>
+                        <li>in table using ngclass add "bg-success" class to Tr if isActive is true else add "bg-secondary" class</li> 
+                        <li>in table using ngclass add "bg-white" class to gender td if gender is "Male" else "bg-danger" class</li> 
+                    </ul>
+                    <div class="row">
+                         <div class="col-12">
+                            <table class="table table-bordered" id="tbl-data">
+                                <thead>
+                                    <tr>
+                                        <th>Sr No</th>
+                                        <th>Name</th>
+                                        <th>Gender</th>
+                                        <th>State</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                         </div>
+                    </div>
+                   
+                </div>
+            </div>
+            
+        </div>
 
     </div>
     <script type="text/javascript" src="../menu.js"> </script>
@@ -185,6 +260,30 @@
         languageArray.forEach(element => {
             const link = "<button class='btn btn-secondary mx-2 mb-1 btnLang' >"+element+" </button>";
             $("#divLanguages").append(link);
+        });
+        studentList.forEach(element => { 
+            if (element.isActive) {
+                if (element.gender == "Male") {
+                    const tr = "<tr class='bg-success'><td>" + element.studId + "</td><td>" +
+                         element.name + "</td><td class='bg-white'>" + element.gender + "</td><td>" + element.state + "</td></tr>";
+                    $("#tbl-data tbody").append(tr);
+                } else {
+                    const tr = "<tr class='bg-success'><td>" + element.studId + "</td><td>" +
+                         element.name + "</td><td  class='bg-danger'>" + element.gender + "</td><td>" + element.state + "</td></tr>";
+                    $("#tbl-data tbody").append(tr);
+                } 
+            } else {
+                if (element.gender == "Male") {
+                    const tr = "<tr class='bg-secondary'><td>" + element.studId + "</td><td>" +
+                         element.name + "</td><td class='bg-white'>" + element.gender + "</td><td>" + element.state + "</td></tr>";
+                    $("#tbl-data tbody").append(tr);
+                } else {
+                    const tr = "<tr class='bg-secondary'><td>" + element.studId + "</td><td>" +
+                         element.name + "</td><td  class='bg-danger'>" + element.gender + "</td><td>" + element.state + "</td></tr>";
+                    $("#tbl-data tbody").append(tr);
+                } 
+            } 
+            index++; 
         });
         
     </script>

@@ -198,6 +198,48 @@ var languageArray = [
     "CSS", "Java-Script", "JQuery", "Angular", "React", "Dot Net", "Java"
 ]
 
+var studentList = [
+    {
+        studId: 1,
+        name: 'Chetan',
+        isActive: true,
+        gender: 'Male',
+        state :'MH'
+
+    },
+    {
+        studId: 2,
+        name: 'Punesh',
+        isActive: false,
+        gender: 'Male',
+        state :'MP'
+
+    },
+    {
+        studId: 3,
+        name: 'Sahiti',
+        isActive: true,
+        gender: 'Female',
+        state :'CG'
+
+    },
+    {
+        studId: 4,
+        name: 'Johar',
+        isActive: true,
+        gender: 'Male',
+        state :'DL'
+
+    },
+    {
+        studId: 5,
+        name: 'Aditi',
+        isActive: false,
+        gender: 'Female',
+        state :'PB'
+
+    }
+]
 var movieArray = [
     {
         movieName: 'Rocketry: The Nambi Effect',
