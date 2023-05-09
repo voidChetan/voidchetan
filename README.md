@@ -1,5 +1,5 @@
 ### Hi there 👋
-###Follow & Connect me on LinkedIn
+Follow & Connect me on LinkedIn
 https://www.linkedin.com/in/chetan-jogi-a87148ba
 Youtube Channel Link
 https://www.youtube.com/@LearningPartnerDigital
