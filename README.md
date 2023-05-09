@@ -1,9 +1,9 @@
 ### Hi there 👋
+### Here you will find Projects and Code of all Videos I will be posting on youTube.
 ### Follow & Connect me on LinkedIn
 https://www.linkedin.com/in/chetan-jogi-a87148ba
 ### Youtube Channel Link
 https://www.youtube.com/@LearningPartnerDigital
-### Here you will find Projects and Code of all Videos I will be posting on youTube.
 ### Visit Our Mini Project Ideas Portal where you can find So many project ideas you can try to implement
 https://miniprojectideas.com
 <!--
