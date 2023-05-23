@@ -169,13 +169,19 @@ var javascriptMenueArray = [
     }, 
     {
         url: 'https://voidchetan.github.io/voidchetan/javascript/array.html',
-        text: 'Object',
+        text: 'Array',
         info: 'how to Create Array n array operations',
         imageUrl: 'https://i.pinimg.com/originals/65/70/92/657092222f678a4e905a03715f1726d8.png'
     }, 
     {
+        url: 'https://voidchetan.github.io/voidchetan/javascript/foorLoop.html',
+        text: 'For-Loop',
+        info: 'how to Create Array n array operations',
+        imageUrl: 'https://i.pinimg.com/originals/65/70/92/657092222f678a4e905a03715f1726d8.png'
+    },
+    {
         url: 'https://voidchetan.github.io/voidchetan/javascript/storage.html',
-        text: 'Object',
+        text: 'Storage',
         info: 'how to Create Array n array operations',
         imageUrl: 'https://i.pinimg.com/originals/65/70/92/657092222f678a4e905a03715f1726d8.png'
     }
