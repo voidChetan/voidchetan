@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="../custom.css">
+    <style>
+        .myBoxs {
+            border: 1px solid teal;
+            padding: 10px;
+            max-height: 500px;
+            height: max-content;
+        }
+    </style>
+    <script>
+        var employeeObj = {
+            name: '',
+            contactNo: '',
+            deptName: '',
+            teamLeadName: '',
+            technology: ''
+        };
+
+        $(document).ready(function () {
+            $("#btnClear").click(function () {
+                debugger
+                employeeObj = {
+                    name: '',
+                    contactNo: '',
+                    deptName: '',
+                    teamLeadName: '',
+                    technology: ''
+                };
+                $("#txtName").val();
+                $("#txtContact").val();
+                $("#dpdlDept").val();
+                $("#txtLeadName").val();
+                $("#dpdlTechnology").val();
+                clearEmpForm();
+            });
+
+            $("#btnSave").click(function () {
+                debugger
+                employeeObj = {
+                    name: $("#txtName").val(),
+                    contactNo: $("#txtContact").val(),
+                    deptName: $("#dpdlDept").val(),
+                    teamLeadName: $("#txtLeadName").val(),
+                    technology: $("#dpdlTechnology").val()
+                };
+
+            });
+            $("#btnPrint").click(function () {
+                debugger
+                clearEmpForm();
+            });
+            $("#btnAddCity").click(function () {
+                debugger;
+                if ($("#myCity").val() != '' && $("#dpdlCity option[value='" + $("#myCity").val() + "']").length == 0) {
+                    const opt = "<option value='" + $("#myCity").val() + "'> " + $("#myCity").val() + "</option>"
+                    $("#dpdlCity").append(opt);
+                    $("#myCity").val("");
+                    $("#totCity").html($("#dpdlCity").children().length - 1);
+                } else {
+                    if ($("#myCity").val() != '') {
+                        alert($("#myCity").val() + " Already Added In Dropdown")
+                    }
+                }
+            });
+        })
+        function clearEmpForm() {
+            $("#strName").html(employeeObj.name);
+            $("#strContact").html(employeeObj.contactNo);
+            $("#strDept").html(employeeObj.deptName);
+            $("#strLeadName").html(employeeObj.teamLeadName);
+            $("#strTechnology").html(employeeObj.technology);
+        }
+        var ticket = {
+            TicketNo:'0123',
+            CreatedBy: 'Chetan',
+            CreatedDate: '02-05-2023',
+            AssigntoEmployeeName: '',
+            TicketDescription: 'I Need New Laptop as old not working' 
+        }
+        function assignEmp() {
+            ticket.AssigntoEmployeeName = $("#dpdlEmp").val();
+            console.log(ticket);
+        }
+
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">taskS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown" id="javascriptUl">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            JavaScript
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown " id="angularUl">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Angular
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown" id="logicalUl">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Logical
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <a href="https://github.com/voidChetan" target="_blank" class="btn btn-outline-success">Examples</a>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container pt-2">
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+            aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">JavaScript</li>
+                <li class="breadcrumb-item active" aria-current="page">For-Loop</li>
+            </ol>
+        </nav>
+        <div class="row"> 
+
+            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
+                <div class="myBox" style="position: relative;">
+                    <div class="text-center">
+                        <h3>Task 1</h3>
+                    </div>
+                    <ul>
+                        <li>Write a logic to get Sum Of 10 numbers from 1-10</li>
+                        <li>Print SUM in strong tag </li>
+                        <li>(use for loop to complete this task)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
+                <div class="myBox" style="position: relative;">
+                    <div class="text-center">
+                        <h3>Task 2</h3>
+                    </div>
+                    <ul>
+                        <li>Create an Array of some numbers</li>
+                        <li>using for loop print even no only in console from array</li>
+                    </ul>
+                    
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
+                <div class="myBox" style="position: relative;">
+                    <div class="text-center">
+                        <h3>Task 3</h3>
+                    </div>
+                    <ul>
+                        <li>Create 2 array of integers </li>
+                        <li>Get sum of both numbers from araray and print it in storng tag </li>
+                        
+                    </ul> 
+                    <div class="row">
+                        <div class="col-12">
+                            <pre>
+
+                           
+let arr_1 = [3, 5, 22, 5,  7,  2,  45, 75, 89, 21, 2]; // --> 276
+let arr_2 = [9, 2, 42, 55, 71, 22, 4,  5,  90, 25, 26]; // --> 351
+// Example output: 
+// 276 + 351 = 627
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
+                <div class="myBox" style="position: relative;">
+                    <div class="text-center">
+                        <h3>Task 4</h3>
+                    </div>
+                    <ul>
+                        <li>Create an array of City Name and a droddown</li>
+                        <li>Now  Using for Loop add dynamic options to a dropdwon in reverse order </li>
+                        
+                    </ul>  
+                    <div class="row">
+                        <div class="col-12">
+                            <pre>
+var cityList = ["Pune", "Nagpur", "Thane", "Mumbai"];
+                            </pre>
+                        </div>
+                        <div class="col-3">
+                            <select name="" id="">
+                                <option value="">Mumbai</option>
+                                <option value="">Thane</option>
+                                <option value="">Nagpur</option>
+                                <option value="">Pune</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
+                <div class="myBox" style="position: relative;">
+                    <div class="text-center">
+                        <h3>Task 5</h3>
+                    </div>
+                    <ul>
+                        <li>Print the ODD numbers from 7 to 31</li>
+                        <li>Print no in UL LI tag </li>
+                      
+                    </ul>   
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
+                <div class="myBox" style="position: relative;">
+                    <div class="text-center">
+                        <h3>Task 6</h3>
+                    </div>
+                    <ul>
+                        <li> Iterate through all numbers from 1 to 45. Print the following </li>
+                        <li> For multiples of 3 print “Fizz” </li>
+                        <li> For multiples of 5 print “Buzz” </li>
+                        <li>For multiples of 3 and 5 print “FizzBuzz”</li>
+                    </ul>   
+                </div>
+            </div>
+            
+
+        </div>
+    </div>
+    <script type="text/javascript" src="../menu.js"> </script>
+    <script>
+
+    </script>
+</body>
+
+</html>
