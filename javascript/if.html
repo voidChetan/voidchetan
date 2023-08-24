@@ -191,7 +191,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6">
+            <div class="col-12 col-md-6 col-lg-6 col-sm-6 ">
                 <div class="myBox"  >
                     <div class="text-center">
                         <h3>Task 2</h3>
@@ -236,7 +236,7 @@
                      
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6">
+            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
                 <div class="myBox" style="position: relative;">
                     <div class="text-center">
                         <h3>Task 3</h3>
@@ -278,51 +278,170 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 ">
+            
+            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
                 <div class="myBoxs">
                     <div class="text-center">
                         <h4>Task - 4</h4>
                     </div>
                     <ul>
-                        <li>create 2 textboxs to Enter numbers and 1 textbox to display result</li>
-                        <li>create 4 buttons with different with all Arthimatic Operators</li>
-                        <li>create only 1 function to perform all add, sub , multply, divide </li>
-                        <li>On All button call same function but you need to send parameter like add, sub, mul or divide </li>
-                        <li>then in function you need to write multple if statement to perform operation as per paramater</li>
+                        <li>Create 3 textbox to provide integer values</li>
+                        <li>cerate a button - check max number</li>
+                        <li>on click of button - find max numbers and print it in p tag </li> 
                     </ul>
-                    <div class="text-center">
-                        <h4>Calculator</h4>
-                    </div>
+                   
                     <div class="row">
-                        <div class="col-6">
-                            <input type="text" id="txtNum1" class="form-control" placeholder="Num 1">
+                        <div class="col-4">
+                            <input type="text" id="txtTask5Num1" class="form-control" placeholder="Num 1">
                         </div>
-                        <div class="col-6">
-                            <input type="text" id="txtNum2" class="form-control" placeholder="Num 1">
+                        <div class="col-4">
+                            <input type="text" id="txtTask5Num2" class="form-control" placeholder="Num 2">
+                        </div>
+                        <div class="col-4">
+                            <input type="text" id="txtTask5Num3" class="form-control" placeholder="Num 3">
                         </div>
                     </div>
                     <div class="row text-center">
                         <div class="col-3">
-                            <button class="btn btn-sm btn-success" onclick="onOperation('add')"> + </button>
+                            <button class="btn btn-sm btn-success" id="btnMax"  > Check Max Number </button>
                         </div>
                         <div class="col-3">
-                            <button class="btn btn-sm btn-success" onclick="onOperation('sub')"> -</button>
-                        </div>
-                        <div class="col-3">
-                            <button class="btn btn-sm btn-success" onclick="onOperation('mul')">*</button>
-                        </div>
-                        <div class="col-3">
-                            <button class="btn btn-sm btn-success" onclick="onOperation('div')">/</button>
-                        </div>
+                           <p id="maxNo"></p>
+                        </div> 
                     </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <input type="text" id="txtResult" disabled class="form-control" placeholder="Result">
-                        </div>
-                    </div>
+                    <script>
+                        $(document).ready(function () {
+                            $("#btnMax").click(function() {
+                                debugger;
+                                var num1 = Number($("#txtTask5Num1").val());
+                                var num2 = Number($("#txtTask5Num2").val());
+                                var num3 = Number($("#txtTask5Num3").val());
+                               var max =  findMaxOfThree(num1, num2,num3 );
+                               $("#maxNo").html('Max No is -'+max);
+                            })
+                        });
+                        function findMaxOfThree(a, b, c) {
+                            let max = a; 
+                            if (b > max) {
+                                max = b;
+                            } 
+                            if (c > max) {
+                                max = c;
+                            } 
+                            return max;
+                        } 
+                    </script>
+                     
                 </div>
             </div>
-           
+
+            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
+                <div class="myBoxs">
+                    <div class="text-center">
+                        <h4>Task - 5</h4>
+                    </div>
+                    <ul>
+                        <li>Create 1 textbox to Enter Aadhar Card No</li>
+                        <li>cerate a button - Verify</li>
+                        <li>on click of Verify - check if aadhar card no is valid or Not </li> 
+                        <li>if no value provide Show warning as Provide Input </li> 
+                        <li>If Valid Show Label as Aadhar Verified else show warning as Please Provide Correct aadhar No </li> 
+                    </ul>
+                   
+                    <div class="row">
+                        <div class="col-4">
+                            <input type="text" id="txtaadahr" class="form-control" placeholder="Enter aadhar">
+                        </div> 
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-3">
+                            <button class="btn btn-sm btn-success" id="btnVerify"  >Verify </button>
+                        </div>
+                        <div class="col-6">
+                           <p id="verified" class="text-success">Aadhar Verified</p>
+                           <p id="wrongAadhar" class="text-danger">Please Provide Correct aadhar No</p>
+                           <p id="empty" class="text-danger">Please Provide Input</p>
+                        </div> 
+
+                    </div>
+                    <script>
+                        $(document).ready(function () {
+                            $("#verified").hide();
+                            $("#wrongAadhar").hide();
+                            $("#empty").hide();
+                            $("#btnVerify").click(function() {
+                                debugger;
+                                if($("#txtaadahr").val() == '') {
+                                    $("#empty").show();
+                                }  else {
+                                    $("#empty").hide();
+                                    if(/^\d+$/.test($("#txtaadahr").val()) && $("#txtaadahr").val().length == 12 )  {
+                                    $("#verified").show();
+                                    $("#wrongAadhar").hide();
+                                } else {
+                                    $("#verified").hide();
+                                 $("#wrongAadhar").show();
+                                }
+                                }
+                                
+                            })
+                        });
+                       
+                    </script>
+                     
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
+                <div class="myBoxs">
+                    <div class="text-center">
+                        <h4>Task - 6 </h4>
+                    </div>
+                    <ul>
+                        <li>Create 1 textbox to Enter Aadhar Card No</li>
+                        <li>cerate a button - Verify</li>
+                        <li>on click of Verify - check if aadhar card no is valid or Not </li> 
+                        <li>if no value provide Show warning as Provide Input </li> 
+                        <li>If Valid Show Label as Aadhar Verified else show warning as Please Provide Correct aadhar No </li> 
+                    </ul>
+                   
+                    <div class="row">
+                        <div class="col-4">
+                            <input type="text" id="txtaadahr" class="form-control" placeholder="Enter aadhar">
+                        </div> 
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-3">
+                            <button class="btn btn-sm btn-success" id="btnVerify"  >Verify </button>
+                        </div>
+                        <div class="col-6">
+                           <p id="verified" class="text-success">Aadhar Verified</p>
+                           <p id="wrongAadhar" class="text-danger">Please Provide Correct aadhar No</p>
+                           <p id="empty" class="text-danger">Please Provide Input</p>
+                        </div> 
+
+                    </div>
+                    <script>
+                        $(document).ready(function () {
+                            $("#verified").hide();
+                            $("#wrongAadhar").hide();
+                            $("#empty").hide();
+                            $("#btnVerify").click(function() {
+                                debugger;
+                                if($("#txtaadahr").val() == '') {
+                                    $("#empty").show();
+                                }  else {
+                                    
+                                 
+                                }
+                                
+                            })
+                        });
+                        
+                    </script>
+                     
+                </div>
+            </div>
         </div>
     </div>
     <script type="text/javascript" src="../menu.js"> </script>
