@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="../custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Studetn Registration</title>
+    <script type="text/javascript" src="../menu.js"> </script>
+ 
+    <script>
+        $(document).ready(function () {
+            $("#divMobile").hide();
+            $("#divFiber").hide();
+            $("#divBusiness").hide();
+
+            
+            
+
+
+
+        })
+    </script>
+    <style>
+        .card {
+            cursor: pointer !important;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">taskS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown" id="javascriptUl">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            JavaScript
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        </ul>
+                    </li> 
+                    <li class="nav-item dropdown " id="angularUl">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Angular
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown" id="logicalUl">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Logical
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        </ul>
+                    </li> 
+                </ul>
+                <form class="d-flex">
+                    <a href="https://github.com/voidChetan" target="_blank" class="btn btn-outline-success">Examples</a>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container pt-1">
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+            aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Logical</li>
+                <li class="breadcrumb-item active" aria-current="page">Student Registration</li>
+            </ol>
+        </nav>
+        <div class="row">
+            <div class="col-12">
+                <div class="myBox">
+                    <div class="text-center">
+                        <h3>Student Registration Form</h3>
+                    </div>
+                    <ul>
+                        <li>We need to design a form Where Student Can Register (Refer Belwo UI)</li>
+                        <li>Create Full name using fname,mname,lname</li>
+                        <li>if caste other is selecetd then only show Other caste textbox</li>
+                        <li>calculate avarage % of 10th, 12th & graduation and show in avarage textbox</li>
+                        <li>create Registration no by using firstname +  last 4 digit of mobile no mean <br>if name is 
+                            chetan & mobile no is 8698707388 so registration no will be <strong>chetan7388</strong> </li>
+                    </ul> 
+                    <div class="row text-center">
+                        <div class="col-3">
+                            <label for="">First Name</label>
+                            <input type="text" class="form-control" id="txtFname">
+                        </div>
+                        <div class="col-3">
+                            <label for="">Middle Name</label>
+                            <input type="text" class="form-control" id="txtFname">
+                        </div>
+                        <div class="col-3">
+                            <label for="">Last Name</label>
+                            <input type="text" class="form-control" id="txtFname">
+                        </div> 
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="">Full Name</label>
+                            <input type="text" disabled class="form-control" id="txtFullname">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="">Select Caste</label>
+                            <select name="" id="" class="form-control">
+                                <option value="">Select Caste</option>
+                                <option value="obc">OBC</option>
+                                <option value="open">OPEN</option>
+                                <option value="sc-nt">SC-NT</option>
+                                <option value="other">OTHER</option>
+                            </select>
+                        </div>
+                        <div class="col-3">
+                            <label for="">Enter Other Caste</label>
+                            <input type="text"  class="form-control" id="txtOtherCaste">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="">Enter 10th %</label>
+                            <input type="text"  class="form-control" id="txt!0th">
+                        </div>
+                        <div class="col-3">
+                            <label for="">Enter 12th %</label>
+                            <input type="text"  class="form-control" id="txt12th">
+                        </div>
+                        <div class="col-3">
+                            <label for="">Enter Graduation %</label>
+                            <input type="text"  class="form-control" id="txtGraduation">
+                        </div>
+                        <div class="col-3">
+                            <label for="">Avarage</label>
+                            <input type="text" disabled class="form-control" id="txtAvarage">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="">Mobile</label>
+                            <input type="text"  class="form-control" id="txtMobile">
+                        </div>
+                        <div class="col-3">
+                            <label for="">Registration No</label>
+                            <input type="text" disabled class="form-control" id="txtRegistartionNo">
+                        </div>
+                    </div>
+                  
+                    
+
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+    <script type="text/javascript" src="../menu.js"> </script>
+    <script>
+
+        debugger;
+        movieArray.forEach(element => {
+            let movie = "<div class='col-md-3' data-name='" + element.movieName + "'> <div class='card' data-name='" + element.movieName + "'> <div class='card-header' data-name='" + element.movieName + "'> " + element.movieName + " </div> <div class='card-body'> " + element.description + " </div> <div class='card-footer'> " + element.ticketRate + " </div> </div> </div>";
+            $("#divMovies").append(movie);
+        });
+        
+    </script>
+</body>
+
+</html>
