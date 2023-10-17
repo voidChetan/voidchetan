@@ -4,7 +4,7 @@
 https://www.linkedin.com/in/chetan-jogi-a87148ba
 ### Youtube Channel Link
 https://www.youtube.com/@LearningPartnerDigital
-### Visit Our Mini Project Ideas Portal where you can find So many project ideas you can try to implement
+### Visit My Mini Project Ideas Portal where you can find So many project ideas you can try to implement
 https://miniprojectideas.com
 <!--
 **voidChetan/voidchetan** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
