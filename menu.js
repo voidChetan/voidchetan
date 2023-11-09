@@ -71,7 +71,13 @@ var studentArray = [
 var logicalMenuArray = [
     {
         url: 'https://voidchetan.github.io/voidchetan/logical/LogicDevelopment.html',
-        text: 'Logic Development',
+        text: 'Logic Development Scenario - 1',
+        info: 'All Scenario on ngIf to Practice with examples',
+        imageUrl: 'https://i.pinimg.com/originals/65/70/92/657092222f678a4e905a03715f1726d8.png'
+    },
+    {
+        url: 'https://voidchetan.github.io/voidchetan/logical/LogicDevelopment2.html',
+        text: 'Logic Development Scenario - 1',
         info: 'All Scenario on ngIf to Practice with examples',
         imageUrl: 'https://i.pinimg.com/originals/65/70/92/657092222f678a4e905a03715f1726d8.png'
     },
@@ -128,6 +134,20 @@ var logicalMenuArray = [
         text: 'Student-Registration',
         info: 'All Scenario on ngIf to Practice with examples',
         imageUrl: 'https://xdfile.com/wp-content/uploads/2020/01/movie-ticket-app-free-download-758x569.jpg'
+    }
+];
+var logicalDevelopmentMenuArray = [
+    {
+        url: 'https://voidchetan.github.io/voidchetan/logical/LogicDevelopment.html',
+        text: 'Logic Development Scenario - 1',
+        info: 'All Scenario on ngIf to Practice with examples',
+        imageUrl: 'https://i.pinimg.com/originals/65/70/92/657092222f678a4e905a03715f1726d8.png'
+    },
+    {
+        url: 'https://voidchetan.github.io/voidchetan/logical/LogicDevelopment2.html',
+        text: 'Logic Development Scenario - 1',
+        info: 'All Scenario on ngIf to Practice with examples',
+        imageUrl: 'https://i.pinimg.com/originals/65/70/92/657092222f678a4e905a03715f1726d8.png'
     }
 ];
 var javascriptMenueArray = [
@@ -320,6 +340,25 @@ var stateArray = [
         stateName: 'Delhi'
     },
 ]
+debugger;
+var logde = " <li class='nav-item dropdown logicalUl' id='logicalUl'>";
+logde = logde + "<a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button'";
+logde = logde + "data-bs-toggle='dropdown' aria-expanded='false'>";
+logde = logde + "Logical Development";
+logde = logde + "</a>";
+logde = logde + "<ul class='dropdown-menu' aria-labelledby='navbarDropdown'>";
+logicalDevelopmentMenuArray.forEach(element => {
+    debugger;
+    logde = logde + "<li><a class='dropdown-item' href='" + element.url + "'>" + element.text + "</a></li>";
+    
+});
+logde = logde + "</ul>";
+logde = logde + "</li>";
+setTimeout(() => {
+    $("#navbarSupportedContent ul").append(logde);
+   
+}, 2000);
+
 
 var index = 1;
 angularMenuArray.forEach(element => {
@@ -367,6 +406,8 @@ javascriptMenueArray.forEach(element => {
 
     $("#divCardJs").append(dynamicCard);
 }); 
+
+
 
 setTimeout(() => {
     let ss = window.location.href;

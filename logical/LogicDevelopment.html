@@ -13,8 +13,7 @@
     <link rel="stylesheet" href="../custom.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Scenario - 1</title>
-    <script type="text/javascript" src="../menu.js"> </script>
-    <script src="../menu.js"></script>
+    <script type="text/javascript" src="../menu.js"> </script> 
     <script>
         $(document).ready(function () {
             $("#divMobile").hide();
@@ -41,18 +40,46 @@
                 $("#divMobile").show();
                 $("#divFiber").hide();
                 $("#divBusiness").hide();
+                $(this).addClass('btn-success');
+                $(this).removeClass('btn-primary');
+
+                $("#btnFiber").removeClass('btn-success')
+                $("#btnBusiness").removeClass('btn-success')
+
+                $("#btnFiber").addClass('btn-primary')
+                $("#btnBusiness").addClass('btn-primary')
+                
             });
             $("#btnFiber").click(function () {
                 $("#divMobile").hide();
                 $("#divFiber").show();
                 $("#divBusiness").hide();
+
+                $(this).addClass('btn-success');
+                $(this).removeClass('btn-primary');
+
+                $("#btnMobile").removeClass('btn-success')
+                $("#btnBusiness").removeClass('btn-success')
+
+                $("#btnMobile").addClass('btn-primary')
+                $("#btnBusiness").addClass('btn-primary')
             });
             $("#btnBusiness").click(function () {
                 $("#divMobile").hide();
                 $("#divFiber").hide();
                 $("#divBusiness").show();
+
+                $(this).addClass('btn-success');
+                $(this).removeClass('btn-primary');
+
+                $("#btnMobile").removeClass('btn-success')
+                $("#btnFiber").removeClass('btn-success')
+
+                $("#btnMobile").addClass('btn-primary')
+                $("#btnFiber").addClass('btn-primary')
             });
 
+            document.getElementById('myDiv').ht(" <div> <i style='font-size: 150px;' class='fa fa-mobile' ></i><br>   Mobile </div>")
         })
     </script>
 </head>
@@ -95,6 +122,7 @@
 
                         </ul>
                     </li>
+                   
                 </ul>
                 <form class="d-flex">
                     <a href="https://github.com/voidChetan" target="_blank" class="btn btn-outline-success">Examples</a>
@@ -111,77 +139,21 @@
                 <li class="breadcrumb-item active" aria-current="page">ng-For Task</li>
             </ol>
         </nav>
-        <div class="row">
-            <div class="col-6">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center pb-5">
-                        <h3>Plan Selection</h3>
-                    </div>
-                    <ul>
-                        <li> On Click of Continue We Need to Show Selected Plan</li>
-                        <li> If No Plan Selected We need to show Error</li>
-                        <li> on Reset - deSelect selected Radio Button and  Hide Plan Div</li> 
-                    </ul>
-                    <div class="h6">Select Plan</div>
-                    <div class="row text-center">
-                        <div class="col-md-3">
-                            <label>Broadband</label> <br />
-                            <input type="radio" name="radioCheck" id="radio1" value="Broadband">
-                        </div>
-                        <div class="col-md-3">
-                            <label>Broadband n Tv</label><br />
-                            <input type="radio" name="radioCheck" id="radio2" value="Broadband n Tv">
-                        </div>
-                        <div class="col-md-3">
-                            <label>Fibre Optics </label><br />
-                            <input type="radio" name="radioCheck" id="radio3" value="Fibre Optics">
-                        </div>
-                        <div class="col-md-3">
-                            <label>Mobile Plan </label><br />
-                            <input type="radio" name="radioCheck" id="radio4" value="Mobile Plan">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-6 text-end">
-                            <button class="btn btn-success btn-sm" id="btnContinue"> Continue</button>
-                        </div>
-                        <div class="col-6 ">
-                            <button class="btn btn-danger btn-sm" id="btnReset"> Reset</button>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 text-center">
-                            <p>Selected Plan is : <strong id="selectedPlan"></strong> </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="row"> 
             <div class="col-6">
                 <div class="myBox">
-                    <div class="text-center pb-5">
-                        <h3>Package Description</h3>
+                    <div class="text-center pb-3">
+                        <h3>Select Plan To Continue</h3>
                     </div>
-                    <div class="row text-center pb-5">
-                        <div class="col-4">
-                            <div>
-                                <i style="font-size: 150px;" class="fa fa-mobile" aria-hidden="true"></i><br>
-                                Mobile
-                            </div>
-                            <button class="btn btn-primary mt-4" id="btnMobile">Find More</button>
+                    <div class="row text-center pb-5" id="myDiv">
+                        <div class="col-4"> 
+                            <button class="btn btn-primary mt-4" id="btnMobile">Mobile Plan</button>
                         </div>
-                        <div class="col-4">
-                            <div>
-                                <i style="font-size: 150px;" class="fa fa-home" aria-hidden="true"></i><br>
-                                JioFiber
-                            </div>
-                            <button class="btn btn-primary mt-4" id="btnFiber">Find More</button>
+                        <div class="col-4">  
+                            <button class="btn btn-primary mt-4" id="btnFiber">JioFiber Plan</button>
                         </div>
-                        <div class="col-4">
-                            <div>
-                                <i style="font-size: 150px;" class="fa fa-id-badge" aria-hidden="true"></i><br>
-                                Business
-                            </div>
-                            <button class="btn btn-primary mt-4" id="btnBusiness">Find More</button>
+                        <div class="col-4"> 
+                            <button class="btn btn-primary mt-4" id="btnBusiness">Business Plan</button>
                         </div>
                     </div>
                     <div class="row pt-1">
@@ -202,11 +174,21 @@
                     </div>
                 </div>
             </div>
-
+            <div class="col-6">
+                <div class="myBox">
+                    <div class="text-muted pb-3">on Click of Plan Button show of Selected Plan Details at bottom and
+                         make that clicked button as selected</div>
+                    <ol>
+                        <li>By creating 3 Functions</li>
+                        <li>By creating 1 Function with parameter and Passing Plan Details</li>
+                        <li>By creating 1 Function with parameter to pass Plan Name and Using if statement show plan details</li>
+                        <li>By Creating Array of Plans and making everything Dynamic</li> 
+                    </ol> 
+                </div>
+            </div>
         </div>
 
-    </div>
-    <script type="text/javascript" src="../menu.js"> </script>
+    </div> 
 </body>
 
 </html>

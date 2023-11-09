@@ -12,17 +12,42 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="../custom.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Studetn Registration</title>
-    <script type="text/javascript" src="../menu.js"> </script>
- 
-    <script>
-        
-    </script>
+    <title>Scenario - 1</title>
+    <script type="text/javascript" src="../menu.js"> </script> 
     <style>
-        .card {
-            cursor: pointer !important;
+        .text-error {
+            border: 1px solid red !important;
         }
     </style>
+    <script>
+        $(document).ready(function () {
+            $("#divMobile").hide();
+            $("#divFiber").hide();
+            $("#divBusiness").hide();
+
+            $(".name").keyup(function () {
+                $("#txtFullname").val($("#txtFname").val() + " " + $("#txtMname").val()+ " " + $("#txtLname").val())
+            });
+            $("#txtMobile").blur(function () {
+                debugger;
+                $("#txtRegistartionNo").val($("#txtFname").val().charAt(0).toUpperCase()+'-'+$("#txtMobile").val().substring(6, 10) +'-' +new Date().getDay() +'-'+new Date().getFullYear() )
+            });
+            $("#txtDob").focusin(function () {
+                debugger;
+                $("#txtDob").prop('type','date');
+            });
+            $("#mySkill").keydown(function () {
+                debugger;
+                $("#charCount").text($("#mySkill").val().length + "/" +20);
+                if($("#mySkill").val().length > 20)  {
+                    $("#mySkill").addClass('text-error')
+                }else {
+                    $("#mySkill").removeClass('text-error')
+                }
+            }); 
+            
+        })
+    </script>
 </head>
 
 <body>
@@ -44,7 +69,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                         </ul>
-                    </li> 
+                    </li>
                     <li class="nav-item dropdown " id="angularUl">
                         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -62,7 +87,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                         </ul>
-                    </li> 
+                    </li>
                 </ul>
                 <form class="d-flex">
                     <a href="https://github.com/voidChetan" target="_blank" class="btn btn-outline-success">Examples</a>
@@ -70,114 +95,82 @@
             </div>
         </div>
     </nav>
-    <div class="container pt-1">
+    <div class="container pt-2">
         <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
             aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Logical</li>
-                <li class="breadcrumb-item active" aria-current="page">Student Registration</li>
+                <li class="breadcrumb-item active" aria-current="page">Angular</li>
+                <li class="breadcrumb-item active" aria-current="page">ng-For Task</li>
             </ol>
         </nav>
         <div class="row">
-            <div class="col-12">
+            <div class="col-6"> 
                 <div class="myBox">
                     <div class="text-center">
-                        <h3>Student Registration Form</h3>
-                    </div>
-                    <ul>
-                        <li>We need to design a form Where Student Can Register (Refer Belwo UI)</li>
-                        <li>Create Full name using fname,mname,lname</li>
-                        <li>if caste other is selecetd then only show Other caste textbox</li>
-                        <li>calculate avarage % of 10th, 12th & graduation and show in avarage textbox</li>
-                        <li>create Registration no by using firstname +  last 4 digit of mobile no mean <br>if name is 
-                            chetan & mobile no is 8698707388 so registration no will be <strong>chetan7388</strong> </li>
-                    </ul> 
-                    <div class="row text-center">
-                        <div class="col-3">
-                            <label for="">First Name</label>
-                            <input type="text" class="form-control" id="txtFname">
-                        </div>
-                        <div class="col-3">
-                            <label for="">Middle Name</label>
-                            <input type="text" class="form-control" id="txtFname">
-                        </div>
-                        <div class="col-3">
-                            <label for="">Last Name</label>
-                            <input type="text" class="form-control" id="txtFname">
-                        </div> 
+                        <h3>Employee Registration</h3>
                     </div>
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-4">
+                            <label for="">First Name</label>
+                            <input type="text" class="form-control name" id="txtFname">
+                        </div>
+                        <div class="col-4">
+                            <label for="">Middle Name</label>
+                            <input type="text" class="form-control name" id="txtMname">
+                        </div>
+                        <div class="col-4">
+                            <label for="">Last Name</label>
+                            <input type="text" class="form-control name" id="txtLname">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
                             <label for="">Full Name</label>
                             <input type="text" disabled class="form-control" id="txtFullname">
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-3">
-                            <label for="">Select Caste</label>
-                            <select name="" id="" class="form-control">
-                                <option value="">Select Caste</option>
-                                <option value="obc">OBC</option>
-                                <option value="open">OPEN</option>
-                                <option value="sc-nt">SC-NT</option>
-                                <option value="other">OTHER</option>
-                            </select>
-                        </div>
-                        <div class="col-3">
-                            <label for="">Enter Other Caste</label>
-                            <input type="text"  class="form-control" id="txtOtherCaste">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-3">
-                            <label for="">Enter 10th %</label>
-                            <input type="text"  class="form-control" id="txt!0th">
-                        </div>
-                        <div class="col-3">
-                            <label for="">Enter 12th %</label>
-                            <input type="text"  class="form-control" id="txt12th">
-                        </div>
-                        <div class="col-3">
-                            <label for="">Enter Graduation %</label>
-                            <input type="text"  class="form-control" id="txtGraduation">
-                        </div>
-                        <div class="col-3">
-                            <label for="">Avarage</label>
-                            <input type="text" disabled class="form-control" id="txtAvarage">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-3">
+                        <div class="col-4">
                             <label for="">Mobile</label>
-                            <input type="text"  class="form-control" id="txtMobile">
+                            <input type="text" class="form-control" id="txtMobile">
                         </div>
-                        <div class="col-3">
-                            <label for="">Registration No</label>
+                        <div class="col-4">
+                            <label for="">Employee Id</label>
                             <input type="text" disabled class="form-control" id="txtRegistartionNo">
                         </div>
                     </div>
-                  
-                    
-
-
+                    <div class="row">
+                        <div class="col-4">
+                            <label for="">Date Of Birth</label>
+                            <input type="text" placeholder="DD-MM-YYYY"  class="form-control" id="txtDob">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <label for="">Skill Details</label>
+                            <textarea id="mySkill"  rows="3" class="form-control"></textarea>
+                        </div>
+                        <div class="col-12 text-end">
+                            <span class="text-muted" id="charCount">  </span>
+                        </div>
+                    </div>
+                     
                 </div>
             </div>
-
-
+            <div class="col-6">
+                <div class="myBox">
+                    <div class="text-muted pb-3">
+                        We need to design a form Where Student Can Register (Refer Belwo UI) <br>
+                        Create Full name using fname,mname,lname <br>
+                        For Date Of Birth Use Normal Textbox but when User Try to Enter make that textbox to Calander <br>
+                        In Skill show no of Charctors Entered and if it exceeds length add red border<br>
+                       Generate Emp Id by using First Char from Name +   last 4 digit of mobile no + current date Day + current date year 
+                    </div>
+                    
+                </div>
+            </div>
         </div>
 
-    </div>
-    <script type="text/javascript" src="../menu.js"> </script>
-    <script>
-
-        debugger;
-        movieArray.forEach(element => {
-            let movie = "<div class='col-md-3' data-name='" + element.movieName + "'> <div class='card' data-name='" + element.movieName + "'> <div class='card-header' data-name='" + element.movieName + "'> " + element.movieName + " </div> <div class='card-body'> " + element.description + " </div> <div class='card-footer'> " + element.ticketRate + " </div> </div> </div>";
-            $("#divMovies").append(movie);
-        });
-        
-    </script>
+    </div> 
 </body>
 
 </html>
