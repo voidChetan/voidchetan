@@ -139,13 +139,13 @@ var logicalMenuArray = [
 var logicalDevelopmentMenuArray = [
     {
         url: 'https://voidchetan.github.io/voidchetan/logical/LogicDevelopment.html',
-        text: 'Logic Development Scenario - 1',
+        text: 'Plan Selection',
         info: 'All Scenario on ngIf to Practice with examples',
         imageUrl: 'https://i.pinimg.com/originals/65/70/92/657092222f678a4e905a03715f1726d8.png'
     },
     {
         url: 'https://voidchetan.github.io/voidchetan/logical/LogicDevelopment2.html',
-        text: 'Logic Development Scenario - 1',
+        text: 'Employee Registration',
         info: 'All Scenario on ngIf to Practice with examples',
         imageUrl: 'https://i.pinimg.com/originals/65/70/92/657092222f678a4e905a03715f1726d8.png'
     }
