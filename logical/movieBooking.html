@@ -14,36 +14,67 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Scenario - 1</title>
     <script type="text/javascript" src="../menu.js"> </script>
- 
+
     <script>
         $(document).ready(function () {
             $("#divMobile").hide();
             $("#divFiber").hide();
             $("#divBusiness").hide();
-
-            $("#btnContinue").click(function () {
-                var radio1Value = $('input:radio[name=radioCheck]:checked').val();
-                if (radio1Value == undefined) {
-                    alert('Selct at least one option');
-                } else {
-                    $("#selectedPlan").text(radio1Value);
-                }
-            });
+            $(".ticketDiv").hide();
+            var selectedShow;
+            var selectedMovie;
             $('#divMovies').on('click', '.card', function () {
-
                 $('#divMovies div.card-header').each(function (idx, itm) {
                     $(itm).removeClass('bg-success');
                 });
 
                 var movieName = $(this).attr("data-name");;
                 var movie = movieArray.find(m => m.movieName == movieName);
+                selectedMovie = movie;
+                
                 debugger;
                 $(this).find(".card-header").addClass('bg-success');
                 $("#divShows").html("");
-                movie.shows.forEach(element => {
-                    const show = "<div class='col-2'> <button class='btn btn-sm btn-secondary'> " + element + "</button></div>";
-                    $("#divShows").append(show);
+                if (selectedMovie.shows.length == 1) {
+                    movie.shows.forEach(element => {
+                        const show = "<div class='col-2'> <button class='btn btn-sm btn-time btn-success'> " + element + "</button></div>";
+                        $("#divShows").append(show);
+                        selectedShow = element;
+                        $(".ticketDiv").show();
+                    });
+                } else {
+                    movie.shows.forEach(element => {
+                        const show = "<div class='col-2'> <button class='btn btn-sm btn-time btn-secondary'> " + element + "</button></div>";
+                        $("#divShows").append(show);
+                    });
+                } 
+                $("#selecetdMoview").text("");
+                $("#selecetdShow").text("");
+                $("#txtNoOfTicket").val("")
+                $("#noticket").text($("#txtNoOfTicket").val());
+                $("#totalAmount").text("");
+            });
+
+            $('#divShows').on('click', '.btn-time', function () {
+                debugger;
+                selectedShow = this.innerText;
+                $('#divShows .btn-time').each(function (index, element) {
+                    element.classList.remove('btn-success');
+                    element.classList.add('btn-secondary')
                 });
+                $(this).addClass('btn-success');
+                $(".ticketDiv").show();
+                $("#selecetdMoview").text("");
+                $("#selecetdShow").text("");
+                $("#txtNoOfTicket").val("")
+                $("#noticket").text($("#txtNoOfTicket").val());
+                $("#totalAmount").text("");
+            });
+            $("#btnBook").click(function () {
+                $("#selecetdMoview").text(selectedMovie.movieName);
+                $("#selecetdShow").text(selectedShow);
+                $("#noticket").text($("#txtNoOfTicket").val());
+                $("#totalAmount").text(selectedMovie.ticketRate * Number($("#txtNoOfTicket").val()));
             });
 
 
@@ -76,7 +107,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                         </ul>
-                    </li> 
+                    </li>
                     <li class="nav-item dropdown " id="angularUl">
                         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -94,7 +125,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                         </ul>
-                    </li> 
+                    </li>
                 </ul>
                 <form class="d-flex">
                     <a href="https://github.com/voidChetan" target="_blank" class="btn btn-outline-success">Examples</a>
@@ -117,38 +148,56 @@
                     <div class="text-center">
                         <h3>Movie Ticket Booking</h3>
                     </div>
-                    <ul>
-                        <li> create movie array with fileds movieName: string,description: string, ticketRate : string,
-                            shows - array of strings </li>
-                        <li> on Click of Movie Show Timing Below</li>
-                        <li> add green color to selected movie Header</li>
-                    </ul> 
-                    <div class="row text-center" id="divMovies">
-
-
+                    <p>create movie array with fileds movieName: string,description: string, ticketRate : string,
+                        shows - array of strings, on Click of Movie Show Timing Below,add green color to selected movie
+                        Header,add green color to selected show and on book button show ticket data</p>
+                    </ul>
+                    <div class="container">
+                        <div class="row text-center" id="divMovies">
+                        </div>
                     </div>
+
                     <hr>
-                    <h5>Available shows</h5>
-                    <div class="row" id="divShows">
-
+                    <div class="container">
+                        <h5>Available shows</h5>
                     </div>
 
+                    <div class="container">
+                        <div class="row" id="divShows">
+                        </div>
+                    </div>
+
+                    <div class="container ticketDiv">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <input type="text" id="txtNoOfTicket" class="form-control"
+                                            placeholder="Enter No Of Tickets">
+                                    </div>
+                                    <div class="col-4">
+                                        <button class="btn btn-primary" id="btnBook">Book Ticket</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 ">
+                                <p>Selected Movie: <strong id="selecetdMoview"></strong></p>
+                                <p>Selected Show: <strong id="selecetdShow"></strong></p>
+                                <p>For <span id="noticket"></span> Cost will Be <strong id="totalAmount"></strong></p>
+                            </div>
+                        </div>
+
+                    </div>
 
                 </div>
             </div>
-
-
         </div>
-
     </div>
     <script>
-
-        debugger;
         movieArray.forEach(element => {
             let movie = "<div class='col-md-3' data-name='" + element.movieName + "'> <div class='card' data-name='" + element.movieName + "'> <div class='card-header' data-name='" + element.movieName + "'> " + element.movieName + " </div> <div class='card-body'> " + element.description + " </div> <div class='card-footer'> " + element.ticketRate + " </div> </div> </div>";
             $("#divMovies").append(movie);
-        });
-        
+        }); 
     </script>
 </body>
 
