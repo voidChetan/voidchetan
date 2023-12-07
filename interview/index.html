@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../custom.css">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>Scenario - 1</title>
+	<style>
+		pre {
+    display: block;
+    font-size: 87.5%;
+    padding: 5px;
+    color: #ffff!important;
+    background-color: #000!important;
+}
+	</style>
+	 
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="../index.html">taskS</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item dropdown" id="javascriptUl">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false">
+							JavaScript
+						</a>
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+						</ul>
+					</li>
+					<li class="nav-item dropdown " id="angularUl">
+						<a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false">
+							Angular
+						</a>
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+						</ul>
+					</li>
+					<li class="nav-item dropdown" id="logicalUl">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false">
+							Logical
+						</a>
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+						</ul>
+					</li>
+				</ul>
+				<form class="d-flex">
+					<a href="https://github.com/voidChetan" target="_blank" class="btn btn-outline-success">Examples</a>
+				</form>
+			</div>
+		</div>
+	</nav>
+	<div class="container pt-2">
+		<div class="row">
+			<div class="col-md-12 " id="myQuestions">
+				<article class="question question-type-normal">
+					<h2>
+						<a href="single_question.html">This is my first Question</a>
+					</h2> 
+					<div class="question-author">
+						<a href="#" original-title="ahmed" class="question-author-img tooltip-n"><span></span><img
+								alt="" src="https://2code.info/demo/html/ask-me/images/demo/avatar.png"></a>
+					</div>
+					<div class="question-inner">
+						<div class="clearfix"></div>
+						<p class="question-desc">Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at
+							elit quis urna adipiscing iaculis. Curabitur vitae velit in neque dictum blandit. Proin in
+							iaculis neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+							turpis egestas. Curabitur vitae velit in neque dictum blandit.</p> 
+					</div>
+				</article>
+				 
+				<!-- <article class="question question-type-normal">
+					<h2>
+						<a href="single_question.html">This Is My Eighth Question</a>
+					</h2>
+					<a class="question-report" href="#">Report</a>
+					<div class="question-type-main"><i class="icon-question-sign"></i>Question</div>
+					<div class="question-author">
+						<a href="#" original-title="ahmed" class="question-author-img tooltip-n"><span></span><img
+								alt="" src="https://2code.info/demo/html/ask-me/images/demo/admin.jpeg"></a>
+					</div>
+					<div class="question-inner">
+						<div class="clearfix"></div>
+						<p class="question-desc">Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at
+							elit quis urna adipiscing iaculis. Curabitur vitae velit in neque dictum blandit. Proin in
+							iaculis neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+							turpis egestas. Curabitur vitae velit in neque dictum blandit.</p>
+						<div class="question-details">
+							<span class="question-answered"><i class="icon-ok"></i>in progress</span>
+							<span class="question-favorite"><i class="icon-star"></i>5</span>
+						</div>
+						<span class="question-category"><a href="#"><i
+									class="icon-folder-close"></i>wordpress</a></span>
+						<span class="question-date"><i class="icon-time"></i>4 mins ago</span>
+						<span class="question-comment"><a href="#"><i class="icon-comment"></i>5 Answer</a></span>
+						<span class="question-view"><i class="icon-user"></i>70 views</span>
+						<div class="clearfix"></div>
+					</div>
+				</article> -->
+			 
+			</div>
+			 
+		</div>
+
+
+	</div>
+	<div class="go-up" style="right: 20px;">
+		<div class="widget widget_stats">
+			<h3 class="widget_title">Languages</h3>
+			<div class="ul_list ul_list-icon-ok">
+				<ul id="sideLanguages">
+
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="go-top" style="right: 0;">
+		<div class="row">
+			<div class="col" id="topicBtn">
+			</div>
+		</div>
+	</div>
+
+	<script>
+		$(document).ready(function () {
+			$('#sideLanguages').on('click', '.main-button', function () {
+				debugger;
+				$('#sideLanguages .main-button').each(function (idx, itm) {
+                    $(itm).removeClass('bg-success text-white'); 
+                });
+				$(this).addClass('bg-success text-white')
+				const lanId = $(this).attr("data-languageid")
+				LoadSubTopics(lanId);
+			});
+			$('#topicBtn').on('click', '.subTopic', function () {
+				debugger; 
+				$('#topicBtn .subTopic').each(function (idx, itm) {
+                    $(itm).removeClass('btn-success');
+					$(itm).addClass('btn-primary');
+                });
+				$(this).addClass('btn-success')
+ 
+				 
+				const lanId = $(this).attr("data-subid")
+				loadQuestions(lanId)
+			});
+		});
+		LoadLanguages();
+
+		function loadQuestions(topicId) {
+			$.ajax({
+				url: "https://freeapi.miniprojectideas.com/api/Interview/GetQuestionByTopicId?id="+topicId,
+				cache: false,
+				success: function (result) { 
+					$("#myQuestions").html('')
+					result.data.forEach(element => {
+						let language = "<article class='question question-type-normal'>";
+							language = language + "<h2>";
+								language = language + 	"<a href='single_question.html'>"+element.question+"</a>";
+								language = language + "</h2> ";
+								language = language +" <div class='question-author'>";
+									language = language + 	"<a href='#' original-title='ahmed' class='question-author-img tooltip-n'><span></span><img";
+										language = language + "		alt='' src='https://2code.info/demo/html/ask-me/images/demo/avatar.png'></a>";
+										language = language + "</div>";
+										language = language + "<div class='question-inner'>";
+											language = language +" <div class='clearfix'></div>";
+											language = language + "<p class='question-desc'>"+ element.answer+"";
+												language = language +" </p> ";
+												language = language +" </div>";
+												language = language + "</article>";
+						$("#myQuestions").append(language);
+					});
+				}
+			});
+		}
+
+		function LoadLanguages() {
+			$("#sideLanguages").html('')
+			$.ajax({
+				url: "https://freeapi.miniprojectideas.com/api/Interview/GetAllLanguage",
+				cache: false,
+				success: function (result) {
+					LoadSubTopics(result.data[0].languageId)
+					let index= 1;
+					result.data.forEach(element => {
+						if (index ==1) {
+							let language = "<li class='main-button bg-success text-white' data-languageid=" + element.languageId + "><i class='fa fa-quora'></i> " + element.language + "</li>";
+						    $("#sideLanguages").append(language);
+						} else {
+							let language = "<li class='main-button' data-languageid=" + element.languageId + "><i class='fa fa-quora'></i> " + element.language + "</li>";
+						    $("#sideLanguages").append(language);
+						}
+						index++;
+						
+					});
+				}
+			});
+		}
+		function LoadSubTopics(languageId) {
+			$("#topicBtn").html('')
+			$.ajax({
+				url: "https://freeapi.miniprojectideas.com/api/Interview/GetLanguageTopicById?id=" + languageId,
+				cache: false,
+				success: function (result) {
+					let index= 1;
+					loadQuestions(result.data[0].languageTopicId)
+					result.data.forEach(element => {
+						if (index ==1) {
+							let language = "<button class='subTopic btn mx-1 btn-sm btn-success' data-subid=" + element.languageTopicId + " > " + element.topicName + "</button>";
+						$("#topicBtn").append(language);
+						} else {
+							let language = "<button class='subTopic btn mx-1 btn-sm btn-primary' data-subid=" + element.languageTopicId + " > " + element.topicName + "</button>";
+						$("#topicBtn").append(language);
+						}
+						index++;
+
+						
+					});
+				}
+			});
+		}
+	</script>
+</body>
+
+</html>

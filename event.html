@@ -11,18 +11,18 @@
     <script>
         $(document).ready(function () {
 
-            
+
             $("#btnSquare").click(function () {
-                $("#div1").css('background-color',$("#txtColor").val());
-                $("#div1").css('height',$("#txtHeight").val());
-                $("#div1").css('width',$("#txtwidth").val());
-                
+                $("#div1").css('background-color', $("#txtColor").val());
+                $("#div1").css('height', $("#txtHeight").val());
+                $("#div1").css('width', $("#txtwidth").val());
+
             });
-            $("#btnCircle").click(function () { 
-                $("#div2").css('background-color',$("#txt2Color").val());
-                $("#div2").css('height',$("#txt2Height").val());
-                $("#div2").css('width',$("#txt2width").val());
-                $("#div2").css('border-radius',$("#txt2Radius").val()+ '%');
+            $("#btnCircle").click(function () {
+                $("#div2").css('background-color', $("#txt2Color").val());
+                $("#div2").css('height', $("#txt2Height").val());
+                $("#div2").css('width', $("#txt2width").val());
+                $("#div2").css('border-radius', $("#txt2Radius").val() + '%');
             });
         })
 
@@ -32,11 +32,11 @@
 <body>
     <div class="row">
         <div class="col-5 p-2" style="border: 1px solid gray;height: 300px;text-align: center;">
-            <div id="div1" > 
+            <div id="div1">
             </div>
         </div>
         <div class="col-5 p-2" style="border: 1px solid gray;height: 300px;">
-            <div id="div2"  > 
+            <div id="div2">
             </div>
         </div>
     </div>
@@ -53,7 +53,7 @@
                 </div>
                 <div class="col">
                     <label for="">BackGround Color</label>
-                    <input type="color"   id="txtColor" class="form-control">
+                    <input type="color" id="txtColor" class="form-control">
                 </div>
             </div>
             <div class="row pt-3">
@@ -78,7 +78,7 @@
                 </div>
                 <div class="col">
                     <label for="">BackGround Color</label>
-                    <input type="color"   id="txt2Color" class="form-control">
+                    <input type="color" id="txt2Color" class="form-control">
                 </div>
             </div>
             <div class="row pt-3">
@@ -89,5 +89,36 @@
         </div>
     </div>
 </body>
+<script>
+    
+    function printNo () {
+        for(var index= 0;index<5;index++) {
+            setTimeout(() => {
+                console.log(index)
+            }, 1000);
+        }
+    }
+    //printNo();
+    function printRollNo() {
+        for(let index = 0;index<5;index++) {
+            setTimeout(() => {
+                console.log(index)
+            }, 1000);
+        }
+    }
+    //printRollNo()
+
+    function printWithScope () {
+        for(var index= 0;index<5;index++) {
+           function printVal(value) {
+            setTimeout(() => {
+                console.log(value)
+            }, 1000);
+           }
+           printVal(index) 
+        }
+    }
+    printWithScope()
+</script>
 
 </html>

@@ -69,7 +69,7 @@ var studentArray = [
 ];
 
 var logicalMenuArray = [
-     
+
     {
         url: 'https://voidchetan.github.io/voidchetan/logical/broadband-plan.html',
         text: 'Plan Selection',
@@ -123,7 +123,7 @@ var logicalMenuArray = [
         text: 'Student-Registration',
         info: 'All Scenario on ngIf to Practice with examples',
         imageUrl: 'https://xdfile.com/wp-content/uploads/2020/01/movie-ticket-app-free-download-758x569.jpg'
-    }, 
+    },
     {
         url: 'https://voidchetan.github.io/voidchetan/logical/movie-seat-booking.html',
         text: 'Movie Seat Booking',
@@ -170,37 +170,37 @@ var javascriptMenueArray = [
         text: 'elementAccess',
         info: 'All Scenario on Javascript Functions',
         imageUrl: 'https://i.pinimg.com/originals/65/70/92/657092222f678a4e905a03715f1726d8.png'
-    }, 
+    },
     {
         url: 'https://voidchetan.github.io/voidchetan/javascript/event.html',
         text: 'Events',
         info: 'All Scenario on Javascript Events',
         imageUrl: 'https://i.pinimg.com/originals/65/70/92/657092222f678a4e905a03715f1726d8.png'
-    }, 
+    },
     {
         url: 'https://voidchetan.github.io/voidchetan/javascript/dynamicCss.html',
         text: 'Dynamic Css',
         info: 'All Scenario on How To Add dynamic css to Element',
         imageUrl: 'https://i.pinimg.com/originals/65/70/92/657092222f678a4e905a03715f1726d8.png'
-    }, 
+    },
     {
         url: 'https://voidchetan.github.io/voidchetan/javascript/if.html',
         text: 'If Else Condition',
         info: 'All Scenario on How To Add dynamic css to Element',
         imageUrl: 'https://i.pinimg.com/originals/65/70/92/657092222f678a4e905a03715f1726d8.png'
-    }, 
+    },
     {
         url: 'https://voidchetan.github.io/voidchetan/javascript/object.html',
         text: 'Object',
         info: 'how to Create Object and add new fields to it - update values fo fields',
         imageUrl: 'https://i.pinimg.com/originals/65/70/92/657092222f678a4e905a03715f1726d8.png'
-    }, 
+    },
     {
         url: 'https://voidchetan.github.io/voidchetan/javascript/array.html',
         text: 'Array',
         info: 'how to Create Array n array operations',
         imageUrl: 'https://i.pinimg.com/originals/65/70/92/657092222f678a4e905a03715f1726d8.png'
-    }, 
+    },
     {
         url: 'https://voidchetan.github.io/voidchetan/javascript/foorLoop.html',
         text: 'For-Loop',
@@ -231,14 +231,13 @@ var languageArray = [
     "Html",
     "CSS", "Java-Script", "JQuery", "Angular", "React", "Dot Net", "Java"
 ]
-
 var studentList = [
     {
         studId: 1,
         name: 'Chetan',
         isActive: true,
         gender: 'Male',
-        state :'MH'
+        state: 'MH'
 
     },
     {
@@ -246,7 +245,7 @@ var studentList = [
         name: 'Punesh',
         isActive: false,
         gender: 'Male',
-        state :'MP'
+        state: 'MP'
 
     },
     {
@@ -254,7 +253,7 @@ var studentList = [
         name: 'Sahiti',
         isActive: true,
         gender: 'Female',
-        state :'CG'
+        state: 'CG'
 
     },
     {
@@ -262,7 +261,7 @@ var studentList = [
         name: 'Johar',
         isActive: true,
         gender: 'Male',
-        state :'DL'
+        state: 'DL'
 
     },
     {
@@ -270,7 +269,7 @@ var studentList = [
         name: 'Aditi',
         isActive: false,
         gender: 'Female',
-        state :'PB'
+        state: 'PB'
 
     }
 ]
@@ -346,13 +345,13 @@ logde = logde + "<ul class='dropdown-menu' aria-labelledby='navbarDropdown'>";
 logicalDevelopmentMenuArray.forEach(element => {
     debugger;
     logde = logde + "<li><a class='dropdown-item' href='" + element.url + "'>" + element.text + "</a></li>";
-    
+
 });
 logde = logde + "</ul>";
 logde = logde + "</li>";
 setTimeout(() => {
     $("#navbarSupportedContent ul").append(logde);
-   
+
 }, 2000);
 
 
@@ -401,7 +400,7 @@ javascriptMenueArray.forEach(element => {
     dynamicCard = dynamicCard + "</div>";
 
     $("#divCardJs").append(dynamicCard);
-}); 
+});
 
 
 
@@ -409,7 +408,47 @@ setTimeout(() => {
     let ss = window.location.href;
     debugger;
     let lastPage = ss.split("/");
-    let last = lastPage[lastPage.length-1];
-    let title =  last.replace(".html","");
+    let last = lastPage[lastPage.length - 1];
+    let title = last.replace(".html", "");
     document.title = title;
 }, 2000);
+
+LoadLanguages()
+
+function LoadLanguages() { 
+    $.ajax({
+        url: "http://storeapi.gerasim.in/api/Interview/GetLanguage",
+        cache: false,
+        success: function (result) {
+            printInterview(result)
+            result.forEach(element => {
+                let language = "<span id='angular_interview_questions_for_beginners' class='main-button' data-languageid=" + element.LanguageId + ">";
+                language = language + "<a href='#''>" + element.Language + "</a>";
+                language = language + " </span>";
+                $("#languages").append(language);
+                let lang = "<option value='" + element.LanguageId + "'  data-languageid=" + element.LanguageId + "> " + element.Language + " </option>"
+                $("#dpdlLanguage").append(lang);
+            });
+        }
+    });
+}
+
+function printInterview(languageArray) {
+    var logde = " <li class='nav-item dropdown logicalUl' id='logicalUl'>";
+    logde = logde + "<a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button'";
+    logde = logde + "data-bs-toggle='dropdown' aria-expanded='false'>";
+    logde = logde + "Interview Questions";
+    logde = logde + "</a>";
+    logde = logde + "<ul class='dropdown-menu' aria-labelledby='navbarDropdown'>";
+    languageArray.forEach(element => {
+        debugger;
+        logde = logde + "<li><a class='dropdown-item' href='" + element.url + "'>" + element.text + "</a></li>";
+
+    });
+    logde = logde + "</ul>";
+    logde = logde + "</li>";
+    setTimeout(() => {
+        $("#navbarSupportedContent ul").append(logde);
+
+    }, 2000);
+}
