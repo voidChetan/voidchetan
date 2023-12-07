@@ -335,6 +335,8 @@ var stateArray = [
         stateName: 'Delhi'
     },
 ]
+var interview = "<li class='nav-item'> <a class='nav-link' href='https://voidchetan.github.io/voidchetan/interview/index.html'>Interview Questions</a></li>";
+$("#navbarSupportedContent ul").append(interview);
 debugger;
 var logde = " <li class='nav-item dropdown logicalUl' id='logicalUl'>";
 logde = logde + "<a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button'";
@@ -413,42 +415,6 @@ setTimeout(() => {
     document.title = title;
 }, 2000);
 
-LoadLanguages()
+ 
 
-function LoadLanguages() { 
-    $.ajax({
-        url: "http://storeapi.gerasim.in/api/Interview/GetLanguage",
-        cache: false,
-        success: function (result) {
-            printInterview(result)
-            result.forEach(element => {
-                let language = "<span id='angular_interview_questions_for_beginners' class='main-button' data-languageid=" + element.LanguageId + ">";
-                language = language + "<a href='#''>" + element.Language + "</a>";
-                language = language + " </span>";
-                $("#languages").append(language);
-                let lang = "<option value='" + element.LanguageId + "'  data-languageid=" + element.LanguageId + "> " + element.Language + " </option>"
-                $("#dpdlLanguage").append(lang);
-            });
-        }
-    });
-}
-
-function printInterview(languageArray) {
-    var logde = " <li class='nav-item dropdown logicalUl' id='logicalUl'>";
-    logde = logde + "<a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button'";
-    logde = logde + "data-bs-toggle='dropdown' aria-expanded='false'>";
-    logde = logde + "Interview Questions";
-    logde = logde + "</a>";
-    logde = logde + "<ul class='dropdown-menu' aria-labelledby='navbarDropdown'>";
-    languageArray.forEach(element => {
-        debugger;
-        logde = logde + "<li><a class='dropdown-item' href='" + element.url + "'>" + element.text + "</a></li>";
-
-    });
-    logde = logde + "</ul>";
-    logde = logde + "</li>";
-    setTimeout(() => {
-        $("#navbarSupportedContent ul").append(logde);
-
-    }, 2000);
-}
+ 

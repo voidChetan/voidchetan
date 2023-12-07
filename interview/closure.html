@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        function foo() {
+            let b = 1;
+            function inner() {
+                return b;
+            }
+            return inner;
+        }
+        let get_func_inner = foo();
+
+        console.log(get_func_inner()); 
+
+    </script>
+
+
+
+</body>
+
+</html>
