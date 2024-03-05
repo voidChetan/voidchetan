@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype</title>
+</head>
+<body>
+    <script>
+
+        var employee = {
+            name:'Chetan',
+            empid: 'Ep-2233',
+            city :'Pune',
+            printName: function() {
+                console.log(this.name)
+            }
+        };
+
+        employee.printName();
+
+        let student = {
+            name:'Sahcin Tendulakr',
+            city:'Pune',
+            Hobby: 'Playing Cricket'
+        };
+
+        student.__proto__ = employee;
+
+        student.printName();
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="../custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Scenario - 1</title>
+     
+    <style>
+        .none {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">taskS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown" id="javascriptUl">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            JavaScript
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown " id="angularUl">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Angular
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown" id="logicalUl">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Logical
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <a href="https://github.com/voidChetan" target="_blank" class="btn btn-outline-success">Examples</a>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container pt-2">
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+            aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Angular</li>
+                <li class="breadcrumb-item active" aria-current="page">ng-For Task</li>
+            </ol>
+        </nav>
+        <div class="row">
+            <div class="col-6">
+                <div class="myBox">
+                    <div class="text-center">
+                        <h3>Hotel Order System </h3>
+                    </div>
+                    <ul>
+                        <li>Create Array of Itmes For Hotel Menu then Display Menu in dropdown</li>
+                        <li>Create a textbox to Enter Quantity </li> 
+                        <li>On Generate Bill- Calculate bill According TO Selected Item with quaitity and
+                            display bill Amount</li>
+                            <li>On Clear Clear all data as per ex</li>
+                    </ul>
+                    <div class="row text-center">
+                        <div class="col-4 bg-success p-2">
+                            <h4>Tea </h4>
+                            <p>(10 Rs)</p>
+                        </div>
+                        <div class="col-4 bg-secondary p-2">
+                            <h4>Coffee </h4>
+                            <p>(15 Rs)</p>
+                        </div>
+                        <div class="col-4 bg-primary p-2">
+                            <h4>Sandwich</h4>
+                            <p>(25 Rs)</p>
+                        </div>
+                    </div>
+                    <script> 
+                        var selectedItems = [];
+
+                        function addHotelOrder() {
+                            debugger;
+                            const selectedItem =  document.getElementById('dpdlHotelItem').value;
+                            const qty =  document.getElementById('txtHotelQuantity').value; 
+                           
+                            if(selectedItem == 'tea') {
+                                const obj = {
+                                    itemName: selectedItem,
+                                    quantity : qty,
+                                    amount: qty * 10
+                                };
+                                var isItemExist = selectedItems.find(m => m.itemName == selectedItem);
+                                if (isItemExist == undefined) {
+                                    selectedItems.unshift(obj)
+                                } else {
+                                    isItemExist.quantity =  Number(isItemExist.quantity ) + Number(qty);
+                                    isItemExist.amount =  isItemExist.quantity * 10;
+                                }
+                                
+                            } else if (selectedItem == 'coffee') {
+                                const obj = {
+                                    itemName: selectedItem,
+                                    quantity : qty,
+                                    amount: qty * 15
+                                };
+                                var isItemExist = selectedItems.find(m => m.itemName == selectedItem);
+                                if (isItemExist == undefined) {
+                                    selectedItems.unshift(obj)
+                                } else {
+                                    isItemExist.quantity =  Number(isItemExist.quantity )+ Number(qty);
+                                    isItemExist.amount =  isItemExist.quantity * 15;
+                                }
+                            } else if (selectedItem == 'sandwich') {
+                                const obj = {
+                                    itemName: selectedItem,
+                                    quantity : qty,
+                                    amount: qty * 25
+                                };
+                                var isItemExist = selectedItems.find(m => m.itemName == selectedItem);
+                                if (isItemExist == undefined) {
+                                    selectedItems.unshift(obj)
+                                } else {
+                                    isItemExist.quantity =  Number(isItemExist.quantity )+ Number(qty);
+                                    isItemExist.amount =  isItemExist.quantity * 25;
+                                }
+                            }
+                            printElement()
+                        }
+                        function printElement() {
+                            document.getElementById('ulItems').innerHTML = '';
+                            for (let index = 0; index < selectedItems.length; index++) {
+                                const itemLi = document.createElement('li');
+                                itemLi.innerText = selectedItems[index].itemName + "("+ selectedItems[index].quantity +")";
+                                document.getElementById('ulItems').appendChild(itemLi)
+                            }
+                        }
+
+                        function calBill() {
+                            debugger;
+                            let totalBill = 0;
+                            for (let index = 0; index < selectedItems.length; index++) {
+                                totalBill = totalBill + selectedItems[index].amount;
+                            }
+                            document.getElementById('btnillAmt').innerText = totalBill;
+                        }
+                        function clearAll() {
+                            document.getElementById('dpdlHotelItem').value = '';
+                            document.getElementById('txtHotelQuantity').value = '';
+                            document.getElementById('btnillAmt').innerText  = '';
+                            document.getElementById('ulItems').innerHTML  = '';
+                        }
+                    </script>
+                    <div class="row">
+                        <div class="col-8 col-sm-8 col-md-8">
+                            <div class="row">
+                                <div class="col-5 col-md-5 col-sm-5 col-lg-5">
+                                    <Select id="dpdlHotelItem" class="form-control">
+                                        <option value="">Select Item</option>
+                                        <option value="tea">Tea</option>
+                                        <option value="coffee">Coffee</option>
+                                        <option value="sandwich">Sandwich</option>
+                                    </Select>
+                                </div>
+                                <div class="col-5 col-md-5 col-sm-5 col-lg-5">
+                                    <input type="text" id="txtHotelQuantity" class="form-control"
+                                        placeholder="Enter Quantity">
+                                </div>
+                                <div class="col-2  col-md-2 col-sm-2 col-lg-2">
+                                    <button class="btn btn-sm btn-success" onclick="addHotelOrder()" id="btnAdd">Add </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 col-sm-4 col-md-4">
+                            <div class="row" id="divBill" style="background-color: lightgray;">
+                                <div class="col-12 text-center">
+                                    <strong>Total Bill Amount </strong> <br>
+                                    <span id="btnillAmt"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <ul id="ulItems">
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-4">
+                            <button class="btn btn-danger" id="btnClear" onclick="clearAll()">Clear</button>
+                        </div>
+                        <div class="col-4">
+                            <button class="btn btn-success" id="btnCalCulate" onclick="calBill()">Calculate Bill</button>
+                        </div>
+
+                    </div>
+                    
+                  
+                </div>
+
+
+            </div>
+            <div class="col-6">
+                <div class="myBox">
+                    <div class="text-center pb-5">
+                        <h3>Package Description</h3>
+                    </div>
+                    <div class="row text-center pb-5">
+                        <div class="col-4">
+                            <div>
+                                <i style="font-size: 150px;" class="fa fa-mobile" aria-hidden="true"></i><br>
+                                Mobile
+                            </div>
+                            <button class="btn btn-primary mt-4" onclick="showPlanData('Free SIM, calls','2000/month')" id="btnMobile">Find More</button>
+                        </div>
+                        <div class="col-4">
+                            <div>
+                                <i style="font-size: 150px;" class="fa fa-home" aria-hidden="true"></i><br>
+                                JioFiber
+                            </div>
+                            <button class="btn btn-primary mt-4" id="btnFiber" onclick="showPlanData('superfast home internet','3000/month')">Find More</button>
+                        </div>
+                        <div class="col-4">
+                            <div>
+                                <i style="font-size: 150px;" class="fa fa-id-badge" aria-hidden="true"></i><br>
+                                Business
+                            </div>
+                            <button class="btn btn-primary mt-4" id="btnBusiness" onclick="showPlanData('Enterprise-grade digital services','5000/month')">Find More</button>
+                        </div>
+                    </div>
+                    <div class="row pt-1">
+                        <div class="col-12">
+                            <div class="text-center" id="divMobile">
+                                <p id="planInfo"> </p>
+                                <p id="planRateInfo"> </p>
+                            </div>
+                            <!-- <div class="text-center none" id="divFiber">
+                                <p> Connected living experiences with superfast home internet.</p>
+                                <p>1500/month</p>
+                            </div>
+                            <div class="text-center none" id="divBusiness">
+                                <p>Enterprise-grade digital services to meet all your business needs.</p>
+                                <p>4000/month</p>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="myBox">
+                    <div class="text-center">
+                        <h3>grocery List </h3>
+                    </div>
+                    <ul>
+                        <li>Create Array of Grocery Items with their Prices</li>
+                        <li>Show grocery item in dropdown and add textbox & button to Add Them </li>
+                        <li>on Add- Create Object of Grocery Item with Quantity and add it to New Array CartItems</li>
+                        <li>Use For Loop on CartItems to Display Cart Items in Table </li>
+                    </ul>
+
+                    <div class="row">
+                        <div class="col-8 col-sm-8 col-md-8">
+                            <div class="row">
+                                <div class="col-5 col-md-5 col-sm-5 col-lg-5">
+                                    <Select id="dpdlItem" class="form-control">
+                                        <option value="">Select Item</option>
+                                    </Select>
+                                </div>
+                                <div class="col-5 col-md-5 col-sm-5 col-lg-5">
+                                    <input type="text" id="txtQuantity" class="form-control"
+                                        placeholder="Enter Quantity">
+                                </div>
+                                <div class="col-2  col-md-2 col-sm-2 col-lg-2">
+                                    <button class="btn btn-sm btn-success" id="btnAdd" onclick="addItem()">Add </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <ul id="selectedItemsUL">
+
+                            </ul>
+                        </div>
+                        <div class="col-12">
+                            Total Amount - <strong id="totalAmt"></strong>
+                        </div>
+                    </div>
+                    <script>
+                        
+                        var items = [
+                            {itemId: 1, itemName: 'Cooking Oil', cost: 120 },
+                            {itemId: 2, itemName: 'Rice', cost: 60 },
+                            {itemId: 3, itemName: 'Dal', cost: 100 },
+                            {itemId: 4, itemName: 'Sugar', cost: 45 },
+                            {itemId: 5, itemName: 'Aata', cost: 40 },
+                            {itemId: 6, itemName: 'Turmeric', cost: 200 },
+                            {itemId: 7, itemName: 'Coffee', cost: 2500 },
+                            {itemId: 8, itemName: 'Dry Fruits Mix', cost: 850 }
+                        ];
+                        var totalCost = 0;
+                        var selectedItem = [];
+
+                        for(var i= 0; i <= items.length;i++) {
+                            let option =  document.createElement('option');
+                            option.innerText = items[i].itemName + " - "+items[i].cost;
+                            option.value = items[i].itemId;
+                            document.getElementById('dpdlItem').appendChild(option);
+                        }
+                        function addItem() {
+                            var selectedItem = document.getElementById('dpdlItem').value;//read selectde item
+                            var quantity =  document.getElementById('txtQuantity').value;//read eneterered qty
+                            debugger;
+                            const itemRecord = items.find(m=> m.itemId == selectedItem); //find item record with selected item id
+                            const totalAMount = Number(quantity) * itemRecord.cost; //generate total amout
+                            totalCost = totalCost + totalAMount;
+                            const productStr  = itemRecord.itemName + " (" +itemRecord.cost+") "+" * "+quantity+" = " + totalAMount;
+                            debugger;
+                            const ItemLi = document.createElement('li');
+                            ItemLi.innerText = productStr;
+                            document.getElementById('selectedItemsUL').appendChild(ItemLi);
+                            document.getElementById('totalAmt').innerText = totalCost;
+                        }
+
+
+ 
+
+                        
+                    </script>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+    <script> 
+
+    var planList = [
+        {planName: 'Mobile', description:"Mobile Plan Info" , rate: '2000/ month'},
+        {planName: 'Fibre', description:"Fibre Plan Info" , rate: '3000/ month'},
+        {planName: 'Business', description:"Business Plan Info" , rate: '5000/ month'}
+    ]
+
+            function showPlanData(planInfo,planRate) {
+                document.getElementById('planInfo').innerText =planInfo;
+                document.getElementById('planRateInfo').innerText =planRate;
+            }
+
+            // function showSelectedPlanInfo(showDiv,hideDiv1, hidediv2) {
+            //     document.getElementById(showDiv).style.display = "block"
+            //     document.getElementById(hideDiv1).style.display = "none"
+            //     document.getElementById(hidediv2).style.display = "none"
+                 
+            // }
+            // function showSelectedPlanInfo(planType) {
+            //     if(planType == "mobile") {
+            //         document.getElementById("divMobile").style.display = "block"
+            //         document.getElementById("divFiber").style.display = "none"
+            //         document.getElementById("divBusiness").style.display = "none"
+            //     } else if (planType == "fibre") {
+            //         document.getElementById("divMobile").style.display = "none"
+            //         document.getElementById("divFiber").style.display = "block"
+            //         document.getElementById("divBusiness").style.display = "none"
+            //     } else if (planType == "business") {
+            //         document.getElementById("divMobile").style.display = "none"
+            //         document.getElementById("divFiber").style.display = "none"
+            //         document.getElementById("divBusiness").style.display = "block"
+            //     } 
+            // }
+            // function showMobilePlan() {
+            //     document.getElementById("divMobile").style.display = "block"
+            //     document.getElementById("divFiber").style.display = "none"
+            //     document.getElementById("divBusiness").style.display = "none"
+            // }
+
+            // function showFibre() {
+            //     document.getElementById("divFiber").style.display = "block"
+            //     document.getElementById("divMobile").style.display = "none"
+            //     document.getElementById("divBusiness").style.display = "none"
+            // }
+
+            // function showBusiness() {
+            //     document.getElementById("divMobile").style.display = "none"
+            //     document.getElementById("divFiber").style.display = "none"
+            //     document.getElementById("divBusiness").style.display = "block"
+            // }
+    </script> 
+</body>
+
+</html>

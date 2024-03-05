@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise</title>
+</head>
+
+<body>
+    <script>
+
+        // localStorage.setItem('sessionName','Javascript');
+
+        // const sessionName =  localStorage.getItem('sessionName')
+        // localStorage.removeItem('lastName')
+        // localStorage.length;
+
+        //sessionStorage.setItem('sessionName','Javascript')
+
+//         var studentObj = {studeId:12, name: 'Sachin tendulkar', age: 53, attendance: 50, city: 'pune', gender: 'M', isIndian: true };
+
+//         var keys =  Object.keys(studentObj);
+//         var value = Object.values(studentObj)
+//         var entries = Object.entries(studentObj)
+//         // for (let index = 0; index < studentObj.length; index++) {
+//         //     const element = array[index]; 
+//         // }
+//         var studentArray = [
+//                 {studeId:12, name: 'Sachin tendulkar', age: 53, attendance: 50, city: 'pune', gender: 'M', isIndian: true },
+//                 {studeId:34, name: 'Rahul D', age: 58, attendance: 67, city: 'pune', gender: 'M', isIndian: true },
+//                 {studeId:12, name: 'Jesika Harries', age: 33, attendance: 70, city: 'mumbai', gender: 'F', isIndian: false },
+//                 {studeId:176, name: 'Json Born', age: 23, attendance: 30, city: 'pune', gender: 'M', isIndian: false },
+//                 {studeId:76, name: 'kiya Doe', age: 34, attendance: 70, city: 'mumbai', gender: 'M', isIndian: false },
+//             ];
+
+//             var newList =  studentArray.map((item)=>{
+//                 return {
+//                     studId: item.studeId,
+//                     name: item.name
+//                 }
+//             })
+//             var newList2 =  studentArray.map((item)=>{
+//                 return  item.studeId 
+//             })
+//             var newList3 =  studentArray.map((item)=>{
+//                 return {...item, state : "MAHARASHTRA" }
+//             })
+// debugger;
+//             //find => return only 1 matching record
+//             var stud12 =  studentArray.find(x => x.studeId  == 12 );
+//             debugger
+//             var stud1322 =  studentArray.find(x => x.studeId  == 1322 );
+//             debugger
+//             var studPuneM =  studentArray.find(x => x.city  == 'pune' && x.gender =='M' );
+//             debugger
+
+//             var stud12Filter =  studentArray.filter(x => x.studeId  == 12 );
+//             debugger
+//             var stud1322Filter  =  studentArray.filter(x => x.studeId  == 1322 );
+//             debugger
+//             var studPuneMFilter  =  studentArray.filter(x => x.city  == 'pune' && x.gender =='M' );
+//             debugger
+
+            
+
+
+    </script>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header bg-success text-white">
+                    <div class="row">
+                        <div class="col-6"> New</div>
+                        <div class="col-6 text-end">
+                            <button class="btn btn-sm btn-primary">CLose</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-7">
+                            <div class="row">
+                                <div class="col-6">
+                                    <label for=""><b>Name</b></label>
+                                    <input type="text" class="form-control" placeholder="Enter Name">
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <label for=""><b>Contact No</b></label>
+                                    <input type="text" class="form-control" placeholder="Enter Contact No">
+                                </div>
+                                <div class="col-4">
+                                    <label for=""><b>Email</b></label>
+                                    <input type="text" class="form-control" placeholder="Enter Email">
+                                </div>
+                                <div class="col-4">
+                                    <label for=""><b>City</b></label>
+                                    <input type="text" class="form-control" placeholder="Enter City">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <label for=""><b>State</b></label>
+                                    <input type="text" class="form-control" placeholder="Enter State">
+                                </div>
+                                <div class="col-4">
+                                    <label for=""><b>Pincode</b></label>
+                                    <input type="text" class="form-control" placeholder="Enter Pincode">
+                                </div>
+                                <div class="col-4">
+                                    <label for=""><b>Dasignation</b></label>
+                                    <select class="form-control">
+                                        <option value="">Select</option>
+                                        <option value="Jr Developer">Jr Developer</option>
+                                        <option value="Sr Developer">Sr Developer</option>
+                                        <option value="Team Leader">Team Leader</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                <div class="col-6 text-end">
+                                    <button class="btn text-white btn-sm bg-secondary">Reset</button>
+                                </div>
+                                <div class="col-6">
+                                    <button class="btn text-white btn-sm bg-success">
+                                        Save Employee
+                                    </button>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <div class="row">
+                                <div class="col-4">
+                                    <label for=""><b>Name</b></label>
+                                    <input type="text" class="form-control" placeholder="Enter Name">
+                                </div>
+                                <div class="col-3">
+                                    <label for=""><b>Relation</b></label>
+                                    <select class="form-control">
+                                        <option value="">Select</option>
+                                        <option value="Mother">Mother</option>
+                                        <option value="Father">Father</option>
+                                        <option value="Sister">Sister</option>
+                                        <option value="Brother">Brother</option>
+                                    </select>
+                                </div>
+                                <div class="col-3">
+                                    <label for=""><b>Age</b></label>
+                                    <input type="text" class="form-control" placeholder="Enter Age">
+                                </div>
+                                <div class="col-1 mt-4 text-end">
+                                    <button class="btn btn-sm bg-primary">Add</button>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-12">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Relation</th>
+                                                <th>Age</th>
+                                                <th class="text-center">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td> </td>
+                                                <td> </td>
+                                                <td> </td>
+                                                <td class="text-center">
+                                                    <button class="btn btn-sm btn-danger">Delete</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
