@@ -12,7 +12,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="../custom.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Dynamic Tab</title>
+    <title>Scenario - 1</title>
+
+
+
     <style>
         .card {
             cursor: pointer !important;
@@ -79,85 +82,46 @@
             <div class="col-6">
                 <div class="myBox">
                     <div class="text-center">
-                        <h3>Dynamic Tab Selection </h3>
+                        <h3>Identity Proof Selection </h3>
                     </div>
                     <ul>
-                        <li>We Need Create a tab Layput like below</li>
-                        <li>on click of Perticular tab - perticular UI will be visible</li>
-                        <li>clicked tab should look like selected tab</li>
+                        <li>Create A dropdown for Identity Type</li>
+                        <li>A textbox to Enter Selected Identity Card No</li>
+                        <li>On change on Identity Dropdown Selection we need to add dynamic Max-Length to Textbox </li>
+                        <li>On change on Identity Dropdown Selection we Empty Textbox Value </li>
+                        <li>On change on Identity Dropdown Selection - we need to add dynamic placeholder to Textbox
+                        </li>
+                        <li>On Click Of Validate - we need to show validation message , and check if correct No is
+                            provided or not</li>
                     </ul>
 
+
                     <div class="row">
-                        <div class="col-12">
-                            <ul class="nav nav-tabs">
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="#">Basic Details</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Project Details</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Family Details</a>
-                                </li>
-                            </ul>
-                            <div class="tab-content">
-                                <div class="tab-pane container active" id="home">
-                                    Basic Details Div
-                                </div>
-                                <div class="tab-pane container fade" id="menu1">
-                                    Project Details Div
-                                </div>
-                                <div class="tab-pane container fade" id="menu2">
-                                    Family Details Div
-                                </div>
+                        <div class="col-6">
+                            <div class="card-header">
+                                Available State
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li>Maharashtra</li>
+                                    <li>Punjab</li>
+                                    <li>Goa</li> 
+                                </ul>
                             </div>
                         </div>
-                    </div>
-
-                    <script>
-
-                    </script>
-                </div>
-
-
-            </div>
-            <div class="col-6">
-                <div class="myBox">
-                    <div class="text-center">
-                        <h3>Hobbies Selection </h3>
-                    </div>
-                    <ul>
-                        <li>Create an Array of Hobbies</li>
-                        <li>Create Dynamic LI based on array</li>
-                        <li>On click of any hobby Make that LI as selected </li>
-                        <li>on click of button we need to Print Selcted hobbies in p tag</li>
-                    </ul>
-
-                    <div class="row">
-                        <div class="col-12">
-                            <ul class="list-group list-group-horizontal">
-                                <li class="list-group-item">Cricket</li>
-                                <li class="list-group-item bg-success">Online Games</li>
-                                <li class="list-group-item">Drawing</li>
-                                <li class="list-group-item">Singing</li>
-                              </ul>
+                        <div class="col-6">
+                            <div class="card-header">
+                                Selected State
+                            </div>
+                            <div class="card-body">
+                                <ul> 
+                                    <li>Goa</li> 
+                                </ul>
+                            </div>
                         </div>
-                        <div class="col-12 pt-3">
-                            <button class="btn btn-primary">Get Selected Hobbies</button>
-                        </div>
-                        <div class="col-12">
-                            <p id="selectedHobbies"></p>
-                        </div>
-                    </div>
-
-                    <script>
-
-                    </script>
-                </div>
-
-
-            </div>
-
+                    </div> 
+                </div> 
+            </div> 
         </div>
         <script type="text/javascript" src="../menu.js"> </script>
 </body>

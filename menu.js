@@ -141,8 +141,14 @@ var logicalMenuArray = [
         text: 'Dynamic Tab',
         info: '',
         imageUrl: 'https://xdfile.com/wp-content/uploads/2020/01/movie-ticket-app-free-download-758x569.jpg'
+    },
+    {
+        url: 'https://voidchetan.github.io/voidchetan/logical/DataListPicker.html',
+        text: 'Data List Picker',
+        info: '',
+        imageUrl: 'https://xdfile.com/wp-content/uploads/2020/01/movie-ticket-app-free-download-758x569.jpg'
     }
-
+    
     
 
 ];
