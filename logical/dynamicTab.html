@@ -91,30 +91,56 @@
                         <div class="col-12">
                             <ul class="nav nav-tabs">
                                 <li class="nav-item">
-                                    <a class="nav-link active" href="#">Basic Details</a>
+                                    <a class="nav-link" id="basic"  onclick="onTabChange('basic')" href="#">Basic Details</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Project Details</a>
+                                    <a class="nav-link" id="project"  onclick="onTabChange('project')" href="#">Project Details</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Family Details</a>
+                                    <a class="nav-link" id="family" onclick="onTabChange('family')" href="#">Family Details</a>
                                 </li>
                             </ul>
-                            <div class="tab-content">
-                                <div class="tab-pane container active" id="home">
+                            <div class="tab-content"> 
+                                <div class="tab-pane container active" id="basicDiv">
                                     Basic Details Div
                                 </div>
-                                <div class="tab-pane container fade" id="menu1">
+                                <div class="tab-pane container" id="projectDiv">
                                     Project Details Div
                                 </div>
-                                <div class="tab-pane container fade" id="menu2">
+                                <div class="tab-pane container" id="familyDiv">
                                     Family Details Div
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <script>
+                    <script> 
+                        function removeClass(...parameteList) {
+                            debugger;
+                            for (let index = 0; index < parameteList.length; index++) {
+                                document.getElementById(parameteList[index]).classList.remove('active') 
+                            }
+                        }
+
+                        function addClass(...params) {
+                            for (let index = 0; index < params.length; index++) {
+                                document.getElementById(params[index]).classList.add('active') 
+                            }
+                        }
+
+                        function onTabChange(tabName) {
+                            debugger;
+                             if(tabName == 'basic') { 
+                                addClass('basic','basicDiv') 
+                                removeClass('project','family','projectDiv','familyDiv') 
+                             } else if (tabName == 'project') {  
+                                addClass('project','projectDiv') 
+                                removeClass('basic','family','basicDiv','familyDiv')
+                             } else  if (tabName == 'family' ) { 
+                                addClass('family','familyDiv')  
+                                removeClass('basic','project','basicDiv','projectDiv')
+                             } 
+                        }
 
                     </script>
                 </div>
