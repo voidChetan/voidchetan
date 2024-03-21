@@ -32,7 +32,7 @@
                 var movie = movieArray.find(m => m.movieName == movieName);
                 selectedMovie = movie;
                 
-                debugger;
+                ;
                 $(this).find(".card-header").addClass('bg-success');
                 $("#divShows").html("");
                 if (selectedMovie.shows.length == 1) {
@@ -56,7 +56,7 @@
             });
 
             $('#divShows').on('click', '.btn-time', function () {
-                debugger;
+                ;
                 selectedShow = this.innerText;
                 $('#divShows .btn-time').each(function (index, element) {
                     element.classList.remove('btn-success');

@@ -14,12 +14,12 @@
         $(document).ready(function () {
 
             $("#btnSuccess").click(function () {
-                debugger;
+                ;
                 $("#div1").addClass('bg-success');
                 $("#div1").removeClass('bg-danger');
             });
             $("#btnDanger").click(function () {
-                debugger;
+                ;
                 $("#div1").removeClass('bg-success');
                 $("#div1").addClass('bg-danger')
             });
@@ -31,20 +31,20 @@
                 $(this).addClass('btn-success');
             });
             $("#btnAdd").click(function () {
-                debugger;
+                ;
                 $("#mainDiv").removeClass('col-12');
                 $("#mainDiv").addClass('col-7'); 
                 $("#sideDiv").show(); 
             });
             $("#btnClose").click(function () {
-                debugger;
+                ;
                 $("#mainDiv").removeClass('col-7');
                 $("#mainDiv").addClass('col-12'); 
                 $("#sideDiv").hide(); 
             }); 
             var isToggle= true;
             $("#toggleDiv").click(function () {
-                debugger;
+                ;
                 $("#div2").removeClass('bg-success');
                 $("#div2").removeClass('bg-danger');
                 if(isToggle) {
@@ -55,7 +55,7 @@
                 isToggle =! isToggle;
             }); 
             $("#tbl-data2 tr").click(function() {
-                debugger;
+                ;
                 $('#tbl-data2 > tbody  > tr').each(function(index, tr) {
                     tr.classList.remove("bg-secondary")
                 });

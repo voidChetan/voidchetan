@@ -31,9 +31,7 @@
 .selectCard:hover {
     box-shadow: 0 2px 2px rgba(47, 47, 226, 0.25); 
 }
-.row {
-    padding-top: 10px;
-}
+ 
 .row-nopad {
     padding-top: 0px;
 }

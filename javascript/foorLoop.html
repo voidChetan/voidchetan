@@ -29,7 +29,7 @@
 
         $(document).ready(function () {
             $("#btnClear").click(function () {
-                debugger
+                
                 employeeObj = {
                     name: '',
                     contactNo: '',
@@ -46,7 +46,7 @@
             });
 
             $("#btnSave").click(function () {
-                debugger
+                
                 employeeObj = {
                     name: $("#txtName").val(),
                     contactNo: $("#txtContact").val(),
@@ -57,11 +57,11 @@
 
             });
             $("#btnPrint").click(function () {
-                debugger
+                
                 clearEmpForm();
             });
             $("#btnAddCity").click(function () {
-                debugger;
+                ;
                 if ($("#myCity").val() != '' && $("#dpdlCity option[value='" + $("#myCity").val() + "']").length == 0) {
                     const opt = "<option value='" + $("#myCity").val() + "'> " + $("#myCity").val() + "</option>"
                     $("#dpdlCity").append(opt);

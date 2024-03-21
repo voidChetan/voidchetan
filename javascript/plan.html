@@ -106,7 +106,7 @@
                         var selectedItems = [];
 
                         function addHotelOrder() {
-                            debugger;
+                            ;
                             const selectedItem =  document.getElementById('dpdlHotelItem').value;
                             const qty =  document.getElementById('txtHotelQuantity').value; 
                            
@@ -163,7 +163,7 @@
                         }
 
                         function calBill() {
-                            debugger;
+                            ;
                             let totalBill = 0;
                             for (let index = 0; index < selectedItems.length; index++) {
                                 totalBill = totalBill + selectedItems[index].amount;
@@ -339,12 +339,12 @@
                         function addItem() {
                             var selectedItem = document.getElementById('dpdlItem').value;//read selectde item
                             var quantity =  document.getElementById('txtQuantity').value;//read eneterered qty
-                            debugger;
+                            ;
                             const itemRecord = items.find(m=> m.itemId == selectedItem); //find item record with selected item id
                             const totalAMount = Number(quantity) * itemRecord.cost; //generate total amout
                             totalCost = totalCost + totalAMount;
                             const productStr  = itemRecord.itemName + " (" +itemRecord.cost+") "+" * "+quantity+" = " + totalAMount;
-                            debugger;
+                            ;
                             const ItemLi = document.createElement('li');
                             ItemLi.innerText = productStr;
                             document.getElementById('selectedItemsUL').appendChild(ItemLi);

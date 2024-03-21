@@ -211,7 +211,7 @@
                                 )
                                 var index = 1;
                                 cars.forEach(element => {
-                                    debugger;
+                                    ;
                                     var car = "<tr><td>" + index + "</td><td>" + element.carName + "</td><td class='text-end'>" + element.perHr + "</td><td class='text-end'>" + element.perDay + "</td></tr>";
                                     $("#tblCars tbody").append(car);
                                     var car2 = "<option value='" + element.carName + "'> " + element.carName + "</option>";
@@ -242,7 +242,7 @@
                                 
                                 var index = 1;
                                 selectdeItems.forEach(element => {
-                                    debugger;
+                                    ;
                                     var li = "<li > " + element.carName + " - " + element.type + " for " + element.perQuantity + " & no oF Cars ( " + element.quantity + " )</option>";
                                     $("#selectedCars").append(li);
                                     index++;

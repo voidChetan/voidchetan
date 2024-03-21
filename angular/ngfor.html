@@ -29,7 +29,7 @@
                 $(this).addClass('btn-success');
             });
             $("#btnAddCity").click(function () {
-                debugger;
+                ;
                 if ($("#myCity").val() != '' && $("#dpdlCity option[value='" + $("#myCity").val() + "']").length == 0) {
                     const opt = "<option value='" + $("#myCity").val() + "'> " + $("#myCity").val() + "</option>"
                     $("#dpdlCity").append(opt);
@@ -310,13 +310,13 @@
             index++; 
         });
         cityArray.forEach(element => {
-                debugger
+                
                 const tr = "<option value='" + element.cityId + "'>" + element.cityName + " </option>";
                 $("#dpdlCity2").append(tr);
 
             });
             stateArray.forEach(element => {
-                debugger
+                
                 const tr = "<option value='" + element.stateId + "'>" + element.stateName + " </option>";
                 $("#dpdlState2").append(tr);
 

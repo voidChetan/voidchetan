@@ -29,15 +29,15 @@
                 $("#txtFullname").val($("#txtFname").val() + " " + $("#txtMname").val()+ " " + $("#txtLname").val())
             });
             $("#txtMobile").blur(function () {
-                debugger;
+                ;
                 $("#txtRegistartionNo").val($("#txtFname").val().charAt(0).toUpperCase()+'-'+$("#txtMobile").val().substring(6, 10) +'-' +new Date().getDay() +'-'+new Date().getFullYear() )
             });
             $("#txtDob").focusin(function () {
-                debugger;
+                ;
                 $("#txtDob").prop('type','date');
             });
             $("#mySkill").keydown(function () {
-                debugger;
+                ;
                 $("#charCount").text($("#mySkill").val().length + "/" +20);
                 if($("#mySkill").val().length > 20)  {
                     $("#mySkill").addClass('text-error')

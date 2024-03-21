@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="../custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Scenario - 1</title>
+
+
+
+    <style>
+        .card {
+            cursor: pointer !important;
+        }
+
+        .dynamic-button {
+            /* display: inline-block; */
+            padding: 10px 20px;
+            margin-right: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        /* Sidebar style */
+        .sidebar {
+            background-color: lightgray;
+            height: 400px
+        }
+
+        /* Style for sidebar links */
+        .sidebar a {
+            padding: 10px;
+            text-decoration: none;
+            font-size: 16px;
+            color: white;
+            display: block;
+
+        }
+
+        /* Style for submenu items */
+        .submenu {
+            padding-left: 20px;
+            padding-bottom: 5px;
+            margin-top: 10px;
+            padding-top: 10px;
+            font-size: 20px;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">taskS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item dropdown" id="javascriptUl">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            JavaScript
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown " id="angularUl">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Angular
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown" id="logicalUl">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Logical
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <a href="https://github.com/voidChetan" target="_blank" class="btn btn-outline-success">Examples</a>
+                </form>
+            </div>
+        </div>
+    </nav>
+  
+    <div class="container pt-1">
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+            aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Angular</li>
+                <li class="breadcrumb-item active" aria-current="page">Logical</li>
+            </ol>
+        </nav>
+        <div class="row">
+            <div class="col-4">
+                <div class="text-center">
+                    <h3>Dynamic UI Selection </h3>
+                </div>
+                <ul>
+                    <li>Top tabs should be dynamic </li>
+                    <li>on Click of top tab - side menu should change and that tab should have selected color</li>
+                    <li>on click of side menu - respective UI should be visible and that side menu should have selected color </li> 
+                </ul>
+            </div>
+            <div class="col-8">
+                <div class="row">
+                    <!-- Buttons container -->
+                    <div class="col-12">
+                        <div class="d-flex" id="button-container"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        <div class="sidebar" id="sidebar">
+                            <!-- Sidebar Menus -->
+                            <div class="text-white mt-2 d-grid gap-2" id="submenu-container"></div>
+                        </div>
+                    </div>
+                    <div class="col-9">
+                        <!-- Basic Information -->
+                        <div class="mt-1" id="information">
+                            <h5>Basic Information</h4>
+                            <form>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label>Name :</label>
+                                        <input type="text" name="name" id="userName" class="form-control">
+                                    </div>
+                                    <div class="col-4">
+                                        <label>DOB :</label>
+                                        <input type="date" name="dob" id="userName" class="form-control">
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="mt-4">Contact</label>
+                                        <input type="text" name="contact" id="userName" class="form-control">
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="mt-1">Gender :</label>
+                                        <input type="radio" class="mx-2" name="gender" id="userName"
+                                            value="Male"><span>Male</span>
+                                        <input type="radio" class="mx-2" name="gender" id="userName"
+                                            value="Female"><span>Female</span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- Address -->
+                        <div class="mt-1" id="address">
+                            <h5>Address</h4>
+                            <form>
+                                <div class="row">
+                                    <div class="col-7">
+                                        <label>Address :</label>
+                                        <textarea name="address" id="addre" cols="5" rows="5"
+                                            class="form-control"></textarea>
+                                    </div>
+                                    <div class="col-4">
+                                        <label>City :</label>
+                                        <input type="text" name="city" class="form-control">
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="mt-4">State :</label>
+                                        <input type="text" name="state" class="form-control">
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="mt-4">Pincode :</label>
+                                        <input type="text" name="pincode" class="form-control">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- Company Details -->
+                        <div class="mt-1" id="address">
+                            <h5>Company Details</h4>
+                            <form>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label>Company Name :</label>
+                                        <input type="text" name="company" class="form-control">
+                                    </div>
+                                    <div class="col-4">
+                                        <label>Company Location :</label>
+                                        <input type="text" name="location" class="form-control">
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="mt-4">Position :</label>
+                                        <input type="text" name="Position" class="form-control">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- work Experience -->
+    
+                        <div class="mt-1" id="address">
+                            <h5>Work Experience</h4>
+                            <form>
+                                <div class="row">
+                                    <div class="col-7">
+                                        <label>Roles and Responsibilty :</label>
+                                        <textarea name="roles" id="roles" cols="5" rows="5" class="form-control"></textarea>
+                                    </div>
+                                    <div class="col-4">
+                                        <label>Technologies Used :</label>
+                                        <input type="text" name="location" class="form-control">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- Project -->
+                        <div class="mt-1" id="address">
+                            <h5>Project Details</h4>
+                            <form>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label>Project Name :</label>
+                                        <input type="text" name="Projectname" class="form-control">
+                                    </div>
+                                    <div class="col-4">
+                                        <label>Project Duration :</label>
+                                        <input type="text" name="Duration" class="form-control">
+                                    </div>
+                                    <div class="col-4">
+                                        <label>Technologies Used :</label>
+                                        <input type="text" name="Technologies" class="form-control">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+    
+                        <!-- Project description -->
+                        <div class="mt-1" id="address">
+                            <h5>Project Details</h4>
+                            <form>
+                                <div class="row">
+                                    <div class="col-8">
+                                        <label>Project Description :</label>
+                                        <textarea name="Description" id="" cols="5" rows="5"
+                                            class="form-control"></textarea>
+                                    </div>
+    
+                                </div>
+                            </form>
+                        </div>
+                        <!-- Project Live links -->
+                        <div class="mt-1" id="address">
+                            <h5>Project Live Links</h4>
+                            <form>
+                                <div class="row">
+                                    <div class="col-8">
+                                        <label>Project Links :</label>
+                                        <input type="text" name="Links" class="form-control">
+                                    </div>
+    
+                                </div>
+                            </form>
+                        </div>
+                        <!-- Project Live links -->
+                        <div class="mt-1" id="address">
+                            <h5>Project Skills</h4>
+                            <form>
+                                <div class="row">
+                                    <div class="col-8">
+                                        <label>Project Skills :</label>
+                                        <input type="text" name="Skills" class="form-control">
+                                    </div>
+                                    <div class="col-8">
+                                        <label>Project Roles and responsibility :</label>
+                                        <textarea name="responsibility" class="form-control" cols="5" rows="5"></textarea>
+                                    </div>
+    
+                                </div>
+                            </form>
+                        </div>
+    
+                    </div>
+                    <script>
+                        // Button names and corresponding submenu items
+                        var buttonSubmenuMap = {
+                            "Personal Details": ["Basic Information", "Address",],
+                            "Job History": ["Company Details", "Experience"],
+                            "Project": ["Project Details", "Description", "Live Link", "Skills"],
+                            "Domain": [, "Domain Name", "Type Of Domain"],
+                        };
+    
+                        // Function to create buttons
+                        function createButtons(names) {
+                            var container = document.getElementById("button-container");
+                            names.forEach(function (name) {
+                                var button = document.createElement("button");
+                                button.textContent = name;
+                                button.className = "dynamic-button";
+                                button.onclick = function () {
+                                    showSubmenu(name);
+                                };
+                                container.appendChild(button);
+                            });
+                        }
+    
+                        // Function to show submenu for a specific button
+                        function showSubmenu(buttonName) {
+                            var submenuItems = buttonSubmenuMap[buttonName];
+                            var submenuContainer = document.getElementById("submenu-container");
+                            submenuContainer.innerHTML = ""; // Clear previous submenu
+    
+                            if (submenuItems) {
+                                submenuItems.forEach(function (item) {
+                                    var menuItem = document.createElement("button");
+                                    menuItem.textContent = item;
+                                    menuItem.className = "btn btn-primary btn-block mb-2";
+                                    submenuContainer.appendChild(menuItem);
+                                });
+                            }
+                        }
+    
+                        // Call the function to create buttons
+                        createButtons(Object.keys(buttonSubmenuMap));
+    
+    
+                    </script>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            
+
+            
+        </div>
+
+    </div>
+    <script type="text/javascript" src="../menu.js"> </script>
+</body>
+
+</html>

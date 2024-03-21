@@ -147,6 +147,12 @@ var logicalMenuArray = [
         text: 'Data List Picker',
         info: '',
         imageUrl: 'https://xdfile.com/wp-content/uploads/2020/01/movie-ticket-app-free-download-758x569.jpg'
+    },
+    {
+        url: 'https://voidchetan.github.io/voidchetan/logical/dynamicUI.html',
+        text: 'Dynamic UI',
+        info: '',
+        imageUrl: 'https://xdfile.com/wp-content/uploads/2020/01/movie-ticket-app-free-download-758x569.jpg'
     }
     
     
@@ -357,7 +363,7 @@ var stateArray = [
 ]
 var interview = "<li class='nav-item'> <a class='nav-link' href='https://voidchetan.github.io/voidchetan/interview/index.html'>Interview Questions</a></li>";
 $("#navbarSupportedContent ul").append(interview);
-debugger;
+;
 var logde = " <li class='nav-item dropdown logicalUl' id='logicalUl'>";
 logde = logde + "<a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button'";
 logde = logde + "data-bs-toggle='dropdown' aria-expanded='false'>";
@@ -365,7 +371,7 @@ logde = logde + "Logical Development";
 logde = logde + "</a>";
 logde = logde + "<ul class='dropdown-menu' aria-labelledby='navbarDropdown'>";
 logicalDevelopmentMenuArray.forEach(element => {
-    debugger;
+    ;
     logde = logde + "<li><a class='dropdown-item' href='" + element.url + "'>" + element.text + "</a></li>";
 
 });
@@ -428,7 +434,7 @@ javascriptMenueArray.forEach(element => {
 
 setTimeout(() => {
     let ss = window.location.href;
-    debugger;
+    ;
     let lastPage = ss.split("/");
     let last = lastPage[lastPage.length - 1];
     let title = last.replace(".html", "");
