@@ -361,9 +361,9 @@ var stateArray = [
         stateName: 'Delhi'
     },
 ]
-var interview = "<li class='nav-item'> <a class='nav-link' href='https://voidchetan.github.io/voidchetan/interview/index.html'>Interview Questions</a></li>";
-$("#navbarSupportedContent ul").append(interview);
-;
+// var interview = "<li class='nav-item'> <a class='nav-link' href='https://voidchetan.github.io/voidchetan/interview/index.html'>Interview Questions</a></li>";
+// $("#navbarSupportedContent ul").append(interview);
+// ;
 var logde = " <li class='nav-item dropdown logicalUl' id='logicalUl'>";
 logde = logde + "<a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button'";
 logde = logde + "data-bs-toggle='dropdown' aria-expanded='false'>";
