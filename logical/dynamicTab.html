@@ -161,15 +161,11 @@
 
                     <div class="row">
                         <div class="col-12">
-                            <ul class="list-group list-group-horizontal">
-                                <li class="list-group-item">Cricket</li>
-                                <li class="list-group-item bg-success">Online Games</li>
-                                <li class="list-group-item">Drawing</li>
-                                <li class="list-group-item">Singing</li>
+                            <ul class="list-group list-group-horizontal" id="myHoobyUl"> 
                               </ul>
                         </div>
                         <div class="col-12 pt-3">
-                            <button class="btn btn-primary">Get Selected Hobbies</button>
+                            <button class="btn btn-primary" onclick="getSelectedHobbies()">Get Selected Hobbies</button>
                         </div>
                         <div class="col-12">
                             <p id="selectedHobbies"></p>
@@ -177,7 +173,43 @@
                     </div>
 
                     <script>
+                        var hobbiesList  = ['Cricket','Online Games','Drawing','Singing'];
+                        var selectedHobbies = [];
+                        createHoobiesLI();
+                        function createHoobiesLI() {
+                            for (let index = 0; index < hobbiesList.length; index++) {
+                                var li=  document.createElement('li');
+                                li.innerText = hobbiesList[index];
+                                li.classList.add('list-group-item');
+                                li.addEventListener('click',onSelect)
+                                document.getElementById('myHoobyUl').append(li) 
+                            }
+                        }
+                        function getSelectedHobbies() {
+                            document.getElementById('selectedHobbies').innerHTML = '';
+                            for (let index = 0; index < selectedHobbies.length; index++) {
+                                const value = selectedHobbies[index];
+                                var mySpan =  document.createElement('span');
+                                mySpan.innerText = value;
+                                document.getElementById('selectedHobbies').append(mySpan)
+                            }
+                        }
 
+                        function onSelect() {
+                            debugger;
+                            console.log(this)
+                            const hobbyIndex =  selectedHobbies.findIndex(m=>m == this.innerText);
+                            debugger;
+                            if(hobbyIndex == -1) {
+                                this.classList.add('bg-success')
+                                selectedHobbies.push(this.innerText);
+                            } else {
+                                selectedHobbies.splice(hobbyIndex,1);
+                                this.classList.remove('bg-success')
+                            }
+                           
+                            
+                        }   
                     </script>
                 </div>
 
