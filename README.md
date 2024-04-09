@@ -1,11 +1,15 @@
 ### Hi there 👋
-### Here you will find Projects and Code of all Videos I will be posting on youTube.
+### Here you will find Source Code of Projects of all Videos I will be posting on youTube.
 ### Follow & Connect me on LinkedIn
 https://www.linkedin.com/in/chetan-jogi-a87148ba
 ### Youtube Channel Link
 https://www.youtube.com/@LearningPartnerDigital
 ### Visit My Mini Project Ideas Portal where you can find So many project ideas you can try to implement
 https://miniprojectideas.com
+### Learn From Me
+https://angularacademy.in
+### Connect With Me on Whatsup
+https://chat.whatsapp.com/GmByxyjIEMg6pP4aqmKdP1
 <!--
 **voidChetan/voidchetan** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 ###Youtube Channel Link
