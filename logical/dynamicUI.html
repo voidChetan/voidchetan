@@ -111,7 +111,7 @@
             </div>
         </div>
     </nav>
-  
+
     <div class="container pt-1">
         <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
             aria-label="breadcrumb">
@@ -129,7 +129,8 @@
                 <ul>
                     <li>Top tabs should be dynamic </li>
                     <li>on Click of top tab - side menu should change and that tab should have selected color</li>
-                    <li>on click of side menu - respective UI should be visible and that side menu should have selected color </li> 
+                    <li>on click of side menu - respective UI should be visible and that side menu should have selected
+                        color </li>
                 </ul>
             </div>
             <div class="col-8">
@@ -150,158 +151,160 @@
                         <!-- Basic Information -->
                         <div class="mt-1" id="information">
                             <h5>Basic Information</h4>
-                            <form>
-                                <div class="row">
-                                    <div class="col-4">
-                                        <label>Name :</label>
-                                        <input type="text" name="name" id="userName" class="form-control">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <label>Name :</label>
+                                            <input type="text" name="name" id="userName" class="form-control">
+                                        </div>
+                                        <div class="col-4">
+                                            <label>DOB :</label>
+                                            <input type="date" name="dob" id="userName" class="form-control">
+                                        </div>
+                                        <div class="col-6">
+                                            <label class="mt-4">Contact</label>
+                                            <input type="text" name="contact" id="userName" class="form-control">
+                                        </div>
+                                        <div class="col-6">
+                                            <label class="mt-1">Gender :</label>
+                                            <input type="radio" class="mx-2" name="gender" id="userName"
+                                                value="Male"><span>Male</span>
+                                            <input type="radio" class="mx-2" name="gender" id="userName"
+                                                value="Female"><span>Female</span>
+                                        </div>
                                     </div>
-                                    <div class="col-4">
-                                        <label>DOB :</label>
-                                        <input type="date" name="dob" id="userName" class="form-control">
-                                    </div>
-                                    <div class="col-6">
-                                        <label class="mt-4">Contact</label>
-                                        <input type="text" name="contact" id="userName" class="form-control">
-                                    </div>
-                                    <div class="col-6">
-                                        <label class="mt-1">Gender :</label>
-                                        <input type="radio" class="mx-2" name="gender" id="userName"
-                                            value="Male"><span>Male</span>
-                                        <input type="radio" class="mx-2" name="gender" id="userName"
-                                            value="Female"><span>Female</span>
-                                    </div>
-                                </div>
-                            </form>
+                                </form>
                         </div>
                         <!-- Address -->
                         <div class="mt-1" id="address">
                             <h5>Address</h4>
-                            <form>
-                                <div class="row">
-                                    <div class="col-7">
-                                        <label>Address :</label>
-                                        <textarea name="address" id="addre" cols="5" rows="5"
-                                            class="form-control"></textarea>
+                                <form>
+                                    <div class="row">
+                                        <div class="col-7">
+                                            <label>Address :</label>
+                                            <textarea name="address" id="addre" cols="5" rows="5"
+                                                class="form-control"></textarea>
+                                        </div>
+                                        <div class="col-4">
+                                            <label>City :</label>
+                                            <input type="text" name="city" class="form-control">
+                                        </div>
+                                        <div class="col-6">
+                                            <label class="mt-4">State :</label>
+                                            <input type="text" name="state" class="form-control">
+                                        </div>
+                                        <div class="col-6">
+                                            <label class="mt-4">Pincode :</label>
+                                            <input type="text" name="pincode" class="form-control">
+                                        </div>
                                     </div>
-                                    <div class="col-4">
-                                        <label>City :</label>
-                                        <input type="text" name="city" class="form-control">
-                                    </div>
-                                    <div class="col-6">
-                                        <label class="mt-4">State :</label>
-                                        <input type="text" name="state" class="form-control">
-                                    </div>
-                                    <div class="col-6">
-                                        <label class="mt-4">Pincode :</label>
-                                        <input type="text" name="pincode" class="form-control">
-                                    </div>
-                                </div>
-                            </form>
+                                </form>
                         </div>
                         <!-- Company Details -->
                         <div class="mt-1" id="address">
                             <h5>Company Details</h4>
-                            <form>
-                                <div class="row">
-                                    <div class="col-4">
-                                        <label>Company Name :</label>
-                                        <input type="text" name="company" class="form-control">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <label>Company Name :</label>
+                                            <input type="text" name="company" class="form-control">
+                                        </div>
+                                        <div class="col-4">
+                                            <label>Company Location :</label>
+                                            <input type="text" name="location" class="form-control">
+                                        </div>
+                                        <div class="col-6">
+                                            <label class="mt-4">Position :</label>
+                                            <input type="text" name="Position" class="form-control">
+                                        </div>
                                     </div>
-                                    <div class="col-4">
-                                        <label>Company Location :</label>
-                                        <input type="text" name="location" class="form-control">
-                                    </div>
-                                    <div class="col-6">
-                                        <label class="mt-4">Position :</label>
-                                        <input type="text" name="Position" class="form-control">
-                                    </div>
-                                </div>
-                            </form>
+                                </form>
                         </div>
                         <!-- work Experience -->
-    
+
                         <div class="mt-1" id="address">
                             <h5>Work Experience</h4>
-                            <form>
-                                <div class="row">
-                                    <div class="col-7">
-                                        <label>Roles and Responsibilty :</label>
-                                        <textarea name="roles" id="roles" cols="5" rows="5" class="form-control"></textarea>
+                                <form>
+                                    <div class="row">
+                                        <div class="col-7">
+                                            <label>Roles and Responsibilty :</label>
+                                            <textarea name="roles" id="roles" cols="5" rows="5"
+                                                class="form-control"></textarea>
+                                        </div>
+                                        <div class="col-4">
+                                            <label>Technologies Used :</label>
+                                            <input type="text" name="location" class="form-control">
+                                        </div>
                                     </div>
-                                    <div class="col-4">
-                                        <label>Technologies Used :</label>
-                                        <input type="text" name="location" class="form-control">
-                                    </div>
-                                </div>
-                            </form>
+                                </form>
                         </div>
                         <!-- Project -->
                         <div class="mt-1" id="address">
                             <h5>Project Details</h4>
-                            <form>
-                                <div class="row">
-                                    <div class="col-4">
-                                        <label>Project Name :</label>
-                                        <input type="text" name="Projectname" class="form-control">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <label>Project Name :</label>
+                                            <input type="text" name="Projectname" class="form-control">
+                                        </div>
+                                        <div class="col-4">
+                                            <label>Project Duration :</label>
+                                            <input type="text" name="Duration" class="form-control">
+                                        </div>
+                                        <div class="col-4">
+                                            <label>Technologies Used :</label>
+                                            <input type="text" name="Technologies" class="form-control">
+                                        </div>
                                     </div>
-                                    <div class="col-4">
-                                        <label>Project Duration :</label>
-                                        <input type="text" name="Duration" class="form-control">
-                                    </div>
-                                    <div class="col-4">
-                                        <label>Technologies Used :</label>
-                                        <input type="text" name="Technologies" class="form-control">
-                                    </div>
-                                </div>
-                            </form>
+                                </form>
                         </div>
-    
+
                         <!-- Project description -->
                         <div class="mt-1" id="address">
                             <h5>Project Details</h4>
-                            <form>
-                                <div class="row">
-                                    <div class="col-8">
-                                        <label>Project Description :</label>
-                                        <textarea name="Description" id="" cols="5" rows="5"
-                                            class="form-control"></textarea>
+                                <form>
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <label>Project Description :</label>
+                                            <textarea name="Description" id="" cols="5" rows="5"
+                                                class="form-control"></textarea>
+                                        </div>
+
                                     </div>
-    
-                                </div>
-                            </form>
+                                </form>
                         </div>
                         <!-- Project Live links -->
                         <div class="mt-1" id="address">
                             <h5>Project Live Links</h4>
-                            <form>
-                                <div class="row">
-                                    <div class="col-8">
-                                        <label>Project Links :</label>
-                                        <input type="text" name="Links" class="form-control">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <label>Project Links :</label>
+                                            <input type="text" name="Links" class="form-control">
+                                        </div>
+
                                     </div>
-    
-                                </div>
-                            </form>
+                                </form>
                         </div>
                         <!-- Project Live links -->
                         <div class="mt-1" id="address">
                             <h5>Project Skills</h4>
-                            <form>
-                                <div class="row">
-                                    <div class="col-8">
-                                        <label>Project Skills :</label>
-                                        <input type="text" name="Skills" class="form-control">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <label>Project Skills :</label>
+                                            <input type="text" name="Skills" class="form-control">
+                                        </div>
+                                        <div class="col-8">
+                                            <label>Project Roles and responsibility :</label>
+                                            <textarea name="responsibility" class="form-control" cols="5"
+                                                rows="5"></textarea>
+                                        </div>
+
                                     </div>
-                                    <div class="col-8">
-                                        <label>Project Roles and responsibility :</label>
-                                        <textarea name="responsibility" class="form-control" cols="5" rows="5"></textarea>
-                                    </div>
-    
-                                </div>
-                            </form>
+                                </form>
                         </div>
-    
+
                     </div>
                     <script>
                         // Button names and corresponding submenu items
@@ -311,7 +314,7 @@
                             "Project": ["Project Details", "Description", "Live Link", "Skills"],
                             "Domain": [, "Domain Name", "Type Of Domain"],
                         };
-    
+
                         // Function to create buttons
                         function createButtons(names) {
                             var container = document.getElementById("button-container");
@@ -325,13 +328,13 @@
                                 container.appendChild(button);
                             });
                         }
-    
+
                         // Function to show submenu for a specific button
                         function showSubmenu(buttonName) {
                             var submenuItems = buttonSubmenuMap[buttonName];
                             var submenuContainer = document.getElementById("submenu-container");
                             submenuContainer.innerHTML = ""; // Clear previous submenu
-    
+
                             if (submenuItems) {
                                 submenuItems.forEach(function (item) {
                                     var menuItem = document.createElement("button");
@@ -341,19 +344,32 @@
                                 });
                             }
                         }
-    
+
                         // Call the function to create buttons
                         createButtons(Object.keys(buttonSubmenuMap));
-    
-    
+                        function isDevToolsOpen() {
+                            let widthThreshold = window.outerWidth - window.innerWidth > 160;
+                            let heightThreshold = window.outerHeight - window.innerHeight > 160;
+
+                            if (widthThreshold || heightThreshold) {
+                               alert('Developer tools may be open.');
+                            } else {
+                                alert('Developer tools are closed.');
+                            }
+                            
+                        }
+
+                        // Usage
+                       
+
                     </script>
                 </div>
             </div>
         </div>
         <div class="container-fluid">
-            
 
-            
+            <button onclick="isDevToolsOpen()">check</button>
+
         </div>
 
     </div>

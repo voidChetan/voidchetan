@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        getName();
+        console.log(X);
+        var X = 123;
+        function getName() {
+            console.log("Hello");
+        } 
+    </script>
+
+    <script>
+        arrowFuntion();
+        functionAsVariable();
+        console.log(X);
+        var X = 123;
+
+        var arrowFuntion = () => {
+            console.log('arrowFuntion');
+        }
+        var functionAsVariable = function () {
+            console.log('functionAsVariable');
+        } 
+    </script>
+
+    <script>
+        var x = 10;
+        console.log(x);
+        if (true) {
+            (function () {
+                var x = 20;
+                console.log(x);
+            })();
+        }
+        console.log(x); 
+    </script>
+
+    <script>
+        if (true) {
+            console.log(innerVar);
+            var innerVar = "I am hoisted!";
+            console.log(innerVar);
+        }
+        console.log(innerVar);
+
+        function printName() {
+            if (true) {
+                var funVar = "I am hoisted!";
+                console.log(funVar);
+            }
+
+        }
+        console.log(funVar);
+        printName() 
+    </script>
+
+    <script>
+        var foo = function () {
+            console.log("I am a function expression!");
+        };
+        function foo() {
+            console.log("I am a function declaration!");
+        }
+        foo() 
+    </script>
+
+    <script>
+        function test() {
+            if (false) {
+                var x = 50;
+            }
+            console.log(x); //
+            console.log(y); //
+            var y = 100;
+            console.log(y);
+        }
+        test(); 
+    </script>
+
+    <script>
+        function print() {
+            var name = "Angular";
+            function printName() {
+                name = "Javascript";
+                console.log(name);
+            }
+            console.log(name);
+            printName();
+        }
+        print(); 
+    </script>
+
+    <script>
+        var num1;
+        num1 = 10;
+        function print() {
+            var num1;
+            if (num1 > 20) {
+                num1 = 50;
+            }
+            console.log(num1);
+        }
+        print(); 
+    </script>
+
+    <script>
+        var x = 21;
+        var girl = function () {
+            console.log(x);
+            var x = 20;
+        };
+        girl(); 
+    </script>
+
+    <script>
+        var userName = "Hemant";
+        function b() {
+            setTimeout(print, 0);
+            console.log(userName);
+            var userName = "Nikhil";
+        }
+        console.log(userName);
+        function print() {
+            console.log(userName);
+        }
+        b(); 
+    </script>
+    
+    <script>
+        function print() {
+            setTimeout(function () {
+                console.log(name);
+            }, 1000);
+            var name = "Demo";
+        }
+        print();
+    </script>
+</body>
+
+</html>
