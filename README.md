@@ -10,7 +10,7 @@ https://voidchetan.github.io/interview_question_app_angular_17/home
 https://miniprojectideas.com
 ### Learn From Me
 https://angularacademy.in
-### Connect With Me on Whatsup
+### Connect With Me on WhatsApp
 https://chat.whatsapp.com/GmByxyjIEMg6pP4aqmKdP1
 <!--
 **voidChetan/voidchetan** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
