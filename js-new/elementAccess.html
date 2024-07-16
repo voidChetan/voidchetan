@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function readName() {
+          var name =  document.getElementById("txtName").value
+          alert(name)
+        }
+        function readCity() {
+            var city =  document.getElementById("dpopdownCity").value;
+            alert(city)
+        }
+        function copy() {
+            var num1 = document.getElementById("txtnum1").value;
+            document.getElementById("txtnum2").value = num1;
+        }
+        function remove() {
+            document.getElementById("txtnum1").value = "";
+            document.getElementById("txtnum2").value = "";
+        }
+        function readParaText() {
+            var paraText =  document.getElementById("txtPara").innerText;
+            alert(paraText)
+        }
+        function updateParaText() {
+            document.getElementById("txtPara").innerText = "Welcome to Next Text"
+        }
+    </script>
+   <input type="text" name="" id="txtName"> 
+   <button onclick="readName()">Read Value</button>
+   <br>
+   <br>
+   <select id="dpopdownCity">
+    <option>Pune</option>
+    <option>Mumbai</option>
+    <option>Solapur</option>
+    <option>Nagpur</option>
+   </select>
+   <button  onclick="readCity()">Read City</button>
+   <br>
+   <br>
+   <input type="text" placeholder="Num 1" id="txtnum1">
+   <button onclick="copy()">Copy</button>
+   <input type="text" placeholder="Num 2" id="txtnum2">
+   <br>
+   <button onclick="remove()">Remove Value</button>
+   <br>
+   <br>
+   <p id="txtPara">This is Sample text</p>
+   <button onclick="readParaText()" >Read Text</button>
+   <button onclick="updateParaText()" >Update Text</button>
+   <br>
+   <br>
+   <input type="number" placeholder="Num 1" id="txtnumber1">
+   <button  onclick="onAdd()"> + </button>
+   <input type="number" placeholder="Num 2" id="txtnumber2">
+   =
+   <input type="text" placeholder="Result" id="txtResult">
+   <script>
+        function onAdd() {
+            debugger;
+            var num1 =  document.getElementById("txtnumber1").value;
+            var num2  =  document.getElementById("txtnumber2").value;
+
+            var number1 = parseInt(num1);
+            var number2 = Number(num2);
+
+            var result =  number1 + number2;
+
+            document.getElementById("txtResult").value = result;
+        }
+   </script>
+</body>
+</html>

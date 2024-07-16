@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function firstNullCheck(arrayList) { 
+            let isStringValeuPresent = "";
+            if(arrayList.length !== 0) {
+                for (let index = 0; index < arrayList.length; index++) {
+                    if(arrayList[index] != null) {
+                        if(isStringValeuPresent == '') {
+                            isStringValeuPresent = arrayList[index];
+                        } 
+                    }  
+                }
+                if(isStringValeuPresent != '') {
+                    return isStringValeuPresent;
+                } else {
+                    return null;
+                }
+            } else {
+                return null;
+            } 
+        }
+
+        console.log(firstNullCheck(['abc','ddd','ccc']) )
+        console.log(firstNullCheck([null,'DDD','']) )
+        console.log(firstNullCheck([null,null, null,null])) 
+        console.log(firstNullCheck([]))
+
+        function calCulateAvgHeight(obj) {
+            let keyList = Object.keys(obj);
+            if(keyList.length != 0) { 
+                let totalHeight = 0;
+                for (let index = 0; index < keyList.length; index++) {
+                    const element = keyList[index];
+                    const height = obj[element].height;
+                    totalHeight = totalHeight + height; 
+                }
+                const avgHeight = totalHeight/ keyList.length; 
+                return avgHeight;
+            } else {
+                return null;
+            }
+        } 
+        const student = {
+            json: {height: 24, width: 45},
+            adam: {height: 45,width: 56},
+            mima: {height: 56,width:45}
+        }; 
+        const employe= {}
+        console.log(calCulateAvgHeight(student))
+        console.log(calCulateAvgHeight(employe))
+
+    </script>
+</body>
+</html>

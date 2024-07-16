@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="row text-center pb-5">
+        <div class="col-4">
+            <div>
+                <i style="font-size: 150px;" class="fa fa-mobile" aria-hidden="true"></i><br>
+                Mobile
+            </div>
+            <button onclick="showDescByPlanName('Mobile')"
+                class="btn btn-primary mt-4" id="btnMobile">Find More</button>
+        </div>
+        <div class="col-4">
+            <div>
+                <i style="font-size: 150px;" class="fa fa-home" aria-hidden="true"></i><br>
+                JioFiber
+            </div>
+            <button onclick="showDescByPlanName('JioFiber')"
+                class="btn btn-primary mt-4" id="btnFiber">Find More</button>
+        </div>
+        <div class="col-4">
+            <div>
+                <i style="font-size: 150px;" class="fa fa-id-badge" aria-hidden="true"></i><br>
+                Business
+            </div>
+            <button
+                onclick="showDescByPlanName('Business')"
+                class="btn btn-primary mt-4" id="btnBusiness">Find More</button>
+        </div>
+    </div>
+    <div>
+        <h2 id="planDescriptioon"></h2>
+    </div>
+    <script>
+        const h1 = document.getElementById("planDescriptioon");
+        const MobilePnaInfo = "Free SIM, calls, and SMS with invaluable digital experiences.2000/month"
+        const JioInfo = "Connected living experiences with superfast home internet.1500/month"
+        const BusinessPnaInfo = "Enterprise-grade digital services to meet all your business needs 4000/month"
+        //way 1
+        function showMobilePlan() {
+            h1.innerText = "Free SIM, calls, and SMS with invaluable digital experiences.2000/month";
+        }
+        function showHioFibrePlan() {
+            h1.innerText = "Connected living experiences with superfast home internet.1500/month";
+        }
+        function showBusineess() {
+            h1.innerText = "Enterprise-grade digital services to meet all your business needs 4000/month";
+        }
+
+        //way 2
+        function showDescByPlan(planName) {
+            if (planName == 'Mobile') {
+                h1.innerText = "Free SIM, calls, and SMS with invaluable digital experiences.2000/month";
+            } else if (planName == 'JioFiber') {
+                h1.innerText = "Connected living experiences with superfast home internet.1500/month";
+            } else {
+                h1.innerText = "Enterprise-grade digital services to meet all your business needs 4000/month";
+            }
+        }
+
+        //way 3
+        function showPlanInfo(planDescriptioon) {
+            document.getElementById("planDescriptioon").innerText = planDescriptioon;
+        }
+        
+        //way 4
+        function showDescByPlanName(planName) {
+            if (planName == 'Mobile') {
+                h1.innerText = MobilePnaInfo;
+            } else if (planName == 'JioFiber') {
+                h1.innerText = JioInfo;
+            } else {
+                h1.innerText = BusinessPnaInfo;
+            }
+        } 
+    </script>
+</body>
+
+</html>

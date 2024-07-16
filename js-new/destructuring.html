@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./calulcate.js"></script>
+</head>
+<body>
+    <script type="module" src="./calulcate.js"></script>
+    <script>
+
+         
+        var cityList = ["Pune","Mumbai","Delhi"];
+        
+        var [first, second, third,fourth = "Jaipur"] = cityList;
+        console.log(first);
+        console.log(second)
+        console.log(third)
+        console.log(fourth)
+
+        var secondEle = cityList[1];
+        var thirdELe = cityList[2];
+
+        var studetnObj = {
+            name:'Chetan',
+            city:'Nagpur',
+            mobile:'1122334455'
+        };
+        var {name,mobile,state ="MH"} = studetnObj;
+        console.log(name)
+        console.log(mobile)
+        console.log(state)
+        var cityName = studetnObj.city;
+
+
+    </script>
+   
+    
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>protoType</title>
+</head>
+
+<body>
+    <script>
+        
+        // var studentObj = {
+        //     name: 'AAAA', 
+        //     printName: function() {
+        //         console.log('Name is '+ this.name + ' city is '+this.city)
+        //     }
+        // };
+
+        // studentObj.printName(); 
+
+        // var employeDetils = {
+        //     name:'Aditya',
+        //     city:'Mumbai',
+        //     empId:1122,
+        //     designation: 'SR ENgr' 
+        // };
+
+        // employeDetils.__proto__ = studentObj;
+
+        // employeDetils.printName();
+
+        // function Employee (name) {
+        //     this.name =  name;
+        // }
+
+
+        // Employee.prototype.printName = function () {
+        //     console.log('Name is ', this.name)
+        // }
+
+        // let emp1 =  new Employee('Aditya');
+        // emp1.printName();
+
+        // let studetn =  new Employee("Pankja");
+        // studetn.printName()
+ 
+        // var firstName = "CEHtan";
+        // console.log(firstName.__proto__);
+        // console.log(firstName.__proto__.__proto__);
+
+
+        // var rollNo = 123;
+        // console.log(rollNo.__proto__);
+        // console.log(rollNo.__proto__.__proto__);
+        String.prototype.checkCharExist = function(searchChar) {
+            const charArray = this.split('');
+            const isExist =  charArray.findIndex(x=>x == searchChar);
+
+            return isExist == -1 ? false : true; 
+        }
+
+
+        function checkCharExist (searchChar) {
+            const charArray = this.split('');
+            const isExist =  charArray.findIndex(x=>x == searchChar);
+
+            return isExist == -1 ? false : true; 
+        }
+        
+        var someText = "This is General text";
+
+        console.log(checkCharExist('x'))
+        
+        console.log(someText.checkCharExist('m'))
+
+
+        let inputData = {
+            "p.data1": "value p-1",
+            "p.data2": "value p-2",
+            "s.data1": "value s-1",
+            "d.data1": "value d-1",
+            "p.data3": "value p-1",
+            "contact": "conatct data",
+            "name": "demo name",
+        };
+
+
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>

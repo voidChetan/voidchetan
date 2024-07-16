@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let mhCityList = [ 'Pune','Nashik', 'mumbai'];
+        let mpStateList = ['Bhopal','Indore'];
+        var newCity = "Nagpur";
+        //combine
+        var newList = [...mpStateList,...mhCityList];
+        var insidalist = [...mhCityList,newCity,"solapur",...mpStateList ]
+        //clone , copy
+        let mhCopyCity = [...mhCityList];
+
+        let studentDetail = {
+            name:'Chetan',
+            mobileNo:'4445555',
+            email:'chetan@gmail.com'
+        };
+        let studentAddress = {
+            city:'Nagpur',
+            state: 'MH'
+        };
+        let cloneObj= {...studentDetail};
+        let studetn  = {...studentDetail,altMobNo:"99988877",...studentAddress}
+
+        
+
+
+
+        debugger;
+    </script>
+    
+</body>
+</html>

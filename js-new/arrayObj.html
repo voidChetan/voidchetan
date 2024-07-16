@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //string, number, boolen, date , symbokl
+        // object, array
+        //undefined , null
+
+        var employeeObj = {
+            empId:345,
+            name:'Chetan',
+            city:'Pune'
+        };
+
+        console.log(employeeObj.name);
+        employeeObj.empId = 222;
+
+        console.log(employeeObj['city'])
+        employeeObj['city'] = "Mumbai"
+        debugger;
+        console.log(employeeObj)
+
+
+        var studentObj = {
+            studId: 111,
+            name: 'Chetan',
+            isActive: true,
+            percent:  null,
+            per: undefined,
+            projects: [
+                {projectName:'AAA',technology: 'html'},
+                {projectName:'BBB',technology: 'CSSS'}
+            ],
+            address: {
+                city: 'Pune',
+                state: 'MH',
+                pincode: '111111',
+                phoneNo: ['11122233', '444455566'],
+                permanentAddress: {
+                    city: 'Warora',
+                    state: 'MH',
+                    pincode: '444444'
+                }
+            },
+            contactNoList: ['9999888877', '1122112233']
+        };
+
+        var rollNoList = [11, 1112, 112];
+
+        var cityList = ['Pune', 'Nagpur','Mumbai'];
+
+        var studentArray = [
+            { name:'Chetan', id:112, mobile:'9988998877'},
+            { name:'Rahul', id:113, mobile:'11122233'},
+            { name:'Punam', id:114, mobile:'222333444'},
+            { name:'Ram', id:115, mobile:'666777888'}
+        ];
+
+        console.log(studentArray[2])
+        console.log(studentArray[1].mobile)
+        studentArray[1].id =2123;
+
+
+
+        console.log(rollNoList[1])
+        console.log(studentObj.address.pincode);
+        console.log(studentObj.address.permanentAddress.state);
+        console.log(studentObj.contactNoList[1])
+
+
+    </script>
+
+</body>
+
+</html>

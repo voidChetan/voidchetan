@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IF Else</title>
+</head>
+
+<body>
+    <script>
+        // var isActive = true;
+        // debugger;
+        // if(isActive == true) {
+        //     alert("Student is Active")
+        // } else {
+        //     alert("Student is Not Active")
+        // }
+        // var stud1Name = "Chetan";
+        // var stud2Name = "Chetan";
+        // if(stud1Name == stud2Name) {
+        //     console.log("Both Name Are Same")
+        // } else {
+        //     alert("Names are differnet")
+        // }
+        // if(stud1Name == stud2Name && isActive == true) {
+        //     alert("Condition matched")
+        // }
+        // var num = 3;
+
+        // if(num % 2 ==0) {
+        //     alert('No is Event');
+        //     num++;
+        // } else {
+        //     alert('no is odd')
+        //     num--;
+        // }
+        // console.log(num)
+
+        function checkEvenOdd() {
+            debugger
+            var num = document.getElementById("txtNum").value;
+            if (num != '') {
+                if (num % 2 == 0) {
+                    document.getElementById("para").innerText = "No Is Even"
+                } else {
+                    document.getElementById("para").innerText = "No is Odd"
+                }
+            } else {
+                document.getElementById("para").innerText = "Please Enter a NUmber"
+            }
+        }
+
+
+    </script>
+    <input type="text" id="txtNum" />
+
+    <button onclick="checkEvenOdd()">Check Num</button>
+
+    <p id="para">No No </p>
+
+    <br>
+    <br>
+    <div onclick="changeSignal('red')" style="background-color: red;width: 50px;height: 50px;"> </div>
+    <div onclick="changeSignal('green')" style="background-color: Green;width: 50px;height: 50px;"> </div>
+    <div  onclick="changeSignal('orange')" style="background-color: orange;width: 50px;height: 50px;"> </div>
+
+    <p id="signalPara">Signal not started</p>
+    <script>
+        function changeSignal(value) {
+            debugger;
+            if(value === "red"){
+                document.getElementById("signalPara").innerText = "You need to Stop Now"
+            } else if (value ==="green") {
+                document.getElementById("signalPara").innerText = "You Can Go Now."
+            } else  {
+                document.getElementById("signalPara").innerText = "Stop For Some Time"
+            }
+        }
+    </script>
+</body>
+
+</html>

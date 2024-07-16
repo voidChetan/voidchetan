@@ -1,0 +1,1 @@
+alert("Hii from Extarnal JS")

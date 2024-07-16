@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./customDate.js"></script>
+</head>
+<body>
+    <div id="div1" style="background-color: red;height: 50px;width: 50px;">
+        div 1
+    </div>
+    <button onclick="showDiv1()"> Show</button>
+    <button onclick="hideDiv1()">Hide</button>
+    <br>
+    <button onclick="toggleDiv1()"> Toggle</button>
+    <br>
+    <div id="div2">
+
+    </div>
+    <button onclick="createCircle()"> create Circle</button>
+    <button onclick="createSquare()">create Square</button>
+    <script>
+        var isDiv1Visiable =  true;
+
+        function toggleDiv1() {
+            if(isDiv1Visiable == true) { 
+                document.getElementById("div1").style.display = "none"
+            } else { 
+                document.getElementById("div1").style.display = "block"
+            }
+            isDiv1Visiable = !isDiv1Visiable;
+        }
+        
+        function createCircle() {
+            document.getElementById("div2").style.width = "100px";
+            document.getElementById("div2").style.height = "100px";
+            document.getElementById("div2").style.borderRadius = "50px";
+            document.getElementById("div2").style.backgroundColor = "yellow";
+        }
+        function createSquare() {
+            document.getElementById("div2").style.width = "200px";
+            document.getElementById("div2").style.height = "200px";
+            document.getElementById("div2").style.backgroundColor = "red";
+        }
+       
+        function showDiv1() {
+            document.getElementById("div1").style.display = "block";
+        }
+        function hideDiv1() {
+            document.getElementById("div1").style.display = "none";
+        }
+    </script>
+</body>
+</html>

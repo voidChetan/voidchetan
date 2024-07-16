@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <label for="">First Name</label>
+                <input type="text" id="txtfName" />
+            </td>
+            <td>
+                <label for="">Middle Name</label>
+                <input type="text"  id="txtMName" />
+            </td>
+            <td>
+                <label for="">Last Name</label>
+                <input type="text" id="txtLName" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="saveDataToLocaStoarge()">Save User</button>
+            </td>
+            <td>
+                <button onclick="removeFName()">Remove f Name</button>
+            </td>
+            <td>
+                <button onclick="removeAll()">Remove ALL</button>
+            </td>
+        </tr>
+        <script>
+            const firstName = localStorage.getItem('fName');
+            const middleName =  localStorage.getItem('mName');
+            const lastName =  localStorage.getItem('lNAme');
+            debugger;
+            document.getElementById('txtfName').value= firstName;
+            document.getElementById('txtMName').value = middleName;
+            document.getElementById('txtLName').value = lastName;
+
+            function removeFName() {
+                localStorage.removeItem('fName');
+            }
+            function removeAll() {
+                localStorage.clear()
+            }
+            function saveDataToLocaStoarge() {
+                var fName = document.getElementById('txtfName').value;
+                var mName = document.getElementById('txtMName').value;
+                var lName = document.getElementById('txtLName').value;
+
+                localStorage.setItem('fName',fName);
+                localStorage.setItem('mName',mName);
+                localStorage.setItem('lNAme',lName);
+
+                sessionStorage.setItem('fName',fName);
+                sessionStorage.setItem('mName',mName);
+                sessionStorage.setItem('lNAme',lName);
+            }
+        </script>
+    </table>
+</body>
+</html>

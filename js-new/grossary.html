@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ 
+    <table>
+        <tr>
+            <td>
+                <select name="" id="itemDropdown">
+                    <option value=""> </option>
+                </select>
+            </td>
+            <td>
+                <input type="text" name="" id="txtQty">
+            </td>
+            <td>
+                <button onclick="addItem()">Add Item</button>
+            </td>
+        </tr>
+    </table>
+    <table class="table table-bordered" id="tableItems">
+        <thead>
+            <tr>
+                <th>Sr No</th>
+                <th>Item Name</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody id="seletcItemRecord">
+
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="text-end" colspan="2">Total</td>
+                <td class="text-end">
+                    <strong id="tot"></strong>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+    <script>
+        var itemList = [
+            { itemName: 'Cooking Oil', price:120},
+            { itemName: 'RIce', price: 60},
+            { itemName: 'laptpop', price: 1220},
+            { itemName: 'mobile', price: 700}
+        ];
+        var selectedItems = [];
+        for (let index = 0; index < itemList.length; index++) {
+            const itemOption = document.createElement('option');
+            itemOption.innerText = itemList[index].itemName +" - ( "+itemList[index].price +" )";
+            itemOption.value = itemList[index].itemName;
+            document.getElementById("itemDropdown").append(itemOption) 
+        }
+        function addItem() {
+            const selecetdItem = document.getElementById("itemDropdown").value;
+            const quantity = document.getElementById("txtQty").value;
+            debugger;
+
+            const itemRecord =  itemList.find( m => m.itemName == selecetdItem);
+
+            const newobj = {
+                itemName: selecetdItem,
+                price: itemRecord.price,
+                quantity: quantity,
+                amount : itemRecord.price * quantity
+            }
+            selectedItems.push(newobj) 
+            printData()
+        }
+
+        function printData() {
+            let total =  0;
+            document.getElementById("seletcItemRecord").innerText = '';
+            for (let index = 0; index < selectedItems.length; index++) {
+                const myTr = document.createElement('tr');
+                const itemNameTd =  document.createElement('td');
+                itemNameTd.innerText = selectedItems[index].itemName +' - ' + selectedItems[index].price;
+                myTr.append(itemNameTd)
+                const quantitytd =  document.createElement('td');
+                quantitytd.innerText = selectedItems[index].quantity;
+                myTr.append(quantitytd)
+                const amounttd =  document.createElement('td');
+                amounttd.innerText = selectedItems[index].amount;
+                myTr.append(amounttd)
+                document.getElementById("seletcItemRecord").append(myTr)
+                total = total + selectedItems[index].amount; 
+            }
+
+            document.getElementById("tot").innerText = total
+          
+        }
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    function searchTrain() {
+        var fromStation =  document.getElementById("fromStation").value;
+        var toStation =  document.getElementById("toStation").value;
+        if(fromStation == "" || toStation == "") {
+            alert("Slect from n To Station")
+        } else {
+            if(fromStation == toStation) {
+                alert("From n To Station Can Not BE Same")
+            } else {
+                document.getElementById("trainSpan").innerText = "3 Trains Found"
+            }
+        }
+    }
+    function resetTrainData() {
+        document.getElementById("fromStation").value = "";
+        document.getElementById("toStation").value = "";
+        document.getElementById("trainSpan").innerText = "";
+    }
+</script>
+    <table>
+        <tr>
+            <td>
+                <label for="">Select From Station</label>
+                <select   id="fromStation">
+                    <option value="">Select</option>
+                    <option value="Pune">Pune</option>
+                    <option value="Nagpur">Nagpur</option>
+                    <option value="Mumbai">Mumbai</option>
+                </select>
+            </td>
+            <td>
+                <label for="">Select To Station</label>
+                <select name="" id="toStation">
+                    <option value="" >Select</option>
+                    <option value="Pune">Pune</option>
+                    <option value="Nagpur">Nagpur</option>
+                    <option value="Mumbai">Mumbai</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="searchTrain()">Search</button>
+            </td>
+            <td>
+                <button  onclick="resetTrainData()">Reset</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span id="trainSpan"></span>
+            </td>
+        </tr>
+    </table>
+    
+</body>
+</html>

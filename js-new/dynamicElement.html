@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="parentDiv">
+
+    </div>
+    <div>
+        <button onclick="createCircle()">Create Cricle</button>
+        <button onclick="createLabel()">Create Label</button>
+    </div>
+    <div>
+        <input type="text" id="txtTaskNAme" placeholder="Todo Item Name"/>
+        <button onclick="addTask()">Add Task</button>
+        <button onclick="printTable()">Print Table <Table></Table></button>
+    </div>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Task NAme</th>
+                </tr>
+            </thead>
+            <tbody id="myTaskList">
+
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <ul id="myUl"> 
+        </ul>
+    </div>
+    <script>
+        function printTable() { 
+            document.getElementById("myUl").innerHTML = ""; 
+            var num = document.getElementById("txtTaskNAme").value; 
+            for(var index= 1;index <11;index++) {
+                var txt =  num + " * "+ index + " =  "+ num* index;
+                var myLi = document.createElement("li");
+                myLi.innerText = txt;
+                document.getElementById("myUl").append(myLi)
+            }
+        }
+        function addTask() {
+            var taskNAme = document.getElementById("txtTaskNAme").value; 
+            var myTr = document.createElement("tr"); 
+            var myTd =  document.createElement("td");
+            myTd.innerText = taskNAme;
+            myTr.append(myTd); 
+            document.getElementById("myTaskList").append(myTr) 
+        }
+        function createLabel() {
+            var myLable = document.createElement("lable");
+            myLable.innerText = "This is demo Lable";
+            myLable.style.color = "red"; 
+            document.getElementById("parentDiv").append(myLable) 
+        }
+        function createCircle () {
+            var myDiv =  document.createElement("div");
+            myDiv.style.height = "100px";
+            myDiv.style.width = "100px";
+            myDiv.style.borderRadius = "50px";
+            myDiv.style.backgroundColor = "orange";
+            document.getElementById("parentDiv").append(myDiv)
+        }
+    </script>
+</body>
+</html>

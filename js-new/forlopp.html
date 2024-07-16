@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="myCityUl">
+
+    </ul>
+    <select id="cityDropdown">
+
+    </select>
+    <script>
+    var cityList = ["Pune","Mumbai","Jalgao","Solapur","Thane"];
+    debugger;
+    for(var index= 0; index< cityList.length;index++) {
+        const myLi = document.createElement("li");
+        myLi.innerText = cityList[index]
+        document.getElementById("myCityUl").append(myLi)
+    }
+    for(var index= 0; index< cityList.length;index++) {
+        const cityOption = document.createElement("option");
+        cityOption.innerText = cityList[index];
+        document.getElementById("cityDropdown").append(cityOption)
+    }
+    
+    </script>
+
+   
+
+
+</body>
+</html>

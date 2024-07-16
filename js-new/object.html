@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h5>Student Informtaion</h5>
+    <input type="text" id="txtName"  placeholder="Name"/>
+    <input type="text" id="txtMobile" placeholder="Mobile No"/>
+    <input type="text" id="txtCity" placeholder="City"/>
+    <input type="text" id="txtState" placeholder="State"/>
+
+    <br>
+    <br>
+    <br>
+    <button  onclick="readFormValue()">Save Student</button>
+
+    <br>
+    <br>
+    <input type="text" id="txtNum1" placeholder="Num1"/>
+    <input type="text" id="txtNum2" placeholder="Num2"/>
+    <button>Add</button>
+    <input type="text" id="txtNum2" placeholder="result"/>
+    <script>
+
+      
+
+        function readFormValue() {
+            var employee = {
+                emmId: 121,
+                empName: 'Chetan',
+                dept:'Engineering',
+                AssigntoEmployeeName :''
+            };
+          
+            debugger;
+            document.getElementById("txtNum1").value = employee.emmId;
+            console.log(employee)
+            console.log(employee.dept)
+            employee.dept = "Testing";
+            console.log(employee.dept)
+            var product = {
+                productId:3344,
+                productName: 'AMobile',
+                price: 22345,
+                disocunt:12
+            }
+            console.log(product.price)
+            var studentObj = {
+                name : document.getElementById("txtName").value,
+                mobile : document.getElementById("txtMobile").value,
+                city :  document.getElementById("txtCity").value,
+                state :document.getElementById("txtState").value
+            }
+            var name =  document.getElementById("txtName").value;
+            var mobile =  document.getElementById("txtMobile").value;
+            var city =  document.getElementById("txtCity").value;
+            var state =  document.getElementById("txtState").value;
+            debugger;
+        }
+    </script>
+    <script>
+        var employeeObj = {
+            TicketNo:123,
+            CreatedBy:'Chetan',
+            CreatedDate: '22-12-24',
+            AssigntoEmployeeName: '',
+            TicketDescription : 'Need New Software Instalation'
+        }
+        function assignEmployee() {
+            var selecetdEMpliName = document.getElementById("selectedEmp").value;
+            employeeObj.AssigntoEmployeeName = selecetdEMpliName;
+
+            console.log(employeeObj)
+        }
+    </script>
+    <select name="" id="selectedEmp">
+        <option >Ramesh</option>
+        <option >Ram</option>
+        <option >Ankit</option>
+    </select>
+    <button onclick="assignEmployee()">Add</button>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //filter-  to get multple record which matching condition
+        //find - get single maching record
+        var studentList = [
+            { name: 'Chetan', city: 'Nagpur', state: 'MH', status: false },
+            { name: 'Rahul', city: 'Pune', state: 'MH', status: false },
+            { name: 'Ankit', city: 'Mumbai', state: 'MH', status: true },
+            { name: 'Ram', city: 'Panji', state: 'Goa', status: true },
+            { name: 'Shyam', city: 'Mumbai', state: 'MH', status: true },
+            { name: 'Sahil', city: 'Pune', state: 'MH', status: true },
+            { name: 'Ram', city: 'Panji', state: 'Rajsthan', status: true }
+        ];
+
+        var studetNAmeList = [];
+        for (let index = 0; index < studentList.length; index++) {
+            studetNAmeList.push(studentList[index].name)
+        }
+
+        var newNameList =  studentList.map(student=>{
+            return student.name;
+        })
+
+        var newStudList =  studentList.map(student=>{
+            student.mobileNo = "123123123";
+            return student;
+        })
+
+
+      
+
+        var activeStud = studentList.filter(m=>m.status == true);
+        var actiMhStud =  studentList.filter(x=>x.state == "MH" && x.status == true );
+
+        var isRamPresent  = studentList.find(m=>m.name == "Ram");
+
+
+        debugger;
+
+    </script>
+
+</body>
+
+</html>
