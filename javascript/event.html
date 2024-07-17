@@ -296,9 +296,127 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    </div>
+        </div>     <hr>
+        <h4>Adv Task</h4>
+        <hr>
+        <div class="row pb-3">
+            <div class="col-12 col-md-4 col-lg-4 col-sm-6 ">
+                <div class="myBoxs">
+                    <div class="text-center">
+                        <h4>Task 1</h4>
+                    </div>
+                    <ul>
+                        <li>
+                            Create on button <strong>Enable Count</strong>. 
+                        </li>
+                         <li>
+                            Create one More Button To <strong>Record Counts</strong> 
+                           
+                        </li>
+                        <li>
+                            On the click of Record Click button We need count how many time user has cliked on button. but only when Enable count is clicked.
+                        </li>
+                    </ul>
+                    <div class="row">
+                        <div class="col-5">
+                            <button type="button" id="btnEnable" class="btn btn-info btn-sm ">Enable Count</button>
+                        </div>
+                        <div class="col-4">
+                            <button type="button" id="btnRecord" class="btn btn-info btn-sm">Record Click</button>
+                        </div>
+                        <div class="col-3">
+                            <span id="timeCliked"></span> Times Cliked
+                        </div>
+                    </div>
+                    <script>
+                        var isEnabled = false;
+                        var counter = 0;
+                        $(document).ready(function () {
+                            $("#btnEnable").click(function () {
+                                isEnabled = true;
+                            });
+                            $("#btnRecord").click(function () {
+                                if(isEnabled) {
+                                    counter ++;
+                                    $("#timeCliked").html(counter)
+                                }  else {
+                                    alert("Not Enbaled Yet")
+                                }
+                            });
+                        })
+                    </script>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 col-lg-4 col-sm-6 ">
+                <div class="myBoxs">
+                    <div class="text-center">
+                        <h4>Task 2</h4>
+                    </div>
+                    <ul>
+                        <li>
+                          Create Uniqe Customer Id 
+                        </li>
+                         <li>
+                            Create 4 Text to Enter First Name & Middle Name & Last Name & Mobile No of Customer 
+                        </li>
+                        <li>
+                            Create A button <strong>Generate Unique Id</strong>
+                        </li>
+                        <li>
+                            Unique Id => current Date day + First 2 Letter FirstName + Last 2 Letter Of Last Name + Last 4 Digit of Mobile No - seperated by -
+                        </li>
+                        <li>On Change of each textbox Uniqe Id shoud be created n display in p tag  </li>
+                    </ul>
+                    <div class="row">
+                        <div class="col-12">
+                             <input type="text" class="unq" id="txtFName" placeholder="f Name">
+                             <input type="text" class="unq" id="txtMName" placeholder="M Name">
+                             <input type="text" class="unq" id="txtLName" placeholder="L Name">
+                             <input type="text" class="unq" id="txtMOBILE" placeholder="Mobile">
+                        </div>
+                        <div class="col-12">
+                             <p id="uniqueId"></p>
+                       </div>
+                        
+                    </div>
+                    <script>
+                        var isEnabled = false;
+                        var counter = 0;
+                        $(document).ready(function () {
+                            $(".unq").change(function () {
+                                var last =  $("#txtLName").val().length -2;
+                                var laststr = $("#txtLName").val().slice(last);
+
+                                var mlast =  $("#txtMOBILE").val().length -4;
+                                var mlaststr = $("#txtMOBILE").val().slice(6);
+                                debugger;
+                                var uniqueId = new Date().getDate() +"-" +$("#txtFName").val().substring(0,2) +"-" + laststr +"-" +mlaststr;
+                                
+                                $("#uniqueId").html(uniqueId)
+                            });
+                            
+                             
+                        })
+                    </script>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 col-lg-4 col-sm-6 ">
+                <div class="myBoxs">
+                    <div class="text-center">
+                        <h4>Task 3</h4>
+                    </div>
+                    <ul>
+                        <li>
+                        create a varibel store current date into it
+                        </li>
+                         <li>
+                           Add 2 Months into that day & add 6 days into date..then print new Date i p Tag
+                        </li>
+                        
+                    </ul> 
+                </div>
+            </div>
+    </div> 
     <script type="text/javascript" src="../menu.js"> </script>
     <script>
 
