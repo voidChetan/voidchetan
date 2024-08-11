@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../custom.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Scenario - 1</title>
-   
+
 
     <style>
         .card {
@@ -77,17 +77,17 @@
             </ol>
         </nav>
         <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                 <div class="myBox">
                     <div class="text-center">
                         <h3>Hotel Order System </h3>
                     </div>
                     <ul>
-                        <li>Create Array of Itmes For Hotel Menu then Display Menu in dropdown</li>
-                        <li>Create a textbox to Enter Quantity </li> 
-                        <li>On Generate Bill- Calculate bill According TO Selected Item with quaitity and
-                            display bill Amount</li>
-                            <li>On Clear Clear all data as per ex</li>
+                        <li>Create Array of Food Itmes </li>
+                        <li>Display Menu in dropdown and Create Dynamic Dropdown</li> 
+                        <li>On Add - add Item with Qty</li>
+                        <li>if item already added Increment quantity </li>
+                        <li>On Clear - Clear all data</li>
                     </ul>
                     <div class="row text-center">
                         <div class="col-4 bg-success p-2">
@@ -103,13 +103,12 @@
                             <p>(25 Rs)</p>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-8 col-sm-8 col-md-8">
+                    <div class="row pt-2">
+                        <div class="col-12 col-sm-8 col-md-8">
                             <div class="row">
                                 <div class="col-5 col-md-5 col-sm-5 col-lg-5">
                                     <Select id="dpdlItem" class="form-control">
-                                        <option value="">Select Item</option>
-
+                                        <option value="">Select Item</option> 
                                     </Select>
                                 </div>
                                 <div class="col-5 col-md-5 col-sm-5 col-lg-5">
@@ -120,18 +119,9 @@
                                     <button class="btn btn-sm btn-success" id="btnAdd">Add </button>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-4 col-sm-4 col-md-4">
-                            <div class="row" id="divBill" style="background-color: lightgray;">
-                                <div class="col-12 text-center">
-                                    <strong>Total Bill Amount </strong> <br>
-                                    <span id="btnillAmt"></span>
-                                </div>
-                            </div>
-                        </div>
-
+                        </div> 
                     </div>
-                    <div class="row">
+                    <div class="row pt-2">
                         <div class="col-12">
                             <ul id="ulItems">
 
@@ -144,12 +134,17 @@
                         </div>
                         <div class="col-4">
                             <button class="btn btn-success" id="btnCalCulate">Calculate Bill</button>
-                        </div>
-
+                        </div> 
                     </div>
-                    <script>
-
-                    </script>
+                    <div class="col-12 col-sm-4 col-md-4 pt-2">
+                        <div class="row" id="divBill" style="background-color: lightgray;">
+                            <div class="col-12 text-center">
+                                <strong>Total Bill Amount </strong> <br>
+                                <span id="btnillAmt"></span>
+                            </div>
+                        </div>
+                    </div>
+                     
                     <script>
 
                         var items = [
@@ -158,28 +153,33 @@
                             { itemName: 'Sandwich', cost: 25 }
                         ];
                         var selectdeItems = []
-                        $(document).ready(function () { 
+                        $(document).ready(function () {
                             items.forEach(element => {
                                 var li = "<option value='" + element.cost + "'>" + element.itemName + " </option>";
                                 $("#dpdlItem").append(li);
-                            }); 
+                            });
 
                             $("#btnAdd").click(function () {
-                                if($("#dpdlItem").val() != ""  && $("#txtQuantity").val() != "") {
+                                if ($("#dpdlItem").val() != "" && $("#txtQuantity").val() != "") {
                                     $("#ulItems").html("");
-                                selectdeItems.push(
-                                    { itemName: $("#dpdlItem :selected").text(), cost: $("#dpdlItem").val(), quantity: $("#txtQuantity").val() },
-                                )
-                                selectdeItems.forEach(element => {
-                                    var li = "<li>" + element.itemName + "- Qty( " + element.quantity + " )</li>";
-                                    $("#ulItems").append(li);
-                                });
-                                $("#dpdlItem").val("");
-                                $("#txtQuantity").val("");
+                                    const isExist = selectdeItems.find(m=>m.itemName ==$("#dpdlItem :selected").text() );
+                                    if(isExist == undefined) {
+                                        selectdeItems.push(
+                                        { itemName: $("#dpdlItem :selected").text(), cost: $("#dpdlItem").val(), quantity: $("#txtQuantity").val() },
+                                    )
+                                    } else {
+                                        isExist.quantity  = Number(isExist.quantity) +  Number($("#txtQuantity").val())
+                                    }
+                                    
+                                    selectdeItems.forEach(element => {
+                                        var li = "<li>" + element.itemName + "- Qty( " + element.quantity + " )</li>";
+                                        $("#ulItems").append(li);
+                                    });
+                                    $("#dpdlItem").val("");
+                                    $("#txtQuantity").val("");
                                 } else {
                                     alert("Select Item n Quantity")
-                                }
-                               
+                                } 
                             });
 
                             $("#btnCalCulate").click(function () {
@@ -204,15 +204,9 @@
                 </div>
 
 
-            </div>
-
-        </div>
-        <script>
-
-            ;
-
-        </script>
-         <script type="text/javascript" src="../menu.js"> </script>
+            </div> 
+        </div> 
+        <script type="text/javascript" src="../menu.js"> </script>
 
 </body>
 

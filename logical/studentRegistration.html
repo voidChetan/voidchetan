@@ -14,9 +14,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Studetn Registration</title>
     <script type="text/javascript" src="../menu.js"> </script>
- 
+
     <script>
-        
+
     </script>
     <style>
         .card {
@@ -26,6 +26,37 @@
 </head>
 
 <body>
+    <script>
+        $(document).ready(function () {
+            $(".name").change(function () { 
+                console.log("asdasd")
+                $("#txtFullname").val($("#txtFname").val() + " "+$("#txtMname").val() + " "+$("#txtLname").val())
+            })
+            $("#dpdlCaste").change(function () { 
+                if($(this).val()  == "other") {
+                    $("#otherCaste").show()
+                } else {
+                    $("#otherCaste").hide()
+                }
+            })
+            $(".per").change(function () { 
+                console.log("asdasd")
+                let tenth = Number($("#txttenthth").val());
+                let tewleth = Number($("#txttewleth").val());
+                let gradu = Number($("#txtGraduation").val());
+                $("#txtAvarage").val(((tenth+tewleth+gradu)/3).toFixed(2))
+            })
+            $("#txtMobile").change(function () { 
+                let fname = $("#txtFname").val();
+                let mobil = $("#txtMobile").val().substr($("#txtMobile").val().length - 4);
+                $("#txtRegistartionNo").val(fname+ mobil);
+
+
+            })
+            
+            
+        })
+    </script>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.html">taskS</a>
@@ -44,7 +75,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                         </ul>
-                    </li> 
+                    </li>
                     <li class="nav-item dropdown " id="angularUl">
                         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -62,7 +93,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                         </ul>
-                    </li> 
+                    </li>
                 </ul>
                 <form class="d-flex">
                     <a href="https://github.com/voidChetan" target="_blank" class="btn btn-outline-success">Examples</a>
@@ -86,37 +117,37 @@
                         <h3>Student Registration Form</h3>
                     </div>
                     <ul>
-                        <li>We need to design a form Where Student Can Register (Refer Belwo UI)</li>
-                        <li>Create Full name using fname,mname,lname</li>
+                        <li>Create Full name using fName,mName,lName</li>
                         <li>if caste other is selecetd then only show Other caste textbox</li>
                         <li>calculate avarage % of 10th, 12th & graduation and show in avarage textbox</li>
-                        <li>create Registration no by using firstname +  last 4 digit of mobile no mean <br>if name is 
-                            chetan & mobile no is 8698707388 so registration no will be <strong>chetan7388</strong> </li>
-                    </ul> 
+                        <li>create Registration no by using firstname + last 4 digit of mobile no mean <br>if name is
+                            chetan & mobile no is 1122334455 so registration no will be <strong>chetan4455</strong>
+                        </li>
+                    </ul>
                     <div class="row text-center">
-                        <div class="col-3">
+                        <div class="col-4 col-sm-4 col-md-3 col-lg-3">
                             <label for="">First Name</label>
-                            <input type="text" class="form-control" id="txtFname">
+                            <input type="text" class="form-control name" id="txtFname">
                         </div>
-                        <div class="col-3">
+                        <div class="col-4 col-sm-4 col-md-3 col-lg-3">
                             <label for="">Middle Name</label>
-                            <input type="text" class="form-control" id="txtFname">
+                            <input type="text" class="form-control name" id="txtMname">
                         </div>
-                        <div class="col-3">
+                        <div class="col-4 col-sm-4 col-md-3 col-lg-3">
                             <label for="">Last Name</label>
-                            <input type="text" class="form-control" id="txtFname">
-                        </div> 
+                            <input type="text" class="form-control name" id="txtLname">
+                        </div>
                     </div>
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-8 col-md-4 col-sm-8">
                             <label for="">Full Name</label>
                             <input type="text" disabled class="form-control" id="txtFullname">
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-3">
+                        <div class="col-6 col-sm-6 col-md-3 col-lg-3">
                             <label for="">Select Caste</label>
-                            <select name="" id="" class="form-control">
+                            <select name="" id="dpdlCaste" class="form-control">
                                 <option value="">Select Caste</option>
                                 <option value="obc">OBC</option>
                                 <option value="open">OPEN</option>
@@ -124,42 +155,39 @@
                                 <option value="other">OTHER</option>
                             </select>
                         </div>
-                        <div class="col-3">
+                        <div id="otherCaste" class="col-6 col-sm-6 col-md-3 col-lg-3" style="display: none;">
                             <label for="">Enter Other Caste</label>
-                            <input type="text"  class="form-control" id="txtOtherCaste">
+                            <input type="text" class="form-control" id="txtOtherCaste">
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-3">
+                        <div class="col-3 col-sm-3 col-md-3 col-lg-3">
                             <label for="">Enter 10th %</label>
-                            <input type="text"  class="form-control" id="txt!0th">
+                            <input type="text" class="form-control per" id="txttenthth">
                         </div>
-                        <div class="col-3">
+                        <div class="col-3 col-sm-3 col-md-3 col-lg-3">
                             <label for="">Enter 12th %</label>
-                            <input type="text"  class="form-control" id="txt12th">
+                            <input type="text" class="form-control per" id="txttewleth">
                         </div>
-                        <div class="col-3">
-                            <label for="">Enter Graduation %</label>
-                            <input type="text"  class="form-control" id="txtGraduation">
+                        <div class="col-3 col-sm-3 col-md-3 col-lg-3">
+                            <label for=""> Graduation %</label>
+                            <input type="text" class="form-control per" id="txtGraduation">
                         </div>
-                        <div class="col-3">
+                        <div class="col-3 col-sm-3 col-md-3 col-lg-3">
                             <label for="">Avarage</label>
                             <input type="text" disabled class="form-control" id="txtAvarage">
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-3">
+                        <div class="col-6 col-sm-6 col-md-3 col-lg-3">
                             <label for="">Mobile</label>
-                            <input type="text"  class="form-control" id="txtMobile">
+                            <input type="text" class="form-control" id="txtMobile">
                         </div>
-                        <div class="col-3">
+                        <div class="col-6 col-sm-6 col-md-3 col-lg-3">
                             <label for="">Registration No</label>
                             <input type="text" disabled class="form-control" id="txtRegistartionNo">
                         </div>
-                    </div>
-                  
-                    
-
+                    </div> 
 
                 </div>
             </div>
@@ -170,12 +198,11 @@
     </div>
     <script>
 
-        ;
         movieArray.forEach(element => {
             let movie = "<div class='col-md-3' data-name='" + element.movieName + "'> <div class='card' data-name='" + element.movieName + "'> <div class='card-header' data-name='" + element.movieName + "'> " + element.movieName + " </div> <div class='card-body'> " + element.description + " </div> <div class='card-footer'> " + element.ticketRate + " </div> </div> </div>";
             $("#divMovies").append(movie);
         });
-        
+
     </script>
 </body>
 

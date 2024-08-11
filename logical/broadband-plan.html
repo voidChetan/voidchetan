@@ -12,8 +12,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="../custom.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Scenario - 1</title>
-     
+    <title>Logic Building</title>
+    <style>
+        @media only screen and (max-width: 600px) {
+            .myBox {
+                margin-top: 100px;
+            }
+        }
+    </style>
     <script>
         $(document).ready(function () {
             $("#divMobile").hide();
@@ -23,7 +29,7 @@
             $("#btnContinue").click(function () {
                 var radio1Value = $('input:radio[name=radioCheck]:checked').val();
                 if (radio1Value == undefined) {
-                    alert('Selct at least one option');
+                    alert('Select A Plan');
                 } else {
                     $("#selectedPlan").text(radio1Value);
                 }
@@ -33,20 +39,30 @@
                 $("input:radio[name='radioCheck']").each(function (i) {
                     this.checked = false;
                 });
-                $("#selectedPlan").text('');
+                $("#selectedPlan").text('...');
             });
 
             $("#btnMobile").click(function () {
+               
+                $("#btnFiber").removeClass("btn-success");
+                $("#btnBusiness").removeClass("btn-success");
+                $("#btnMobile").addClass("btn-success");
                 $("#divMobile").show();
                 $("#divFiber").hide();
                 $("#divBusiness").hide();
             });
             $("#btnFiber").click(function () {
+                $("#btnMobile").removeClass("btn-success"); 
+                $("#btnBusiness").removeClass("btn-success");
+                $("#btnFiber").addClass("btn-success");
                 $("#divMobile").hide();
                 $("#divFiber").show();
                 $("#divBusiness").hide();
             });
             $("#btnBusiness").click(function () {
+                $("#btnMobile").removeClass("btn-success"); 
+                $("#btnBusiness").addClass("btn-success");
+                $("#btnFiber").removeClass("btn-success");
                 $("#divMobile").hide();
                 $("#divFiber").hide();
                 $("#divBusiness").show();
@@ -59,7 +75,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="../index.html">taskS</a>
+            <a class="navbar-brand" href="../index.html">Logic Building</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -102,88 +118,45 @@
         </div>
     </nav>
     <div class="container pt-2">
-        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+        <!-- <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
             aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Angular</li>
                 <li class="breadcrumb-item active" aria-current="page">ng-For Task</li>
             </ol>
-        </nav>
+        </nav> -->
         <div class="row">
-            <div class="col-6">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center pb-5">
-                        <h3>Plan Selection</h3>
-                    </div>
-                    <ul>
-                        <li> On Click of Continue We Need to Show Selected Plan</li>
-                        <li> If No Plan Selected We need to show Error</li>
-                        <li> on Reset - deSelect selected Radio Button and  Hide Plan Div</li> 
-                    </ul>
-                    <div class="h6">Select Plan</div>
-                    <div class="row text-center">
-                        <div class="col-md-3">
-                            <label>Broadband</label> <br />
-                            <input type="radio" name="radioCheck" id="radio1" value="Broadband">
-                        </div>
-                        <div class="col-md-3">
-                            <label>Broadband n Tv</label><br />
-                            <input type="radio" name="radioCheck" id="radio2" value="Broadband n Tv">
-                        </div>
-                        <div class="col-md-3">
-                            <label>Fibre Optics </label><br />
-                            <input type="radio" name="radioCheck" id="radio3" value="Fibre Optics">
-                        </div>
-                        <div class="col-md-3">
-                            <label>Mobile Plan </label><br />
-                            <input type="radio" name="radioCheck" id="radio4" value="Mobile Plan">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-6 text-end">
-                            <button class="btn btn-success btn-sm" id="btnContinue"> Continue</button>
-                        </div>
-                        <div class="col-6 ">
-                            <button class="btn btn-danger btn-sm" id="btnReset"> Reset</button>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 text-center">
-                            <p>Selected Plan is : <strong id="selectedPlan"></strong> </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6">
+            <div class="col-12 col-md-6 col-lg-6 col-sm-12 pb-6">
                 <div class="myBox">
                     <div class="text-center pb-5">
-                        <h3>Package Description</h3>
+                        <h3> Package</h3>
+                        <h6>JavaScript, Angular, Reactjs</h6>
                     </div>
-                    <div class="row text-center pb-5">
+                    <div class="row text-center pb-3">
                         <div class="col-4">
                             <div>
-                                <i style="font-size: 150px;" class="fa fa-mobile" aria-hidden="true"></i><br>
+                                <i style="font-size: 7rem;" class="fa fa-mobile" aria-hidden="true"></i><br>
                                 Mobile
                             </div>
                             <button class="btn btn-primary mt-4" id="btnMobile">Find More</button>
                         </div>
                         <div class="col-4">
                             <div>
-                                <i style="font-size: 150px;" class="fa fa-home" aria-hidden="true"></i><br>
+                                <i style="font-size: 7rem;" class="fa fa-home" aria-hidden="true"></i><br>
                                 JioFiber
                             </div>
                             <button class="btn btn-primary mt-4" id="btnFiber">Find More</button>
                         </div>
                         <div class="col-4">
                             <div>
-                                <i style="font-size: 150px;" class="fa fa-id-badge" aria-hidden="true"></i><br>
+                                <i style="font-size: 7rem;" class="fa fa-id-badge" aria-hidden="true"></i><br>
                                 Business
                             </div>
                             <button class="btn btn-primary mt-4" id="btnBusiness">Find More</button>
                         </div>
                     </div>
-                    <div class="row pt-1">
+                    <div class="row pt-0">
                         <div class="col-12">
                             <div class="text-center" id="divMobile">
                                 <p>Free SIM, calls, and SMS with invaluable digital experiences.</p>
@@ -200,14 +173,59 @@
                         </div>
                     </div>
                 </div>
+            </div> 
+            <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                <div class="myBox" style="position: relative;">
+                    <div class="text-center pb-5">
+                        <h3> Plan Selection</h3>
+                        <h6>JavaScript, Angular, Reactjs</h6>
+                    </div>
+                    <ul>
+                        <li> On Continue Show Selected Plan</li>
+                        <li> If No Plan Selected Ask to select Plan</li>
+                        <li> On Reset - Remove Selected Plan & Hide Plan Div</li> 
+                    </ul>
+                    <div class="h6">Select Plan</div>
+                    <div class="row text-center">
+                        <div class="col-md-3 col-3 col-sm-3 col-lg-3">
+                            <label>Mobile Plan </label><br />
+                            <input type="radio" name="radioCheck" id="radio4" value="Mobile Plan">
+                        </div>
+                        <div class="col-md-3 col-3 col-sm-3 col-lg-3">
+                            <label>Fibre Optics </label><br />
+                            <input type="radio" name="radioCheck" id="radio3" value="Fibre Optics">
+                        </div>
+                        <div class="col-md-3 col-3 col-sm-3 col-lg-3">
+                            <label>Broadband</label> <br />
+                            <input type="radio" name="radioCheck" id="radio1" value="Broadband">
+                        </div>
+                        <div class="col-md-3 col-3 col-sm-3 col-lg-3">
+                            <label>Business</label><br />
+                            <input type="radio" name="radioCheck" id="radio2" value="Broadband n Tv">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 text-end">
+                            <button class="btn btn-success btn-sm" id="btnContinue"> Continue</button>
+                        </div>
+                        <div class="col-6 ">
+                            <button class="btn btn-danger btn-sm" id="btnReset"> Reset</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <p>Selected Plan : <strong id="selectedPlan">....</strong> </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-
+            
         </div>
 
     </div>
-    <script> 
+    <div class="mt-4">
 
-    </script> 
+    </div>
      <script type="text/javascript" src="../menu.js"> </script>
 </body>
 

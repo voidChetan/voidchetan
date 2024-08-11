@@ -30,21 +30,19 @@
 
                 var movieName = $(this).attr("data-name");;
                 var movie = movieArray.find(m => m.movieName == movieName);
-                selectedMovie = movie;
-                
-                ;
+                selectedMovie = movie; 
                 $(this).find(".card-header").addClass('bg-success');
                 $("#divShows").html("");
                 if (selectedMovie.shows.length == 1) {
                     movie.shows.forEach(element => {
-                        const show = "<div class='col-2'> <button class='btn btn-sm btn-time btn-success'> " + element + "</button></div>";
+                        const show = "<div class='col-6 col-md-2 col-sm-3 col-lg-2 pt-2'> <button class='btn btn-sm btn-time btn-success'> " + element + "</button></div>";
                         $("#divShows").append(show);
                         selectedShow = element;
                         $(".ticketDiv").show();
                     });
                 } else {
                     movie.shows.forEach(element => {
-                        const show = "<div class='col-2'> <button class='btn btn-sm btn-time btn-secondary'> " + element + "</button></div>";
+                        const show = "<div class='col-6 col-md-2 col-sm-3 col-lg-2 pt-2'> <button class='btn btn-sm btn-time btn-secondary'> " + element + "</button></div>";
                         $("#divShows").append(show);
                     });
                 } 
@@ -148,10 +146,17 @@
                     <div class="text-center">
                         <h3>Movie Ticket Booking</h3>
                     </div>
-                    <p>create movie array with fileds movieName: string,description: string, ticketRate : string,
-                        shows - array of strings, on Click of Movie Show Timing Below,add green color to selected movie
-                        Header,add green color to selected show and on book button show ticket data</p>
+                    <ul>
+                        <li>create movie array of obj like</li>
+                            <li> {movieName: "",desc: "", rate : "",
+                                shows - ["2-5 pm","5-8 pm"]}</li>
+                                <li>Create Dynamic UI like below by iterating array</li>
+                                <li>on Click of Movie show selcted moview show at bottom</li>
+                                <li>add color to selected movie</li>
+                                <li>user shoud be able to select show time</li>
+                                <li>if only single show is there make it default selected</li>
                     </ul>
+                   
                     <div class="container">
                         <div class="row text-center" id="divMovies">
                         </div>
@@ -167,25 +172,28 @@
                         </div>
                     </div>
 
-                    <div class="container ticketDiv">
+                    <div class="container ticketDiv pt-2">
                         <div class="row">
-                            <div class="col-6">
+                            <div class="col-6 col-sm-6 col-md-6">
                                 <div class="row">
-                                    <div class="col-7">
+                                    <div class="col-8 col-md-7 col-sm-8 col-lg-7">
                                         <input type="text" id="txtNoOfTicket" class="form-control"
-                                            placeholder="Enter No Of Tickets">
+                                            placeholder="No Of Tickets">
                                     </div>
-                                    <div class="col-4">
-                                        <button class="btn btn-primary" id="btnBook">Book Ticket</button>
+                                    <div class="col-4 col-md-5 col-sm-4 col-lg-5">
+                                        <button class="btn btn-primary" id="btnBook">Book </button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-6 ">
-                                <p>Selected Movie: <strong id="selecetdMoview"></strong></p>
-                                <p>Selected Show: <strong id="selecetdShow"></strong></p>
+                            <div class="col-6  col-sm-6 col-md-6">
+                                <p> Movie: <strong id="selecetdMoview"></strong></p>
+                                <p> ( <strong id="selecetdShow"></strong>)</p>
                                 <p>For <span id="noticket"></span> Cost will Be <strong id="totalAmount"></strong></p>
                             </div>
                         </div>
+
+                    </div>
+                    <div style="padding-bottom: 200px;">
 
                     </div>
 
@@ -196,7 +204,7 @@
     <script type="text/javascript" src="../menu.js"> </script>
     <script>
         movieArray.forEach(element => {
-            let movie = "<div class='col-md-3' data-name='" + element.movieName + "'> <div class='card' data-name='" + element.movieName + "'> <div class='card-header' data-name='" + element.movieName + "'> " + element.movieName + " </div> <div class='card-body'> " + element.description + " </div> <div class='card-footer'> " + element.ticketRate + " </div> </div> </div>";
+            let movie = "<div class='col-6 col-md-3 col-sm-6 col-lg-3 pt-2' data-name='" + element.movieName + "'> <div class='card' data-name='" + element.movieName + "'> <div class='card-header' title='"+element.movieName+"' data-name='" + element.movieName + "'> " + element.movieName.substring(0,10) + " </div> <div class='card-body' title='"+ element.description+"'> " + element.description.substring(0,50) + "... </div> <div class='card-footer'>₹ " + element.ticketRate + " </div> </div> </div>";
             $("#divMovies").append(movie);
         }); 
     </script>

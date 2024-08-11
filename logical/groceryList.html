@@ -20,6 +20,9 @@
         .card {
             cursor: pointer !important;
         }
+        .table {
+            border-color: #144f8a !important;
+        }
     </style>
 </head>
 
@@ -79,7 +82,7 @@
             </ol>
         </nav>
         <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                 <div class="myBox">
                     <div class="text-center">
                         <h3>grocery List </h3>
@@ -88,11 +91,12 @@
                         <li>Create Array of Grocery Items with their Prices</li>
                         <li>Show grocery item in dropdown and add textbox & button to Add Them </li>
                         <li>on Add- Create Object of Grocery Item with Quantity and add it to New Array CartItems</li>
+                        <li>if item already added Increment quantity </li>
                         <li>Use For Loop on CartItems to Display Cart Items in Table </li>
                     </ul>
 
                     <div class="row">
-                        <div class="col-8 col-sm-8 col-md-8">
+                        <div class="col-12 col-sm-12 col-md-8">
                             <div class="row">
                                 <div class="col-5 col-md-5 col-sm-5 col-lg-5">
                                     <Select id="dpdlItem" class="form-control">
@@ -109,7 +113,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row pt-2">
                         <div class="col-12">
                             <table class="table table-bordered" id="tableItems">
                                 <thead>
@@ -124,9 +128,9 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <td class="text-end" colspan="2">Total</td>
-                                        <td class="text-end">
-                                            <strong id="tot"></strong>
+                                        <td class="text-end bg-secondary" colspan="2">Total</td>
+                                        <td class="text-end bg-secondary">
+                                            <strong id="tot">00.00</strong>
                                         </td>
                                     </tr>
                                 </tfoot>
@@ -151,17 +155,25 @@
                                 var li = "<option value='" + element.cost + "'>" + element.itemName + "-(" + element.cost + ") </option>";
                                 $("#dpdlItem").append(li);
                             });
+                            var empty = "<tr><td class='text-center' colspan='3'> No Items Added yet </td></tr>";
+                                        $("#tableItems tbody").append(empty);
 
                             $("#btnAdd").click(function () {
                                 if ($("#dpdlItem").val() != "" && $("#txtQuantity").val() != "") {
                                     $("#tableItems tbody").html("");
-                                    selectdeItems.push(
+                                    const isExist = selectdeItems.find(m=>m.itemName ==$("#dpdlItem :selected").text() );
+                                    if(isExist == undefined) {
+                                        selectdeItems.push(
                                         { itemName: $("#dpdlItem :selected").text(), cost: $("#dpdlItem").val(), quantity: $("#txtQuantity").val() },
                                     )
+                                    } else {
+                                        isExist.quantity  = Number(isExist.quantity) +  Number($("#txtQuantity").val())
+                                    }
+                                     
                                     var index = 1;
                                     var tot = 0;
                                     selectdeItems.forEach(element => {
-                                        var li = "<tr><td>" + index + "</td><td>" + element.itemName + "</td><td class='text-end'>" + element.cost + " *" + element.quantity + " =" + Number(element.cost) * Number(element.quantity) + " </td></tr>";
+                                        var li = "<tr><td>" + index + "</td><td>" + element.itemName + "</td><td class='text-end'>" + element.cost + " * " + element.quantity + " =" + Number(element.cost) * Number(element.quantity) + " </td></tr>";
                                         $("#tableItems tbody").append(li);
                                         index++;
                                         tot = tot + Number(element.cost) * Number(element.quantity);
