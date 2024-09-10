@@ -14,7 +14,7 @@ var angularMenuArray = [
     {
         url: 'https://voidchetan.github.io/voidchetan/angular/ngclass.html',
         text: 'ngClass',
-        info: 'how to add dynammic class  in angular check examples',
+        info: 'Dynamic class angular check examples',
         imageUrl: 'https://daily-dev-tips.com/images/31-03-2021.jpg'
     },
     {
@@ -105,7 +105,7 @@ var youtubeVideoList = [
     isMiniProject: false,
     isLogicalScenario: false,
     isTutorial: false,
-    videoType:'Full Course', 
+    videoType:'Full Course, Angular', 
     apiSwaggerUrl: "",
     duration: "2 Hr",
     description: `All Advance concepts covered.
@@ -133,7 +133,7 @@ All new Features and advance concept s of angular we will use to complete this p
     isMiniProject: false,
     isLogicalScenario: false,
     isTutorial: false,
-    videoType:'Full Course',
+    videoType:'Full Course, Angular',
     apiSwaggerUrl: "",
     duration: "3 Hr",
     description: `A 3 Hour Long video where I have Explained all basic topics in Angular with a project Employee Management Application.`,
@@ -1009,7 +1009,7 @@ angularMenuArray.forEach((element) => {
     dynamic = dynamic + "</div>";
     dynamic = dynamic + "<div class='card-body p-2'>"; 
     dynamic = dynamic + "<div class='list-unstyled mt-1 mb-1'>";
-    dynamic = dynamic + " <p>" + element.info + "</p>";
+    dynamic = dynamic + " <small>" + element.info + "</small>";
     dynamic = dynamic + " </div>";
     dynamic =
       dynamic +

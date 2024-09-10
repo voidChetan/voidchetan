@@ -216,9 +216,22 @@
 
         </div>
         <div class="container marketing">
-            <div class="row" id="javascriptTask">
+            <div class="row">
+                <div class="col-md-9 col-sm-8 col-12 col-lg-9">
+                    <h4>Task List</h4>
+                    <div class="row" id="javascriptTask">
+
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4 col-12 col-lg-3">
+                    <h4>Related Video</h4> 
+                    <div class="row" id="youtubeData">
+                         
+                    </div>
+                </div>
 
             </div>
+            
         </div>
 
 
@@ -251,10 +264,39 @@
 
 
     </main>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script type="text/javascript" src="menu.js"> </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
     <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://apis.google.com/js/platform.js"></script>
+    <script type="text/javascript" src="./menu.js"> </script>
+    <script>
+        let sortedVdo = youtubeVideoList.filter(video =>
+            video.videoType.split(',').map(type => type.trim()).includes('JavaScript')  
+        );
+        createVideoElement(sortedVdo)
+        debugger;
+
+        function createVideoElement(filteredVideos) {
+            $("#youtubeData").empty();
+            filteredVideos.forEach(element => {
+                var dynamicCard = "<div class='col-6 col-md-12 col-sm-12 col-lg-12'>";
+                dynamicCard = dynamicCard + "  <div class='card shadow-sm' style='    border-radius: 10px;'>";
+                dynamicCard = dynamicCard + "    <iframe loading='lazy' class='bd-placeholder-img card-img-top' style='border-radius: 10px;border-bottom-left-radius: 0px;border-bottom-right-radius: 0px;' width='100%' height='60%' src='https://www.youtube.com/embed/" + element.url + "'    frameborder='0' autoplay='true' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'  allowfullscreen></iframe>";
+                dynamicCard = dynamicCard + "    <div class='card-body p-1'>";
+                dynamicCard = dynamicCard + "      <h6 p-0 m-0 title='" + element.title + "'>" + element.title.substring(0, 60) + "</h6> <small class='p-0 m-0' title='" + element.description + "'>" + element.description.substring(0, 60) + "...</small>",
+                    dynamicCard = dynamicCard + "      <div class='d-flex justify-content-between align-items-center'>";
+                dynamicCard = dynamicCard + "        <div class='btn-group'>";
+                dynamicCard = dynamicCard + "          <a href='" + element.liveVersion + "' target='_blank' ><button type='button' class='btn btn-sm btn-warning'>Live Version</button></a>";
+                dynamicCard = dynamicCard + "          <a href='" + element.apiSwaggerUrl + "' target='_blank' ><button type='button' class='btn btn-sm btn-primary mx-2'>API Portal</button></a>";
+                dynamicCard = dynamicCard + "        </div>";
+                dynamicCard = dynamicCard + "        <small class='text-body-secondary'>9 mins</small>";
+                dynamicCard = dynamicCard + "      </div>";
+                dynamicCard = dynamicCard + "    </div>";
+                dynamicCard = dynamicCard + "  </div>";
+                dynamicCard = dynamicCard + "</div> ";
+                $("#youtubeData").append(dynamicCard);
+            });
+        }
+    </script>
 </body>
 
 </html>
