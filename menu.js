@@ -100,12 +100,13 @@ var youtubeVideoList = [
   {
     title: "Angular 18 Full Course | Angular 18 Ecommerce App From Scratch",
     url: "b9ne9HIQWnc",
-    liveVersion: '',
+    liveVersion: "",
     isPlayList: false,
     isMiniProject: false,
     isLogicalScenario: false,
     isTutorial: false,
-    apiSwaggerUrl: '',
+    videoType:'Full Course', 
+    apiSwaggerUrl: "",
     duration: "2 Hr",
     description: `All Advance concepts covered.
 We will try to Complete Ecommerce website using angular 18.
@@ -114,50 +115,57 @@ All new Features and advance concept s of angular we will use to complete this p
   {
     title: "JavaScript Tutorials for Beginners in Hindi",
     url: "rWhhxVLX2uU",
-    liveVersion: '',
+    liveVersion: "",
     isPlayList: false,
     isMiniProject: false,
     isLogicalScenario: false,
     isTutorial: false,
-    apiSwaggerUrl: '',
+    videoType:'Full Course',
+    apiSwaggerUrl: "",
     duration: "3 Hr",
     description: `JavaScript Tutorial Full Course For Beginners. JavaScript Tutorial In Hindi`,
   },
   {
     title: "Angular 18 Full Course  | Angular 18 Tutorial With Project",
     url: "QjaNv7s1gW0",
-    liveVersion: '',
+    liveVersion: "",
     isPlayList: false,
     isMiniProject: false,
     isLogicalScenario: false,
     isTutorial: false,
-    apiSwaggerUrl: '',
+    videoType:'Full Course',
+    apiSwaggerUrl: "",
     duration: "3 Hr",
     description: `A 3 Hour Long video where I have Explained all basic topics in Angular with a project Employee Management Application.`,
   },
   {
     title: "Angular 18 CRUD with Local Storage | Angular 18 Tutorial",
     url: "5Sn4POibEec",
-    liveVersion: '',
+    liveVersion: "",
     isPlayList: false,
     isMiniProject: false,
     isLogicalScenario: false,
     isTutorial: false,
-    apiSwaggerUrl: '',
+    videoType:'Angular, Crud',
+    apiSwaggerUrl: "",
     duration: "1 Hr",
     description: `I have explained from scratch How to Complete Crud Application with Local Storage.
 How To create Repository on GitHub.
 How to Clone Repository.
 CRUD operation with local-storage.`,
-  }, {
-    title: "Ecommerce App with Angular | Angular 17 Project | Admin Application",
+  },
+  {
+    title:
+      "Ecommerce App with Angular | Angular 17 Project | Admin Application",
     url: "hejR2GfFXiA",
-    isPlayList: false,
-    isMiniProject: false,
+    isPlayList: true,
+    isMiniProject: true,
     isLogicalScenario: false,
     isTutorial: false,
-    liveVersion: 'https://voidchetan.github.io/bigbasket_ecommerce_angular/AllProducts',
-    apiSwaggerUrl: 'https://freeapi.miniprojectideas.com/index.html',
+    videoType:'Project Video, Angular',
+    liveVersion:
+      "https://voidchetan.github.io/bigbasket_ecommerce_angular/AllProducts",
+    apiSwaggerUrl: "https://freeapi.miniprojectideas.com/index.html",
     duration: "1.30 Hr",
     description: `In this Series I will be completing Angular ecommerce application Admin and Website modules.
 We will try to implement this with Angular 17.
@@ -166,6 +174,499 @@ In this Particular video I have Completed Admin Module like below
 2) Products Creation
 3) Category List
 4) API call functions in service`,
+  },
+  {
+    title:
+      "Angular Login and Signup Page | Local-Storage | angular tutorial | angular tutorial for beginners",
+    url: "38JJ0hDQoos",
+    isPlayList: false,
+    isMiniProject: true,
+    isLogicalScenario: false,
+    isTutorial: true,
+    videoType:'',
+    videoType:'Angular , Tutorial',
+    liveVersion: "",
+    apiSwaggerUrl: "https://freeapi.miniprojectideas.com/index.html",
+    duration: "1 Hr",
+    description: `Angular login and signup page using template form.
+Store data in local storage.
+Angular 17
+Angular 17 Projects`,
+  },
+
+  {
+    title:
+      "Ecommerce App with Angular from scratch | Angular Project | angular tutorial for beginners",
+    url: "adaRRTIiwWk",
+    isPlayList: false,
+    isMiniProject: false,
+    isLogicalScenario: false,
+    isTutorial: true,
+    videoType:'Project Video, Angular', 
+    liveVersion: "",
+    apiSwaggerUrl: "https://freeapi.miniprojectideas.com/index.html",
+    duration: "1.30 Hr",
+    description: `In this video We have tried to Design an ecommerce application using Angular with Dot net API.
+Ecommerce website in angular.
+ecommerce application in angular.
+ecommerce angular.
+angular ecommerce.`,
+  },
+  {
+    title: "Angular 17 Login | With API Integration",
+    url: "Dvqe0uIhBxQ",
+    isPlayList: false,
+    isMiniProject: false,
+    isLogicalScenario: false,
+    isTutorial: false,
+    videoType:'Angular, Tutorial',
+    liveVersion: "",
+    apiSwaggerUrl: "https://freeapi.miniprojectideas.com/index.html",
+    duration: "30 min",
+    description: `Angular 17 Login Page with API integration.
+Angular 17 Login Page.
+Angular 17 login.
+Angular Login.`,
+  },
+  {
+    title:
+      "Angular Login | API | Interceptor | JWT Tokens | Complete Authentication & Authorization",
+    url: "BSU3bIXU85k",
+    isPlayList: false,
+    isMiniProject: false,
+    isLogicalScenario: false,
+    isTutorial: false,
+    videoType:'Angular, Tutorial',
+    liveVersion: "",
+    apiSwaggerUrl: "https://freeapi.miniprojectideas.com/index.html",
+    duration: "20 min",
+    description: `Angular login page.
+API integration and sending jwt Token in headers using Interceptor in angular. `,
+  },
+  {
+    title:
+      "Angular Interview Questions and Answers | Angular Interview Questions | Top Angular Questions",
+    url: "L9EXIhabTMs",
+    isPlayList: false,
+    isMiniProject: false,
+    isLogicalScenario: false,
+    isTutorial: false,
+    videoType:'Angular, Interview',
+    liveVersion: "",
+    apiSwaggerUrl: "https://freeapi.miniprojectideas.com/index.html",
+    duration: "1 Hr",
+    description: `This video on Top 30 Angular Interview Question and Answers will help you to prepare yourself for Angular Interviews.
+It covers questions for beginners, intermediate having 0-2 yrs of experience.  `,
+  },
+  {
+    title:
+      "Angular Modal Popup Using Bootstrap | angular tutorial | angular tutorial for beginners | Bootstrap",
+    url: "LnBo9dn70MY",
+    isPlayList: false,
+    isMiniProject: false,
+    isLogicalScenario: false,
+    isTutorial: true,
+    videoType:'Angular, Tutorial',
+    liveVersion: "",
+    apiSwaggerUrl: "https://freeapi.miniprojectideas.com/index.html",
+    duration: "10 min",
+    description: `In this tutorial, we will see how to implement a modal dialog popup in angular using the bootstrap library. We will see how to install bootstrap in Angular Project.`,
+  },
+  {
+    title:
+      "Role Based Login in Angular | Role Based Authorization Angular | Angular Tutorials",
+    url: "tiSx6H8rXDU",
+    isPlayList: false,
+    isMiniProject: false,
+    isLogicalScenario: false,
+    isTutorial: true,
+    videoType:'Angular, Tutorial',
+    liveVersion: "",
+    apiSwaggerUrl: "https://freeapi.miniprojectideas.com/index.html",
+    duration: "25 min",
+    description: `Angular login using template form.
+Role Based authentication in angular.
+Step 1: Create Menu Array with Roles
+Step 2: Filter Menu with Logged in Role 
+Step 3: Use Filtered Menu to Plot Menu using ngFor`,
+  },
+  {
+    title:
+      "Angular Login App with JWT token authentication | Interceptor | Angular Login",
+    url: "PhzxED19FVA",
+    isPlayList: false,
+    isMiniProject: false,
+    isLogicalScenario: false,
+    isTutorial: false,
+    videoType:'Angular, Tutorial',
+    liveVersion: "",
+    apiSwaggerUrl: "https://freeapi.miniprojectideas.com/index.html",
+    duration: "30.50 min ",
+    description: `Angular Login Page with JWT authentication with API integration.
+Angular Interceptor.
+Angular Login Page
+Angular login with API.
+JWT angular login`,
+  },
+  {
+    title:
+      "How To Upload File In Angular | angular tutorial for beginners | angular tutorial | angular 15",
+    url: "bGTKu3Bn-z8",
+    isPlayList: false,
+    isMiniProject: false,
+    isLogicalScenario: false,
+    isTutorial: true,
+    videoType:'Angular, Tutorial',
+    liveVersion: "",
+    apiSwaggerUrl: "https://freeapi.miniprojectideas.com/index.html",
+    duration: "15 min ",
+    description: `File upload in angular.
+Angular File Upload.
+Angular File upload with API.
+how to upload file in angular.
+API integration to upload file / images.
+how to upload file in angular using api.
+Angular 17 file upload
+angular 17 tutorials
+`,
+  },
+  {
+    title:
+      "Ecommerce Application In Angular From Scratch | Angular Project | angular tutorial for beginners",
+    url: "pWx-Ot0ydLg",
+    isPlayList: false,
+    isMiniProject: true,
+    isLogicalScenario: false,
+    isTutorial: true,
+    videoType:'Project Video, Angular',
+    liveVersion: "https://voidchetan.github.io/amazon-e-commerce/products",
+    apiSwaggerUrl: "https://freeapi.miniprojectideas.com/index.html",
+    duration: "1.15 Hr ",
+    description: `Video will help you implement Ecommerce Application from scratch.
+Modules Covered as below 
+1) Login & Signup
+2) Show Products in Home page
+3) Add To Cart
+4) Checkout Page
+5) Order Place
+`,
+  },
+  {
+    title: "Inline Table Editing Angular | angular tutorials | Angular 17",
+    url: "xpXlEJArHzg",
+    isPlayList: false,
+    isMiniProject: false,
+    isLogicalScenario: false,
+    isTutorial: true,
+    videoType:'Angular, Tutorial',
+    liveVersion: "",
+    apiSwaggerUrl: "https://freeapi.miniprojectideas.com/index.html",
+    duration: "1.15 Hr ",
+    description: `Inline Table Editing in angular.
+Angular inline editing.
+Angular table inline editing.
+I have explained 2 ways by which we can achieve inline table editing in angular.
+1) On Edit button click we convert all tds to textbox.
+2) On column double click we convert that particular td to textbox.
+`,
+  },
+  {
+    title:
+      "Train Ticket Booking App In Angular | Angular Projects | Angular 17 Projects",
+    url: "MamE1c31Xyc",
+    isPlayList: false,
+    isMiniProject: true,
+    isLogicalScenario: false,
+    isTutorial: false,
+    videoType:'Angular, Project Video',
+    liveVersion: "https://voidchetan.github.io/Railway_Booking_Angular/home",
+    apiSwaggerUrl: "https://freeapi.miniprojectideas.com/index.html",
+    duration: "1.15 Hr ",
+    description: `Train ticket booking system, train booking system
+In this Video I have covered flow of Train Ticket Booking with Real API integration. 
+Major Modules Covered as below
+1) Home Page to Search Train with from n to destination with Travel Date
+2) Show Available  Result Of Trains 
+3) Registration & Login.
+4) Booking Of Tickets.
+`,
+  },
+  {
+    title:
+      "Zomato app in Angular | Online Food Order app Angular | angular project from scratch",
+    url: "r0QH2DtGJV8",
+    isPlayList: false,
+    isMiniProject: true,
+    isLogicalScenario: false,
+    isTutorial: false,
+    videoType:'Angular, Project Video',
+    liveVersion: "https://voidchetan.github.io/zomato/foodCategory",
+    apiSwaggerUrl: "https://freeapi.miniprojectideas.com/index.html",
+    duration: "1.30 Hr ",
+    description: `Zomato App using angular with Dot Net API.
+Online Food Order app with API.
+
+In this Video I have covered Basic flow covering we can show Food categories then show Hotels serving that category food items and order place functionality.
+`,
+  },
+  {
+    title: "Angular Login and Signup with Local-Storage | Angular 17",
+    url: "5QM_GK-pFpM",
+    isPlayList: false,
+    isMiniProject: false,
+    isLogicalScenario: false,
+    isTutorial: false,
+    videoType:'Angular, Tutorial',
+    liveVersion: "",
+    apiSwaggerUrl: "https://freeapi.miniprojectideas.com/index.html",
+    duration: "50 min ",
+    description: `Angular 17 Login Page with Local Storage.
+Angular 17 Login Page.
+Angular 17 login.
+Angular Login.
+Angular Authentication and Authorization.
+Authentication and authorization in Angular.
+`,
+  },
+  {
+    title:
+      "Dynamic Form using Reactive Form Angular | angular tutorial | angular tutorial for beginners",
+    url: "ZhJF78w34QM",
+    isPlayList: false,
+    isMiniProject: false,
+    isLogicalScenario: false,
+    isTutorial: true,
+    videoType:'Angular, Tutorial',
+    liveVersion: "",
+    apiSwaggerUrl: "https://freeapi.miniprojectideas.com/index.html",
+    duration: "7.35 min ",
+    description: `How to implement Reactive form in angular and dynamic form array with form.
+how to use form array in reactive form in angular 
+
+Angular Forms
+Angular Reactive form
+Dynamic form in angular
+Angular dynamic Form
+FormArray in reactive form angular
+`,
+  },
+  {
+    title: "Flight Booking App Angular | Angular 17 Projects | Angular Project",
+    url: "Dmvx2EPKOy8",
+    isPlayList: false,
+    isMiniProject: true,
+    isLogicalScenario: false,
+    isTutorial: false,
+    videoType:'Angular, Project Video',
+    liveVersion: "https://voidchetan.github.io/Flight_Booking_Angular/search",
+    apiSwaggerUrl: "https://freeapi.miniprojectideas.com/index.html",
+    duration: "7.35 min ",
+    description: `Flight Booking Project From Scratch in Angular.
+Angular Project from scratch completing Flight booking management System.
+
+Major Roles and Feature Modules
+1) Admin Login
+2) Airline Login
+3) Website
+
+Functionality Covered
+1) Flight Creation.
+2) Airport & City Creation.
+3) Admin & Airline Login.
+4) Website - Flight Searching.
+5) Website - Customer Registration and Login.
+6) Website - Ticket Booking.
+`,
+  },
+  {
+    title: "Angular 17 CRUD with Local-Storage | angular 17 tutorial",
+    url: "VVHj6WjcWrA",
+    isPlayList: false,
+    isMiniProject: true,
+    isLogicalScenario: false,
+    isTutorial: true,
+    videoType:'Angular, Tutorial',
+    liveVersion: "https://voidchetan.github.io/angular_17_crud_localstorage/",
+    apiSwaggerUrl: "https://freeapi.miniprojectideas.com/index.html",
+    duration: "1.30 Hr ",
+    description: `Angular 17 Crud Operation with Local Storage.
+In this video we are going to create a Student Registration app with angular 17. To store data we are going to use Local-Storage.
+Angular 17 New Features we are going to use like @For, @If , @else
+`,
+  },
+  {
+    title:
+      "Dynamically Add & Remove Table Rows Using jQuery | jquery tutorial | jquery tutorial for beginners",
+    url: "nhKFge4TlQA",
+    isPlayList: false,
+    isMiniProject: false,
+    isLogicalScenario: false,
+    isTutorial: true,
+    videoType:'jQuery',
+    liveVersion: "",
+    apiSwaggerUrl: "https://freeapi.miniprojectideas.com/index.html",
+    duration: "12.35 min ",
+    description: `How to add rows in table dynamically and delete from table.
+Using jquery append and remove we achieve same.
+`,
+  },
+  {
+    title:
+      "Setup Environment & Install Angular 18 | Angular 18 Tutorials in Hindi | part 1",
+    url: "FDIj5Vklnlc",
+    isPlayList: true,
+    isMiniProject: false,
+    isLogicalScenario: false,
+    isTutorial: true,
+    videoType:'Angular, Tutorial',
+    liveVersion: "",
+    apiSwaggerUrl: "https://freeapi.miniprojectideas.com/index.html",
+    duration: "16 min ",
+    description: `Angular 18 tutorials in Hindi.
+In this Episode we will see
+1) How to Install Angular.
+2) How to Create Angular Project.
+3) How to Run Angular Project..
+`,
+  },
+  {
+    title:
+      "Reactive Form in Angular | Using FormGroup | Using FormBuilder | Angular Tutorials",
+    url: "dlNY-eQOZ5s",
+    isPlayList: false,
+    isMiniProject: false,
+    isLogicalScenario: false,
+    isTutorial: true,
+    videoType:'Angular, Tutorial',
+    liveVersion: "",
+    apiSwaggerUrl: "https://freeapi.miniprojectideas.com/index.html",
+    duration: "29 min ",
+    description: `Reactive form using FormGroup and Reactive form with FormBuilder.
+How to Implement Reactive form using both ways.
+Reactive form in angular
+angular reactive form
+how to implement reactive form in angular
+angular forms
+`,
+  },
+  {
+    title: "Reactive Form Validation in Angular 17 | angular 17 tutorial",
+    url: "kZAQ-IBO4qw",
+    isPlayList: false,
+    isMiniProject: false,
+    isLogicalScenario: false,
+    isTutorial: false,
+    videoType:'Angular, Tutorial',
+    liveVersion: "",
+    apiSwaggerUrl: "https://freeapi.miniprojectideas.com/index.html",
+    duration: "26.45 min ",
+    description: `Reactive  Form validation in Angular 17.
+Angular 17 From Validation.
+Reactive Form Validation in Angular.
+How to Validate Form in Angular 17.
+How To Create Reactive Form in Angular.
+`,
+  },
+  {
+    title: "Angular 17 Login with JWT token | With API | Angular Interceptor",
+    url: "mWERmpulRIw",
+    isPlayList: false,
+    isMiniProject: false,
+    isLogicalScenario: false,
+    isTutorial: false,
+    videoType:'Angular, Tutorial',
+    liveVersion: "",
+    apiSwaggerUrl: "https://freeapi.miniprojectideas.com/index.html",
+    duration: "17.40 min ",
+    description: `Angular 17 login page.
+Angular 17 Interceptor.
+Angular 17 Login with API.
+How to Implement Interceptor in angular 17.
+API integration and sending JWT Token in headers using Interceptor in angular 17.
+`,
+  },
+  {
+    title:
+      "Dependent Dropdown In Angular Using API | angular tutorial for beginners | Angular | Part 1",
+    url: "ncMO1Lt7b6g",
+    isPlayList: true,
+    isMiniProject: false,
+    isLogicalScenario: false,
+    isTutorial: true,
+    videoType:'Angular, Tutorial',
+    liveVersion: "",
+    apiSwaggerUrl: "https://freeapi.miniprojectideas.com/index.html",
+    duration: "18.45  min ",
+    description: `How to create Dependent Dropdown in angular with API.
+Topic Used : HttpClinet, ngFor, ngModel
+Dependent dropdown in angular.
+angular dependent dropdown.
+`,
+  },
+  {
+    title: "Reusable Table Component Angular 17 | Angular tutorial",
+    url: "vsTrYV6CXQM",
+    isPlayList: false,
+    isMiniProject: false,
+    isLogicalScenario: false,
+    isTutorial: true,
+    videoType:'Angular, Tutorial',
+    liveVersion: "",
+    apiSwaggerUrl: "https://freeapi.miniprojectideas.com/index.html",
+    duration: "23.35  min ",
+    description: `Build Reusable table component in angular with action button.
+Configuration of Table header columns as well.
+`,
+  },
+  {
+    title:
+      "Inline Table Editing using jQuery | jQuery tutorial | jQuery tutorial for beginners",
+    url: "-iR22uBDbI4",
+    isPlayList: false,
+    isMiniProject: false,
+    isLogicalScenario: false,
+    isTutorial: true,
+    videoType:'Angular, Tutorial',
+    liveVersion: "",
+    apiSwaggerUrl: "https://freeapi.miniprojectideas.com/index.html",
+    duration: "7.46  min ",
+    description: `Video focus on inline table editing with this New Row, update existing and delete.
+How to add rows in table dynamically and delete from table.
+Using jquery append and remove we achieve same.
+`,
+  },
+  {
+    title:
+      "Crud Operation with inline Editing jQuery Ajax | jQuery tutorial | jQuery tutorial for beginners",
+    url: "eWHJ0JS4eIM",
+    isPlayList: false,
+    isMiniProject: false,
+    isLogicalScenario: false,
+    isTutorial: true,
+    videoType:'jQuery',
+    liveVersion: "",
+    apiSwaggerUrl: "https://freeapi.miniprojectideas.com/index.html",
+    duration: "17  min ",
+    description: `Video focus on inline table editing with GET, POST, PUT and DELETE API consumption.
+How to add rows in table dynamically and delete from table.
+Using jquery append and remove we achieve same.
+`,
+  },
+  {
+    title:
+      "JavaScript Coding Interview Questions & Answers | JavaScript Interview Questions | Coding Questions",
+    url: "rP1_uvz2D-o",
+    isPlayList: true,
+    isMiniProject: false,
+    isLogicalScenario: false,
+    isTutorial: true,
+    videoType:'JavaScript, Interview',
+    liveVersion: "",
+    apiSwaggerUrl: "https://freeapi.miniprojectideas.com/index.html",
+    duration: "19.12  min ",
+    description: `In this JavaScript Interview video, you will learn some of the top JavaScript coding questions that are often asked in an interview. You will look at practical based questions on several crucial topics of JavaScript.
+Will be helpful for Angular, React as well as Dot net Developer.
+`,
   },
 ];
 
@@ -559,24 +1060,24 @@ logicalMenuArray.forEach(element => {
     $("#divCard2").append(dynamicCard);
 });
 
-youtubeVideoList.forEach(element => {
-    var dynamicCard = "<div class='col'>";
-  dynamicCard = dynamicCard + "  <div class='card shadow-sm' style='    border-radius: 10px;'>";
-  dynamicCard = dynamicCard + "    <iframe class='bd-placeholder-img card-img-top' style='border-radius: 10px;border-bottom-left-radius: 0px;border-bottom-right-radius: 0px;' width='100%' height='100%' src='https://www.youtube.com/embed/"+element.url+"'    frameborder='0' autoplay='true' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'  allowfullscreen></iframe>";
-  dynamicCard = dynamicCard + "    <div class='card-body p-1'>";
-  dynamicCard = dynamicCard + "      <h5 p-0 m-0>"+element.title+"</h5> <p class='p-0 m-0' title='"+element.description+"'>"+element.description.substring(0,70)+"</p>",
-  dynamicCard = dynamicCard + "      <div class='d-flex justify-content-between align-items-center'>";
-  dynamicCard = dynamicCard + "        <div class='btn-group'>";
-  dynamicCard = dynamicCard + "          <a href='"+element.liveVersion+"' target='_blank' ><button type='button' class='btn btn-sm btn-warning'>Live Version</button></a>";
-  dynamicCard = dynamicCard + "          <a href='"+element.apiSwaggerUrl+"' target='_blank' ><button type='button' class='btn btn-sm btn-primary mx-2'>API Portal</button></a>";
-  dynamicCard = dynamicCard + "        </div>";
-  dynamicCard = dynamicCard + "        <small class='text-body-secondary'>9 mins</small>";
-  dynamicCard = dynamicCard + "      </div>";
-  dynamicCard = dynamicCard + "    </div>";
-  dynamicCard = dynamicCard + "  </div>";
-  dynamicCard = dynamicCard + "</div> ";
-    $("#youtubeData").append(dynamicCard);
-});
+// youtubeVideoList.forEach(element => {
+//     var dynamicCard = "<div class='col-6 col-md-3 col-sm-3 col-lg-3'>";
+//   dynamicCard = dynamicCard + "  <div class='card shadow-sm' style='    border-radius: 10px;'>";
+//   dynamicCard = dynamicCard + "    <iframe loading='lazy' class='bd-placeholder-img card-img-top' style='border-radius: 10px;border-bottom-left-radius: 0px;border-bottom-right-radius: 0px;' width='100%' height='60%' src='https://www.youtube.com/embed/"+element.url+"'    frameborder='0' autoplay='true' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'  allowfullscreen></iframe>";
+//   dynamicCard = dynamicCard + "    <div class='card-body p-1'>";
+//   dynamicCard = dynamicCard + "      <h6 p-0 m-0 title='"+element.title+"'>"+element.title.substring(0,60)+"</h6> <small class='p-0 m-0' title='"+element.description+"'>"+element.description.substring(0,70)+"</small>",
+//   dynamicCard = dynamicCard + "      <div class='d-flex justify-content-between align-items-center'>";
+//   dynamicCard = dynamicCard + "        <div class='btn-group'>";
+//   dynamicCard = dynamicCard + "          <a href='"+element.liveVersion+"' target='_blank' ><button type='button' class='btn btn-sm btn-warning'>Live Version</button></a>";
+//   dynamicCard = dynamicCard + "          <a href='"+element.apiSwaggerUrl+"' target='_blank' ><button type='button' class='btn btn-sm btn-primary mx-2'>API Portal</button></a>";
+//   dynamicCard = dynamicCard + "        </div>";
+//   dynamicCard = dynamicCard + "        <small class='text-body-secondary'>9 mins</small>";
+//   dynamicCard = dynamicCard + "      </div>";
+//   dynamicCard = dynamicCard + "    </div>";
+//   dynamicCard = dynamicCard + "  </div>";
+//   dynamicCard = dynamicCard + "</div> ";
+//     $("#youtubeData").append(dynamicCard);
+// });
 
 logicalMenuArray.forEach((element) => {
     var dynamic = "<div class='col-6 col-md-3 col-sm-4 col-lg-3'>";
