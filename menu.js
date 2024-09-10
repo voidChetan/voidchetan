@@ -96,6 +96,46 @@ var studentArray = [
     },
 ];
 
+var youtubeVideoList = [
+  {
+    title: "Angular 18 Full Course | Angular 18 Ecommerce App From Scratch",
+    url: "b9ne9HIQWnc",
+    liveVersion: '',
+    apiSwaggerUrl: '',
+    duration: "2 Hr",
+    description: `All Advance concepts covered.
+We will try to Complete Ecommerce website using angular 18.
+All new Features and advance concept s of angular we will use to complete this project`,
+  },
+  {
+    title: "JavaScript Tutorials for Beginners in Hindi",
+    url: "rWhhxVLX2uU",
+    liveVersion: '',
+    apiSwaggerUrl: '',
+    duration: "3 Hr",
+    description: `JavaScript Tutorial Full Course For Beginners. JavaScript Tutorial In Hindi`,
+  },
+  {
+    title: "Angular 18 Full Course  | Angular 18 Tutorial With Project",
+    url: "QjaNv7s1gW0",
+    liveVersion: '',
+    apiSwaggerUrl: '',
+    duration: "3 Hr",
+    description: `A 3 Hour Long video where I have Explained all basic topics in Angular with a project Employee Management Application.`,
+  },
+  {
+    title: "Angular 18 CRUD with Local Storage | Angular 18 Tutorial",
+    url: "5Sn4POibEec",
+    liveVersion: '',
+    apiSwaggerUrl: '',
+    duration: "1 Hr",
+    description: `I have explained from scratch How to Complete Crud Application with Local Storage.
+How To create Repository on GitHub.
+How to Clone Repository.
+CRUD operation with local-storage.`,
+  },
+];
+
 var logicalMenuArray = [
 
     {
@@ -427,6 +467,49 @@ angularMenuArray.forEach(element => {
 
     $("#divCard").append(dynamicCard);
 });
+angularMenuArray.forEach((element) => {
+    var dynamic = "<div class='col-6 col-md-3 col-sm-4 col-lg-3'>";
+    dynamic = dynamic + "<div class='card mb-2 rounded-3 shadow-sm '>";
+    dynamic = dynamic + "<div class='card-header py-1'>";
+    dynamic = dynamic + "<h5 class='my-0 fw-normal'>" + element.text + "</h5>";
+    dynamic = dynamic + "</div>";
+    dynamic = dynamic + "<div class='card-body p-2'>"; 
+    dynamic = dynamic + "<div class='list-unstyled mt-1 mb-1'>";
+    dynamic = dynamic + " <p>" + element.info + "</p>";
+    dynamic = dynamic + " </div>";
+    dynamic =
+      dynamic +
+      "<a href='" +
+      element.url +
+      "'><button type='button' class='w-100 btn btn-outline-primary'>See Tasks</button></a>";
+    dynamic = dynamic + " </div>";
+    dynamic = dynamic + " </div>";
+    dynamic = dynamic + " </div>";
+  
+    $("#angularTask").append(dynamic);
+  });
+
+  javascriptMenueArray.forEach((element) => {
+  var dynamic = "<div class='col-6 col-md-3 col-sm-4 col-lg-3'>";
+  dynamic = dynamic + "<div class='card mb-2 rounded-3 shadow-sm '>";
+  dynamic = dynamic + "<div class='card-header py-1'>";
+  dynamic = dynamic + "<h5 class='my-0 fw-normal'>" + element.text + "</h5>";
+  dynamic = dynamic + "</div>";
+  dynamic = dynamic + "<div class='card-body p-2'>"; 
+  dynamic = dynamic + "<div class='list-unstyled mt-1 mb-1'>";
+  dynamic = dynamic + " <p>" + element.info + "</p>";
+  dynamic = dynamic + " </div>";
+  dynamic =
+    dynamic +
+    "<a href='" +
+    element.url +
+    "'><button type='button' class='w-100 btn btn-outline-primary'>See Tasks</button></a>";
+  dynamic = dynamic + " </div>";
+  dynamic = dynamic + " </div>";
+  dynamic = dynamic + " </div>";
+
+  $("#javascriptTask").append(dynamic);
+});
 logicalMenuArray.forEach(element => {
     const link = " <li><a class='dropdown-item' href='" + element.url + "'>" + element.text + "</a></li>";
     $("#logicalUl ul").append(link);
@@ -442,6 +525,47 @@ logicalMenuArray.forEach(element => {
 
     $("#divCard2").append(dynamicCard);
 });
+
+youtubeVideoList.forEach(element => {
+    var dynamicCard = "<div class='col'>";
+  dynamicCard = dynamicCard + "  <div class='card shadow-sm' style='    border-radius: 10px;'>";
+  dynamicCard = dynamicCard + "    <iframe class='bd-placeholder-img card-img-top' style='border-radius: 10px;border-bottom-left-radius: 0px;border-bottom-right-radius: 0px;' width='100%' height='100%' src='https://www.youtube.com/embed/"+element.url+"'    frameborder='0' autoplay='true' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'  allowfullscreen></iframe>";
+  dynamicCard = dynamicCard + "    <div class='card-body p-1'>";
+  dynamicCard = dynamicCard + "      <h5 p-0 m-0>"+element.title+"</h5> <p class='p-0 m-0' title='"+element.description+"'>"+element.description.substring(0,70)+"</p>",
+  dynamicCard = dynamicCard + "      <div class='d-flex justify-content-between align-items-center'>";
+  dynamicCard = dynamicCard + "        <div class='btn-group'>";
+  dynamicCard = dynamicCard + "          <a href='"+element.liveVersion+"' target='_blank' ><button type='button' class='btn btn-sm btn-warning'>Live Version</button></a>";
+  dynamicCard = dynamicCard + "          <a href='"+element.apiSwaggerUrl+"' target='_blank' ><button type='button' class='btn btn-sm btn-primary mx-2'>API Portal</button></a>";
+  dynamicCard = dynamicCard + "        </div>";
+  dynamicCard = dynamicCard + "        <small class='text-body-secondary'>9 mins</small>";
+  dynamicCard = dynamicCard + "      </div>";
+  dynamicCard = dynamicCard + "    </div>";
+  dynamicCard = dynamicCard + "  </div>";
+  dynamicCard = dynamicCard + "</div> ";
+    $("#youtubeData").append(dynamicCard);
+});
+
+logicalMenuArray.forEach((element) => {
+    var dynamic = "<div class='col-6 col-md-3 col-sm-4 col-lg-3'>";
+    dynamic = dynamic + "<div class='card mb-2 rounded-3 shadow-sm '>";
+    dynamic = dynamic + "<div class='card-header py-1'>";
+    dynamic = dynamic + "<h5 class='my-0 fw-normal'>" + element.text + "</h5>";
+    dynamic = dynamic + "</div>";
+    dynamic = dynamic + "<div class='card-body p-2'>"; 
+    dynamic = dynamic + "<div class='list-unstyled mt-1 mb-1'>";
+    dynamic = dynamic + " <p>" + element.info + "</p>";
+    dynamic = dynamic + " </div>";
+    dynamic =
+      dynamic +
+      "<a href='" +
+      element.url +
+      "'><button type='button' class='w-100 btn btn-outline-primary'>See Tasks</button></a>";
+    dynamic = dynamic + " </div>";
+    dynamic = dynamic + " </div>";
+    dynamic = dynamic + " </div>";
+  
+    $("#logicalTask").append(dynamic);
+  });
 javascriptMenueArray.forEach(element => {
     const link = " <li><a class='dropdown-item' href='" + element.url + "'>" + element.text + "</a></li>";
     $("#javascriptUl ul").append(link);
