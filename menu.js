@@ -133,6 +133,19 @@ All new Features and advance concept s of angular we will use to complete this p
 How To create Repository on GitHub.
 How to Clone Repository.
 CRUD operation with local-storage.`,
+  }, {
+    title: "Ecommerce App with Angular | Angular 17 Project | Admin Application",
+    url: "hejR2GfFXiA",
+    liveVersion: 'https://voidchetan.github.io/bigbasket_ecommerce_angular/AllProducts',
+    apiSwaggerUrl: 'https://freeapi.miniprojectideas.com/index.html',
+    duration: "1.30 Hr",
+    description: `In this Series I will be completing Angular ecommerce application Admin and Website modules.
+We will try to implement this with Angular 17.
+In this Particular video I have Completed Admin Module like below
+1) Project Creation  & Components Creation
+2) Products Creation
+3) Category List
+4) API call functions in service`,
   },
 ];
 
