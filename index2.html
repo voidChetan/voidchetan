@@ -191,13 +191,17 @@
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="https://voidchetan.github.io/voidchetan/angular.html">Angular</a>
+                            <a class="nav-link " aria-current="page"
+                                href="https://voidchetan.github.io/voidchetan/angular.html">Angular</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="https://voidchetan.github.io/voidchetan/javascript.html">JavaScript</a>
+                            <a class="nav-link " aria-current="page"
+                                href="https://voidchetan.github.io/voidchetan/javascript.html">JavaScript</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="https://voidchetan.github.io/voidchetan/logicalScenarios.html">Logical Scenarios</a>
+                            <a class="nav-link" aria-current="page"
+                                href="https://voidchetan.github.io/voidchetan/logicalScenarios.html">Logical
+                                Scenarios</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link disabled" aria-disabled="true">ReactJs Task</a>
@@ -270,13 +274,15 @@
                     <img src="angular.png" width="150" height="150" />
                     <h2 class="fw-normal">JavaScript</h2>
                     <p>Tasks to confirm if you are on right track in your learing phase</p>
-                    <p><a class="btn btn-outline-warning" href="https://voidchetan.github.io/voidchetan/javascript.html">Explore Tasks &raquo;</a></p>
+                    <p><a class="btn btn-outline-warning"
+                            href="https://voidchetan.github.io/voidchetan/javascript.html">Explore Tasks &raquo;</a></p>
                 </div><!-- /.col-lg-4 -->
                 <div class="col-lg-4">
                     <img src="reactjs.png" width="150" height="150" />
                     <h2 class="fw-normal">Angular</h2>
                     <p>For Each Building Block of Angular we have Dedicated list of task</p>
-                    <p><a class="btn btn-outline-danger" href="https://voidchetan.github.io/voidchetan/angular.html">Explore Tasks &raquo;</a></p>
+                    <p><a class="btn btn-outline-danger"
+                            href="https://voidchetan.github.io/voidchetan/angular.html">Explore Tasks &raquo;</a></p>
                 </div><!-- /.col-lg-4 -->
                 <div class="col-lg-4">
                     <img src="javascript.png" width="150" height="150" />
@@ -320,9 +326,9 @@
                         <p class="fs-5 text-body-secondary">From Tutorials to Logical Scenarios we need while working on
                             any projects. So many Project Ideas to Implement </p>
                     </div>
-                     
+
                     <div style="display: flex;" id="videoTypeList">
-                        <input type="text"    id="searchBox" placeholder="Search Video..." />
+                        <input type="text" id="searchBox" placeholder="Search Video..." />
                     </div>
 
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 pt-2  " id="youtubeData">
@@ -369,7 +375,7 @@
     <script src="https://apis.google.com/js/platform.js"></script>
     <script type="text/javascript" src="../menu.js"> </script>
     <script>
-         var selectedBtn = "";
+        var selectedBtn = "";
         let uniqueVideoTypes = [
             ...new Set(
                 youtubeVideoList
@@ -400,7 +406,7 @@
                 dynamicCard = dynamicCard + "    <iframe loading='lazy' class='bd-placeholder-img card-img-top' style='border-radius: 10px;border-bottom-left-radius: 0px;border-bottom-right-radius: 0px;' width='100%' height='60%' src='https://www.youtube.com/embed/" + element.url + "'    frameborder='0' autoplay='true' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'  allowfullscreen></iframe>";
                 dynamicCard = dynamicCard + "    <div class='card-body p-1'>";
                 dynamicCard = dynamicCard + "      <h6 p-0 m-0 title='" + element.title + "'>" + element.title.substring(0, 60) + "</h6> <small class='p-0 m-0' title='" + element.description + "'>" + element.description.substring(0, 60) + "...</small>",
-                dynamicCard = dynamicCard + "      <div class='d-flex justify-content-between align-items-center'>";
+                    dynamicCard = dynamicCard + "      <div class='d-flex justify-content-between align-items-center'>";
                 dynamicCard = dynamicCard + "        <div class='btn-group'>";
                 dynamicCard = dynamicCard + "          <a href='" + element.liveVersion + "' target='_blank' ><button type='button' class='btn btn-sm btn-warning'>Live Version</button></a>";
                 dynamicCard = dynamicCard + "          <a href='" + element.apiSwaggerUrl + "' target='_blank' ><button type='button' class='btn btn-sm btn-primary mx-2'>API Portal</button></a>";
@@ -413,7 +419,7 @@
                 $("#youtubeData").append(dynamicCard);
             });
         }
-       
+
         $(document).on('click', '.btn', function () {
             $('.vdobtn').removeClass('btn-success').addClass('btn-primary');
             $(this).removeClass('btn-primary').addClass('btn-success');
@@ -432,35 +438,52 @@
 
         });
         $('#searchBox').on('input', function () {
-                const searchText = $(this).val().toLowerCase().trim();
+            const searchText = $(this).val().toLowerCase().trim();
 
-                if (searchText.length >= 3) {
-                    
-                    // Filter the video list based on title or description
-                    const filteredVideos = youtubeVideoList.filter(video =>
-                        video.title.toLowerCase().includes(searchText) ||
-                        video.description.toLowerCase().includes(searchText)
-                    );
-                    if(filteredVideos.length >0) {
-                        createVideoElement(filteredVideos);
-                    } else {
-                        var dynamicCard = "<div class='col-12 col-md-12 col-sm-12 col-lg-12 text-center'> <p> No Video Found  </p> </div>";
-                        $("#youtubeData").html(dynamicCard)
-                    }
+            if (searchText.length >= 3) {
 
-                    
-                } else { 
-                    debugger;
-
-            // Filter youtubeVideoList by videoType
-            let filteredVideos = youtubeVideoList.filter(video =>
-                video.videoType.split(',').map(type => type.trim()).includes(selectedBtn)
-            );
-                    // If less than 3 characters, show all videos
+                // Filter the video list based on title or description
+                const filteredVideos = youtubeVideoList.filter(video =>
+                    video.title.toLowerCase().includes(searchText) ||
+                    video.description.toLowerCase().includes(searchText)
+                );
+                if (filteredVideos.length > 0) {
                     createVideoElement(filteredVideos);
+                } else {
+                    var dynamicCard = "<div class='col-12 col-md-12 col-sm-12 col-lg-12 text-center'> <p> No Video Found  </p> </div>";
+                    $("#youtubeData").html(dynamicCard)
                 }
+
+
+            } else {
+                debugger;
+
+                // Filter youtubeVideoList by videoType
+                let filteredVideos = youtubeVideoList.filter(video =>
+                    video.videoType.split(',').map(type => type.trim()).includes(selectedBtn)
+                );
+                // If less than 3 characters, show all videos
+                createVideoElement(filteredVideos);
+            }
+        });
+
+        $(document).ready(function () {
+                const isVisited = localStorage.getItem('voidChetan');
+                if (isVisited == null) {
+                    localStorage.setItem('voidChetan', "yes")
+                    $.ajax({
+                        url: 'https://projectapi.gerasim.in/api/BudgetPlanner/IncreaseVisitCount',
+                        type: 'GET',
+                        success: function (data) {
+                            // Displaying the data on the page
+                            
+                        },
+                        error: function (error) {
+                            console.error("Error fetching data:", error);
+                        }
+                    });
+                } 
             });
-        debugger;
     </script>
 </body>
 
