@@ -155,6 +155,17 @@ How to Clone Repository.
 CRUD operation with local-storage.`,
   },
   {
+    title: "How To Build Logic | Logic Development  | Student Registration Form | Part 5",
+    url: "8qcKvEdevRI",
+    liveVersion: "https://voidchetan.github.io/angular_18_eCommerce_app/home",
+   
+    videoType:'Logic Development, Angular',
+    apiSwaggerUrl: "",
+    duration: "30 min",
+    description: `In this video I have Explained How to Build Logic with Some Task.
+Logic will build when you work on task like this one solution I have explained but there are multiple ways to do same task that you need to think.`,
+  },
+  {
     title:
       "Ecommerce App with Angular | Angular 17 Project | Admin Application",
     url: "hejR2GfFXiA",

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swagger-Like UI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .endpoint {
+            margin-bottom: 20px;
+        }
+        .endpoint h3 {
+            margin: 0;
+            padding: 10px;
+            background-color: #f2f2f2;
+            cursor: pointer;
+        }
+        .parameters {
+            padding: 10px;
+            background-color: #fafafa;
+            display: none;
+        }
+        .response {
+            margin-top: 10px;
+            background-color: #e0f7fa;
+            padding: 10px;
+            display: none;
+        }
+        .send-btn {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="swaggerUI"></div>
+
+    <script>
+        // Mock swagger data (replace this with your actual swagger data)
+var swaggerData = {
+    "paths": {
+        "/api/BudgetPlanner/GetAllTransactionType": {
+            "get": {
+                "tags": ["BudgetPlanner"],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": { "$ref": "#/components/schemas/ApiResponse" }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/BudgetPlanner/GetDashboardData": {
+            "get": {
+                "tags": ["BudgetPlanner"],
+                "parameters": [
+                    { "name": "userId", "in": "query", "schema": { "type": "integer", "format": "int32" }},
+                    { "name": "fromDate", "in": "query", "schema": { "type": "string", "format": "date-time" }},
+                    { "name": "toDate", "in": "query", "schema": { "type": "string", "format": "date-time" }}
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": { "$ref": "#/components/schemas/ApiResponse" }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+};
+
+// Function to generate Swagger-like UI
+function generateSwaggerUI() {
+    const container = document.getElementById('swaggerUI');
+
+    for (const path in swaggerData.paths) {
+        const endpoint = swaggerData.paths[path];
+        for (const method in endpoint) {
+            const methodData = endpoint[method];
+            const endpointDiv = document.createElement('div');
+            endpointDiv.className = 'endpoint';
+
+            const header = document.createElement('h3');
+            header.textContent = `${method.toUpperCase()} ${path}`;
+            endpointDiv.appendChild(header);
+
+            const paramsDiv = document.createElement('div');
+            paramsDiv.className = 'parameters';
+
+            if (methodData.parameters) {
+                methodData.parameters.forEach(param => {
+                    const paramLabel = document.createElement('label');
+                    paramLabel.textContent = `${param.name} (${param.schema.type}):`;
+                    const paramInput = document.createElement('input');
+                    paramInput.type = param.schema.type === 'integer' ? 'number' : 'text';
+                    paramInput.name = param.name;
+                    paramsDiv.appendChild(paramLabel);
+                    paramsDiv.appendChild(paramInput);
+                    paramsDiv.appendChild(document.createElement('br'));
+                });
+            } 
+
+            endpointDiv.appendChild(paramsDiv);
+
+            const responseDiv = document.createElement('div');
+            responseDiv.className = 'response';
+            endpointDiv.appendChild(responseDiv);
+
+            header.addEventListener('click', () => {
+                paramsDiv.style.display = paramsDiv.style.display === 'none' ? 'block' : 'none';
+            });
+
+            container.appendChild(endpointDiv);
+        }
+    }
+}
+
+// Function to send the API request
+ 
+
+// Initialize Swagger-like UI
+generateSwaggerUI();
+
+    </script>
+</body>
+</html>
