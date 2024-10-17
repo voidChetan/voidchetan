@@ -54,10 +54,10 @@
 
             });
 
-            $("#dpdlState2").change(function() {
+            $("#dpdlState2").change(function () {
                 $("#spanState").html($("#dpdlState2").val())
             })
-            $("#dpdlCity2").change(function() {
+            $("#dpdlCity2").change(function () {
                 $("#spanCity").html($("#dpdlCity2").val())
             })
 
@@ -84,7 +84,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                         </ul>
-                    </li> 
+                    </li>
                     <li class="nav-item dropdown " id="angularUl">
                         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -102,7 +102,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                         </ul>
-                    </li> 
+                    </li>
                 </ul>
                 <form class="d-flex">
                     <a href="https://github.com/voidChetan" target="_blank" class="btn btn-outline-success">Examples</a>
@@ -111,7 +111,8 @@
         </div>
     </nav>
     <div class="container-fluid pt-2">
-        <nav class="voidChetan" style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+        <nav class="voidChetan"
+            style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
             aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
@@ -199,8 +200,6 @@
 
                 </div>
             </div>
-        </div>
-        <div class="row">
             <div class="col-12 col-md-4 col-lg-4 col-sm-6 ">
                 <div class="myBox">
                     <div class="text-center">
@@ -248,18 +247,16 @@
                         </tbody>
                     </table>
                 </div>
-                
-            </div> 
-        </div>
-        <div class="row">
+    
+            </div>
             <div class="col-12 col-md-4 col-lg-4 col-sm-6 ">
                 <div class="myBox">
                     <div class="text-center">
-                        <h3>Task 5</h3>
+                        <h3>Task 6</h3>
                     </div>
                     <ul>
                         <li>Create City And State Array Bind that to Dropdown</li>
-                        <li>City Array Fileds:  cityId, CityName & stateArray fileds stateId, StateName</li>
+                        <li>City Array Fileds: cityId, CityName & stateArray fileds stateId, StateName</li>
                         <li>on Get Data btn click..show selected city and state id in span tag</li>
                     </ul>
                     <div class="row">
@@ -279,22 +276,23 @@
                     <div class="row">
                         <div class="col-6">
                             <label for="">Selected State : <span id="spanState"></span> </label>
-                             
+    
                         </div>
                         <div class="col-6">
-                            <label for="">Selected City :  <span id="spanCity"></span> </label>
-                            
+                            <label for="">Selected City : <span id="spanCity"></span> </label>
+    
                         </div>
                     </div>
                 </div>
             </div>
-             
         </div>
+
+       
     </div>
     <script type="text/javascript" src="../menu.js"> </script>
     <script>
         var index = 1;
-        angularMenuArray.forEach(element => { 
+        angularMenuArray.forEach(element => {
             if (index == 1) {
                 const tr = "<tr class='bg-success'><td>" + index + "</td><td>" + element.url + "</td><td>" + element.text + "</td></tr>";
                 $("#tbl-data tbody").append(tr);
@@ -306,22 +304,22 @@
                     const tr = "<tr ><td>" + index + "</td><td>" + element.url + "</td><td>" + element.text + "</td></tr>";
                     $("#tbl-data tbody").append(tr);
                 }
-            } 
-            index++; 
+            }
+            index++;
         });
         cityArray.forEach(element => {
-                
-                const tr = "<option value='" + element.cityId + "'>" + element.cityName + " </option>";
-                $("#dpdlCity2").append(tr);
 
-            });
-            stateArray.forEach(element => {
-                
-                const tr = "<option value='" + element.stateId + "'>" + element.stateName + " </option>";
-                $("#dpdlState2").append(tr);
+            const tr = "<option value='" + element.cityId + "'>" + element.cityName + " </option>";
+            $("#dpdlCity2").append(tr);
 
-            });
-        
+        });
+        stateArray.forEach(element => {
+
+            const tr = "<option value='" + element.stateId + "'>" + element.stateName + " </option>";
+            $("#dpdlState2").append(tr);
+
+        });
+
     </script>
 </body>
 

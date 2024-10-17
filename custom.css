@@ -2,8 +2,9 @@
      font-weight: 700;;
 }
 .myBox {
-    border: 1px solid teal;
-    padding: 10px;
+    margin-top: 10px;
+    border: 2px solid teal;
+    padding: 3px;
     min-height:300px;
     height: max-content;
     background-color: #ffff;
