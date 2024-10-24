@@ -3,19 +3,79 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Variables</title>
+    <title>JavaScript Task Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="../custom.css">
     <style>
-        .myBoxs {
-            border: 1px solid teal;
-            padding: 10px;
-            max-height: 500px;
-            height: max-content;
+        .task-container {
+            padding: 20px;
+            border: 1px solid #007bff;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            height: 100%;
+        }
+
+        .task-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            background-color: #d3ffce;
+        }
+
+        .task-heading {
+            font-weight: bold;
+            font-size: 20px;
+            color: #007bff;
+        }
+
+        .task-list {
+            text-align: left;
+        }
+
+        .btn-attempt {
+            background-color: #007bff;
+            color: white;
+            border: 2px solid #007bff;
+        }
+
+        .btn-attempting {
+            background-color: #f0ad4e;
+            color: white;
+            border: 2px solid #f0ad4e;
+        }
+
+        .btn-progress {
+            background-color: #5cb85c;
+            color: white;
+            border: 2px solid #5cb85c;
+        }
+
+        .btn:focus {
+            outline: none;
+            border: 2px solid currentColor;
+        }
+
+        .btn:hover {
+            border-width: 2px;
+        }
+
+        @media (max-width: 576px) {
+            .col-12.col-sm-6.col-md-3 {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .col-12.col-sm-6.col-md-3 {
+                flex-basis: 50%;
+                max-width: 50%;
+            }
         }
     </style>
     <script>
@@ -27,24 +87,24 @@
             technology: ''
         };
         const display = () => {
-         console.log(this); //
+            console.log(this); //
         }
-       
-     
-     function display2() {
-         console.log(this); //
-     }
-     display2()
 
-     function printName() {
-        const stud = {
 
+        function display2() {
+            console.log(this); //
         }
-        display();
-     }
+        display2()
+
+        function printName() {
+            const stud = {
+
+            }
+            display();
+        }
         $(document).ready(function () {
             $("#btnClear").click(function () {
-                
+
                 employeeObj = {
                     name: '',
                     contactNo: '',
@@ -61,7 +121,7 @@
             });
 
             $("#btnSave").click(function () {
-                
+
                 employeeObj = {
                     name: $("#txtName").val(),
                     contactNo: $("#txtContact").val(),
@@ -72,7 +132,7 @@
 
             });
             $("#btnPrint").click(function () {
-                
+
                 clearEmpForm();
             });
             $("#btnAddCity").click(function () {
@@ -97,11 +157,11 @@
             $("#strTechnology").html(employeeObj.technology);
         }
         var ticket = {
-            TicketNo:'0123',
+            TicketNo: '0123',
             CreatedBy: 'Chetan',
             CreatedDate: '02-05-2023',
             AssigntoEmployeeName: '',
-            TicketDescription: 'I Need New Laptop as old not working' 
+            TicketDescription: 'I Need New Laptop as old not working'
         }
         function assignEmp() {
             ticket.AssigntoEmployeeName = $("#dpdlEmp").val();
@@ -112,7 +172,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg voidChetan navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.html">taskS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -156,8 +216,8 @@
             </div>
         </div>
     </nav>
-    <div class="container-fluid pt-2">
-        <nav class="voidChetan" style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+    <div class="container pt-2">
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
             aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
@@ -165,240 +225,207 @@
                 <li class="breadcrumb-item active" aria-current="page">Array</li>
             </ol>
         </nav>
-        <div class="row"> 
 
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center">
-                        <h3>Task 1</h3>
-                    </div>
-                    <ul>
-                        <li>Create an array of Cities</li>
-                        <li>Print Length of City Array in console</li>
-                        <li>Print 3rd Element from array</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center">
-                        <h3>Task 2</h3>
-                    </div>
-                    <ul>
-                        <li>Create an array of RollNos</li>
-                        <li>Print Length of RollNos Array in Alert</li>
-                        <li>Print 2nd Element from array</li>
-                    </ul>
-                    
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center">
-                        <h3>Task 3</h3>
-                    </div>
-                    <ul>
-                        <li>Create an array of StudentList</li>
-                        <li>Create A textbox to enter student name </li>
-                        <li>Create a button Add - on click of it push entered name into array using push method</li>
-                    </ul> 
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center">
-                        <h3>Task 4</h3>
-                    </div>
-                    <ul>
-                        <li>Create an array of Numbers</li>
-                        <li>Create 4 buttons Push, pop, shift & unShift </li>
-                        <li> on click of all button do add , remove elements from array</li>
-                    </ul>  
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center">
-                        <h3>Task 5</h3>
-                    </div>
-                    <ul>
-                        <li>Create an array of RollNo </li>
-                        <li>Create a textbox - to eneter index number </li>
-                        <li>Create a button with name "Get Element Value"  - on click of it show Element From  array on entered index </li>
-                    </ul>   
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center">
-                        <h3>Task 6</h3>
-                    </div>
-                    <ul>
-                        <li>Create an array of RollNo </li>
-                        <li> Create a button "Print Length" </li>
-                        <li> on click ot it - print length of array in strong tag </li>
-                    </ul>   
-                </div>
-            </div>
-            <div class="col-12 col-md-4 col-lg-4 col-sm-6 pt-2">
-                <div class="myBox">
-                    <div class="text-center">
-                        <h3>Task 1</h3>
-                    </div>
-
-                    <ul>
-                        <li> on add btn click Entered City Should be added to dropdown option</li>
-                        <li> after adding city - textbox Should be empty</li>
-                        <li> Show count of Added Cities beside dropdown</li>
-                        <li class="text-danger"> if Entered city is already added in dropdown show error that city
-                            already present</li>
-                    </ul>
-                    <div class="row">
-                        <div class="col-6">
-                            <input type="text" id="myCity" class="form-control" placeholder="Enter City">
-                        </div>
-                        <div class="col-6">
-                            <button class="btn btn-sm btn-success" id="btnAddCity">Add City</button>
-                        </div>
-                    </div>
-                    <div class="row pt-3">
-                        <div class="col-6">
-                            <select name="" id="dpdlCity" class="form-control">
-                                <option value="">Select City</option>
-                            </select>
-                        </div>
-                        <div class="col-6">
-                            Total City Added: <strong id="totCity"></strong>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-        <hr>
-        <h4>Ad Task</h4>
-        <div class="row"> 
-
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center">
-                        <h3>Task 1</h3>
-                    </div>
-                    <ul>
-                        <li>Create A function to check data passed is same or not </li>
-                        <li>This Function will have 2 parameter</li>
-                        <li>We need to write a code to check if both parameter have same value if same return true else false</li>
-                        <li>Ex: testFun("12","12") => True testFun(12,14) => false</li>
-                        <li>Ex: testFun([1,2,3],[2,3,4]) => false testFun({name:'rahul'},{name:'shyam'}) => false</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center">
-                        <h3>Task 2</h3>
-                    </div>
-                    <ul>
-                        <li>Create A function to check if filed or key exists in object or not</li>
-                        <li>fun will have 2 parameter : object n key</li>
-                        <li>we need to write a code to check if in provided object we have key or not </li>
-                        <li>ex: testFun({name:'',city:''},'city')=> true</li>
-                        <li>ex: testFun({empname:'',empcity:''},'empState')=> false</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center">
-                        <h3>Task 3</h3>
-                    </div>
-                    <ul>
-                      <li>create a button startTimer</li>
-                      <li>on click of button we need to start a timer which start from 10 upto 0 </li>
-                      <li> Once timer starts - we need to display timer in p tag after every 1 sec timeer should mimize by 1 and latest time shoud display in p tag</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center">
-                        <h3>Task 4</h3>
-                    </div>
-                    <ul>
-                      <li>create a button "Schedule Message" and a textbox to enter time and a textbox to enter message</li>
-                      <li> on click of button we need to show Message we enter in textbox after that much time we Enter in textbox  </li>
-                      <li> Hint *( use setTimeout) to achieve this</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center">
-                        <h3>Task 5</h3>
-                    </div>
-                    <ul>
-                       <li>Create an array of city List</li>
-                       <li>Create a textbox and search button</li>
-                       <li>on clcik of button - check if city entered into textbox is presen into array or not</li>
-                       <li>if city present in array Print "City Is Present" or else Print "City Not Found" in p Tag</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center">
-                        <h3>Task 6</h3>
-                    </div>
-                    <ul>
-                      <li>Create an Object to Store Student Details - create key value as per your choice</li>
-                      <li>we need create adynamic table like </li>
-                      <li>tr will have 2 tds</li>
-                      <li>1st td will have key & 2nd td will have value of that key</li>
-                      <li>ex: var stud = { name:'Chetan',city:'Pune',state:'goa'}</li>
-
+        <div class="container mt-4">
+            <div class="row">
+                <!-- Task 1 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 1</div>
+                        <ul class="task-list">
+                            <li>Create an array of Cities</li>
+                            <li>Print the length of the array in the console</li>
+                            <li>Print the 3rd element from the array</li>
                         </ul>
-                        <div class="do">
-                            <table class="table table-bordered">
-                                <tr>
-                                    <td>name</td>
-                                    <td>Chetan</td>
-                                </tr>
-                                <tr>
-                                    <td>city</td>
-                                    <td>Pune</td>
-                                </tr>
-                                <tr>
-                                    <td>state</td>
-                                    <td>goa</td>
-                                </tr>
-                            </table>
-                        </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center">
-                        <h3>Task 6</h3>
+                        <button id="btn1" class="btn btn-attempt">Attempt</button>
                     </div>
-                    <ul>
-                       <li>Create an array of state list</li>
-                       <li>create a button - Sort Array</li>
-                       <li>on click of button - sort the array and print sorted array in p tag</li>
-
-                    </ul>
-                         
                 </div>
+
+                <!-- Task 2 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 2</div>
+                        <ul class="task-list">
+                            <li>Create an array of RollNos</li>
+                            <li>Print the length in an alert</li>
+                            <li>Print the 2nd element</li>
+                        </ul>
+                        <button id="btn2" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+
+                <!-- Task 3 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 3</div>
+                        <ul class="task-list">
+                            <li>Create an array of StudentList</li>
+                            <li>Add functionality to push an entered student name into the array using a button</li>
+                        </ul>
+                        <button id="btn3" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+
+                <!-- Task 4 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 4</div>
+                        <ul class="task-list">
+                            <li>Create an array of Numbers</li>
+                            <li>Implement push, pop, shift, and unshift operations using buttons</li>
+                        </ul>
+                        <button id="btn4" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+
+                <!-- Task 5 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 5</div>
+                        <ul class="task-list">
+                            <li>Create an array of RollNos</li>
+                            <li>Allow the user to get an element by entering an index number</li>
+                        </ul>
+                        <button id="btn5" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+
+                <!-- Task 6 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 6</div>
+                        <ul class="task-list">
+                            <li>Create an array of RollNos</li>
+                            <li>Add a button to print the length of the array in a strong tag</li>
+                        </ul>
+                        <button id="btn6" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+
+                <!-- Task 7 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 7</div>
+                        <ul class="task-list">
+                            <li>Add entered City to a dropdown</li>
+                            <li>Ensure no duplicate cities are allowed</li>
+                            <li>Show the count of cities</li>
+                        </ul>
+                        <button id="btn7" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+
+                <!-- Task 8 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 8</div>
+                        <ul class="task-list">
+                            <li>Create a function to check if two passed parameters are the same (different data types)
+                            </li>
+                        </ul>
+                        <button id="btn8" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+
+                <!-- Task 9 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 9</div>
+                        <ul class="task-list">
+                            <li>Create a function to check if a key exists in an object</li>
+                        </ul>
+                        <button id="btn9" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+
+                <!-- Task 10 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 10</div>
+                        <ul class="task-list">
+                            <li>Create a button to start a timer from 10 to 0</li>
+                            <li>Update the timer every second</li>
+                        </ul>
+                        <button id="btn10" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+
+                <!-- Task 11 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 11</div>
+                        <ul class="task-list">
+                            <li>Create a 'Schedule Message' feature using setTimeout</li>
+                            <li>Schedule message based on specified time</li>
+                        </ul>
+                        <button id="btn11" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+
+                <!-- Task 12 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 12</div>
+                        <ul class="task-list">
+                            <li>Implement a city search functionality in an array of cities</li>
+                            <li>Show if the city is found</li>
+                        </ul>
+                        <button id="btn12" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+
+                <!-- Task 13 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 13</div>
+                        <ul class="task-list">
+                            <li>Create a dynamic table from an object of student details</li>
+                        </ul>
+                        <button id="btn13" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+
+                <!-- Task 14 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 14</div>
+                        <ul class="task-list">
+                            <li>Create a state list array</li>
+                            <li>Sort it using a button</li>
+                            <li>Display the sorted array</li>
+                        </ul>
+                        <button id="btn14" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+
             </div>
-
-
         </div>
-        
-    </div>
-    <script type="text/javascript" src="../menu.js"> </script>
-    <script>
+        <script type="text/javascript" src="../menu.js"></script>
 
-    </script>
+        <script>
+            const buttons = document.querySelectorAll('button[id^="btn"]');
+
+            buttons.forEach((button) => {
+                let currentState = 'attempt';
+
+                button.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    if (currentState === 'attempt') {
+                        button.textContent = 'Attempting';
+                        button.className = 'btn btn-attempting';
+                        currentState = 'attempting';
+                    } else if (currentState === 'attempting') {
+                        button.textContent = 'Attempt in Progress';
+                        button.className = 'btn btn-progress';
+                        currentState = 'progress';
+                    } else {
+                        button.textContent = 'Attempt';
+                        button.className = 'btn btn-attempt';
+                        currentState = 'attempt';
+                    }
+                });
+            });
+        </script>
 </body>
 
 </html>
