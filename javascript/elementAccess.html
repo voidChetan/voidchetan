@@ -3,19 +3,82 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Functions</title>
+    <title>JavaScript Task Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="../custom.css">
     <style>
-        .myBoxs {
-            border: 1px solid teal;
-            padding: 10px;
-            max-height: 500px;
-            height: max-content;
+        .task-container {
+            padding: 20px;
+            border: 1px solid #007bff;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+            height: 100%;
+        }
+
+        .task-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            background-color: #d3ffce;
+        }
+
+        .task-heading {
+            font-weight: bold;
+            font-size: 20px;
+            color: #007bff;
+        }
+
+        .task-list {
+            text-align: left;
+        }
+
+        .btn-attempt {
+            background-color: #007bff;
+            color: white;
+            border: 2px solid #007bff;
+        }
+
+        .btn-attempting {
+            background-color: #f0ad4e;
+            color: white;
+            border: 2px solid #f0ad4e;
+        }
+
+        .btn-progress {
+            background-color: #5cb85c;
+            color: white;
+            border: 2px solid #5cb85c;
+        }
+
+        .btn:focus {
+            outline: none;
+            border: 2px solid currentColor;
+        }
+
+        .btn:hover {
+            border-width: 2px;
+
+
+
+        }
+
+        @media (max-width: 576px) {
+            .col-12.col-sm-6.col-md-3 {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .col-12.col-sm-6.col-md-3 {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
         }
     </style>
     <script>
@@ -36,12 +99,13 @@
             });
         })
     </script>
+
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg voidChetan navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="../index.html">tasks</a>
+            <a class="navbar-brand" href="../index.html">taskS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -83,158 +147,180 @@
             </div>
         </div>
     </nav>
-    <div class="container-fluid pt-2">
-        <nav class="voidChetan" style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
-        aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">JavaScript</li>
-            <li class="breadcrumb-item active" aria-current="page">Element Access</li>
-        </ol>
-    </nav>
-        <div class="row">
-            <div class="col-12 col-md-4 col-lg-4 col-sm-6 ">
-                <div class="myBoxs">
-                    <div class="text-center">
-                        <h4>Task 1</h4>
+    <div class="container pt-2">
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+            aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">JavaScript</li>
+                <li class="breadcrumb-item active" aria-current="page">Element Access</li>
+            </ol>
+        </nav>
+
+        <div class="container mt-4">
+            <div class="row">
+                <!-- Task 1 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 1</div>
+                        <ul class="task-list">
+                            <li>
+                                Create a dropdown with some options of fruits
+                            </li>
+                            <li>
+                                Read selected fruit store it in a variable and print value in console.
+                            </li>
+                        </ul>
+                        <button id="btn1" class="btn btn-attempt">Attempt</button>
                     </div>
-                    <ul>
-                        <li>
-                           create a dropdown with some options of fruits
-                        </li>
-                        <li>
-                           read selected fruit store it in a variable and print value in console.
-                        </li>
-                      
-                    </ul>
                 </div>
-            </div>
-            <div class="col-12 col-md-4 col-lg-4 col-sm-6 ">
-                <div class="myBoxs">
-                    <div class="text-center">
-                        <h4>Task 2</h4>
+
+                <!-- Task 2 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 2</div>
+                        <ul class="task-list">
+                            <li>
+                                Create a one textbox and provide value and id to it.
+                            </li>
+                            <li>
+                                Give the by default value to that textbox
+                            </li>
+                            <li>
+                                Read the value of the textbox by using <code> getElementById </code> and display value
+                                in alert box.
+                            </li>
+                        </ul>
+                        <button id="btn2" class="btn btn-attempt">Attempt</button>
                     </div>
-                    <ul>
-                        <li>
-                            Create a one textbox and provide value and id to it.
-                        </li>
-                        <li>
-                            give the by default value to that textbox
-                        </li>
-                        <li>
-                            read the value of the textbox by using getElementById and display value in alert box.
-                        </li> 
-                    </ul>
                 </div>
-            </div>
-            <div class="col-12 col-md-4 col-lg-4 col-sm-6 ">
-                <div class="myBoxs">
-                    <div class="text-center">
-                        <h4>Task 3</h4>
+                <!-- Task 3 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 3</div>
+                        <ul class="task-list">
+                            <li>
+                                Create 2 radio buttons with same name ="gender" value will be Male & female
+                            </li>
+                            <li>
+                                Read selected value and print it in console.
+                            </li>
+                            <li>
+                                Try in to write it in console directly rather than in script section
+                            </li>
+                        </ul>
+                        <button id="btn3" class="btn btn-attempt">Attempt</button>
                     </div>
-                    <ul>
-                        <li>
-                            create 2 radio buttons with same name ="gender" value will be Male & female 
-                        </li>
-                        <li>
-                          read selected value and print it in console.
-                        </li> 
-                        <li>
-                            try in to write it in console directly rather than in script section
-                        </li>
-                    </ul>
+                </div>
+                <!-- Task 4 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 4</div>
+                        <ul class="task-list">
+                            <li>
+                                Create a one dropdown for sports and create one textbox.
+                            </li>
+                            <li>
+                                Give default values for both.
+                            </li>
+                            <li>
+                                Give same class name for dropdown and textbox.
+                            </li>
+                            <li>
+                                And First stored the dropdown selected value in console and textbox value in alert.
+                            </li>
+                        </ul>
+                        <button id="btn4" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+                <!-- Task 5 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 5</div>
+                        <ul class="task-list">
+                            <li>
+                                Create a one span and provide id.
+                            </li>
+                            <li>
+                                Write the anything under the span
+                            </li>
+                            <li>
+                                Read the value of the span by using <code>getElementById</code> and display that in
+                                confirm popup.
+                            </li>
+                        </ul>
+                        <button id="btn5" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+                <h4>Advance Task</h4>
+                <hr>
+                <!-- Task 1 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 1</div>
+                        <ul>
+                            <li>Create 3 Array of object to store State, district, city</li>
+                            <li>We need to create array of object like from city also I should get to know district and
+                                state also. </li>
+                            <li>Ex: <code>state obj {stateId:1,stateName: ''} </code> <br>- like this you need to
+                                create
+                                district and city
+                                array also.</li>
+                        </ul>
+                        <button id="btn11" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+                <!-- Task 2 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 2</div>
+                        <ul>
+                            <li>By Using Array created with (⬅️Task 1) we need to create three dropdown. </li>
+                            <li>The options will be dynamic as per array.</li>
+                            <li>But on State change we need to display district of that state and on disctirct change we
+                                need to display Cities of that District.</li>
+
+                        </ul>
+                        <button id="btn12" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+                <!-- Task 3 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 3</div>
+                        <ul class="task-list">
+                            <li>We need to create object to store employee details.</li>
+                            <li> Employee Basic details at parent level, contact details going to be multple.</li>
+                            <li> Employee current address and permanent address should be inner object. </li>
+                        </ul>
+                        <button id="btn14" class="btn btn-attempt">Attempt</button>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12 col-md-4 col-lg-4 col-sm-6 ">
-                <div class="myBoxs">
-                    <div class="text-center">
-                        <h4>Task 4</h4>
-                    </div>
-                    <ul>
-                        <li>
-                            Create a one dropdown for sports and create one textbox.
-                        </li>
-                         <li>
-                            give default values for both.
-                        </li>
-                        <li>
-                            give same class name for dropdown and textbox.
-                        </li>
-                        <li>
-                            and First stored the dropdown selected  value in console and  textbox value in alert.
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-12 col-md-4 col-lg-4 col-sm-6 ">
-                <div class="myBoxs">
-                    <div class="text-center">
-                        <h4>Task 5</h4>
-                    </div>
-                    <ul>
-                        <li>
-                            Create a one span and provide id.
-                        </li>
-                        <li>
-                            write the anything under the span
-                        </li>
-                        <li>
-                            read the value of the span by using getElementById and display that in confirm popup.
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <hr>
-        <h3>Adv Task</h3>
-        <div class="row">
-            <div class="col-12 col-md-4 col-lg-4 col-sm-6 ">
-                <div class="myBoxs">
-                    <div class="text-center">
-                        <h4>Task 1</h4>
-                    </div>
-                    <ul>
-                        <li>Create 3 Array of object to store State, district, city</li>
-                        <li>we need to create array of object like from city also I should get to know district n state also </li>
-                        <li>Ex: state obj {stateId:1,stateName: ''} - like this you need to create district n city array also</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-12 col-md-4 col-lg-4 col-sm-6 ">
-                <div class="myBoxs">
-                    <div class="text-center">
-                        <h4>Task 2</h4>
-                    </div>
-                    <ul>
-                        <li>By Using Array created with above task we need to create 3 dropdown </li>
-                        <li>options will be dynamic as per array</li>
-                        <li>but on State change we need to display district of that state and on disctirct change we need to display Cities of that District</li>
-
-                    </ul>
-                </div>
-            </div>
-            <div class="col-12 col-md-4 col-lg-4 col-sm-6 ">
-                <div class="myBoxs">
-                    <div class="text-center">
-                        <h4>Task 3</h4>
-                    </div>
-                    <ul>
-                       <li>We need to create object to store employee details</li>
-                       <li> employee Basic details at parent level, contact details going to be multple</li>
-                        <li>employee current address n permanent address should be inner object </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    <script type="text/javascript" src="../menu.js"> </script>
-    <script>
-
-    </script>
+        <script type="text/javascript" src="../menu.js"></script>
+        <script>
+            const buttons = document.querySelectorAll('button[id^="btn"]');
+            buttons.forEach((button) => {
+                let currentState = 'attempt';
+                button.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    if (currentState === 'attempt') {
+                        button.textContent = 'Attempting';
+                        button.className = 'btn btn-attempting';
+                        currentState = 'attempting';
+                    } else if (currentState === 'attempting') {
+                        button.textContent = 'Attempt in Progress';
+                        button.className = 'btn btn-progress';
+                        currentState = 'progress';
+                    } else {
+                        button.textContent = 'Attempt';
+                        button.className = 'btn btn-attempt';
+                        currentState = 'attempt';
+                    }
+                });
+            });
+        </script>
 </body>
 
 </html>

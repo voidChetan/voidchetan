@@ -3,32 +3,95 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Variables</title>
+    <title>JavaScript Task Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="../custom.css">
     <style>
-        .myBoxs {
-            border: 1px solid teal;
-            padding: 10px;
-            max-height: 500px;
-            height: max-content;
+        .task-container {
+            padding: 20px;
+            border: 1px solid #007bff;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+            height: 100%;
+        }
+
+        .task-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            background-color: #d3ffce;
+        }
+
+        .task-heading {
+            font-weight: bold;
+            font-size: 20px;
+            color: #007bff;
+        }
+
+        .task-list {
+            text-align: left;
+        }
+
+        .btn-attempt {
+            background-color: #007bff;
+            color: white;
+            border: 2px solid #007bff;
+        }
+
+        .btn-attempting {
+            background-color: #f0ad4e;
+            color: white;
+            border: 2px solid #f0ad4e;
+        }
+
+        .btn-progress {
+            background-color: #5cb85c;
+            color: white;
+            border: 2px solid #5cb85c;
+        }
+
+        .btn:focus {
+            outline: none;
+            border: 2px solid currentColor;
+        }
+
+        .btn:hover {
+            border-width: 2px;
+
+
+
+        }
+
+        @media (max-width: 576px) {
+            .col-12.col-sm-6.col-md-3 {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .col-12.col-sm-6.col-md-3 {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
         }
     </style>
     <script>
         $(document).ready(function () {
             $("#checkVal").click(function () {
-                
+
                 const one = $("#txt1").val();
                 const two = $("#txt2").val();
-               if(one > two) {
-                 alert ('Text box one value is greater than textbox two value ' + one);
-               } else {
-                alert ('Text box two value is greater than textbox one value ' + two);
-               }
+                if (one > two) {
+                    alert('Text box one value is greater than textbox two value ' + one);
+                } else {
+                    alert('Text box two value is greater than textbox one value ' + two);
+                }
 
             });
             $("#txtNum11").on('input', function () {
@@ -45,36 +108,36 @@
                     $("#div3").show();
                 }
             });
-            $("#btnCheck").click(function () { 
+            $("#btnCheck").click(function () {
                 var val = Number($("#textNum").val());
                 if (val % 2 == 0) {
-                    $("#strResult").html(`${val} is a Even number`); 
+                    $("#strResult").html(`${val} is a Even number`);
                 }
                 else {
-                    $("#strResult").html(`${val} is a Odd number`); 
+                    $("#strResult").html(`${val} is a Odd number`);
                 }
             });
-            $("#btnResult").click(function () { 
-                var val = Number($("#txtSub1").val()) + Number($("#txtSub2").val()) + Number($("#txtSub3").val()) + Number($("#txtSub4").val()) + 
-                Number($("#txtSub5").val()) ;
-                if(val> 300) {
-                    alert($("#txtName").val() + '  Passed')
+            $("#btnResult").click(function () {
+                var val = Number($("#txtSub1").val()) + Number($("#txtSub2").val()) + Number($("#txtSub3").val()) + Number($("#txtSub4").val()) +
+                    Number($("#txtSub5").val());
+                if (val > 300) {
+                    alert($("#txtName").val() + ' Passed 🎉🙌')
                 } else {
-                    alert($("#txtName").val() +'   Failed')
-                } 
+                    alert($("#txtName").val() + ' Failed ☹️🥹')
+                }
             });
-            $("#btnClear").click(function () { 
-                 $(".cls").val("");
-                 
+            $("#btnClear").click(function () {
+                $(".cls").val("");
+
             });
-            
-            
-            
+
+
+
         })
         var isDiv1Visible = true;
         function btnDiv2Toggle() {
-            isDiv1Visible =! isDiv1Visible;
-            if(isDiv1Visible) {
+            isDiv1Visible = !isDiv1Visible;
+            if (isDiv1Visible) {
                 $("#div2").show();
             } else {
                 $("#div2").hide();
@@ -103,15 +166,15 @@
                 const result = one / two;
                 $("#txtResult").val(result);
             } else if (opt == 'address') {
-                var address =   $("#txtPlot").val() + ','+ $("#txtCity").val() + ','+  $("#txtState").val() + ','+$("#txtPin").val() + ','+$("#txtAddress").val();
+                var address = $("#txtPlot").val() + ',' + $("#txtCity").val() + ',' + $("#txtState").val() + ',' + $("#txtPin").val() + ',' + $("#txtAddress").val();
                 $("#address").html(address);
-            } 
+            }
         }
     </script>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg voidChetan navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.html">taskS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -129,7 +192,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                         </ul>
-                    </li> 
+                    </li>
                     <li class="nav-item dropdown " id="angularUl">
                         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -147,7 +210,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                         </ul>
-                    </li> 
+                    </li>
                 </ul>
                 <form class="d-flex">
                     <a href="https://github.com/voidChetan" target="_blank" class="btn btn-outline-success">Examples</a>
@@ -155,338 +218,347 @@
             </div>
         </div>
     </nav>
-    <div class="container-fluid pt-2">
-        <nav class="voidChetan" style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
-        aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">JavaScript</li>
-            <li class="breadcrumb-item active" aria-current="page">If Else</li>
-        </ol>
-    </nav>
-        <div class="row">
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center">
-                        <h3>Task 1</h3>
-                    </div>
-                    <ul> 
-                         <li>create a texbox to Enter number</li>
-                         <li>create Button with name check - </li>
-                         <li>on btn click check if Entered no is even or odd</li>
-                         <li>Display result in strong tag beside button</li>
-                    </ul>
-                    <div class="row"> 
-                        <div class="col-6">
-                             <input type="text" id="textNum" class="form-control" placeholder="Enter a Number">
-                        </div>
-                        <div class="col-6">
-                            <button class="btn btn-primary btn-sm" id="btnCheck">Check </button>
-                        </div>
-                    </div>
-                    <div class="row pt-4 text-center"> 
-                        <div class="col-12">
-                            <strong id="strResult" class="text-danger"></strong>
-                        </div> 
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 ">
-                <div class="myBox"  >
-                    <div class="text-center">
-                        <h3>Task 2</h3>
-                    </div>
-                    <ul> 
-                         <li>create below UI - to enter student Name and Subject marks</li>
-                         <li>on calculate result btn click - calculate sub of all subject marks</li>
-                         <li>If student has got more than 300 show Message in alert box as Student Passed</li>
-                         <li>If student has got less than 300 show Message in alert box as Student Failed</li>
-                         <li>on Clear btn clear textbox values</li>
-                    </ul>
-                    <div class="row"> 
-                        <div class="col-5">
-                             <input type="text" id="txtName" class="form-control cls" placeholder="Student Name">
-                        </div> 
-                    </div>
-                    <div class="row">
-                        <div class="col-2">
-                            <input type="text" id="txtSub1" class="form-control cls" placeholder="Math">
-                        </div>
-                        <div class="col-2">
-                            <input type="text" id="txtSub2" class="form-control cls"  placeholder="English">
-                        </div>
-                        <div class="col-2">
-                            <input type="text" id="txtSub3" class="form-control cls" placeholder="Physics">
-                        </div>
-                        <div class="col-2">
-                            <input type="text" id="txtSub4" class="form-control cls" placeholder="Chemistry">
-                        </div>
-                        <div class="col-2">
-                            <input type="text" id="txtSub5" class="form-control cls" placeholder="History">
-                        </div>
-                    </div>
-                    <div class="row"> 
-                        <div class="col-5">
-                            <button class="btn btn-secondary btn-sm" id="btnClear">Clear </button>
-                        </div>
-                        <div class="col-6">
-                            <button class="btn btn-success btn-sm" id="btnResult">Calculate Result </button>
-                        </div>
-                    </div>
-                     
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center">
-                        <h3>Task 3</h3>
-                    </div>
-                    <ul> 
-                        <li>create a varible isDiv1Visible assign value true to it</li>
-                        <li> on click of toggle btn chnage value of isDiv1Visible to false it true or viceversa </li>
-                        <li>if isDiv1Visible is true show div1 else Hide</li>
-                        <li> if we enter same value in both textbox hide div2 else show</li> 
-                    </ul>
-                    <div class="row"> 
-                        <div class="col-6">
-                            <div class="bg-secondary p-4 rounded" id="div2" style="display: none;">
-                                Div 1
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="bg-primary p-4 rounded" id="div3">
-                                Div 2
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row pt-4 text-center">
-                        
-                        <div class="col-6">
-                            <button class="btn btn-success btn-sm" onclick="btnDiv2Toggle()">Toggle </button>
-                        </div>
-                        <div class="col-6">
-                            <div class="row">
-                                <div class="col-6">
-                                    <input type="text" class="form-control" id="txtNum11" placeholder="Enter Num1">
-                                </div>
-                                <div class="col-6">
-                                    <input type="text" class="form-control" id="txtNum22" placeholder="Enter Num2">
-                                </div>
-                            </div>
+    <div class="container pt-2">
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+            aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">JavaScript</li>
+                <li class="breadcrumb-item active" aria-current="page">If Else</li>
+            </ol>
+        </nav>
 
+        <div class="container mt-4">
+            <div class="row">
+                <!-- Task 1 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 1</div>
+                        <ul class="task-list">
+                            <li>create a texbox to Enter number</li>
+                            <li>create Button with name check - </li>
+                            <li>on btn click check if Entered no is even or odd</li>
+                            <li>Display result in strong tag beside button</li>
+                        </ul>
+                        <div class="row">
+                            <div class="col-6">
+                                <input type="text" id="textNum" class="form-control" placeholder="Enter a Number">
+                            </div>
+                            <div class="col-6">
+                                <button class="btn btn-primary btn-sm" id="btnCheck">Check </button>
+                            </div>
                         </div>
+                        <div class="row pt-4 text-center">
+                            <div class="col-12">
+                                <strong id="strResult" class="text-danger"></strong>
+                            </div>
+                        </div>
+                        <BR>
+                        <button id="btn1" class="btn btn-attempt">Attempt</button>
                     </div>
                 </div>
-            </div>
-            
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBoxs">
-                    <div class="text-center">
-                        <h4>Task - 4</h4>
-                    </div>
-                    <ul>
-                        <li>Create 3 textbox to provide integer values</li>
-                        <li>cerate a button - check max number</li>
-                        <li>on click of button - find max numbers and print it in p tag </li> 
-                    </ul>
-                   
-                    <div class="row">
-                        <div class="col-4">
-                            <input type="text" id="txtTask5Num1" class="form-control" placeholder="Num 1">
+                <!-- Task 4 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 2</div>
+                        <ul class="task-list">
+                            <li>Create 3 textbox to provide integer values</li>
+                            <li>cerate a button - check max number</li>
+                            <li>on click of button - find max numbers and print it in p tag </li>
+                        </ul>
+
+                        <div class="row">
+                            <div class="col-4">
+                                <input type="text" id="txtTask5Num1" class="form-control" placeholder="Num1">
+                            </div>
+                            <div class="col-4">
+                                <input type="text" id="txtTask5Num2" class="form-control" placeholder="Num2">
+                            </div>
+                            <div class="col-4">
+                                <input type="text" id="txtTask5Num3" class="form-control" placeholder="Num3">
+                            </div>
                         </div>
-                        <div class="col-4">
-                            <input type="text" id="txtTask5Num2" class="form-control" placeholder="Num 2">
+                        <div class="row text-center">
+                            <div class="col-12">
+                                <br>
+                                <button class="btn btn-sm btn-success" id="btnMax"> Check Max Number </button>
+                            </div>
+                            <div class="col-12">
+                                <br>
+                                <p id="maxNo"></p>
+                            </div>
                         </div>
-                        <div class="col-4">
-                            <input type="text" id="txtTask5Num3" class="form-control" placeholder="Num 3">
-                        </div>
-                    </div>
-                    <div class="row text-center">
-                        <div class="col-3">
-                            <button class="btn btn-sm btn-success" id="btnMax"  > Check Max Number </button>
-                        </div>
-                        <div class="col-3">
-                           <p id="maxNo"></p>
-                        </div> 
-                    </div>
-                    <script>
-                        $(document).ready(function () {
-                            $("#btnMax").click(function() {
-                                ;
-                                var num1 = Number($("#txtTask5Num1").val());
-                                var num2 = Number($("#txtTask5Num2").val());
-                                var num3 = Number($("#txtTask5Num3").val());
-                               var max =  findMaxOfThree(num1, num2,num3 );
-                               $("#maxNo").html('Max No is -'+max);
-                            })
-                        });
-                        function findMaxOfThree(a, b, c) {
-                            let max = a; 
-                            if (b > max) {
-                                max = b;
+                        <script>
+                            $(document).ready(function () {
+                                $("#btnMax").click(function () {
+                                    ;
+                                    var num1 = Number($("#txtTask5Num1").val());
+                                    var num2 = Number($("#txtTask5Num2").val());
+                                    var num3 = Number($("#txtTask5Num3").val());
+                                    var max = findMaxOfThree(num1, num2, num3);
+                                    $("#maxNo").html('Max No is -' + max);
+                                })
+                            });
+                            function findMaxOfThree(a, b, c) {
+                                let max = a;
+                                if (b > max) {
+                                    max = b;
+                                }
+                                if (c > max) {
+                                    max = c;
+                                }
+                                return max;
                             } 
-                            if (c > max) {
-                                max = c;
-                            } 
-                            return max;
-                        } 
-                    </script>
-                     
+                        </script>
+                        <button id="btn4" class="btn btn-attempt">Attempt</button>
+                    </div>
                 </div>
-            </div>
+                <!-- Task 6 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 3</div>
+                        <ul>
+                            <li>Create 1 dropdown with Caste Options and One Other Option</li>
+                            <li>On dropdown Change if Other is selected show other textbox else hide </li>
+                        </ul>
 
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBoxs">
-                    <div class="text-center">
-                        <h4>Task - 5</h4>
-                    </div>
-                    <ul>
-                        <li>Create 1 textbox to Enter Aadhar Card No</li>
-                        <li>cerate a button - Verify</li>
-                        <li>on click of Verify - check if aadhar card no is valid or Not </li> 
-                        <li>if no value provide Show warning as Provide Input </li> 
-                        <li>If Valid Show Label as Aadhar Verified else show warning as Please Provide Correct aadhar No </li> 
-                    </ul>
-                   
-                    <div class="row">
-                        <div class="col-4">
-                            <input type="text" id="txtaadahr" class="form-control" placeholder="Enter aadhar">
-                        </div> 
-                    </div>
-                    <div class="row text-center">
-                        <div class="col-3">
-                            <button class="btn btn-sm btn-success" id="btnVerify"  >Verify </button>
+                        <div class="row">
+                            <div class="col-6">
+                                <select class="form-select" id="dpdlCast" onchange="checkCaste()">
+                                    <option value="OBC">OBC</option>
+                                    <option value="SC-NT">SC-NT</option>
+                                    <option value="Open">Open</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="col-6" id="divOther">
+                                <input type="text" class="form-control" placeholder="Enter Other Caste">
+                            </div>
                         </div>
-                        <div class="col-6">
-                           <p id="verified" class="text-success">Aadhar Verified</p>
-                           <p id="wrongAadhar" class="text-danger">Please Provide Correct aadhar No</p>
-                           <p id="empty" class="text-danger">Please Provide Input</p>
-                        </div> 
 
-                    </div>
-                    <script>
-                        $(document).ready(function () {
-                            $("#verified").hide();
-                            $("#wrongAadhar").hide();
-                            $("#empty").hide();
-                            $("#btnVerify").click(function() {
-                                ;
-                                if($("#txtaadahr").val() == '') {
-                                    $("#empty").show();
-                                }  else {
-                                    $("#empty").hide();
-                                    if(/^\d+$/.test($("#txtaadahr").val()) && $("#txtaadahr").val().length == 12 )  {
-                                    $("#verified").show();
-                                    $("#wrongAadhar").hide();
+                        <script>
+                            document.getElementById("divOther").style.display = "none";
+                            function checkCaste() {
+                                var caste = document.getElementById("dpdlCast").value;
+                                if (caste === "Other") {
+                                    document.getElementById("divOther").style.display = "block";
                                 } else {
-                                    $("#verified").hide();
-                                 $("#wrongAadhar").show();
+                                    document.getElementById("divOther").style.display = "none";
                                 }
-                                }
-                                
-                            })
-                        });
-                       
-                    </script>
-                     
-                </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBoxs">
-                    <div class="text-center">
-                        <h4>Task - 6 </h4>
-                    </div>
-                    <ul>
-                        <li>Create 1 textbox to Enter Aadhar Card No</li>
-                        <li>cerate a button - Verify</li>
-                        <li>on click of Verify - check if aadhar card no is valid or Not </li> 
-                        <li>if no value provide Show warning as Provide Input </li> 
-                        <li>If Valid Show Label as Aadhar Verified else show warning as Please Provide Correct aadhar No </li> 
-                    </ul>
-                   
-                    <div class="row">
-                        <div class="col-4">
-                            <input type="text" id="txtaadahr" class="form-control" placeholder="Enter aadhar">
-                        </div> 
-                    </div>
-                    <div class="row text-center">
-                        <div class="col-3">
-                            <button class="btn btn-sm btn-success" id="btnVerify"  >Verify </button>
-                        </div>
-                        <div class="col-6">
-                           <p id="verified" class="text-success">Aadhar Verified</p>
-                           <p id="wrongAadhar" class="text-danger">Please Provide Correct aadhar No</p>
-                           <p id="empty" class="text-danger">Please Provide Input</p>
-                        </div> 
-
-                    </div>
-                    <script>
-                        $(document).ready(function () {
-                            $("#verified").hide();
-                            $("#wrongAadhar").hide();
-                            $("#empty").hide();
-                            $("#btnVerify").click(function() {
-                                ;
-                                if($("#txtaadahr").val() == '') {
-                                    $("#empty").show();
-                                }  else {
-                                    
-                                 
-                                }
-                                
-                            })
-                        });
-                        
-                    </script>
-                     
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBoxs">
-                    <div class="text-center">
-                        <h4>Task - 7 </h4>
-                    </div>
-                    <ul>
-                        <li>Create 1 dropdown with Caste Options and One Other Option</li>
-                        <li>On dropdown Change if Other is selected show other textbox else hide </li>
-                       
-                    </ul>
-                   
-                    <div class="row">
-                        <div class="col-4">
-                           <select name="" id="dpdlCast" onchange="checkCaste()">
-                            <option value="OBC">OBC</option>
-                            <option value="SC-NT">SC-NT</option>
-                            <option value="Open">Open</option>
-                            <option value="Other">Other</option>
-                           </select>
-                        </div> 
-                        <div class="col-3" id="divOther">
-                            <input type="text" placeholder="Enter Other Caste" id="">
-                        </div>
-                    </div>
-                    
-                    <script>
-                          $("#divOther").hide()
-                         function checkCaste() {
-                            var caste =  document.getElementById("dpdlCast").value;
-                            if(caste =="Other") {
-                                $("#divOther").show()
-                            } else{
-                                $("#divOther").hide()
                             }
-                         }
-                        
-                    </script>
-                     
+                        </script>
+                        <br>
+                        <button id="btn13" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+
+                <style>
+                    .task-container {
+                        padding: 10px;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                    }
+
+                    .task-heading {
+                        font-weight: bold;
+                        margin-bottom: 10px;
+                    }
+
+                    .form-select,
+                    .form-control {
+                        width: 100%;
+                    }
+
+                    .form-control::placeholder {
+                        font-size: 13px;
+                    }
+                </style>
+                <hr>
+                <h3>Advance Task </h3>
+                <hr>
+                <!-- Task 5 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 1</div>
+                        <ul class="task-list">
+                            <li>Create 1 textbox to Enter Aadhar Card Number</li>
+                            <li>Create a button - Verify</li>
+                            <li>on click of Verify - check if aadhar card no is valid or Not </li>
+                            <li>If no value provide Show warning as Provide Input </li>
+                            <li>If Valid Show Label as Aadhar Verified else show warning as Please Provide Correct
+                                aadhar Number </li>
+                        </ul>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <input type="text" id="txtaadahr" class="form-control" placeholder="Enter aadhar">
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-3">
+                                <br>
+                                <button class="btn btn-sm btn-success" id="btnVerify">Verify </button>
+                            </div>
+                            <div class="col-6">
+                                <p id="verified" class="text-success">Aadhar Verified</p>
+                                <p id="wrongAadhar" class="text-danger">Please Provide Correct aadhar No</p>
+                                <p id="empty" class="text-danger">Please Provide Input</p>
+                            </div>
+
+                        </div>
+                        <script>
+                            $(document).ready(function () {
+                                $("#verified").hide();
+                                $("#wrongAadhar").hide();
+                                $("#empty").hide();
+                                $("#btnVerify").click(function () {
+                                    ;
+                                    if ($("#txtaadahr").val() == '') {
+                                        $("#empty").show();
+                                    } else {
+                                        $("#empty").hide();
+                                        if (/^\d+$/.test($("#txtaadahr").val()) && $("#txtaadahr").val().length == 12) {
+                                            $("#verified").show();
+                                            $("#wrongAadhar").hide();
+                                        } else {
+                                            $("#verified").hide();
+                                            $("#wrongAadhar").show();
+                                        }
+                                    }
+
+                                })
+                            });
+
+                        </script>
+                        <br>
+                        <button id="btn5" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+                <!-- Task 2 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 2</div>
+                        <ul class="task-list">
+                            <li>create below UI - to enter student Name and Subject marks</li>
+                            <li>on calculate result btn click - calculate sub of all subject marks</li>
+                            <li>If student has got more than 300 show Message in alert box as Student Passed</li>
+                            <li>If student has got less than 300 show Message in alert box as Student Failed</li>
+                            <li>on Clear btn clear textbox values</li>
+                        </ul>
+                        <div class="row">
+                            <div class="col-12">
+                                <input type="text" id="txtName" class="form-control cls" placeholder="Student Name">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                <br>
+                                <input type="text" id="txtSub1" class="form-control cls" placeholder="Math">
+                            </div>
+                            <div class="col-4">
+                                <br>
+                                <input type="text" id="txtSub2" class="form-control cls" placeholder="English">
+                            </div>
+                            <div class="col-4">
+                                <br>
+                                <input type="text" id="txtSub3" class="form-control cls" placeholder="Physics">
+                            </div>
+                            <div class="col-4">
+                                <input type="text" id="txtSub4" class="form-control cls" placeholder="Chemistry">
+                            </div>
+                            <div class="col-4">
+                                <input type="text" id="txtSub5" class="form-control cls" placeholder="History">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5">
+                                <br>
+                                <button class="btn btn-secondary btn-sm" id="btnClear">Clear </button>
+                            </div>
+                            <div class="col-6">
+                                <br>
+                                <button class="btn btn-success btn-sm" id="btnResult">Calculate Result </button>
+                            </div>
+                        </div>
+                        <br>
+                        <button id="btn2" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+
+                <!-- Task 3 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 3</div>
+                        <ul class="task-list">
+                            <li>create a varible isDiv1Visible assign value true to it</li>
+                            <li> on click of toggle btn chnage value of isDiv1Visible to false it true or viceversa
+                            </li>
+                            <li>if isDiv1Visible is true show div1 else Hide</li>
+                            <li> if we enter same value in both textbox hide div2 else show</li>
+                        </ul>
+
+                        <div class="row pt-4 text-center">
+
+                            <div class="col-4">
+                                <button class="btn btn-success btn-sm" onclick="btnDiv2Toggle()">Toggle </button>
+                            </div>
+                            <div class="col-8">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <input type="text" class="form-control" id="txtNum11" placeholder="Num1">
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="text" class="form-control" id="txtNum22" placeholder="Num2">
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="bg-info p-4 rounded" id="div2" style="display: none;">
+                                    Div 1
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="bg-warning p-4 rounded" id="div3">
+                                    Div 2
+                                </div>
+                            </div>
+                        </div>
+                        <br> <br>
+
+                        <button id="btn3" class="btn btn-attempt">Attempt</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <script type="text/javascript" src="../menu.js"> </script>
-    <script>
-         
-    </script>
+        <script type="text/javascript" src="../menu.js"></script>
+
+        <!-- <script>
+            const buttons = document.querySelectorAll('button[id^="btn"]');
+
+            buttons.forEach((button) => {
+                let currentState = 'attempt';
+
+                button.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    if (currentState === 'attempt') {
+                        button.textContent = 'Attempting';
+                        button.className = 'btn btn-attempting';
+                        currentState = 'attempting';
+                    } else if (currentState === 'attempting') {
+                        button.textContent = 'Attempt in Progress';
+                        button.className = 'btn btn-progress';
+                        currentState = 'progress';
+                    } else {
+                        button.textContent = 'Attempt';
+                        button.className = 'btn btn-attempt';
+                        currentState = 'attempt';
+                    }
+                });
+            });
+        </script> -->
 </body>
+
 </html>

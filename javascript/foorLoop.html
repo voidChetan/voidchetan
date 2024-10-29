@@ -3,19 +3,82 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Variables</title>
+    <title>JavaScript Task Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="../custom.css">
     <style>
-        .myBoxs {
-            border: 1px solid teal;
-            padding: 10px;
-            max-height: 500px;
-            height: max-content;
+        .task-container {
+            padding: 20px;
+            border: 1px solid #007bff;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+            height: 100%;
+        }
+
+        .task-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            background-color: #d3ffce;
+        }
+
+        .task-heading {
+            font-weight: bold;
+            font-size: 20px;
+            color: #007bff;
+        }
+
+        .task-list {
+            text-align: left;
+        }
+
+        .btn-attempt {
+            background-color: #007bff;
+            color: white;
+            border: 2px solid #007bff;
+        }
+
+        .btn-attempting {
+            background-color: #f0ad4e;
+            color: white;
+            border: 2px solid #f0ad4e;
+        }
+
+        .btn-progress {
+            background-color: #5cb85c;
+            color: white;
+            border: 2px solid #5cb85c;
+        }
+
+        .btn:focus {
+            outline: none;
+            border: 2px solid currentColor;
+        }
+
+        .btn:hover {
+            border-width: 2px;
+
+
+
+        }
+
+        @media (max-width: 576px) {
+            .col-12.col-sm-6.col-md-3 {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .col-12.col-sm-6.col-md-3 {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
         }
     </style>
     <script>
@@ -29,7 +92,7 @@
 
         $(document).ready(function () {
             $("#btnClear").click(function () {
-                
+
                 employeeObj = {
                     name: '',
                     contactNo: '',
@@ -46,7 +109,7 @@
             });
 
             $("#btnSave").click(function () {
-                
+
                 employeeObj = {
                     name: $("#txtName").val(),
                     contactNo: $("#txtContact").val(),
@@ -57,7 +120,7 @@
 
             });
             $("#btnPrint").click(function () {
-                
+
                 clearEmpForm();
             });
             $("#btnAddCity").click(function () {
@@ -82,11 +145,11 @@
             $("#strTechnology").html(employeeObj.technology);
         }
         var ticket = {
-            TicketNo:'0123',
+            TicketNo: '0123',
             CreatedBy: 'Chetan',
             CreatedDate: '02-05-2023',
             AssigntoEmployeeName: '',
-            TicketDescription: 'I Need New Laptop as old not working' 
+            TicketDescription: 'I Need New Laptop as old not working'
         }
         function assignEmp() {
             ticket.AssigntoEmployeeName = $("#dpdlEmp").val();
@@ -94,10 +157,11 @@
         }
 
     </script>
+
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg voidChetan navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.html">taskS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -141,8 +205,8 @@
             </div>
         </div>
     </nav>
-    <div class="container-fluid pt-2">
-        <nav class="voidChetan" style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+    <div class="container pt-2">
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
             aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
@@ -150,71 +214,93 @@
                 <li class="breadcrumb-item active" aria-current="page">For-Loop</li>
             </ol>
         </nav>
-        <div class="row"> 
 
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center">
-                        <h3>Task 1</h3>
+        <div class="container mt-4">
+            <div class="row">
+                <!-- Task 1 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 1</div>
+                        <ul class="task-list">
+                            <li>Write a logic to get Sum Of 10 numbers from 1-10.</li>
+                            <li>Print SUM in <b>strong</b> tag. </li>
+                            <li>
+                                <u>Note</u> : Use <code>for loop </code>to complete this task.
+                            </li>
+                        </ul>
+                        <button id="btn1" class="btn btn-attempt">Attempt</button>
                     </div>
-                    <ul>
-                        <li>Write a logic to get Sum Of 10 numbers from 1-10</li>
-                        <li>Print SUM in strong tag </li>
-                        <li>(use for loop to complete this task)</li>
-                    </ul>
                 </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center">
-                        <h3>Task 2</h3>
-                    </div>
-                    <ul>
-                        <li>Create an Array of some numbers</li>
-                        <li>using for loop print even no only in console from array</li>
-                    </ul>
-                    
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center">
-                        <h3>Task 3</h3>
-                    </div>
-                    <ul>
-                        <li>Create 2 array of integers </li>
-                        <li>Get sum of both numbers from araray and print it in storng tag </li>
-                        
-                    </ul> 
-                    <div class="row">
-                        <div class="col-12">
-                            <pre>
 
-                           
-let arr_1 = [3, 5, 22, 5,  7,  2,  45, 75, 89, 21, 2]; // --> 276
-let arr_2 = [9, 2, 42, 55, 71, 22, 4,  5,  90, 25, 26]; // --> 351
-// Example output: 
-// 276 + 351 = 627
-</pre>
-                        </div>
+                <!-- Task 2 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 2</div>
+                        <ul class="task-list">
+                            <li>Create an Array of some numbers.</li>
+                            <li>Using <code> for loop </code> print even numbers only in console from the array.</li>
+                        </ul>
+                        <button id="btn2" class="btn btn-attempt">Attempt</button>
                     </div>
                 </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center">
-                        <h3>Task 4</h3>
-                    </div>
-                    <ul>
-                        <li>Create an array of City Name and a droddown</li>
-                        <li>Now  Using for Loop add dynamic options to a dropdwon in reverse order </li>
-                        
-                    </ul>  
-                    <div class="row">
-                        <div class="col-12">
-                            <pre>
-var cityList = ["Pune", "Nagpur", "Thane", "Mumbai"];
+
+                <!-- Task 3 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 3</div>
+                        <ul class="task-list">
+                            <li>Create 2 array of integers </li>
+                            <li>Get sum of both numbers from array and print it in storng tag. </li>
+
+                        </ul>
+                        <div class="row">
+                            <pre style="text-align: left;">
+<u>Example</u> : 
+let arr_1 = [3,5,22,5,7,2,45,75,89,21,2]; // --> 276
+let arr_2 = [9,2,42,55,71,22,4,5,90,25,26]; // --> 351
                             </pre>
+                            <button onclick="calculateTotalSum()">Calculate Total Sum</button>
+                            <p>Sum of Array 1 and Array 2: <strong id="totalSum"></strong></p>
+
+                            <script>
+                                function calculateTotalSum() {
+                                    let arr_1 = [3, 5, 22, 5, 7, 2, 45, 75, 89, 21, 2];
+                                    let arr_2 = [9, 2, 42, 55, 71, 22, 4, 5, 90, 25, 26];
+                                    let sumArray1 = 0;
+                                    let sumArray2 = 0;
+                                    for (let i = 0; i < arr_1.length; i++) {
+                                        sumArray1 += arr_1[i];
+                                    }
+                                    for (let i = 0; i < arr_2.length; i++) {
+                                        sumArray2 += arr_2[i];
+                                    }
+                                    const totalSum = sumArray1 + sumArray2;
+                                    document.getElementById("totalSum").innerText = totalSum;
+                                }
+                            </script>
+                        </div>
+                        <button id="btn3" class="btn btn-attempt">Attempt</button>
+                    </div>
+
+
+                </div>
+
+                <!-- Task 4 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 4</div>
+                        <ul class="task-list">
+                            <li>Create an array of City Name and a droddown</li>
+                            <li>Now Using for Loop add dynamic options to a dropdwon in reverse order </li>
+
+                        </ul>
+                        <div class="row">
+                            <div class="col-12">
+                                <pre>
+<u>Example</u> : 
+var cityList = ["Pune", "Nagpur", "Thane", "Mumbai"];
+                                </pre>
+                            </div>
                         </div>
                         <div class="col-3">
                             <select name="" id="">
@@ -224,97 +310,130 @@ var cityList = ["Pune", "Nagpur", "Thane", "Mumbai"];
                                 <option value="">Pune</option>
                             </select>
                         </div>
+                        <br>
+                        <button id="btn4" class="btn btn-attempt">Attempt</button>
                     </div>
                 </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center">
-                        <h3>Task 5</h3>
-                    </div>
-                    <ul>
-                        <li>Print the ODD numbers from 7 to 31</li>
-                        <li>Print no in UL LI tag </li>
-                      
-                    </ul>   
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center">
-                        <h3>Task 6</h3>
-                    </div>
-                    <ul>
-                        <li> Iterate through all numbers from 1 to 45. Print the following </li>
-                        <li> For multiples of 3 print “Fizz” </li>
-                        <li> For multiples of 5 print “Buzz” </li>
-                        <li>For multiples of 3 and 5 print “FizzBuzz”</li>
-                    </ul>   
-                </div>
-            </div>
-            
 
+                <!-- Task 5 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 5</div>
+                        <ul class="task-list">
+                            <li>Print the ODD numbers from 7 to 31</li>
+                            <li>Print no in <code>ul li</code> tag </li>
+                        </ul>
+                        <button id="btn5" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+
+                <!-- Task 6 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 6</div>
+                        <ul class="task-list">
+                            <li>Iterate through all numbers from 1 to 45. </li>
+                            <li>Print the following : </li>
+                            <li> For multiples of 3 print “Fizz” </li>
+                            <li> For multiples of 5 print “Buzz” </li>
+                            <li>For multiples of 3 and 5 print “FizzBuzz”</li>
+                        </ul>
+                        <button id="btn6" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+
+                <hr>
+                <h4>Advance Task</h4>
+                <hr>
+
+                <!-- Task 1 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 1</div>
+                        <ul>
+                            <li>Create a textbox and a button</li>
+                            <li>on <code>click</code> of btn print Table of that num provided in textbox</li>
+                            <li>only even number should be printed</li>
+                        </ul>
+                        <button id="btn8" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+                <!-- Task 2 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 2</div>
+                        <ul>
+                            <li>Create two textbox to enter start No and end No and a button</li>
+                            <li>on <code>click</code> of btn print all the even no from start upto end no. </li>
+                            <br>
+
+                            Ex:<br>
+                            <ul>
+                                <li>In 1st textbox 3<br></li>
+                                <Li>In 2nd text 9 => 4, 6, 8.</Li>
+                            </ul>
+                        </ul>
+                        <button id="btn9" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+                <!-- Task 3 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 3</div>
+                        <ul>
+                            <li>Create a textarea to enter sentences.
+                            <li>Add two textboxes and a button labeled <b>Replace</b>. </li>
+                            <li> On clicking the button, replace the text in the textarea by replacing the word from
+                                the first textbox with the word added in the second textbox.</li>
+                            <li> Print the newly replaced text <br>in the <code>p</code> tag.</li>
+                            </li>
+                        </ul>
+                        <button id="btn10" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+
+                <!-- Task 4 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 4</div>
+                        <ul>
+                            <li>Create a textarea , a textbox to enter a character and button</li>
+                            <li>on <code>click</code> of button - check how many times we have that character in
+                                textarea and print count in the <code>p</code> tag</li>
+
+                        </ul>
+                        <button id="btn11" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+
+            </div>
         </div>
-        <hr>
-        <h3>Adv Task</h3>
-        <hr>
-        <div class="row">  
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center">
-                        <h3>Task 1</h3>
-                    </div>
-                    <ul>
-                         <li>Create a textbox and a button</li>
-                         <li>on click of btn print Table of that num provided in textbox</li>
-                         <li>only even number should be printed</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center">
-                        <h3>Task 2</h3>
-                    </div>
-                    <ul>
-                         <li>Create two textbox to enter start No  and end No and a button</li>
-                         <li>on click of btn print all the even no from start upto end no. </li>
-                         <li>Ex: in 1st textbox 3 2nd text 9 => 4,6,8</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center">
-                        <h3>Task 3</h3>
-                    </div>
-                    <ul>
-                         <li>Create a textarea to eneter some sentences - add two textbox- a button Replace </li>
-                         <li>on click of button- replace text from textarea with 1st textbox word with word added in 2nd textbox</li>
-                         <li>Print new replaced word in p tag</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center">
-                        <h3>Task 4</h3>
-                    </div>
-                    <ul>
-                         <li>Create a textarea , a textbox to enter a charctor and button</li>
-                         <li>on  click of btn - check how many times we have that charctor in textarea and print count in p tag</li>
-                    </ul>
-                </div>
-            </div>
-            
+        <script type="text/javascript" src="../menu.js"></script>
 
-        </div>
+        <script>
+            const buttons = document.querySelectorAll('button[id^="btn"]');
 
-    </div>
-    <script type="text/javascript" src="../menu.js"> </script>
-    <script>
+            buttons.forEach((button) => {
+                let currentState = 'attempt';
 
-    </script>
+                button.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    if (currentState === 'attempt') {
+                        button.textContent = 'Attempting';
+                        button.className = 'btn btn-attempting';
+                        currentState = 'attempting';
+                    } else if (currentState === 'attempting') {
+                        button.textContent = 'Attempt in Progress';
+                        button.className = 'btn btn-progress';
+                        currentState = 'progress';
+                    } else {
+                        button.textContent = 'Attempt';
+                        button.className = 'btn btn-attempt';
+                        currentState = 'attempt';
+                    }
+                });
+            });
+        </script>
 </body>
 
 </html>

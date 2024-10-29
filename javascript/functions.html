@@ -3,19 +3,82 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Functions</title>
+    <title>JavaScript Task Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="../custom.css">
     <style>
-        .myBoxs {
-            border: 1px solid teal;
-            padding: 10px;
-            max-height: 500px;
-            height: max-content;
+        .task-container {
+            padding: 20px;
+            border: 1px solid #007bff;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+            height: 100%;
+        }
+
+        .task-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            background-color: #d3ffce;
+        }
+
+        .task-heading {
+            font-weight: bold;
+            font-size: 20px;
+            color: #007bff;
+        }
+
+        .task-list {
+            text-align: left;
+        }
+
+        .btn-attempt {
+            background-color: #007bff;
+            color: white;
+            border: 2px solid #007bff;
+        }
+
+        .btn-attempting {
+            background-color: #f0ad4e;
+            color: white;
+            border: 2px solid #f0ad4e;
+        }
+
+        .btn-progress {
+            background-color: #5cb85c;
+            color: white;
+            border: 2px solid #5cb85c;
+        }
+
+        .btn:focus {
+            outline: none;
+            border: 2px solid currentColor;
+        }
+
+        .btn:hover {
+            border-width: 2px;
+
+
+
+        }
+
+        @media (max-width: 576px) {
+            .col-12.col-sm-6.col-md-3 {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .col-12.col-sm-6.col-md-3 {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
         }
     </style>
     <script>
@@ -39,7 +102,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg voidChetan navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.html">taskS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -57,7 +120,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                         </ul>
-                    </li> 
+                    </li>
                     <li class="nav-item dropdown " id="angularUl">
                         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -75,7 +138,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                         </ul>
-                    </li> 
+                    </li>
                 </ul>
                 <form class="d-flex">
                     <a href="https://github.com/voidChetan" target="_blank" class="btn btn-outline-success">Examples</a>
@@ -83,215 +146,272 @@
             </div>
         </div>
     </nav>
-    <div class="container-fluid pt-2">
-        <div class="row">
-            <div class="col-12 col-md-4 col-lg-4 col-sm-6 ">
-                <div class="myBoxs">
-                    <div class="text-center">
-                        <h4>Task 1</h4>
-                    </div>
-                    <ul>
-                        <li>
-                            Create a simple function with name firstFunction().
-                        </li>
-                        <li>
-                            and stored the value in console ('This is my first function')
-                        </li>
-                        <li>
-                            and call the function firstFunction().
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-12 col-md-4 col-lg-4 col-sm-6 ">
-                <div class="myBoxs">
-                    <div class="text-center">
-                        <h4>Task 2</h4>
-                    </div>
-                    <ul>
-                        <li>
-                            Create a function with name square().
-                        </li>
-                        <li>
-                            The function square() takes one parameter and parameter name is num. 
-                        </li>
-                        <li>
-                            Return the parameter (num) multiplied by itself. <small>Example like (num * num)</small>
-                        </li>
-                        <li>
-                            and call the function square() and store the result in console.
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-12 col-md-4 col-lg-4 col-sm-6 ">
-                <div class="myBoxs">
-                    <div class="text-center">
-                        <h4>Task 3</h4>
-                    </div>
-                    <ul>
-                        <li>
-                            Create a one function with name is Addition()
-                        </li>
-                        <li>
-                            The function Addition() takes Four parameter like num1,num2,num3,num4. 
-                        </li>
-                        <li>
-                            take a one variable in function that is result and stored the addition of this four paramater
-                            in the result
-                        </li>
-                        <li>Resturn the result variable under the function</li>
-                        <li>and now call the  Addition() function </li>
-                    </ul>
-                </div>
-            </div>
-            <hr>
-            <h4>Adv Task</h4>
-            <div class="col-4">
-                <div class="myBoxs">
-                    <div class="text-center">
-                        <h4>Task 1</h4>
-                    </div>
-                    <ul>
-                        <li>
-                            Create a function which has a parameter where we can send a word as parameter and converts the first letter of word into upper case and Return New String
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="myBoxs">
-                    <div class="text-center">
-                        <h4>Task 2</h4>
-                    </div>
-                    <ul>
-                        <li>
-                            Create a function which has a parameter and converts the first letter of each word into 
-                            upper case and Return New String
-                        </li>
-                    </ul>
-                    <script>
-                        function checkNum(num){
-                            const isNum = isNaN(num);
-                            console.log(isNum)
-                        }
+    <div class="container pt-2">
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+            aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">JavaScript</li>
+                <li class="breadcrumb-item active" aria-current="page">Functions</li>
+            </ol>
+        </nav>
 
-                        function checkNumber(num) {
-                            const numvale =  parseInt(num);
-                            if(numvale != NaN) {
-                                
+        <div class="container mt-4">
+            <div class="row">
+                <!-- Task 1 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 1</div>
+                        <ul class="task-list">
+                            <li>
+                                Create a simple function with name firstFunction().
+                            </li>
+                            <li>
+                                and store the value in console ('This is my first function')
+                            </li>
+                            <li>
+                                and call the function firstFunction().
+                            </li>
+                        </ul>
+                        <button id="btn1" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+
+                <!-- Task 2 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 2</div>
+                        <ul class="task-list">
+                            <li>
+                                Create a function with name square().
+                            </li>
+                            <li>
+                                The function square() takes one parameter and parameter name is num.
+                            </li>
+                            <li>
+                                Return the parameter (num) multiplied by itself. <br><small>Example like (num *
+                                    num)</small>
+                            </li>
+                            <li>
+                                and call the function square() and store the result in console.
+                            </li>
+                        </ul>
+                        <button id="btn2" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+
+                <!-- Task 3 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 3</div>
+                        <ul class="task-list">
+                            <li>
+                                Create one function with name as Addition()
+                            </li>
+                            <li>
+                                The function Addition() takes Four parameter like num1,num2,num3,num4.
+                            </li>
+                            <li>
+                                take a one variable in function that is result and stored the addition of this four
+                                paramater
+                                in the result
+                            </li>
+                            <li>Return the result variable under the function</li>
+                            <li>and now call the Addition() function </li>
+                        </ul>
+                        <button id="btn3" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+                <hr>
+                <h4>Advance Task</h4>
+                <hr><!-- Task 1 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 1</div>
+                        <ul>
+                            <li>
+                                Create a function which has a parameter where we can send a word as parameter.
+                            </li>
+                            <li>
+                                And converts the first letter of word into upper case and Return New String.
+                            </li>
+                        </ul>
+                        <button id="btn8" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+
+                <!-- Task 2 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 2</div>
+                        <ul>
+                            <li>
+                                Create a function which has a parameter and converts the first letter of each word into
+                                upper case and Return New String
+                            </li>
+                        </ul>
+                        <script>
+                            function checkNum(num) {
+                                const isNum = isNaN(num);
+                                console.log(isNum)
                             }
-                            debugger;
-                        }
-                        checkNumber(12); // false
-                        checkNumber("24"); //false
-                        checkNumber("asdadas") //true
-                    </script>
-                </div>
-            </div> 
-            <div class="col-4">
-                <div class="myBoxs">
-                    <div class="text-center">
-                        <h4>Task 3</h4>
+
+                            function checkNumber(num) {
+                                const numvale = parseInt(num);
+                                if (numvale != NaN) {
+
+                                }
+                                debugger;
+                            }
+                            checkNumber(12); // false
+                            checkNumber("24"); //false
+                            checkNumber("asdadas") //true
+                        </script>
+                        <button id="btn9" class="btn btn-attempt">Attempt</button>
                     </div>
-                    <ul>
-                        <li>
-                            Create a function which has a parameter - if parameter has string data -
-                             create an array of words that we have in parameter to this function n return array of string else show alert as "NO String Found"
-                        </li>
-                        <li> Ex: testFun("This is my Word") output : ["This","is","my","Word"]</li>
-                        <li> Ex: testFun("Welcome to My Channel") output : ["Welcome","to","My","Channel"]</li>
-                        <li> Ex: testFun(23123) output : "NO String Found"</li>
-                    </ul>
                 </div>
-            </div>
-            <div class="col-4">
-                <div class="myBoxs">
-                    <div class="text-center">
-                        <h4>Task 4</h4>
+                <!-- Task 3 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 3</div>
+                        <ul>
+                            <li>
+                                Create a function which accept any no of parameter - it should return sum all
+                                parameeter.
+                            </li>
+                            <li> Ex: testFun(1,3) output: 4, testFun(1,3,2,3) output: 9 </li>
+                        </ul>
+                        <button id="btn11" class="btn btn-attempt">Attempt</button>
                     </div>
-                    <ul>
-                        <li>
-                            Create a function which accept any no of parameter - it shoud return sum all parameeter.
-                        </li>
-                        <li> Ex: testFun(1,3) output: 4, testFun(1,3,2,3) output: 9 </li>
-                    </ul>
                 </div>
-            </div>
-            <div class="col-4">
-                <div class="myBoxs">
-                    <div class="text-center">
-                        <h4>Task 5</h4>
+                <!-- Task 4 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 4</div>
+                        <ul class="task-list">
+                            <li>
+                                create 2 Buttons <br>=> "Button 1" => "Button 2"
+                            </li>
+                            <li>
+                                we need to record how many times user has click both buttons and show clicked counter in
+                                the <code>p</code> tag
+                            </li>
+                        </ul>
+                        <button id="btn14" class="btn btn-attempt">Attempt</button>
+
                     </div>
-                    <ul>
-                        <li>
-                            Create a function with a parameter which will tell you DataType of any parametr value you passed to the function
-                        </li>
-                        <li> Ex: testFun("Chetan") output: string, testFun(12) output: number, testFun({}) output: object, testFun([]) output: array </li>
-                    </ul>
                 </div>
-            </div>
-            <div class="col-4">
-                <div class="myBoxs">
-                    <div class="text-center">
-                        <h4>Task 6</h4>
+                <!-- Task 5 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 5</div>
+                        <ul>
+                            <li>
+                                Create a function with a parameter which will tell you DataType of any parametr value
+                                you passed to the function
+                            </li>
+                            <li> Ex: testFun("Chetan") output: string, testFun(12) output: number, testFun({}) output:
+                                object, testFun([]) output: array </li>
+                        </ul>
+                        <button id="btn12" class="btn btn-attempt">Attempt</button>
                     </div>
-                    <ul>
-                        <li>
-                            Create a function which have 2 parameter - write logic to check if both parameter has same value n if yes return true else return false
-                        </li>
-                        <li> Ex: testFun("Chetan","Chetan") output: true, testFun(12,"12") output: false, testFun(12,12) output: true </li>
-                    </ul>
                 </div>
-            </div>
-            <div class="col-4">
-                <div class="myBoxs">
-                    <div class="text-center">
-                        <h4>Task 7</h4>
+
+
+                <!-- Task 6 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 6</div>
+                        <ul class="task-list">
+                            <li>
+                                Create a function which have 2 parameter - write logic to check if both parameter has
+                                same value n if yes return true else return false
+                            </li>
+                            <li> Ex: testFun("Chetan","Chetan") output: true, testFun(12,"12") output: false,
+                                testFun(12,12) output: true </li>
+                        </ul>
+                        <button id="btn14" class="btn btn-attempt">Attempt</button>
                     </div>
-                    <ul>
-                        <li>
-                            create 2 Button => "Button 1" =>  "Button 2"
-                        </li>
-                        <li>
-                            we need to record how many times user has click both buttons and show clicked counter in p tag
-                        </li>
-                    </ul>
                 </div>
-            </div>
-            <div class="col-4">
-                <div class="myBoxs">
-                    <div class="text-center">
-                        <h4>Task 8</h4>
+
+                <!-- Task 7 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 7</div>
+                        <ul class="task-list">
+                            <li>
+                                Create a function with parameter to check if value is number or not - return true or
+                                false
+                            </li>
+                            <li> Ex: testFun("Chetan") output: false, testFun(12) output: true, testFun("33") output:
+                                true </li>
+                        </ul>
+                        <button id="btn14" class="btn btn-attempt">Attempt</button>
+
                     </div>
-                    <ul>
-                        <li>
-                           Create a function with parameter to check if value is number or not - return true or false
-                        </li>
-                        <li> Ex: testFun("Chetan") output: false, testFun(12) output: true, testFun("33") output: true </li>
-                    </ul>
                 </div>
-            </div>
-            <div class="col-4">
-                <div class="myBoxs">
-                    <div class="text-center">
-                        <h4>Task 9</h4>
+                <!-- Task 8 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 8</div>
+                        <ul class="task-list">
+                            <li>
+                                Create a fun with 2 paramater which will check if both parameter in number the it will
+                                add num and return sum else return msg - "Number Not Found"
+                            </li>
+                            <li> Ex: testFun("Chetan",23) output: "Number Not Found", testFun(12,12) output: 24 </li>
+                            </li>
+                        </ul>
+                        <button id="btn14" class="btn btn-attempt">Attempt</button>
                     </div>
-                    <ul>
-                        <li>
-                          Create a fun with 2 paramater which will check if both parameter in number the it will add num and return sum else return msg - "Number Not Found"
-                        </li>
-                        <li> Ex: testFun("Chetan",23) output: "Number Not Found", testFun(12,12) output: 24 </li>
-                    </ul>
                 </div>
+                <!-- Task 9 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 9</div>
+                        <ul>
+                            <li>
+                                Create a function which has a parameter - if parameter has string data -
+                                create an array of words that we have in parameter to this function n return array of
+                                string else show alert as "NO String Found"
+                            </li>
+                            <li> Ex: testFun("This is my Word") output : ["This","is","my","Word"]</li>
+                            <li> Ex: testFun("Welcome to My Channel") output : ["Welcome","to","My","Channel"]</li>
+                            <li> Ex: testFun(23123) output : "NO String Found"</li>
+                        </ul>
+                        <button id="btn10" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+
+
             </div>
         </div>
-    </div>
-    </div>
-    <script type="text/javascript" src="../menu.js"> </script>
-    <script>
-        
-    </script>
+        <script type="text/javascript" src="../menu.js"></script>
+
+        <script>
+            const buttons = document.querySelectorAll('button[id^="btn"]');
+
+            buttons.forEach((button) => {
+                let currentState = 'attempt';
+
+                button.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    if (currentState === 'attempt') {
+                        button.textContent = 'Attempting';
+                        button.className = 'btn btn-attempting';
+                        currentState = 'attempting';
+                    } else if (currentState === 'attempting') {
+                        button.textContent = 'Attempt in Progress';
+                        button.className = 'btn btn-progress';
+                        currentState = 'progress';
+                    } else {
+                        button.textContent = 'Attempt';
+                        button.className = 'btn btn-attempt';
+                        currentState = 'attempt';
+                    }
+                });
+            });
+        </script>
 </body>
 
 </html>

@@ -3,19 +3,82 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Variables</title>
+    <title>JavaScript Task Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="../custom.css">
     <style>
-        .myBoxs {
-            border: 1px solid teal;
-            padding: 10px;
-            max-height: 500px;
-            height: max-content;
+        .task-container {
+            padding: 20px;
+            border: 1px solid #007bff;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+            height: 100%;
+        }
+
+        .task-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            background-color: #d3ffce;
+        }
+
+        .task-heading {
+            font-weight: bold;
+            font-size: 20px;
+            color: #007bff;
+        }
+
+        .task-list {
+            text-align: left;
+        }
+
+        .btn-attempt {
+            background-color: #007bff;
+            color: white;
+            border: 2px solid #007bff;
+        }
+
+        .btn-attempting {
+            background-color: #f0ad4e;
+            color: white;
+            border: 2px solid #f0ad4e;
+        }
+
+        .btn-progress {
+            background-color: #5cb85c;
+            color: white;
+            border: 2px solid #5cb85c;
+        }
+
+        .btn:focus {
+            outline: none;
+            border: 2px solid currentColor;
+        }
+
+        .btn:hover {
+            border-width: 2px;
+
+
+
+        }
+
+        @media (max-width: 576px) {
+            .col-12.col-sm-6.col-md-3 {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .col-12.col-sm-6.col-md-3 {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
         }
     </style>
     <script>
@@ -29,7 +92,7 @@
 
         $(document).ready(function () {
             $("#btnClear").click(function () {
-                
+
                 employeeObj = {
                     name: '',
                     contactNo: '',
@@ -46,7 +109,7 @@
             });
 
             $("#btnSave").click(function () {
-                
+
                 employeeObj = {
                     name: $("#txtName").val(),
                     contactNo: $("#txtContact").val(),
@@ -57,7 +120,7 @@
 
             });
             $("#btnPrint").click(function () {
-                
+
                 clearEmpForm();
             });
         })
@@ -84,7 +147,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg voidChetan navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.html">taskS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -128,8 +191,8 @@
             </div>
         </div>
     </nav>
-    <div class="container-fluid pt-2">
-        <nav class="voidChetan" style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+    <div class="container pt-2">
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
             aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
@@ -137,221 +200,264 @@
                 <li class="breadcrumb-item active" aria-current="page">Objects</li>
             </ol>
         </nav>
-        <div class="row">
 
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center">
-                        <h3>Task 1</h3>
-                    </div>
-                    <ul>
-                        <li>Create a Object to store Product information</li>
-                        <li>Fields will be ProductName, Category, Price, Discount</li>
-                        <li>Print ProductName & Price in console</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center">
-                        <h3>Task 2</h3>
-                    </div>
-                    <ul>
-                        <li>Create a Object to store Train Ticket information</li>
-                        <li>Fields will be TrainName, TrainNo, NoOfPassinger, From, To, DateOfJourney</li>
-                        <li>Print whole Information in P tag like below</li>
-                    </ul>
-                    <div class="row">
-                        <div class="col-12">
-                            Traine Name: Vidarbah Express <br>
-                            Traine No: 12135<br>
-                            No Of Passinger : 3 <br>
-                            From Location: Nagpur <br>
-                            To Location: Mumbai <br>
-                            Date Of Journey: 08-04-2023 05.00 PM <br>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center">
-                        <h3>Task 3</h3>
-                    </div>
-                    <ul>
-                        <li>Create a Object to Hold Information of School</li>
-                        <li>Fields will be SchoolName, PrincipleName, ContactNo, Address</li>
-                        <li>Print whole Object in console</li>
-                        <li>after that add one more Field SchoolEmail with some email</li>
-                        <li>again print updated object</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center">
-                        <h3>Task 4</h3>
-                    </div>
-                    <ul>
-                        <li>Create Object to Hold SupportTicket data</li>
-                        <li>Properties will be TicketNo, CreatedBy, CreatedDate, AssigntoEmployeeName,TicketDescription
-                            just keep AssigntoEmployeeName filed with empty value</li>
-                        <li>Print a dropdown with Employee Name </li>
-                        <li>ON Assign Button add selected employee name to AssigntoEmployeeName</li>
-                        <li>Print Whole Object afetr assigning employee in Console</li>
-                    </ul>
-                    <div class="row">
-                        <div class="col-6">
-                            <select class="form-control" id="dpdlEmp">
-                                <option value="">Select Empoloyee</option>
-                                <option value="Sachin">Sachin</option>
-                                <option value="Aditya">Aditya</option>
-                                <option value="Omkar">Omkar</option>
-                                <option value="Punesh">Punesh</option>
-                            </select>
-                        </div>
-                        <div class="col-6">
-                            <button class="btn btn-sm btn-success" onclick="assignEmp()"> Assign Employee</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center">
-                        <h3>Task 5</h3>
-                    </div>
-                    <ul>
-                        <li>Create employee Object with fields name, contactNo, deptName, teamLeadName,technology</li>
-                        <li>Create a form for above fileds like below</li>
-                        <li>on Save Button - add values to perticular field from textbox</li>
-                        <li> on Print button - print whole object into p tag</li>
-                        <li> on clear button - empty value of all fields from object and print updated Object again</li>
-                    </ul>
-                    <div class="row">
-                        <div class="col-6 pt-2">
-                            <input type="text" id="txtName" class="form-control" placeholder="Name">
-                        </div>
-                        <div class="col-6 pt-2">
-                            <input type="text" id="txtContact" class="form-control" placeholder="Contact No">
-                        </div>
-                        <div class="col-6 pt-2">
-                            <select class="form-control" id="dpdlDept">
-                                <option value="">Select Department</option>
-                                <option value="Sales">Sales</option>
-                                <option value="Marketing">Marketing</option>
-                                <option value="Development">Development</option>
-                                <option value="Testing">Testing</option>
-                            </select>
-                        </div>
-                        <div class="col-6 pt-2">
-                            <input type="text" id="txtLeadName" class="form-control" placeholder="Team Lead Name">
-                        </div>
-                        <div class="col-6 pt-2">
-                            <select class="form-control" id="dpdlTechnology">
-                                <option value="">Select Technology</option>
-                                <option value="Dot Net">Dot Net</option>
-                                <option value="UI Designing">UI Designing</option>
-                                <option value="Java">DeveloJavapment</option>
-                                <option value="Angular">Angular</option>
-                                <option value="React">React</option>
-                            </select>
-                        </div>
+        <div class="container mt-4">
+            <div class="row">
+                <!-- Task 1 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 1</div>
+                        <ul class="task-list">
+                            <li>Create a Object to store Product information.</li>
+                            <li>Fields will be ProductName, Category, Price, Discount</li>
+                            <li>Print ProductName & Price in the console.</li>
+                        </ul>
 
-                    </div>
-                    <div class="row pt-4 text-center">
-                        <div class="col-4">
-                            <button class="btn btn-danger btn-sm" id="btnClear">Clear Object </button>
-                        </div>
-                        <div class="col-4">
-                            <button class="btn btn-primary btn-sm" id="btnSave">Save Object </button>
-                        </div>
-                        <div class="col-4">
-                            <button class="btn btn-success btn-sm" id="btnPrint">Print Object </button>
-                        </div>
-                    </div>
-                    <div class="row pt-4 text-center">
-                        <div class="col-12">
-                            <span>Name Is: <strong id="strName" class="text-danger"></strong>,</span>
-                            <span>Contact Is:<strong id="strContact" class="text-danger"></strong>,</span>
-                            <span>Dept Is:<strong id="strDept" class="text-danger"></strong>,</span>
-                            <span>LeadName Is:<strong id="strLeadName" class="text-danger"></strong>,</span>
-                            <span>Technology Is:<strong id="strTechnology" class="text-danger"></strong></span>
-                        </div>
+                        <button id="btn1" class="btn btn-attempt">Attempt</button>
                     </div>
                 </div>
+
+                <!-- Task 2 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 2</div>
+                        <ul class="task-list">
+                            <li>Create a Object to store Train Ticket information</li>
+                            <li>Fields will be TrainName, TrainNo, NoOfPassinger, From, To, DateOfJourney</li>
+                            <li>Print whole Information in <br>the <code>p</code> tag like below</li>
+                        </ul>
+                        <div class="row">
+                            <div class="col-12">
+                                <ul>
+                                    ➡️ Traine Name: Vidarbah Express <br>
+                                    ➡️ Traine No: 12135<br>
+                                    ➡️ No Of Passinger : 3 <br>
+                                    ➡️ From Location: Nagpur <br>
+                                    ➡️ To Location: Mumbai <br>
+                                    ➡️ Date Of Journey: <br>08-04-2023 05.00 PM <br>
+                                </ul>
+                            </div>
+                        </div>
+                        <br>
+                        <button id="btn2" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+
+                <!-- Task 3 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 3</div>
+                        <ul class="task-list">
+                            <li>Create one Object to Hold Information of School.</li>
+                            <li>Fields will be SchoolName, PrincipleName, ContactNo, and Address.</li>
+                            <li>Print whole Object in console</li>
+                            <li>after that add one more Field SchoolEmail with some email.</li>
+                            <li>Again print updated object.</li>
+                        </ul>
+                        <button id="btn3" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+                <!-- Task 4 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 4</div>
+                        <ul class="task-list">
+                            <li>Create one Object to Hold SupportTicket data</li>
+                            <li>Properties will be TicketNo, CreatedBy, CreatedDate,
+                                AssigntoEmployeeName,<br>TicketDescription.</li>
+                            <li>Keep AssigntoEmployeeName filed with empty value.</li>
+                            <li>Print a dropdown with Employee Name.</li>
+                            <li>ON Assign Button add selected employee name to AssigntoEmployeeName.</li>
+                            <li>Print Whole Object after assigning employee in Console.</li>
+                        </ul>
+                        <div class="row">
+                            <div class="col-6">
+                                <select class="form-control" id="dpdlEmp">
+                                    <option value="">Select Empoloyee</option>
+                                    <option value="Sachin">Sachin</option>
+                                    <option value="Aditya">Aditya</option>
+                                    <option value="Omkar">Omkar</option>
+                                    <option value="Punesh">Punesh</option>
+                                </select>
+                            </div>
+                            <div class="col-6">
+                                <button class="btn btn-sm btn-success" onclick="assignEmp()"> Assign Employee</button>
+                            </div>
+                        </div>
+                        <button id="btn4" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+
+                <!-- Task 5 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 5</div>
+                        <ul class="task-list">
+                            <li>Create employee Object with fields name, contactNo, deptName, teamLeadName,technology
+                            </li>
+                            <li>Create a form for above fileds like below</li>
+                            <li>on Save Button - add values to perticular field from textbox</li>
+                            <li> on Print button - print whole object into p tag</li>
+                            <li> on clear button - empty value of all fields from object and print updated Object again
+                            </li>
+                        </ul>
+                        <div class="row">
+                            <div class="col-6 pt-2">
+                                <input type="text" id="txtName" class="form-control" placeholder="Name">
+                            </div>
+                            <div class="col-6 pt-2">
+                                <input type="text" id="txtContact" class="form-control" placeholder="Contact No">
+                            </div>
+                            <div class="col-6 pt-2">
+                                <select class="form-control" id="dpdlDept">
+                                    <option value="">Select Department</option>
+                                    <option value="Sales">Sales</option>
+                                    <option value="Marketing">Marketing</option>
+                                    <option value="Development">Development</option>
+                                    <option value="Testing">Testing</option>
+                                </select>
+                            </div>
+                            <div class="col-6 pt-2">
+                                <input type="text" id="txtLeadName" class="form-control" placeholder="Team Lead Name">
+                            </div>
+                            <div class="col-6 pt-2">
+                                <select class="form-control" id="dpdlTechnology">
+                                    <option value="">Select Technology</option>
+                                    <option value="Dot Net">Dot Net</option>
+                                    <option value="UI Designing">UI Designing</option>
+                                    <option value="Java">DeveloJavapment</option>
+                                    <option value="Angular">Angular</option>
+                                    <option value="React">React</option>
+                                </select>
+                            </div>
+
+                        </div>
+                        <div class="row pt-4 text-center">
+                            <div class="col-4">
+                                <button class="btn btn-danger btn-sm" id="btnClear">Clear Object </button>
+                            </div>
+                            <div class="col-4">
+                                <button class="btn btn-primary btn-sm" id="btnSave">Save Object </button>
+                            </div>
+                            <div class="col-4">
+                                <button class="btn btn-success btn-sm" id="btnPrint">Print Object </button>
+                            </div>
+                        </div>
+                        <div class="row pt-4 text-center">
+                            <div class="col-12">
+                                <span>Name Is: <strong id="strName" class="text-danger"></strong>,</span>
+                                <span>Contact Is:<strong id="strContact" class="text-danger"></strong>,</span>
+                                <span>Dept Is:<strong id="strDept" class="text-danger"></strong>,</span>
+                                <span>LeadName Is:<strong id="strLeadName" class="text-danger"></strong>,</span>
+                                <span>Technology Is:<strong id="strTechnology" class="text-danger"></strong></span>
+                            </div>
+                        </div>
+                        <br>
+                        <button id="btn5" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+
+                <hr>
+                <h4>Advance Task</h4>
+                <hr>
+
+                <!-- Task 1 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 1</div>
+                        <ul>
+                            <li>we need to create a function which will accept 2 paramaeter - 1st will be array and
+                                second
+                                parameter will be index</li>
+                            <li> We need to write a code to remove perticular index element from array we pass and
+                                return
+                                new array with removed element</li>
+                            <li>Ex: testFun([1,2,3,4],2)=> [1,2,4]</li>
+                            <li>Ex: testFun([1,2,3,4],0)=> [2,3,4]</li>
+                        </ul>
+                        <button id="btn8" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+
+                <!-- Task 2 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 2</div>
+                        <ul>
+
+                            <li>we need to create a function which will accept 2 paramaeter - 1st will be object and
+                                second
+                                parameter will be key to remove from object</li>
+                            <li> We need to write a code to remove perticular key from object we pass and return new
+                                object
+                                with removed key</li>
+                            <li>Ex: testFun({name:'ram',city:'pune'},<br>'city')=> {name:'ram'}</li>
+                        </ul>
+                        <button id="btn9" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+
+
+                <!-- Task 3 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 3</div>
+                        <ul>
+                            <li>create a function to check how many keys are there in object</li>
+                            <li>ex: textFun({name:'asd',city:'asdas'})<br>=> 2</li>
+                            <li>ex: textFun({name:'asd',city:'asdas',<br>addss:'',state:''})=> 4</li>
+
+                            </li>
+                        </ul>
+                        <button id="btn10" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+
+                <!-- Task 4 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 4</div>
+                        <ul>
+                            <li>create a function to check if passed object has any child Object if yes return true else
+                                false</li>
+                            <li>ex: textFun({name:'asd',address: {pincode:112233,city:'pune'}})=> true</li>
+                            <li>ex: textFun({name:'asd',city:'asdas',<br>addss:'',state:''})=> false</li>
+
+                        </ul>
+                        <button id="btn11" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+
+
+
             </div>
-
-
         </div>
-        <hr>
-        <h4>Ad Task</h4>
-        <div class="row">
-            <div class="col-6 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center">
-                        <h3>Task 1</h3>
-                    </div>
-                    <ul>
+        <script type="text/javascript" src="../menu.js"></script>
 
-                        <li>we need to create a function which will accept 2 paramaeter - 1st will be array and second
-                            parameter will be index</li>
-                        <li> We need to write a code to remove perticular index element from array we pass and return
-                            new array with removed element</li>
-                        <li>Ex: testFun([1,2,3,4],2)=> [1,2,4]</li>
-                        <li>Ex: testFun([1,2,3,4],0)=> [2,3,4]</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-6 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center">
-                        <h3>Task 2</h3>
-                    </div>
-                    <ul>
+        <!-- <script>
+            const buttons = document.querySelectorAll('button[id^="btn"]');
 
-                        <li>we need to create a function which will accept 2 paramaeter - 1st will be object and second
-                            parameter will be key to remove from object</li>
-                        <li> We need to write a code to remove perticular key from object we pass and return new object
-                            with removed key</li>
-                        <li>Ex: testFun({name:'ram',city:'pune'},'city')=> {name:'ram'}</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-6 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center">
-                        <h3>Task 3</h3>
-                    </div>
-                    <ul>
-                        <li>create a function to check how many keys are there in object</li>
-                        <li>ex: textFun({name:'asd',city:'asdas'})=> 2</li>
-                        <li>ex: textFun({name:'asd',city:'asdas',addss:'',state:''})=> 4</li>
+            buttons.forEach((button) => {
+                let currentState = 'attempt';
 
-                    </ul>
-                </div>
-            </div>
-            <div class="col-6 col-md-6 col-lg-6 col-sm-6 pt-2">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center">
-                        <h3>Task 4</h3>
-                    </div>
-                    <ul>
-                        <li>create a function to check if passed object has any child Object if yes return true else
-                            false</li>
-                        <li>ex: textFun({name:'asd',address: {pincode:112233,city:'pune'}})=> true</li>
-                        <li>ex: textFun({name:'asd',city:'asdas',addss:'',state:''})=> false</li>
-
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <script type="text/javascript" src="../menu.js"> </script>
-    <script>
-
-    </script>
+                button.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    if (currentState === 'attempt') {
+                        button.textContent = 'Attempting';
+                        button.className = 'btn btn-attempting';
+                        currentState = 'attempting';
+                    } else if (currentState === 'attempting') {
+                        button.textContent = 'Attempt in Progress';
+                        button.className = 'btn btn-progress';
+                        currentState = 'progress';
+                    } else {
+                        button.textContent = 'Attempt';
+                        button.className = 'btn btn-attempt';
+                        currentState = 'attempt';
+                    }
+                });
+            });
+        </script> -->
 </body>
 
 </html>
