@@ -13,13 +13,79 @@
     <link rel="stylesheet" href="../custom.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Scenario - 1</title>
-
-
-
     <style>
+        .task-container {
+            padding: 20px;
+            border: 1px solid #007bff;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+            height: 100%;
+        }
+
+        .task-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            background-color: #d3ffce;
+        }
+
+        .task-heading {
+            font-weight: bold;
+            font-size: 20px;
+            color: #007bff;
+        }
+
+        .task-list {
+            text-align: left;
+        }
+
+        .btn-attempt {
+            background-color: #007bff;
+            color: white;
+            border: 2px solid #007bff;
+        }
+
+        .btn-attempting {
+            background-color: #f0ad4e;
+            color: white;
+            border: 2px solid #f0ad4e;
+        }
+
+        .btn-progress {
+            background-color: #5cb85c;
+            color: white;
+            border: 2px solid #5cb85c;
+        }
+
+        .btn:focus {
+            outline: none;
+            border: 2px solid currentColor;
+        }
+
+        .btn:hover {
+            border-width: 2px;
+        }
+
+        @media (max-width: 576px) {
+            .col-12.col-sm-6.col-md-3 {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .col-12.col-sm-6.col-md-3 {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+        }
+
         .card {
             cursor: pointer !important;
         }
+
         .table {
             border-color: #144f8a !important;
         }
@@ -27,7 +93,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg voidChetan navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.html">taskS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -73,7 +139,7 @@
         </div>
     </nav>
     <div class="container pt-1">
-        <nav class="voidChetan" style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
             aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
@@ -81,123 +147,158 @@
                 <li class="breadcrumb-item active" aria-current="page">Logical</li>
             </ol>
         </nav>
-        <div class="row">
-            <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-                <div class="myBox">
-                    <div class="text-center">
-                        <h3>grocery List </h3>
-                    </div>
-                    <ul>
-                        <li>Create Array of Grocery Items with their Prices</li>
-                        <li>Show grocery item in dropdown and add textbox & button to Add Them </li>
-                        <li>on Add- Create Object of Grocery Item with Quantity and add it to New Array CartItems</li>
-                        <li>if item already added Increment quantity </li>
-                        <li>Use For Loop on CartItems to Display Cart Items in Table </li>
-                    </ul>
-
-                    <div class="row">
-                        <div class="col-12 col-sm-12 col-md-8">
-                            <div class="row">
-                                <div class="col-5 col-md-5 col-sm-5 col-lg-5">
-                                    <Select id="dpdlItem" class="form-control">
-                                        <option value="">Select Item</option>
-                                    </Select>
-                                </div>
-                                <div class="col-5 col-md-5 col-sm-5 col-lg-5">
-                                    <input type="text" id="txtQuantity" class="form-control"
-                                        placeholder="Enter Quantity">
-                                </div>
-                                <div class="col-2  col-md-2 col-sm-2 col-lg-2">
-                                    <button class="btn btn-sm btn-success" id="btnAdd">Add </button>
+    </div>
+    <div class="container mt-4">
+        <div class="row d-flex justify-content-center">
+            <!-- Task 1 -->
+            <div class="col-12 col-sm-12 col-md-8 mb-4">
+                <div class="task-container">
+                    <div class="myBox">
+                        <div class="task-heading">Task 1</div>
+                        <div class="text-center">
+                            <h3>grocery List </h3>
+                        </div>
+                        <ul>
+                            <li>Create Array of Grocery Items with their Prices</li>
+                            <li>Show grocery item in dropdown and add textbox & button to Add Them </li>
+                            <li>on Add- Create Object of Grocery Item with Quantity and add it to New Array CartItems
+                            </li>
+                            <li>if item already added Increment quantity </li>
+                            <li>Use For Loop on CartItems to Display Cart Items in Table </li>
+                        </ul>
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-8">
+                                <div class="row">
+                                    <div class="col-5 col-md-5 col-sm-5 col-lg-5">
+                                        <Select id="dpdlItem" class="form-control">
+                                            <option value="">Select Item</option>
+                                        </Select>
+                                    </div>
+                                    <div class="col-5 col-md-5 col-sm-5 col-lg-5">
+                                        <input type="text" id="txtQuantity" class="form-control"
+                                            placeholder="Enter Quantity">
+                                    </div>
+                                    <div class="col-2  col-md-2 col-sm-2 col-lg-2 px-0">
+                                        <button class="btn btn-sm btn-success" id="btnAdd">Add </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row pt-2">
-                        <div class="col-12">
-                            <table class="table table-bordered" id="tableItems">
-                                <thead>
-                                    <tr>
-                                        <th>Sr No</th>
-                                        <th>Item Name</th>
-                                        <th>Quantity</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <td class="text-end bg-secondary" colspan="2">Total</td>
-                                        <td class="text-end bg-secondary">
-                                            <strong id="tot">00.00</strong>
-                                        </td>
-                                    </tr>
-                                </tfoot>
-                            </table>
+                        <div class="row pt-2">
+                            <div class="col-12">
+                                <table class="table table-bordered" id="tableItems">
+                                    <thead>
+                                        <tr>
+                                            <th>Sr No</th>
+                                            <th>Item Name</th>
+                                            <th>Quantity</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td class="text-end bg-secondary" colspan="2">Total</td>
+                                            <td class="text-end bg-secondary">
+                                                <strong id="tot">00.00</strong>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
                         </div>
                     </div>
-                    <script>
-                        var items = [
-                            { itemName: 'Cooking Oil', cost: 120 },
-                            { itemName: 'Rice', cost: 60 },
-                            { itemName: 'Dal', cost: 100 },
-                            { itemName: 'Sugar', cost: 45 },
-                            { itemName: 'Aata', cost: 40 },
-                            { itemName: 'Turmeric', cost: 200 },
-                            { itemName: 'Coffee', cost: 2500 },
-                            { itemName: 'Dry Fruits Mix', cost: 850 }
-                        ];
-                        var selectdeItems = [];
-
-                        $(document).ready(function () {
-                            items.forEach(element => {
-                                var li = "<option value='" + element.cost + "'>" + element.itemName + "-(" + element.cost + ") </option>";
-                                $("#dpdlItem").append(li);
-                            });
-                            var empty = "<tr><td class='text-center' colspan='3'> No Items Added yet </td></tr>";
-                                        $("#tableItems tbody").append(empty);
-
-                            $("#btnAdd").click(function () {
-                                if ($("#dpdlItem").val() != "" && $("#txtQuantity").val() != "") {
-                                    $("#tableItems tbody").html("");
-                                    const isExist = selectdeItems.find(m=>m.itemName ==$("#dpdlItem :selected").text() );
-                                    if(isExist == undefined) {
-                                        selectdeItems.push(
-                                        { itemName: $("#dpdlItem :selected").text(), cost: $("#dpdlItem").val(), quantity: $("#txtQuantity").val() },
-                                    )
-                                    } else {
-                                        isExist.quantity  = Number(isExist.quantity) +  Number($("#txtQuantity").val())
-                                    }
-                                     
-                                    var index = 1;
-                                    var tot = 0;
-                                    selectdeItems.forEach(element => {
-                                        var li = "<tr><td>" + index + "</td><td>" + element.itemName + "</td><td class='text-end'>" + element.cost + " * " + element.quantity + " =" + Number(element.cost) * Number(element.quantity) + " </td></tr>";
-                                        $("#tableItems tbody").append(li);
-                                        index++;
-                                        tot = tot + Number(element.cost) * Number(element.quantity);
-                                    });
-                                    $("#tot").html(tot);
-                                    $("#dpdlItem").val("");
-                                    $("#txtQuantity").val("");
-
-                                } else {
-                                    alert("Select Item n Quantity")
-                                }
-                            });
-
-
-
-                        })
-                    </script>
+                    <ul class="task-list">
+                        <li>Create an array of Cities</li>
+                        <li>Print the length of the array in the console</li>
+                        <li>Print the 3rd element from the array</li>
+                    </ul>
+                    <div class="text-center"> <button id="btn1" class="btn btn-attempt">Attempt</button>
+                    </div>
                 </div>
-
-
             </div>
-
         </div>
-        <script type="text/javascript" src="../menu.js"> </script>
+    </div>
+    <script>
+        var items = [
+            { itemName: 'Cooking Oil', cost: 120 },
+            { itemName: 'Rice', cost: 60 },
+            { itemName: 'Dal', cost: 100 },
+            { itemName: 'Sugar', cost: 45 },
+            { itemName: 'Aata', cost: 40 },
+            { itemName: 'Turmeric', cost: 200 },
+            { itemName: 'Coffee', cost: 2500 },
+            { itemName: 'Dry Fruits Mix', cost: 850 }
+        ];
+        var selectdeItems = [];
+
+        $(document).ready(function () {
+            items.forEach(element => {
+                var li = "<option value='" + element.cost + "'>" + element.itemName + "-(" + element.cost + ") </option>";
+                $("#dpdlItem").append(li);
+            });
+            var empty = "<tr><td class='text-center' colspan='3'> No Items Added yet </td></tr>";
+            $("#tableItems tbody").append(empty);
+
+            $("#btnAdd").click(function () {
+                if ($("#dpdlItem").val() != "" && $("#txtQuantity").val() != "") {
+                    $("#tableItems tbody").html("");
+                    const isExist = selectdeItems.find(m => m.itemName == $("#dpdlItem :selected").text());
+                    if (isExist == undefined) {
+                        selectdeItems.push(
+                            { itemName: $("#dpdlItem :selected").text(), cost: $("#dpdlItem").val(), quantity: $("#txtQuantity").val() },
+                        )
+                    } else {
+                        isExist.quantity = Number(isExist.quantity) + Number($("#txtQuantity").val())
+                    }
+
+                    var index = 1;
+                    var tot = 0;
+                    selectdeItems.forEach(element => {
+                        var li = "<tr><td>" + index + "</td><td>" + element.itemName + "</td><td class='text-end'>" + element.cost + " * " + element.quantity + " =" + Number(element.cost) * Number(element.quantity) + " </td></tr>";
+                        $("#tableItems tbody").append(li);
+                        index++;
+                        tot = tot + Number(element.cost) * Number(element.quantity);
+                    });
+                    $("#tot").html(tot);
+                    $("#dpdlItem").val("");
+                    $("#txtQuantity").val("");
+
+                } else {
+                    alert("Select Item n Quantity")
+                }
+            });
+
+
+
+        })
+    </script>
+    <script type="text/javascript" src="../menu.js"></script>
+
+    <script>
+        const buttons = document.querySelectorAll('button[id^="btn1"]');
+
+        buttons.forEach((button) => {
+            let currentState = 'attempt';
+
+            button.addEventListener('click', function (event) {
+                event.preventDefault();
+                if (currentState === 'attempt') {
+                    button.textContent = 'Attempting';
+                    button.className = 'btn btn-attempting';
+                    currentState = 'attempting';
+                } else if (currentState === 'attempting') {
+                    button.textContent = 'Attempt in Progress';
+                    button.className = 'btn btn-progress';
+                    currentState = 'progress';
+                } else {
+                    button.textContent = 'Attempt';
+                    button.className = 'btn btn-attempt';
+                    currentState = 'attempt';
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

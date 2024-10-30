@@ -20,12 +20,100 @@
             }
         }
     </style>
+    <style>
+        .task-container {
+            padding: 20px;
+            border: 1px solid #007bff;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+            height: 100%;
+        }
+
+        .task-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            background-color: #d3ffce;
+        }
+
+        .task-heading {
+            font-weight: bold;
+            font-size: 20px;
+            color: #007bff;
+        }
+
+        .task-list {
+            text-align: left;
+        }
+
+        .btn-attempt {
+            background-color: #007bff;
+            color: white;
+            border: 2px solid #007bff;
+        }
+
+        .btn-attempting {
+            background-color: #f0ad4e;
+            color: white;
+            border: 2px solid #f0ad4e;
+        }
+
+        .btn-progress {
+            background-color: #5cb85c;
+            color: white;
+            border: 2px solid #5cb85c;
+        }
+
+        .btn:focus {
+            outline: none;
+            border: 2px solid currentColor;
+        }
+
+        .btn:hover {
+            border-width: 2px;
+        }
+
+        .fonticon {
+            font-size: 7rem;
+        }
+
+        @media (max-width: 576px) {
+            .col-12.col-sm-6.col-md-3 {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .col-12.col-sm-6.col-md-3 {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+
+            .fonticon {
+                font-size: 4rem;
+
+            }
+
+            .btnfont {
+                font-size: 13px;
+            }
+
+            @media (max-width: 768px) {}
+
+            .btnfont {
+                font-size: 9px;
+            }
+        }
+    </style>
+
     <script>
         $(document).ready(function () {
             $("#divMobile").hide();
             $("#divFiber").hide();
             $("#divBusiness").hide();
-
             $("#btnContinue").click(function () {
                 var radio1Value = $('input:radio[name=radioCheck]:checked').val();
                 if (radio1Value == undefined) {
@@ -43,7 +131,6 @@
             });
 
             $("#btnMobile").click(function () {
-               
                 $("#btnFiber").removeClass("btn-success");
                 $("#btnBusiness").removeClass("btn-success");
                 $("#btnMobile").addClass("btn-success");
@@ -52,7 +139,7 @@
                 $("#divBusiness").hide();
             });
             $("#btnFiber").click(function () {
-                $("#btnMobile").removeClass("btn-success"); 
+                $("#btnMobile").removeClass("btn-success");
                 $("#btnBusiness").removeClass("btn-success");
                 $("#btnFiber").addClass("btn-success");
                 $("#divMobile").hide();
@@ -60,22 +147,21 @@
                 $("#divBusiness").hide();
             });
             $("#btnBusiness").click(function () {
-                $("#btnMobile").removeClass("btn-success"); 
+                $("#btnMobile").removeClass("btn-success");
                 $("#btnBusiness").addClass("btn-success");
                 $("#btnFiber").removeClass("btn-success");
                 $("#divMobile").hide();
                 $("#divFiber").hide();
                 $("#divBusiness").show();
             });
-
         })
     </script>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg voidChetan navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="../index.html">Logic Building</a>
+            <a class="navbar-brand" href="../index.html">taskS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -117,116 +203,172 @@
             </div>
         </div>
     </nav>
-    <div class="container-fluid pt-2">
-        <!-- <nav class="voidChetan" style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+    <div class="container pt-2">
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
             aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Angular</li>
-                <li class="breadcrumb-item active" aria-current="page">ng-For Task</li>
+                <li class="breadcrumb-item active" aria-current="page">Logical</li>
             </ol>
-        </nav> -->
-        <div class="row">
-            <div class="col-12 col-md-6 col-lg-6 col-sm-12 pb-6">
-                <div class="myBox">
-                    <div class="text-center pb-5">
-                        <h3> Package</h3>
-                        <h6>JavaScript, Angular, Reactjs</h6>
-                    </div>
-                    <div class="row text-center pb-3">
-                        <div class="col-4">
-                            <div>
-                                <i style="font-size: 7rem;" class="fa fa-mobile" aria-hidden="true"></i><br>
-                                Mobile
+        </nav>
+        <div class="container mt-4">
+            <div class="row">
+                <!-- Task 1 -->
+                <div class="col-12 col-sm-6 col-md-6 mb-4 ">
+                    <div class="task-container">
+                        <div class="task-heading">Task 1</div>
+                        <div class="myBox">
+                            <div class="text-center pb-5">
+                                <h3> Package</h3>
+                                <h6>JavaScript, Angular, Reactjs</h6>
                             </div>
-                            <button class="btn btn-primary mt-4" id="btnMobile">Find More</button>
-                        </div>
-                        <div class="col-4">
-                            <div>
-                                <i style="font-size: 7rem;" class="fa fa-home" aria-hidden="true"></i><br>
-                                JioFiber
+                            <div class="row text-center pb-3">
+                                <div class="col-4">
+                                    <div>
+                                        <i class="fonticon fa fa-mobile" aria-hidden="true"></i><br>
+                                        Mobile
+                                    </div>
+                                    <button class="btn btn-sm btn-primary mt-4 btnfont" id="btnMobile">Find
+                                        More</button>
+                                </div>
+                                <div class="col-4">
+                                    <div>
+                                        <i class="fonticon fa fa-home" aria-hidden="true"></i><br>
+                                        JioFiber
+                                    </div>
+                                    <button class=" btn btn-sm btn-primary mt-4 btnfont" id="btnFiber">Find
+                                        More</button>
+                                </div>
+                                <div class="col-4">
+                                    <div>
+                                        <i class="fonticon fa fa-id-badge" aria-hidden="true"></i><br>
+                                        Business
+                                    </div>
+                                    <button class="btn btn-sm btn-primary mt-4 btnfont" id="btnBusiness">Find
+                                        More</button>
+                                </div>
                             </div>
-                            <button class="btn btn-primary mt-4" id="btnFiber">Find More</button>
-                        </div>
-                        <div class="col-4">
-                            <div>
-                                <i style="font-size: 7rem;" class="fa fa-id-badge" aria-hidden="true"></i><br>
-                                Business
+                            <div class="row pt-5">
+                                <div class="col-12">
+                                    <div class="text-center" id="divMobile">
+                                        <p>Free SIM, calls, and SMS with invaluable digital experiences.</p>
+                                        <p>2000/month</p>
+                                    </div>
+                                    <div class="text-center" id="divFiber">
+                                        <p> Connected living experiences with superfast home internet.</p>
+                                        <p>1500/month</p>
+                                    </div>
+                                    <div class="text-center" id="divBusiness">
+                                        <p>Enterprise-grade digital services to meet all your business needs.</p>
+                                        <p>4000/month</p>
+                                    </div>
+                                </div>
                             </div>
-                            <button class="btn btn-primary mt-4" id="btnBusiness">Find More</button>
-                        </div>
-                    </div>
-                    <div class="row pt-0">
-                        <div class="col-12">
-                            <div class="text-center" id="divMobile">
-                                <p>Free SIM, calls, and SMS with invaluable digital experiences.</p>
-                                <p>2000/month</p>
-                            </div>
-                            <div class="text-center" id="divFiber">
-                                <p> Connected living experiences with superfast home internet.</p>
-                                <p>1500/month</p>
-                            </div>
-                            <div class="text-center" id="divBusiness">
-                                <p>Enterprise-grade digital services to meet all your business needs.</p>
-                                <p>4000/month</p>
+                            <div class="text-center pt-3">
+                                <button id="btn1" class="btn btn-attempt">Attempt</button>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div> 
-            <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                <div class="myBox" style="position: relative;">
-                    <div class="text-center pb-5">
-                        <h3> Plan Selection</h3>
-                        <h6>JavaScript, Angular, Reactjs</h6>
-                    </div>
-                    <ul>
-                        <li> On Continue Show Selected Plan</li>
-                        <li> If No Plan Selected Ask to select Plan</li>
-                        <li> On Reset - Remove Selected Plan & Hide Plan Div</li> 
-                    </ul>
-                    <div class="h6">Select Plan</div>
-                    <div class="row text-center">
-                        <div class="col-md-3 col-3 col-sm-3 col-lg-3">
-                            <label>Mobile Plan </label><br />
-                            <input type="radio" name="radioCheck" id="radio4" value="Mobile Plan">
+                <!-- Task 2 -->
+                <div class="col-12 col-sm-6 col-md-6 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 2</div>
+                        <div class="myBox" style="position: relative;">
+                            <div class="text-center pb-5">
+                                <h3> Plan Selection</h3>
+                                <h6>JavaScript, Angular, Reactjs</h6>
+                            </div>
+                            <ul>
+                                <li> On Continue Show Selected Plan</li>
+                                <li> If No Plan Selected Ask to select Plan</li>
+                                <li> On Reset - Remove Selected Plan & Hide Plan Div</li>
+                            </ul>
+                            <div class="h6">Select Plan</div>
+                            <div class="row text-center">
+                                <div class="col-md-3 col-3 col-sm-3 col-lg-3">
+                                    <label>Mobile Plan </label><br />
+                                    <input type="radio" name="radioCheck" id="radio4" value="Mobile Plan">
+                                </div>
+                                <div class="col-md-3 col-3 col-sm-3 col-lg-3">
+                                    <label>Fibre Optics </label><br />
+                                    <input type="radio" name="radioCheck" id="radio3" value="Fibre Optics">
+                                </div>
+                                <div class="col-md-3 col-3 col-sm-3 col-lg-3">
+                                    <label>Broadband</label> <br />
+                                    <input type="radio" name="radioCheck" id="radio1" value="Broadband">
+                                </div>
+                                <div class="col-md-3 col-3 col-sm-3 col-lg-3">
+                                    <label>Business</label><br />
+                                    <input type="radio" name="radioCheck" id="radio2" value="Broadband n Tv">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 text-end">
+                                    <button class="btn btn-success btn-sm" id="btnContinue"> Continue</button>
+                                </div>
+                                <div class="col-6 ">
+                                    <button class="btn btn-danger btn-sm" id="btnReset"> Reset</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <p>Selected Plan : <strong id="selectedPlan">....</strong> </p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-3 col-3 col-sm-3 col-lg-3">
-                            <label>Fibre Optics </label><br />
-                            <input type="radio" name="radioCheck" id="radio3" value="Fibre Optics">
-                        </div>
-                        <div class="col-md-3 col-3 col-sm-3 col-lg-3">
-                            <label>Broadband</label> <br />
-                            <input type="radio" name="radioCheck" id="radio1" value="Broadband">
-                        </div>
-                        <div class="col-md-3 col-3 col-sm-3 col-lg-3">
-                            <label>Business</label><br />
-                            <input type="radio" name="radioCheck" id="radio2" value="Broadband n Tv">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-6 text-end">
-                            <button class="btn btn-success btn-sm" id="btnContinue"> Continue</button>
-                        </div>
-                        <div class="col-6 ">
-                            <button class="btn btn-danger btn-sm" id="btnReset"> Reset</button>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 text-center">
-                            <p>Selected Plan : <strong id="selectedPlan">....</strong> </p>
+                        <div class="text-center pt-3">
+                            <button id="btn2" class="btn btn-attempt text-center">Attempt</button>
                         </div>
                     </div>
                 </div>
             </div>
-            
         </div>
-
     </div>
-    <div class="mt-4">
-
-    </div>
-     <script type="text/javascript" src="../menu.js"> </script>
+    <script type="text/javascript" src="../menu.js"></script>
+    <script>
+        const buttons = document.querySelectorAll('button[id^="btn1"]');
+        buttons.forEach((button) => {
+            let currentState = 'attempt';
+            button.addEventListener('click', function (event) {
+                event.preventDefault();
+                if (currentState === 'attempt') {
+                    button.textContent = 'Attempting';
+                    button.className = 'btn btn-attempting';
+                    currentState = 'attempting';
+                } else if (currentState === 'attempting') {
+                    button.textContent = 'Attempt in Progress';
+                    button.className = 'btn btn-progress';
+                    currentState = 'progress';
+                } else {
+                    button.textContent = 'Attempt';
+                    button.className = 'btn btn-attempt';
+                    currentState = 'attempt';
+                }
+            });
+        });
+        const buttones = document.querySelectorAll('button[id^="btn2"]');
+        buttones.forEach((button) => {
+            let currentState = 'attempt';
+            button.addEventListener('click', function (event) {
+                event.preventDefault();
+                if (currentState === 'attempt') {
+                    button.textContent = 'Attempting';
+                    button.className = 'btn btn-attempting';
+                    currentState = 'attempting';
+                } else if (currentState === 'attempting') {
+                    button.textContent = 'Attempt in Progress';
+                    button.className = 'btn btn-progress';
+                    currentState = 'progress';
+                } else {
+                    button.textContent = 'Attempt';
+                    button.className = 'btn btn-attempt';
+                    currentState = 'attempt';
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

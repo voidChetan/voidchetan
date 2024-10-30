@@ -13,6 +13,75 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../custom.css">
     <title>Train Booking - 1</title>
+    <style>
+        .task-container {
+            padding: 20px;
+            border: 1px solid #007bff;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+            height: 100%;
+        }
+
+        .task-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            background-color: #d3ffce;
+        }
+
+        .task-heading {
+            font-weight: bold;
+            font-size: 20px;
+            color: #007bff;
+        }
+
+        .task-list {
+            text-align: left;
+        }
+
+        .btn-attempt {
+            background-color: #007bff;
+            color: white;
+            border: 2px solid #007bff;
+        }
+
+        .btn-attempting {
+            background-color: #f0ad4e;
+            color: white;
+            border: 2px solid #f0ad4e;
+        }
+
+        .btn-progress {
+            background-color: #5cb85c;
+            color: white;
+            border: 2px solid #5cb85c;
+        }
+
+        .btn:focus {
+            outline: none;
+            border: 2px solid currentColor;
+        }
+
+        .btn:hover {
+            border-width: 2px;
+        }
+
+        @media (max-width: 576px) {
+            .col-12.col-sm-6.col-md-3 {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .col-12.col-sm-6.col-md-3 {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
     <script>
         $(document).ready(function () {
             var cityArray = ['Pune', 'Mumbai', 'Jalgao', 'Nagpur', 'Thane'];
@@ -29,7 +98,7 @@
                 $("#txtDate").val('');
                 $(".journey").hide();
             })
-            
+
             $("#exchange").click(function () {
                 const from = $("#dpdlFrom").val();
                 const to = $("#dpdlTo").val();
@@ -60,7 +129,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg voidChetan navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.html">taskS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -78,7 +147,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                         </ul>
-                    </li> 
+                    </li>
                     <li class="nav-item dropdown " id="angularUl">
                         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -96,7 +165,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                         </ul>
-                    </li> 
+                    </li>
                 </ul>
                 <form class="d-flex">
                     <a href="https://github.com/voidChetan" target="_blank" class="btn btn-outline-success">Examples</a>
@@ -104,8 +173,8 @@
             </div>
         </div>
     </nav>
-    <div class="container-fluid pt-2">
-        <nav class="voidChetan" style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+    <div class="container pt-2">
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
             aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
@@ -113,75 +182,109 @@
                 <li class="breadcrumb-item active" aria-current="page">ng-For Task</li>
             </ol>
         </nav>
-        <div class="row">
-            <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                <div class="myBox">
-                    <div class="text-center">
-                        <h3>Train Booking Form</h3>
-                    </div> 
-                    <ul>
-                        <li>Create City Array Bind that to Dropdown</li>
-                        <li>Search - Check If Journey details are provided</li>
-                        <li> Search - If From n To City are Same Show Alert</li> 
-                        
-                        <li>on Exchange - Exchnage From n to Stations</li>
-                        <li> Search - Show Selected Details in below Box</li>
-                        <li>  Clear  - Clear Booking Form n Hide Journey Details Info</li>
-                    </ul>
-                    <div class="row"> 
-                        <div class="col-5 col-sm-5 col-md-5">
-                            <label for=""> From Station</label>
-                            <select name="" id="dpdlFrom" class="form-control">
-                                <option value="">From Station</option>
-                            </select> 
-                        </div>
-                        <div class="col-2 col-sm-2 col-md-1 pt-4 text-center">
-                            <i class="fa fa-exchange" id="exchange" aria-hidden="true"></i>
-                        </div>
-                        <div class="col-5 col-sm-5 col-md-5">
-                            <label for=""> To Station</label>
-                            <select name="" id="dpdlTo" class="form-control">
-                                <option value="">To Station</option>
-                            </select>
-                        </div>
-                        
-                        <div class="col-6 col-sm-6 col-md-5">
-                            <label for="">Journey Date</label>
-                            <input type="date" id="txtDate" class="form-control">
-                        </div>
-                        <div class="col-6 col-sm-6 col-md-5">
-                            <button class="btn btn-sm btn-primary mt-4" id="btnSearch">Search</button>
-                            <button class="btn btn-sm btn-success mt-4" id="btnClear">Clear</button>
-                        </div>
-                    </div>
-                    <div class="row pt-5 journey">
-                        <div class="col-8">
-                            <h4>Selected Journey Details</h4>
-                        </div>
-                    </div>
-                    <div class="row journey">
-                        <div class="col-4 col-sm-4 col-md-4">
-                             Date: <strong id="dateText"></strong>
-                        </div>
-                        <div class="col-4 col-sm-4 col-md-4">
-                            From: <strong id="fromText"></strong>
-                        </div>
-                        <div class="col-4 col-sm-4 col-md-4">
-                            From: <strong id="toText"></strong>
-                        </div>
 
+        <div class="container mt-4">
+            <div class="row d-flex justify-content-center">
+                <!-- Task 1 -->
+                <div class="col-12 col-sm-12 col-md-8 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 1</div>
+                        <div class="myBox">
+                            <div class="text-center">
+                                <h3>Train Booking Form</h3>
+                            </div>
+                            <ul>
+                                <li>Create City Array Bind that to Dropdown</li>
+                                <li>Search - Check If Journey details are provided</li>
+                                <li> Search - If From n To City are Same Show Alert</li>
+                                <li>on Exchange - Exchnage From n to Stations</li>
+                                <li> Search - Show Selected Details in below Box</li>
+                                <li> Clear - Clear Booking Form n Hide Journey Details Info</li>
+                            </ul>
+                            <div class="row">
+                                <div class="col-5 col-sm-5 col-md-5">
+                                    <label for=""> From Station</label>
+                                    <select name="" id="dpdlFrom" class="form-control">
+                                        <option value="">From Station</option>
+                                    </select>
+                                </div>
+                                <div class="col-2 col-sm-2 col-md-1 pt-4 text-center">
+                                    <i class="fa fa-exchange" id="exchange" aria-hidden="true"></i>
+                                </div>
+                                <div class="col-5 col-sm-5 col-md-5">
+                                    <label for=""> To Station</label>
+                                    <select name="" id="dpdlTo" class="form-control">
+                                        <option value="">To Station</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-6 col-sm-6 col-md-5">
+                                    <label for="">Journey Date</label>
+                                    <input type="date" id="txtDate" class="form-control">
+                                </div>
+                                <div class="col-6 col-sm-6 col-md-5">
+                                    <div class="row">
+                                        <div class="col-6 text-end">
+                                            <button class="btn btn-sm btn-primary mt-4" id="btnSearch">Search</button>
+
+                                        </div>
+                                        <div class="col-6 text-start"> <button class="btn btn-sm btn-success mt-4"
+                                                id="btnClear">Clear</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row pt-5 journey">
+                                <div class="col-8">
+                                    <h4>Selected Journey Details</h4>
+                                </div>
+                            </div>
+                            <div class="row journey">
+                                <div class="col-4 col-sm-4 col-md-4">
+                                    Date: <strong id="dateText"></strong>
+                                </div>
+                                <div class="col-4 col-sm-4 col-md-4">
+                                    From: <strong id="fromText"></strong>
+                                </div>
+                                <div class="col-4 col-sm-4 col-md-4">
+                                    From: <strong id="toText"></strong>
+                                </div>
+
+                            </div>
+                            <div class="text-center pt-3">
+                                <button id="btn1" class="btn btn-attempt">Attempt</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
         </div>
-
+        <script type="text/javascript" src="../menu.js"></script>
     </div>
-    <script type="text/javascript" src="../menu.js"> </script>
-        <script> 
-            
-        </script>
+    <script>
+        const buttons = document.querySelectorAll('button[id^="btn"]');
 
+        buttons.forEach((button) => {
+            let currentState = 'attempt';
+
+            button.addEventListener('click', function (event) {
+                event.preventDefault();
+                if (currentState === 'attempt') {
+                    button.textContent = 'Attempting';
+                    button.className = 'btn btn-attempting';
+                    currentState = 'attempting';
+                } else if (currentState === 'attempting') {
+                    button.textContent = 'Attempt in Progress';
+                    button.className = 'btn btn-progress';
+                    currentState = 'progress';
+                } else {
+                    button.textContent = 'Attempt';
+                    button.className = 'btn btn-attempt';
+                    currentState = 'attempt';
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

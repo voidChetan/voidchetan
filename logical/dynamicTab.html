@@ -17,11 +17,86 @@
         .card {
             cursor: pointer !important;
         }
+
+        .task-container {
+            padding: 20px;
+            border: 1px solid #007bff;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+            height: 100%;
+        }
+
+        .task-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            background-color: #d3ffce;
+        }
+
+        .task-heading {
+            font-weight: bold;
+            font-size: 20px;
+            color: #007bff;
+        }
+
+        .task-list {
+            text-align: left;
+        }
+
+        .btn-attempt {
+            background-color: #007bff;
+            color: white;
+            border: 2px solid #007bff;
+        }
+
+        .btn-attempting {
+            background-color: #f0ad4e;
+            color: white;
+            border: 2px solid #f0ad4e;
+        }
+
+        .btn-progress {
+            background-color: #5cb85c;
+            color: white;
+            border: 2px solid #5cb85c;
+        }
+
+        .btn:focus {
+            outline: none;
+            border: 2px solid currentColor;
+        }
+
+        .btn:hover {
+            border-width: 2px;
+        }
+
+        @media (max-width: 576px) {
+            .col-12.col-sm-6.col-md-3 {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .col-12.col-sm-6.col-md-3 {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 375px) {
+            .hobby {
+                font-size: 10px;
+            }
+        }
     </style>
+
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg voidChetan navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.html">taskS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -66,8 +141,8 @@
             </div>
         </div>
     </nav>
-    <div class="container pt-1">
-        <nav class="voidChetan" style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+    <div class="container pt-2">
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
             aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
@@ -75,149 +150,207 @@
                 <li class="breadcrumb-item active" aria-current="page">Logical</li>
             </ol>
         </nav>
-        <div class="row">
-            <div class="col-6">
-                <div class="myBox">
-                    <div class="text-center">
-                        <h3>Dynamic Tab Selection </h3>
-                    </div>
-                    <ul>
-                        <li>We Need Create a tab Layput like below</li>
-                        <li>on click of Perticular tab - perticular UI will be visible</li>
-                        <li>clicked tab should look like selected tab</li>
-                    </ul>
-
-                    <div class="row">
-                        <div class="col-12">
-                            <ul class="nav nav-tabs">
-                                <li class="nav-item">
-                                    <a class="nav-link" id="basic"  onclick="onTabChange('basic')" href="#">Basic Details</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="project"  onclick="onTabChange('project')" href="#">Project Details</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="family" onclick="onTabChange('family')" href="#">Family Details</a>
-                                </li>
+        <div class="container mt-4">
+            <div class="row">
+                <!-- Task 1 -->
+                <div class="col-12 col-sm-12 col-md-6 mb-4 ">
+                    <div class="task-container">
+                        <div class="task-heading">Task 1</div>
+                        <div class="myBox">
+                            <div class="text-center pb-5">
+                                <h3>Dynamic Tab Selection </h3>
+                            </div>
+                            <ul>
+                                <li>We Need Create a tab Layput like below</li>
+                                <li>on click of Perticular tab - perticular UI will be visible</li>
+                                <li>clicked tab should look like selected tab</li>
                             </ul>
-                            <div class="tab-content"> 
-                                <div class="tab-pane container active" id="basicDiv">
-                                    Basic Details Div
+                            <div class="row">
+                                <div class="col-12">
+                                    <ul class="nav nav-tabs">
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="basic" onclick="onTabChange('basic')" href="#">Basic
+                                                Details</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="project" onclick="onTabChange('project')"
+                                                href="#">Project Details</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="family" onclick="onTabChange('family')"
+                                                href="#">Family Details</a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div class="tab-pane container active" id="basicDiv">
+                                            Basic Details Div
+                                        </div>
+                                        <div class="tab-pane container" id="projectDiv">
+                                            Project Details Div
+                                        </div>
+                                        <div class="tab-pane container" id="familyDiv">
+                                            Family Details Div
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="tab-pane container" id="projectDiv">
-                                    Project Details Div
-                                </div>
-                                <div class="tab-pane container" id="familyDiv">
-                                    Family Details Div
-                                </div>
+                            </div>
+
+                            <div class="text-center pt-5">
+                                <button id="btn1" class="btn btn-attempt">Attempt</button>
                             </div>
                         </div>
                     </div>
-
-                    <script> 
-                        function removeClass(...parameteList) {
-                            ;
-                            for (let index = 0; index < parameteList.length; index++) {
-                                document.getElementById(parameteList[index]).classList.remove('active') 
-                            }
-                        }
-
-                        function addClass(...params) {
-                            for (let index = 0; index < params.length; index++) {
-                                document.getElementById(params[index]).classList.add('active') 
-                            }
-                        }
-
-                        function onTabChange(tabName) {
-                            ;
-                             if(tabName == 'basic') { 
-                                addClass('basic','basicDiv') 
-                                removeClass('project','family','projectDiv','familyDiv') 
-                             } else if (tabName == 'project') {  
-                                addClass('project','projectDiv') 
-                                removeClass('basic','family','basicDiv','familyDiv')
-                             } else  if (tabName == 'family' ) { 
-                                addClass('family','familyDiv')  
-                                removeClass('basic','project','basicDiv','projectDiv')
-                             } 
-                        }
-
-                    </script>
                 </div>
-
-
-            </div>
-            <div class="col-6">
-                <div class="myBox">
-                    <div class="text-center">
-                        <h3>Hobbies Selection </h3>
-                    </div>
-                    <ul>
-                        <li>Create an Array of Hobbies</li>
-                        <li>Create Dynamic LI based on array</li>
-                        <li>On click of any hobby Make that LI as selected </li>
-                        <li>on click of button we need to Print Selcted hobbies in p tag</li>
-                    </ul>
-
-                    <div class="row">
-                        <div class="col-12">
-                            <ul class="list-group list-group-horizontal" id="myHoobyUl"> 
-                              </ul>
+                <!-- Task 2 -->
+                <div class="col-12 col-sm-12 col-md-6 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 2</div>
+                        <div class="myBox" style="position: relative;">
+                            <div class="text-center pb-5">
+                                <h3>Hobbies Selection </h3>
+                            </div>
+                            <ul>
+                                <li>Create an Array of Hobbies</li>
+                                <li>Create Dynamic LI based on array</li>
+                                <li>On click of any hobby Make that LI as selected </li>
+                                <li>on click of button we need to Print Selcted hobbies in p tag</li>
+                            </ul>
+                            <div class="h6">Select Plan</div>
+                            <div class="row">
+                                <div class="col-12 px-0">
+                                    <ul class="list-group list-group-horizontal hobby" id="myHoobyUl">
+                                    </ul>
+                                </div>
+                                <div class="col-12 pt-3">
+                                    <button class="btn btn-primary" onclick="getSelectedHobbies()">Get Selected
+                                        Hobbies</button>
+                                </div>
+                                <div class="col-12">
+                                    <p id="selectedHobbies"></p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-12 pt-3">
-                            <button class="btn btn-primary" onclick="getSelectedHobbies()">Get Selected Hobbies</button>
-                        </div>
-                        <div class="col-12">
-                            <p id="selectedHobbies"></p>
+                        <div class="text-center pt-3">
+                            <button id="btn2" class="btn btn-attempt text-center">Attempt</button>
                         </div>
                     </div>
-
-                    <script>
-                        var hobbiesList  = ['Cricket','Online Games','Drawing','Singing'];
-                        var selectedHobbies = [];
-                        createHoobiesLI();
-                        function createHoobiesLI() {
-                            for (let index = 0; index < hobbiesList.length; index++) {
-                                var li=  document.createElement('li');
-                                li.innerText = hobbiesList[index];
-                                li.classList.add('list-group-item');
-                                li.addEventListener('click',onSelect)
-                                document.getElementById('myHoobyUl').append(li) 
-                            }
-                        }
-                        function getSelectedHobbies() {
-                            document.getElementById('selectedHobbies').innerHTML = '';
-                            for (let index = 0; index < selectedHobbies.length; index++) {
-                                const value = selectedHobbies[index];
-                                var mySpan =  document.createElement('span');
-                                mySpan.innerText = value;
-                                document.getElementById('selectedHobbies').append(mySpan)
-                            }
-                        }
-
-                        function onSelect() {
-                            debugger;
-                            console.log(this)
-                            const hobbyIndex =  selectedHobbies.findIndex(m=>m == this.innerText);
-                            debugger;
-                            if(hobbyIndex == -1) {
-                                this.classList.add('bg-success')
-                                selectedHobbies.push(this.innerText);
-                            } else {
-                                selectedHobbies.splice(hobbyIndex,1);
-                                this.classList.remove('bg-success')
-                            }
-                           
-                            
-                        }   
-                    </script>
                 </div>
-
-
             </div>
-
         </div>
-        <script type="text/javascript" src="../menu.js"> </script>
+    </div>
+    <script>
+        function removeClass(...parameteList) {
+            ;
+            for (let index = 0; index < parameteList.length; index++) {
+                document.getElementById(parameteList[index]).classList.remove('active')
+            }
+        }
+
+        function addClass(...params) {
+            for (let index = 0; index < params.length; index++) {
+                document.getElementById(params[index]).classList.add('active')
+            }
+        }
+
+        function onTabChange(tabName) {
+            ;
+            if (tabName == 'basic') {
+                addClass('basic', 'basicDiv')
+                removeClass('project', 'family', 'projectDiv', 'familyDiv')
+            } else if (tabName == 'project') {
+                addClass('project', 'projectDiv')
+                removeClass('basic', 'family', 'basicDiv', 'familyDiv')
+            } else if (tabName == 'family') {
+                addClass('family', 'familyDiv')
+                removeClass('basic', 'project', 'basicDiv', 'projectDiv')
+            }
+        }
+
+    </script>
+    <script>
+        var hobbiesList = ['Cricket', 'Online Games', 'Drawing', 'Singing'];
+        var selectedHobbies = [];
+        createHoobiesLI();
+        function createHoobiesLI() {
+            for (let index = 0; index < hobbiesList.length; index++) {
+                var li = document.createElement('li');
+                li.innerText = hobbiesList[index];
+                li.classList.add('list-group-item');
+                li.addEventListener('click', onSelect)
+                document.getElementById('myHoobyUl').append(li)
+            }
+        }
+        function getSelectedHobbies() {
+            document.getElementById('selectedHobbies').innerHTML = '';
+            for (let index = 0; index < selectedHobbies.length; index++) {
+                const value = selectedHobbies[index];
+                var mySpan = document.createElement('span');
+                mySpan.innerText = value;
+                document.getElementById('selectedHobbies').append(mySpan)
+            }
+        }
+
+        function onSelect() {
+            debugger;
+            console.log(this)
+            const hobbyIndex = selectedHobbies.findIndex(m => m == this.innerText);
+            debugger;
+            if (hobbyIndex == -1) {
+                this.classList.add('bg-success')
+                selectedHobbies.push(this.innerText);
+            } else {
+                selectedHobbies.splice(hobbyIndex, 1);
+                this.classList.remove('bg-success')
+            }
+        }   
+    </script>
+    <script>
+        const buttons = document.querySelectorAll('button[id^="btn1"]');
+        buttons.forEach((button) => {
+            let currentState = 'attempt';
+            button.addEventListener('click', function (event) {
+                event.preventDefault();
+                if (currentState === 'attempt') {
+                    button.textContent = 'Attempting';
+                    button.className = 'btn btn-attempting';
+                    currentState = 'attempting';
+                } else if (currentState === 'attempting') {
+                    button.textContent = 'Attempt in Progress';
+                    button.className = 'btn btn-progress';
+                    currentState = 'progress';
+                } else {
+                    button.textContent = 'Attempt';
+                    button.className = 'btn btn-attempt';
+                    currentState = 'attempt';
+                }
+            });
+        });
+        const buttones = document.querySelectorAll('button[id^="btn2"]');
+        buttones.forEach((button) => {
+            let currentState = 'attempt';
+            button.addEventListener('click', function (event) {
+                event.preventDefault();
+                if (currentState === 'attempt') {
+                    button.textContent = 'Attempting';
+                    button.className = 'btn btn-attempting';
+                    currentState = 'attempting';
+                } else if (currentState === 'attempting') {
+                    button.textContent = 'Attempt in Progress';
+                    button.className = 'btn btn-progress';
+                    currentState = 'progress';
+                } else {
+                    button.textContent = 'Attempt';
+                    button.className = 'btn btn-attempt';
+                    currentState = 'attempt';
+                }
+            });
+        });
+    </script>
+    </div>
+    </div>
+    </div>
+    </div>
+    <script type="text/javascript" src="../menu.js"> </script>
 </body>
 
 </html>

@@ -15,8 +15,75 @@
     <title>Scenario - 1</title>
 
 
-
     <style>
+        .task-container {
+            padding: 20px;
+            border: 1px solid #007bff;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+            height: 100%;
+        }
+
+        .task-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            background-color: #d3ffce;
+        }
+
+        .task-heading {
+            font-weight: bold;
+            font-size: 20px;
+            color: #007bff;
+        }
+
+        .task-list {
+            text-align: left;
+        }
+
+        .btn-attempt {
+            background-color: #007bff;
+            color: white;
+            border: 2px solid #007bff;
+        }
+
+        .btn-attempting {
+            background-color: #f0ad4e;
+            color: white;
+            border: 2px solid #f0ad4e;
+        }
+
+        .btn-progress {
+            background-color: #5cb85c;
+            color: white;
+            border: 2px solid #5cb85c;
+        }
+
+        .btn:focus {
+            outline: none;
+            border: 2px solid currentColor;
+        }
+
+        .btn:hover {
+            border-width: 2px;
+        }
+
+        @media (max-width: 576px) {
+            .col-12.col-sm-6.col-md-3 {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .col-12.col-sm-6.col-md-3 {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+        }
+
         .card {
             cursor: pointer !important;
         }
@@ -24,7 +91,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg voidChetan navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.html">taskS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -69,8 +136,8 @@
             </div>
         </div>
     </nav>
-    <div class="container pt-1">
-        <nav class="voidChetan" style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+    <div class="container pt-2">
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
             aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
@@ -78,97 +145,129 @@
                 <li class="breadcrumb-item active" aria-current="page">Logical</li>
             </ol>
         </nav>
-        <div class="row">
-            <div class="col-6">
-                <div class="myBox">
-                    <div class="text-center">
-                        <h3>Identity Proof Selection </h3>
-                    </div>
-                    <ul>
-                        <li>Create A dropdown for Identity Type</li>
-                        <li>A textbox to Enter Selected Identity Card No</li>
-                        <li>On change on Identity Dropdown Selection we need to add dynamic Max-Length to Textbox </li>
-                        <li>On change on Identity Dropdown Selection we Empty Textbox Value </li>
-                        <li>On change on Identity Dropdown Selection - we need to add dynamic placeholder to Textbox
-                        </li>
-                        <li>On Click Of Validate - we need to show validation message , and check if correct No is
-                            provided or not</li>
-                    </ul>
+        <div class="container mt-4">
+            <div class="row d-flex justify-content-center">
+                <!-- Task 1 -->
+                <div class="col-12 col-sm-12 col-md-10 mb-4">
+                    <div class="task-container">
+                        <div class="myBox">
+                            <div class="task-heading">Task 1</div>
+                            <div class="text-center">
+                                <h3>Identity Proof Selection </h3>
+                            </div>
+                            <ul>
+                                <li>Create A dropdown for Identity Type</li>
+                                <li>A textbox to Enter Selected Identity Card No</li>
+                                <li>On change on Identity Dropdown Selection we need to add dynamic Max-Length to
+                                    Textbox </li>
+                                <li>On change on Identity Dropdown Selection we Empty Textbox Value </li>
+                                <li>On change on Identity Dropdown Selection - we need to add dynamic placeholder to
+                                    Textbox
+                                </li>
+                                <li>On Click Of Validate - we need to show validation message , and check if correct No
+                                    is
+                                    provided or not</li>
+                            </ul>
+                            <div class="row">
+                                <div class="col-4 col-md-4 col-sm-4 col-lg-4">
+                                    <Select id="dpdpIdentityType" onchange="onIdentityDropdownChange()"
+                                        class="form-control">
+                                        <option value="">Select Item</option>
+                                        <option value="AadharCard">Aadhar Card</option>
+                                        <option value="PanCard">Pan Card</option>
+                                    </Select>
+                                </div>
+                                <div class="col-4 col-md-4 col-sm-4 col-lg-4">
+                                    <input type="text" id="txtIdentityNo" class="form-control"
+                                        placeholder="Enter Identity Card No">
+                                </div>
+                                <div class="col-4  col-md-4 col-sm-4 col-lg-4 mx-0">
+                                    <button class="btn btn-sm btn-success" id="btnValidate"
+                                        onclick="validateInputCardNo()">Validate </button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <h1 id="validateText"></h1>
+                                </div>
+                            </div>
+                            <div class="text-center pt-3">
+                                <button id="btn1" class="btn btn-attempt">Attempt</button>
+                            </div>
+                            <script>
 
+                                function showValidationMessage(message, color) {
+                                    document.getElementById("validateText").innerText = message
+                                    document.getElementById("validateText").style.color = color;
+                                }
 
-                    <div class="row">
-                        <div class="col-5 col-md-5 col-sm-5 col-lg-5">
-                            <Select id="dpdpIdentityType" onchange="onIdentityDropdownChange()" class="form-control">
-                                <option value="">Select Item</option>
-                                <option value="AadharCard">Aadhar Card</option>
-                                <option value="PanCard">Pan Card</option>
-                            </Select>
-                        </div>
-                        <div class="col-5 col-md-5 col-sm-5 col-lg-5">
-                            <input type="text" id="txtIdentityNo" class="form-control"
-                                placeholder="Enter Identity Card No">
-                        </div>
-                        <div class="col-2  col-md-2 col-sm-2 col-lg-2">
-                            <button class="btn btn-sm btn-success" id="btnValidate"
-                                onclick="validateInputCardNo()">Validate </button>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <h1 id="validateText"></h1>
-                        </div>
-                    </div>
-                    <script>
-
-                        function showValidationMessage(message, color) {
-                            document.getElementById("validateText").innerText = message
-                            document.getElementById("validateText").style.color = color;
-                        }
-
-                        function validateInputCardNo() {
-                            var selectedIdentityProof = document.getElementById("dpdpIdentityType").value;
-                            var inputNo = document.getElementById("txtIdentityNo").value;
-                            if (inputNo != '') {
-                                if (selectedIdentityProof === 'AadharCard') {
-                                    var cardNo = parseInt(inputNo);
-                                    ;
-                                    if (isNaN(cardNo) == false && inputNo.length == 12) {
-                                        showValidationMessage("Aaddhar Card is Valid", "green")
+                                function validateInputCardNo() {
+                                    var selectedIdentityProof = document.getElementById("dpdpIdentityType").value;
+                                    var inputNo = document.getElementById("txtIdentityNo").value;
+                                    if (inputNo != '') {
+                                        if (selectedIdentityProof === 'AadharCard') {
+                                            var cardNo = parseInt(inputNo);
+                                            ;
+                                            if (isNaN(cardNo) == false && inputNo.length == 12) {
+                                                showValidationMessage("Aaddhar Card is Valid", "green")
+                                            } else {
+                                                showValidationMessage("Aaddhar Card is In-Valid", "red")
+                                            }
+                                        } else if (selectedIdentityProof === 'PanCard') {
+                                            var regpan = /^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$/;
+                                            if (regpan.test(inputNo)) {
+                                                showValidationMessage("Pan No Is Valid", "green")
+                                            } else {
+                                                showValidationMessage("Pan No Is In-Valid", "red")
+                                            }
+                                        }
                                     } else {
-                                        showValidationMessage("Aaddhar Card is In-Valid", "red")
-                                    }
-                                } else if (selectedIdentityProof === 'PanCard') {
-                                    var regpan = /^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$/;
-                                    if (regpan.test(inputNo)) {
-                                        showValidationMessage("Pan No Is Valid", "green")
-                                    } else {
-                                        showValidationMessage("Pan No Is In-Valid", "red")
+                                        showValidationMessage("Please Enter Car No", "red")
                                     }
                                 }
-                            } else {
-                                showValidationMessage("Please Enter Car No", "red")
-                            }
-                        }
-                        function onIdentityDropdownChange() {
-                            var input = document.getElementById("txtIdentityNo");
-                            input.value = "";
-                            var selectedIdentityProof = document.getElementById("dpdpIdentityType").value;
-                            if (selectedIdentityProof === 'AadharCard') {
-                                input.maxLength = 12;
-                                input.placeholder = "Enter Aadhar Card No";
-                            } else if (selectedIdentityProof === 'PanCard') {
-                                input.maxLength = 10;
-                                input.placeholder = "Enter Pan Card No";
-                            }
-                        }
-                    </script>
+                                function onIdentityDropdownChange() {
+                                    var input = document.getElementById("txtIdentityNo");
+                                    input.value = "";
+                                    var selectedIdentityProof = document.getElementById("dpdpIdentityType").value;
+                                    if (selectedIdentityProof === 'AadharCard') {
+                                        input.maxLength = 12;
+                                        input.placeholder = "Enter Aadhar Card No";
+                                    } else if (selectedIdentityProof === 'PanCard') {
+                                        input.maxLength = 10;
+                                        input.placeholder = "Enter Pan Card No";
+                                    }
+                                }
+                            </script>
+                        </div>
+                    </div>
                 </div>
-
-
             </div>
-
         </div>
-        <script type="text/javascript" src="../menu.js"> </script>
+    </div>
+
+    <script type="text/javascript" src="../menu.js"> </script>
+    <script>
+        const buttons = document.querySelectorAll('button[id^="btn1"]');
+        buttons.forEach((button) => {
+            let currentState = 'attempt';
+            button.addEventListener('click', function (event) {
+                event.preventDefault();
+                if (currentState === 'attempt') {
+                    button.textContent = 'Attempting';
+                    button.className = 'btn btn-attempting';
+                    currentState = 'attempting';
+                } else if (currentState === 'attempting') {
+                    button.textContent = 'Attempt in Progress';
+                    button.className = 'btn btn-progress';
+                    currentState = 'progress';
+                } else {
+                    button.textContent = 'Attempt';
+                    button.className = 'btn btn-attempt';
+                    currentState = 'attempt';
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
