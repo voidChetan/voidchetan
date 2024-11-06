@@ -67,7 +67,7 @@
 
         }
 
-        @media (max-width: 576px) {
+        /* @media (max-width: 576px) {
             .col-12.col-sm-6.col-md-3 {
                 flex-basis: 100%;
                 max-width: 100%;
@@ -79,13 +79,68 @@
                 flex-basis: 100%;
                 max-width: 100%;
             }
+        } */
+        @media (max-width: 798px) {
+            .task-container {
+                font-size: smaller;
+
+            }
+
+            .task-list {
+                /* text-align: left; */
+                padding: 10px;
+            }
+
+            .task-heading {
+                font-weight: bold;
+                font-size: 16px;
+                color: #007bff;
+            }
+
+            .btnCount {
+                font-size: 10px;
+            }
+
+        }
+
+        @media (max-width: 425px) {
+            .task-container {
+                font-size: 11px;
+
+            }
+
+            .task-list {
+                /* text-align: left; */
+                padding: 10px;
+            }
+
+            .task-heading {
+                font-weight: bold;
+                font-size: 13px;
+                color: #007bff;
+            }
+
+            .attepfont {
+                font-size: 12px;
+            }
+
+            .btn-clickevnet {
+                width: 100px;
+                height: 40px;
+                font-size: 8px;
+            }
+
+            .btnCount {
+                font-size: 8px;
+            }
+
         }
     </style>
 
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg voidChetan navbar-dark bg-dark">
+    <!-- <nav class="navbar navbar-expand-lg voidChetan navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.html">taskS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -128,8 +183,8 @@
                 </form>
             </div>
         </div>
-    </nav>
-    <div class="container pt-2">
+    </nav> -->
+    <!-- <div class="container pt-2">
         <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
             aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -137,12 +192,12 @@
                 <li class="breadcrumb-item active" aria-current="page">JavaScript</li>
                 <li class="breadcrumb-item active" aria-current="page">Operators</li>
             </ol>
-        </nav>
+        </nav> -->
 
-        <div class="container mt-4">
+        <div class="container-fluid mt-4">
             <div class="row">
                 <!-- Task 1 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
                     <div class="task-container">
                         <div class="task-heading">Task 1</div>
                         <ul class="task-list">
@@ -151,12 +206,14 @@
                             <li>show addition and substraction in Alert popup</li>
                             <li>show multiplication and division in console</li>
                         </ul>
-                        <button id="btn1" class="btn btn-attempt">Attempt</button>
+                        <div class="text-center">
+                        <button id="btn1" class="  btn btn-attempt    attepfont">Attempt</button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Task 2 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
                     <div class="task-container">
                         <div class="task-heading">Task 2</div>
                         <ul class="task-list">
@@ -166,12 +223,14 @@
                             <li>Discount will be in %</li>
                             <li>Show Discounted Product Price in Confirm Popup</li>
                         </ul>
-                        <button id="btn2" class="btn btn-attempt">Attempt</button>
+                        <div class="text-center">
+                        <button id="btn2" class="  btn btn-attempt    attepfont">Attempt</button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Task 3 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
                     <div class="task-container">
                         <div class="task-heading">Task 3</div>
                         <ul class="task-list">
@@ -179,12 +238,14 @@
                                 console </li>
                             <li>decremnt that value by 6 time and show updated value in alert popup</li>
                         </ul>
-                        <button id="btn3" class="btn btn-attempt">Attempt</button>
+                        <div class="text-center">
+                        <button id="btn3" class="  btn btn-attempt    attepfont">Attempt</button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Task 4 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
                     <div class="task-container">
                         <div class="task-heading">Task 4</div>
                         <ul class="task-list">
@@ -192,12 +253,14 @@
                             <li>store student states into other 3 variables</li>
                             <li>now check if student has same name and same state and print it in console</li>
                         </ul>
-                        <button id="btn4" class="btn btn-attempt">Attempt</button>
+                        <div class="text-center">
+                        <button id="btn4" class="  btn btn-attempt    attepfont">Attempt</button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Task 5 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
                     <div class="task-container">
                         <div class="task-heading">Task 5</div>
                         <ul class="task-list">
@@ -205,12 +268,14 @@
                             <li>check if both states having same no of charactors <small>(to get charactors legth you
                                     need use length property of string)</small></li>
                         </ul>
-                        <button id="btn5" class="btn btn-attempt">Attempt</button>
+                        <div class="text-center">
+                        <button id="btn5" class="  btn btn-attempt    attepfont">Attempt</button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Task 6 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
                     <div class="task-container">
                         <div class="task-heading">Task 6</div>
                         <ul class="task-list">
@@ -218,7 +283,9 @@
                             <li> now reverse value to true by using Not Operator</li>
                             <li>print value in console</li>
                         </ul>
-                        <button id="btn6" class="btn btn-attempt">Attempt</button>
+                        <div class="text-center">
+                        <button id="btn6" class="  btn btn-attempt    attepfont">Attempt</button>
+                        </div>
                     </div>
                 </div>
                 <script type="text/javascript" src="../menu.js"></script>
@@ -233,7 +300,7 @@
                             event.preventDefault();
                             if (currentState === 'attempt') {
                                 button.textContent = 'Attempting';
-                                button.className = 'btn btn-attempting';
+                                button.className = '  btn btn-attempt    attepfonting';
                                 currentState = 'attempting';
                             } else if (currentState === 'attempting') {
                                 button.textContent = 'Attempt in Progress';
@@ -241,7 +308,7 @@
                                 currentState = 'progress';
                             } else {
                                 button.textContent = 'Attempt';
-                                button.className = 'btn btn-attempt';
+                                button.className = '  btn btn-attempt    attepfont';
                                 currentState = 'attempt';
                             }
                         });
