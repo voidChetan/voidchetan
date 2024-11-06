@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../custom.css">
     <style>
         .task-container {
-            padding: 20px;
+            padding: 10px;
             border: 1px solid #007bff;
             border-radius: 8px;
             background-color: #f9f9f9;
@@ -19,6 +19,7 @@
             transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
             text-align: left;
             height: 100%;
+
         }
 
         .task-container:hover {
@@ -35,6 +36,7 @@
 
         .task-list {
             text-align: left;
+
         }
 
         .btn-attempt {
@@ -63,30 +65,40 @@
 
         .btn:hover {
             border-width: 2px;
-
-
-
         }
 
-        @media (max-width: 576px) {
-            .col-12.col-sm-6.col-md-3 {
+        /* @media (max-width: 576px) {
+            .col-6. col-sm-4.col-md-4 {
                 flex-basis: 100%;
                 max-width: 100%;
             }
         }
 
         @media (max-width: 768px) {
-            .col-12.col-sm-6.col-md-3 {
+            .col-6. col-sm-4.col-md-4 {
                 flex-basis: 100%;
                 max-width: 100%;
             }
+        } */
+
+        @media (max-width: 798px) {
+            .task-container {
+                font-size: smaller;
+
+            }
+
+            .task-list {
+                /* text-align: left; */
+                padding: 10px;
+            }
+
         }
     </style>
 
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg voidChetan navbar-dark bg-dark">
+    <!-- <nav class="navbar navbar-expand-lg voidChetan navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.html">taskS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -129,8 +141,8 @@
                 </form>
             </div>
         </div>
-    </nav>
-    <div class="container pt-2">
+    </nav> -->
+    <!-- <div class="container pt-2">
         <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
             aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -138,195 +150,215 @@
                 <li class="breadcrumb-item active" aria-current="page">javascript</li>
                 <li class="breadcrumb-item active" aria-current="page">variables</li>
             </ol>
-        </nav>
+        </nav> -->
 
-        <div class="container mt-4">
-            <div class="row">
-                <!-- Task 1 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
-                    <div class="task-container">
-                        <div class="task-heading">Task 1</div>
-                        <ul class="task-list">
-                            <li>create 3 variables to store firstName, middleName, lastName and Generate fullName by
-                                joining 3 variable and print full name in console.</li>
-                            <li>create variables to store student details like name, contactNo, FatherName, MotherName,
-                                Class,RollNo and print it in console</li>
-                            <li> create variable to store address, city ,state and pincode- and print address and city
-                                in console</li>
-                        </ul>
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <!-- Task 1 -->
+            <div class=" col-6  col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container ">
+                    <div class="task-heading">Task 1</div>
+                    <ul class="task-list">
+                        <li>create 3 variables to store firstName, middleName, lastName and Generate fullName by
+                            joining 3 variable and print full name in console.</li>
+                        <li>create variables to store student details like name, contactNo, FatherName, MotherName,
+                            Class,RollNo and print it in console</li>
+                        <li> create variable to store address, city ,state and pincode- and print address and city
+                            in console</li>
+                    </ul>
+                    <div class="text-center ">
                         <button id="btn1" class="btn btn-attempt">Attempt</button>
+
                     </div>
                 </div>
+            </div>
 
-                <!-- Task 2 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
-                    <div class="task-container">
-                        <div class="task-heading">Task 2</div>
-                        <ul class="task-list">
-                            <li>create currentDate variable and store current Date into it and show that in alert popup
-                            </li>
-                            <li>create variables to store patient data - name, age, address, contactNo and print name &
-                                age in console </li>
+            <!-- Task 2 -->
+            <div class=" col-6  col-sm-4 col-md-4 mb-4 px-1 ">
+                <div class="task-container">
+                    <div class="task-heading">Task 2</div>
+                    <ul class="task-list">
+                        <li>create currentDate variable and store current Date into it and show that in alert popup
+                        </li>
+                        <li>create variables to store patient data - name, age, address, contactNo and print name &
+                            age in console </li>
 
-                        </ul>
+                    </ul>
+                    <div class="text-center">
                         <button id="btn2" class="btn btn-attempt">Attempt</button>
                     </div>
                 </div>
+            </div>
 
-                <!-- Task 3 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
-                    <div class="task-container">
-                        <div class="task-heading">Task 3</div>
-                        <ul class="task-list">
-                            <li>create 2 script tag in html page- 1st will be in head part- 2nd will be in body part at
-                                the end</li>
-                            <li>in first script tag show alert as script 1 loaded</li>
-                            <li>in 2nd script tag show alert as script 2 loaded</li>
-                        </ul>
+            <!-- Task 3 -->
+            <div class=" col-6  col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task 3</div>
+                    <ul class="task-list">
+                        <li>create 2 script tag in html page- 1st will be in head part- 2nd will be in body part at
+                            the end</li>
+                        <li>in first script tag show alert as script 1 loaded</li>
+                        <li>in 2nd script tag show alert as script 2 loaded</li>
+                    </ul>
+                    <div class="text-center">
                         <button id="btn3" class="btn btn-attempt">Attempt</button>
                     </div>
                 </div>
+            </div>
 
-                <!-- Task 4 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
-                    <div class="task-container">
-                        <div class="task-heading">Task 4</div>
-                        <ul class="task-list">
-                            <li>Create 2 variable num1 assign value = 1122, num2 == 3344</li>
-                            <li>show both varible in alert popup</li>
-                            <li> after alert now replace value of num1 with num2 & num2 with num1</li>
-                            <li>now show updated value in alert again</li>
-                        </ul>
+            <!-- Task 4 -->
+            <div class=" col-6  col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task 4</div>
+                    <ul class="task-list">
+                        <li>Create 2 variable num1 assign value = 1122, num2 == 3344</li>
+                        <li>show both varible in alert popup</li>
+                        <li> after alert now replace value of num1 with num2 & num2 with num1</li>
+                        <li>now show updated value in alert again</li>
+                    </ul>
+                    <div class="text-center">
                         <button id="btn4" class="btn btn-attempt">Attempt</button>
                     </div>
                 </div>
-                <hr>
-                <h4>Advance Task</h4>
-                <hr>
+            </div>
+            <hr>
+            <h4>Advance Task</h4>
+            <hr>
 
-                <!-- Task 1 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
-                    <div class="task-container">
-                        <div class="task-heading">Task 1</div>
-                        <ul>
-                            <li>Create a boolean Variable Store some value in it</li>
-                            <li>if value is true print "Value is Success" if false print "Value is Danger"</li>
-                        </ul>
+            <!-- Task 1 -->
+            <div class=" col-6  col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task 1</div>
+                    <ul class="task-list">
+                        <li>Create a boolean Variable Store some value in it</li>
+                        <li>if value is true print "Value is Success" if false print "Value is Danger"</li>
+                    </ul>
+                    <div class="text-center">
                         <button id="btn8" class="btn btn-attempt">Attempt</button>
                     </div>
                 </div>
+            </div>
 
-                <!-- Task 2 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
-                    <div class="task-container">
-                        <div class="task-heading">Task 2</div>
-                        <ul>
-                            <li>Create 2 variable to store first, middle & last name</li>
-                            <li> Create a button => Get First Charactors </li>
-                            <li>On click - get First charactors of all the variable and Join them with " - " and Print
-                                it in console</li>
-                            <li>Ex. Sachin Ramesh Tendulkar => C-R-T</li>
-                        </ul>
+            <!-- Task 2 -->
+            <div class=" col-6  col-sm-4 col-md-4 mb-4 px-1 ">
+                <div class="task-container">
+                    <div class="task-heading">Task 2</div>
+                    <ul class="task-list">
+                        <li>Create 2 variable to store first, middle & last name</li>
+                        <li> Create a button => Get First Charactors </li>
+                        <li>On click - get First charactors of all the variable and Join them with " - " and Print
+                            it in console</li>
+                        <li>Ex. Sachin Ramesh Tendulkar => C-R-T</li>
+                    </ul>
+                    <div class="text-center">
                         <button id="btn9" class="btn btn-attempt">Attempt</button>
                     </div>
                 </div>
+            </div>
 
-
-                <!-- Task 3 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
-                    <div class="task-container">
-                        <div class="task-heading">Task 3</div>
-                        <ul>
-                            <li>Create A varible Store Current Date into it</li>
-                            <li> now create a Formated Date by using value store in variable(Use Date Functions Refer
-                                W3School)</li>
-                            <li> Year "/" Month "/" Day</li>
-                        </ul>
+            <!-- Task 3 -->
+            <div class=" col-6  col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task 3</div>
+                    <ul class="task-list">
+                        <li>Create A varible Store Current Date into it</li>
+                        <li> now create a Formated Date by using value store in variable(Use Date Functions Refer
+                            W3School)</li>
+                        <li> Year "/" Month "/" Day</li>
+                    </ul>
+                    <div class="text-center">
                         <button id="btn10" class="btn btn-attempt">Attempt</button>
                     </div>
                 </div>
+            </div>
 
-                <!-- Task 4 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
-                    <div class="task-container">
-                        <div class="task-heading">Task 4</div>
-                        <ul>
-                            <li>Create 3 varibales to store ProductName, Price, discount</li>
-                            <li>now Enter Some data into it. add some decimal values into price with 4-5 digits after
-                                decimal ex 23.54655</li>
-                            <li>now create new String like - product Name is "ProdutName" Original price is "price" with
-                                Discount "dicount"% => new Final price will be "New Price"</li>
-                            <li>calculate Final price by adding discount ro original Price</li>
-                        </ul>
+            <!-- Task 4 -->
+            <div class=" col-6  col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task 4</div>
+                    <ul class="task-list">
+                        <li>Create 3 varibales to store ProductName, Price, discount</li>
+                        <li>now Enter Some data into it. add some decimal values into price with 4-5 digits after
+                            decimal ex 23.54655</li>
+                        <li>now create new String like - product Name is "ProdutName" Original price is "price" with
+                            Discount "dicount"% => new Final price will be "New Price"</li>
+                        <li>calculate Final price by adding discount ro original Price</li>
+                    </ul>
+                    <div class="text-center">
                         <button id="btn11" class="btn btn-attempt">Attempt</button>
                     </div>
                 </div>
+            </div>
 
-                <!-- Task 5 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
-                    <div class="task-container">
-                        <div class="task-heading">Task 5</div>
-                        <ul>
-                            <li>Create textarea to Enter Some sentences below that create a textbox and a button
-                                "Search"</li>
-                            <li>now enter some sentence into textarea .. </li>
-                            <li>now if we enter some word into textbox on button click we need to check if that word is
-                                present in textarea</li>
-                            <li>For Ex: "Hi my name is Rahul and my city is Pune" this is in textare and in serach
-                                textbox we enter "city" on button click we should show alert city exist in textara else
-                                City not present</li>
-                        </ul>
+            <!-- Task 5 -->
+            <div class=" col-6  col-sm-4 col-md-4 mb-4 px-1 ">
+                <div class="task-container">
+                    <div class="task-heading">Task 5</div>
+                    <ul class="task-list">
+                        <li>Create textarea to Enter Some sentences below that create a textbox and a button
+                            "Search"</li>
+                        <li>now enter some sentence into textarea .. </li>
+                        <li>now if we enter some word into textbox on button click we need to check if that word is
+                            present in textarea</li>
+                        <li>For Ex: "Hi my name is Rahul and my city is Pune" this is in textare and in serach
+                            textbox we enter "city" on button click we should show alert city exist in textara else
+                            City not present</li>
+                    </ul>
+                    <div class="text-center">
                         <button id="btn12" class="btn btn-attempt">Attempt</button>
                     </div>
                 </div>
+            </div>
 
 
-                <!-- Task 6 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
-                    <div class="task-container">
-                        <div class="task-heading">Task 6</div>
-                        <ul class="task-list">
-                            <li>create a textarea Where User will Neter Some Sentence</li>
-                            <li>Create a textbox with placeholder "Replace word" , create 2nd textbox with placeholder
-                                "Replace with" </li>
-                            <li>Create a button "Replace"</li>
-                            <li>On Click of Replace - you need to replace word you enter in 1st textbox with word u
-                                enter with 2nd textbox in Sentence from textarea and Print that newly Created Sentences
-                                into <code>&lt;p&gt;</code> tag</li>
-                        </ul>
+            <!-- Task 6 -->
+            <div class=" col-6  col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task 6</div>
+                    <ul class="task-list">
+                        <li>create a textarea Where User will Neter Some Sentence</li>
+                        <li>Create a textbox with placeholder "Replace word" , create 2nd textbox with placeholder
+                            "Replace with" </li>
+                        <li>Create a button "Replace"</li>
+                        <li>On Click of Replace - you need to replace word you enter in 1st textbox with word u
+                            enter with 2nd textbox in Sentence from textarea and Print that newly Created Sentences
+                            into <code>&lt;p&gt;</code> tag</li>
+                    </ul>
+                    <div class="text-center">
                         <button id="btn14" class="btn btn-attempt">Attempt</button>
                     </div>
                 </div>
-
-
             </div>
+
+
         </div>
-        <script type="text/javascript" src="../menu.js"></script>
+    </div>
+    <script type="text/javascript" src="../menu.js"></script>
 
-        <script>
-            const buttons = document.querySelectorAll('button[id^="btn"]');
+    <script>
+        const buttons = document.querySelectorAll('button[id^="btn"]');
 
-            buttons.forEach((button) => {
-                let currentState = 'attempt';
+        buttons.forEach((button) => {
+            let currentState = 'attempt';
 
-                button.addEventListener('click', function (event) {
-                    event.preventDefault();
-                    if (currentState === 'attempt') {
-                        button.textContent = 'Attempting';
-                        button.className = 'btn btn-attempting';
-                        currentState = 'attempting';
-                    } else if (currentState === 'attempting') {
-                        button.textContent = 'Attempt in Progress';
-                        button.className = 'btn btn-progress';
-                        currentState = 'progress';
-                    } else {
-                        button.textContent = 'Attempt';
-                        button.className = 'btn btn-attempt';
-                        currentState = 'attempt';
-                    }
-                });
+            button.addEventListener('click', function (event) {
+                event.preventDefault();
+                if (currentState === 'attempt') {
+                    button.textContent = 'Attempting';
+                    button.className = 'btn btn-attempting';
+                    currentState = 'attempting';
+                } else if (currentState === 'attempting') {
+                    button.textContent = 'Attempt in Progress';
+                    button.className = 'btn btn-progress';
+                    currentState = 'progress';
+                } else {
+                    button.textContent = 'Attempt';
+                    button.className = 'btn btn-attempt';
+                    currentState = 'attempt';
+                }
             });
-        </script>
+        });
+    </script>
 </body>
 
 </html>
