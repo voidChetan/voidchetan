@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../custom.css">
     <style>
         .task-container {
-            padding: 20px;
+            padding: 10px;
             border: 1px solid #007bff;
             border-radius: 8px;
             background-color: #f9f9f9;
@@ -67,6 +67,20 @@
 
         }
 
+        .btn-clickevnet {
+            width: 100px;
+            height: 40px;
+            font-size: 12px;
+
+        }
+
+        .btn-clickevnet {
+            width: 100px;
+            height: 40px;
+            font-size: 12px;
+        }
+
+        /* 
         @media (max-width: 576px) {
             .col-12.col-sm-6.col-md-3 {
                 flex-basis: 100%;
@@ -79,13 +93,68 @@
                 flex-basis: 100%;
                 max-width: 100%;
             }
+        } */
+        @media (max-width: 798px) {
+            .task-container {
+                font-size: smaller;
+
+            }
+
+            .task-list {
+                /* text-align: left; */
+                padding: 10px;
+            }
+
+            .task-heading {
+                font-weight: bold;
+                font-size: 16px;
+                color: #007bff;
+            }
+
+            .btnCount {
+                font-size: 10px;
+            }
+
+        }
+
+        @media (max-width: 425px) {
+            .task-container {
+                font-size: 11px;
+
+            }
+
+            .task-list {
+                /* text-align: left; */
+                padding: 10px;
+            }
+
+            .task-heading {
+                font-weight: bold;
+                font-size: 13px;
+                color: #007bff;
+            }
+
+            .attepfont {
+                font-size: 12px;
+            }
+
+            .btn-clickevnet {
+                width: 100px;
+                height: 40px;
+                font-size: 8px;
+            }
+
+            .btnCount {
+                font-size: 8px;
+            }
+
         }
     </style>
 
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg voidChetan navbar-dark bg-dark">
+    <!-- <nav class="navbar navbar-expand-lg voidChetan navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.html">taskS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -128,8 +197,8 @@
                 </form>
             </div>
         </div>
-    </nav>
-    <div class="container pt-2">
+    </nav> -->
+    <!-- <div class="container pt-2">
         <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
             aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -137,311 +206,431 @@
                 <li class="breadcrumb-item active" aria-current="page">JavaScript</li>
                 <li class="breadcrumb-item active" aria-current="page">Events</li>
             </ol>
-        </nav>
+        </nav> -->
 
-        <div class="container mt-4">
-            <div class="row">
-                <!-- Task 1 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
-                    <div class="task-container">
-                        <div class="task-heading">Task 1 (Click Event)</div>
-                        <ul class="task-list">
-                            <li>
-                                Create on button <strong>Click Me</strong>.
-                                <button type="button" id="myBtn" class="btn btn-info btn-sm">Click Me</button>
-                            </li>
-                            <li>
-                                On the click on button showcase alert with text <strong>Hello Javascript</strong>
-                            </li>
-                        </ul>
-                        <button id="btn1" class="btn btn-attempt">Attempt</button>
-                    </div>
-                </div>
-
-                <script>
-                    document.getElementById('myBtn').addEventListener('click', function () {
-                        alert('Hello Javascript');
-                    });
-                </script>
-                <!-- Task 2 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
-                    <div class="task-container">
-                        <div class="task-heading">Task 2 (onblur Event or onchange)</div>
-                        <ul class="task-list">
-                            <li>Take three textboxes.</li>
-                            <li>Do multiplication of textbox 1 and 2 and store the result in textbox 3.</li>
-                        </ul>
-                        Example:
-                        <br>
-                        <input type="text" id="txt1" style="width: 30%;" placeholder="Num 1" onblur="multiplyValues()">
-                        &nbsp;
-                        <input type="text" id="txt2" style="width: 30%;" placeholder="Num 2" onblur="multiplyValues()">
-                        &nbsp;
-                        <input type="text" id="txt3" disabled style="width: 20%;" placeholder="Result">
-                        <br><br>
-                        <button id="btn2" class="btn btn-attempt">Attempt</button>
-                    </div>
-                </div>
-
-                <script>
-                    function multiplyValues() {
-                        const num1 = parseFloat(document.getElementById('txt1').value) || 0;
-                        const num2 = parseFloat(document.getElementById('txt2').value) || 0;
-                        document.getElementById('txt3').value = num1 * num2;
-                    }
-                </script>
-
-
-                <!-- Task 3 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
-                    <div class="task-container">
-                        <div class="task-heading">Task 3 (Keydown Event)</div>
-                        <ul class="task-list">
-                            <li>
-                                Take a one textbox and apply Keydown event in that textbox
-                            </li>
-                            <li>
-                                On the click on textbox you have to showcase alert box and show the message (You have
-                                pressed a key inside text input!)
-                            </li>
-                        </ul>
-                        example:
-                        <br> <input type="text" onkeydown="alert('You have pressed a key inside text input!')">
-
-                        </ul>
-                        <br>
-                        <br>
-                        <button id="btn3" class="btn btn-attempt">Attempt</button>
-                    </div>
-                </div>
-
-                <!-- Task 4 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
-                    <div class="task-container">
-                        <div class="task-heading">Task 4 (Change Event)</div>
-                        <ul class="task-list">
-                            <li>
-                                Create a dropdown with options of fruits
-                            </li>
-                            <li>
-                                add on change event and show selected value in strong tag
-                            </li>
-                        </ul>
-                        example <br>
-                        <div class="row">
-                            <div class="col-6">
-                                <select class="checkFruit" id="dplFruits">
-                                    <option>Select Fruit</option>
-                                    <option value="Mango">Mango</option>
-                                    <option value="Papaya">Papaya</option>
-                                    <option value="Orange">Orange</option>
-                                    <option value="Watermelon">Watermelon</option>
-                                </select>
-                            </div>
-                            <div class="col-6">
-                                <strong id="selectedVal" style="color:red"></strong>
-                            </div>
-                        </div>
-                        <br>
-                        <br>
-                        <button id="btn4" class="btn btn-attempt">Attempt</button>
-                    </div>
-                </div>
-
-                <script>
-                    const fruitDropdown = document.getElementById('dplFruits');
-                    const selectedVal = document.getElementById('selectedVal');
-                    fruitDropdown.addEventListener('change', function () {
-                        const selectedFruit = fruitDropdown.value;
-                        selectedVal.textContent = selectedFruit;
-                    });
-                </script>
-
-                <!-- Task 5 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
-                    <div class="task-container">
-                        <div class="task-heading">Task 5 (Calculator)</div>
-                        <ul class="task-list">
-                            <div class="row">
-                                <div class="col-6">
-                                    <input type="text" id="txtNum1" onkeydown="alert('23423')" class="form-control mb-2" placeholder="Num 1">
-                                </div>
-                                <div class="col-6">
-                                    <input type="text" id="txtNum2" class="form-control mb-2" placeholder="Num 2">
-                                </div>
-                            </div>
-                            <div class="row text-center mb-3">
-                                <div class="col-3" onmouseenter="onOperation('234')">
-                                    <button class="btn btn-sm btn-success" onclick="alert('add')"> + </button>
-                                </div>
-                                <div class="col-3">
-                                    <button class="btn btn-sm btn-success" onclick="onOperation('sub')"> -</button>
-                                </div>
-                                <div class="col-3">
-                                    <button class="btn btn-sm btn-success" onclick="onOperation('mul')">*</button>
-                                </div>
-                                <div class="col-3">
-                                    <button class="btn btn-sm btn-success" onclick="onOperation('div')">/</button>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12 mb-2">
-                                    <input type="text" id="txtResult" disabled class="form-control"
-                                        placeholder="Result">
-                                </div>
-                            </div>
-                        </ul>
-                        <button id="btn5" class="btn btn-attempt">Attempt</button>
-                    </div>
-                </div>
-
-                <script>
-                    function onOperation(operation) {
-                    debugger;
-                        const num1 = parseFloat(document.getElementById('txtNum1').value);
-                        const num2 = parseFloat(document.getElementById('txtNum2').value);
-                        let result;
-
-                        if (isNaN(num1) || isNaN(num2)) {
-                            result = "Please enter valid numbers.";
-                        } else {
-                            switch (operation) {
-                                case 'add':
-                                    result = num1 + num2;
-                                    break;
-                                case 'sub':
-                                    result = num1 - num2;
-                                    break;
-                                case 'mul':
-                                    result = num1 * num2;
-                                    break;
-                                case 'div':
-                                    if (num2 !== 0) {
-                                        result = num1 / num2;
-                                    } else {
-                                        result = "Cannot divide by zero";
-                                    }
-                                    break;
-                                default:
-                                    result = "Invalid operation";
-                            }
-                        }
-                        document.getElementById('txtResult').value = result;
-                    }
-                </script>
-                <!-- Task 6 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
-                    <div class="task-container">
-                        <div class="task-heading">Task 6 (Click Event)</div>
-                        <ul class="task-list">
-                            <li>
-                                Take a three button click on button and show one alert
-                                <br><br>
-                                <div class="d-flex justify-content-start">
-                                    <button id="btn1" class="btn btn-sm btn-info rectangular-btn me-2"
-                                        style="width: 100px; height: 40px; font-size: 12px;"
-                                        onclick="alert('Button 1 clicked')">Button 1</button>
-                                    <button id="btn2" class="btn btn-sm btn-info rectangular-btn me-2"
-                                        style="width: 100px; height: 40px; font-size: 12px;"
-                                        onclick="alert('Button 2 clicked')">Button 2</button>
-                                    <button id="btn3" class="btn btn-sm btn-info rectangular-btn"
-                                        style="width: 100px; height: 40px; font-size: 12px;"
-                                        onclick="alert('Button 3 clicked')">Button 3</button>
-                                </div>
-                                <br><br>
-                            </li>
-                        </ul>
-                        <button id="btn6" class="btn btn-attempt">Attempt</button>
-                    </div>
-                </div>
-
-                <!-- Task 7 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
-                    <div class="task-container">
-                        <div class="task-heading">Task 7 (Address Generator)</div>
-                        <div class="text-left"></div>
-                        <div class="row">
-                            <div class="col-6">
-                                <input type="text" id="txtPlot" class="form-control" placeholder="Plot No">
-                            </div>
-                            <div class="col-6">
-                                <input type="text" id="txtCity" class="form-control" placeholder="City">
-                            </div>
-                        </div>
-                        <div class="row mt-2">
-                            <div class="col-6">
-                                <input type="text" id="txtState" class="form-control" placeholder="State">
-                            </div>
-                            <div class="col-6">
-                                <input type="text" id="txtPin" class="form-control" placeholder="Pin">
-                            </div>
-                        </div>
-
-                        <div class="row text-center mt-4">
-                            <div class="col-12">
-                                <button class="btn btn-sm btn-success" onclick="onOperation('address')">Click To Get
-                                    Full Address Here</button>
-
-                            </div>
-                        </div>
-
-                        <div class="row mt-2">
-                            <div class="col-12">
-                                <p id="address"></p>
-                            </div>
-                        </div>
-
-                        <button id="btn13" class="btn btn-attempt">Attempt</button>
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <!-- Task 1 -->
+            <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task 1 (Click Event)</div>
+                    <ul class="task-list">
+                        <li>
+                            Create on button <strong>Click Me</strong>.
+                            <button type="button" id="myBtn" class="btn btn-info btn-sm">Click Me</button>
+                        </li>
+                        <li>
+                            On the click on button showcase alert with text <strong>Hello Javascript</strong>
+                        </li>
+                    </ul>
+                    <div class="text-center pt-4">
+                        <button id="btn1" class="btn btn-attempt attepfont">Attempt</button>
                     </div>
                 </div>
             </div>
+
             <script>
-                function onOperation(type) {
-                    debugger;
-                    if (type === 'address') {
-                        const plot = document.getElementById('txtPlot').value;
-                        const city = document.getElementById('txtCity').value;
-                        const state = document.getElementById('txtState').value;
-                        const pin = document.getElementById('txtPin').value;
-                        const fullAddress = `${plot}, ${city}, ${state} - ${pin}`;
-                        document.getElementById('address').innerText = fullAddress;
-                    }
-                }
+                document.getElementById('myBtn').addEventListener('click', function () {
+                    alert('Hello Javascript');
+                });
             </script>
-            <hr>
-            <h4>Advance Task</h4>
-            <hr>
-            <div class="container">
-                <div class="row">
-                    <!-- Task 1 -->
-                    <div class="col-12 col-sm-6 col-md-3 mb-4">
-                        <div class="task-container">
-                            <div class="task-heading">Task 1</div>
-                            <ul>
-                                <li>Create one button <strong>Enable Count</strong>.</li>
-                                <li>Create one more button to <strong>Record Counts</strong>.</li>
-                                <li>On clicking the Record Count button, we need to count how many times the user has
-                                    clicked the button, but only when Enable Count is clicked.</li>
-                            </ul>
-                            <div class="row mb-2 d-flex">
-                                <div class="col">
-                                    <button type="button" id="btnEnable" class="btn btn-info btn-full">Enable
-                                        Count</button>
-                                </div>
-                                <div class="col">
-                                    <button type="button" id="btnRecord" class="btn btn-info btn-full">Record
-                                        Click</button>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <span id="timeClicked" style="font-weight: bold;">0</span> Times Clicked
-                                </div>
-                            </div>
-                            <button id="btn8" class="btn btn-attempt btn-block mt-3">Attempt</button>
+            <!-- Task 2 -->
+            <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task 2 (onblur Event or onchange)</div>
+                    <ul class="task-list">
+                        <li>Take three textboxes.</li>
+                        <li>Do multiplication of textbox 1 and 2 and store the result in textbox 3.</li>
+                    </ul>
+                    Example:
+                    <br>
+                    <div class="row">
+                        <div class="col-4 ps-0">
+                            <input type="text" class="form-control" id="txt1" placeholder="Num1"
+                                onblur="multiplyValues()">
+                        </div>
+                        <div class="col-4 px-0">
+
+                            <input type="text" class="form-control" id="txt2" placeholder="Num2"
+                                onblur="multiplyValues()">
+                        </div>
+                        <div class="col-4 ps-1">
+
+                            <input type="text" class="form-control" id="txt3" disabled placeholder="Result">
                         </div>
                     </div>
 
+
+
+                    <br><br>
+                    <div class="text-center pt-5">
+                        <button id="btn2" class="btn btn-attempt attepfont">Attempt</button>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                function multiplyValues() {
+                    const num1 = parseFloat(document.getElementById('txt1').value) || 0;
+                    const num2 = parseFloat(document.getElementById('txt2').value) || 0;
+                    document.getElementById('txt3').value = num1 * num2;
+                }
+            </script>
+
+
+            <!-- Task 3 -->
+            <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task 3 (Keydown Event)</div>
+                    <ul class="task-list">
+                        <li>
+                            Take a one textbox and apply Keydown event in that textbox
+                        </li>
+                        <li>
+                            On the click on textbox you have to showcase alert box and show the message (You have
+                            pressed a key inside text input!)
+                        </li>
+                    </ul>
+                    example:
+                    <br> <input type="text" onkeydown="alert('You have pressed a key inside text input!')">
+
+                    </ul>
+                    <br>
+                    <br>
+                    <div class="text-center pt-2">
+                        <button id="btn3" class="btn btn-attempt attepfont attepfont">Attempt</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Task 4 -->
+            <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task 4 (Change Event)</div>
+                    <ul class="task-list">
+                        <li>
+                            Create a dropdown with options of fruits
+                        </li>
+                        <li>
+                            add on change event and show selected value in strong tag
+                        </li>
+                    </ul>
+                    example <br>
+                    <div class="row">
+                        <div class="col-6">
+                            <select class="checkFruit" id="dplFruits">
+                                <option>Select Fruit</option>
+                                <option value="Mango">Mango</option>
+                                <option value="Papaya">Papaya</option>
+                                <option value="Orange">Orange</option>
+                                <option value="Watermelon">Watermelon</option>
+                            </select>
+                        </div>
+                        <div class="col-6">
+                            <strong id="selectedVal" style="color:red"></strong>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="text-center">
+                        <button id="btn4" class="btn btn-attempt attepfont">Attempt</button>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                const fruitDropdown = document.getElementById('dplFruits');
+                const selectedVal = document.getElementById('selectedVal');
+                fruitDropdown.addEventListener('change', function () {
+                    const selectedFruit = fruitDropdown.value;
+                    selectedVal.textContent = selectedFruit;
+                });
+            </script>
+
+            <!-- Task 5 -->
+            <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task 5 (Calculator)</div>
+                    <ul class="task-list">
+                        <div class="row">
+                            <div class="col-6">
+                                <input type="text" id="txtNum1" onkeydown="alert('23423')" class="form-control mb-2"
+                                    placeholder="Num 1">
+                            </div>
+                            <div class="col-6">
+                                <input type="text" id="txtNum2" class="form-control mb-2" placeholder="Num 2">
+                            </div>
+                        </div>
+                        <div class="row text-center mb-3">
+                            <div class="col-3" onmouseenter="onOperation('234')">
+                                <button class="btn btn-sm btn-success" onclick="alert('add')"> + </button>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-sm btn-success" onclick="onOperation('sub')"> -</button>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-sm btn-success" onclick="onOperation('mul')">*</button>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-sm btn-success" onclick="onOperation('div')">/</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mb-2">
+                                <input type="text" id="txtResult" disabled class="form-control" placeholder="Result">
+                            </div>
+                        </div>
+                    </ul>
+                    <div class="text-center pt-5">
+                        <button id="btn5" class="btn btn-attempt attepfont">Attempt</button>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                function onOperation(operation) {
+                    debugger;
+                    const num1 = parseFloat(document.getElementById('txtNum1').value);
+                    const num2 = parseFloat(document.getElementById('txtNum2').value);
+                    let result;
+
+                    if (isNaN(num1) || isNaN(num2)) {
+                        result = "Please enter valid numbers.";
+                    } else {
+                        switch (operation) {
+                            case 'add':
+                                result = num1 + num2;
+                                break;
+                            case 'sub':
+                                result = num1 - num2;
+                                break;
+                            case 'mul':
+                                result = num1 * num2;
+                                break;
+                            case 'div':
+                                if (num2 !== 0) {
+                                    result = num1 / num2;
+                                } else {
+                                    result = "Cannot divide by zero";
+                                }
+                                break;
+                            default:
+                                result = "Invalid operation";
+                        }
+                    }
+                    document.getElementById('txtResult').value = result;
+                }
+            </script>
+            <!-- Task 6 -->
+            <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task 6 (Click Event)</div>
+                    <ul class="task-list">
+                        <li>
+                            Take a three button click on button and show one alert
+                            <br><br>
+
+
+                        </li>
+                    </ul>
+                    <div class="d-flex justify-content-center ">
+                        <button id="btn1" class="btn btn-sm btn-info rectangular-btn me-2 btn-clickevnet"
+                            onclick="alert('Button 1 clicked')">Button 1</button>
+                        <button id="btn2" class="btn btn-sm btn-info rectangular-btn me-2 btn-clickevnet"
+                            onclick="alert('Button 2 clicked')">Button 2</button>
+                        <button id="btn3" class="btn btn-sm btn-info rectangular-btn btn-clickevnet"
+                            onclick="alert('Button 3 clicked')">Button 3</button>
+                    </div>
+                    <div class="text-center pt-5">
+                        <button id="btn6" class="btn btn-attempt attepfont">Attempt</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Task 7 -->
+            <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task 7 (Address Generator)</div>
+                    <div class="text-left"></div>
+                    <div class="row">
+                        <div class="col-6">
+                            <input type="text" id="txtPlot" class="form-control" placeholder="Plot No">
+                        </div>
+                        <div class="col-6">
+                            <input type="text" id="txtCity" class="form-control" placeholder="City">
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-6">
+                            <input type="text" id="txtState" class="form-control" placeholder="State">
+                        </div>
+                        <div class="col-6">
+                            <input type="text" id="txtPin" class="form-control" placeholder="Pin">
+                        </div>
+                    </div>
+
+                    <div class="row text-center mt-4">
+                        <div class="col-12">
+                            <button class="btn btn-sm btn-success" onclick="onOperation('address')">Click To Get
+                                Full Address Here</button>
+
+                        </div>
+                    </div>
+
+                    <div class="row mt-2">
+                        <div class="col-12">
+                            <p id="address"></p>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button id="btn13" class="btn btn-attempt attepfont">Attempt</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function onOperation(type) {
+                debugger;
+                if (type === 'address') {
+                    const plot = document.getElementById('txtPlot').value;
+                    const city = document.getElementById('txtCity').value;
+                    const state = document.getElementById('txtState').value;
+                    const pin = document.getElementById('txtPin').value;
+                    const fullAddress = `${plot}, ${city}, ${state} - ${pin}`;
+                    document.getElementById('address').innerText = fullAddress;
+                }
+            }
+        </script>
+        <hr>
+        <h4>Advance Task</h4>
+        <hr>
+
+        <div class="row">
+            <!-- Task 1 -->
+            <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task 1</div>
+                    <ul>
+                        <li>Create one button <strong>Enable Count</strong>.</li>
+                        <li>Create one more button to <strong>Record Counts</strong>.</li>
+                        <li>On clicking the Record Count button, we need to count how many times the user has
+                            clicked the button, but only when Enable Count is clicked.</li>
+                    </ul>
+                    <div class="row mb-2 d-flex">
+                        <div class="col-6">
+                            <button type="button" id="btnEnable" class="btn btn-info  btnCount">Enable
+                                Count</button>
+                        </div>
+                        <div class="col-6">
+                            <button type="button" id="btnRecord" class="btn btn-info  btnCount">Record
+                                Click</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <span id="timeClicked" style="font-weight: bold;">0</span> Times Clicked
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button id="btn8" class="btn btn-attempt attepfont btn-block mt-3">Attempt</button>
+                    </div>
+                </div>
+            </div>
+
+            <style>
+                .task-container {
+                    padding: 15px;
+                    border: 1px solid #dee2e6;
+                    border-radius: 5px;
+                    background-color: #f8f9fa;
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                }
+
+                .btn-full {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                .btn-attempt {
+                    color: white;
+                    background-color: #007bff;
+                }
+            </style>
+
+            <script>
+                var isEnabled = false;
+                var counter = 0;
+
+                $(document).ready(function () {
+                    $("#btnEnable").click(function () {
+                        isEnabled = true;
+                        alert("Count Enabled 🙌 You can now record clicks 🫡");
+                    });
+                    $("#btnRecord").click(function () {
+                        if (isEnabled) {
+                            counter++;
+                            $("#timeClicked").html(counter);
+                        } else {
+                            alert("Count is not enabled yet 😭, Please click 'Enable Count' button 👈 first.");
+                        }
+                    });
+                });
+            </script>
+
+            <!-- Task 2 -->
+            <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task 2</div>
+                    <ul>
+                        <li>Create Unique Customer Id</li>
+                        <li>Create 4 Text fields to Enter First Name, Middle Name, Last Name, and Mobile No of
+                            Customer</li>
+                        <li>Create a button <strong>Generate Unique Id</strong></li>
+                        <li>Unique Id => current Date day + First 2 Letters of First Name + Last 2 Letters of
+                            Last Name + Last 4 Digits of Mobile No - separated by -</li>
+                        <li>On Change of each textbox, Unique Id should be created and displayed in a
+                            <code>&lt;p&gt;</code> tag below
+                        </li>
+                    </ul>
+                    <div class="row mb-1">
+                        <div class="col-6">
+                            <input type="text" class="unq form-control" id="txtFName" placeholder="First Name">
+                        </div>
+                        <div class="col-6">
+                            <input type="text" class="unq form-control" id="txtMName" placeholder="Middle Name">
+                        </div>
+                    </div>
+                    <div class="row mb-1">
+                        <div class="col-6">
+                            <input type="text" class="unq form-control" id="txtLName" placeholder="Last Name">
+                        </div>
+                        <div class="col-6">
+                            <input type="text" class="unq form-control" id="txtMOBILE" placeholder="Mobile">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <p id="uniqueId" class="mt-2"></p>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button id="btn9" class="btn btn-attempt attepfont btn-block mt-2">Attempt</button>
+                    </div>
+                    <script>
+                        $(document).ready(function () {
+                            $(".unq").on("input", function () {
+                                const firstName = $("#txtFName").val();
+                                const lastName = $("#txtLName").val();
+                                const mobile = $("#txtMOBILE").val();
+                                const day = new Date().getDate();
+                                const firstTwoFName = firstName ? firstName.substring(0, 2) : "";
+                                const lastTwoLName = lastName ? lastName.slice(-2) : "";
+                                const lastFourMobile = mobile ? mobile.slice(-4) : "";
+                                const uniqueId = `${day}-${firstTwoFName}-${lastTwoLName}-${lastFourMobile}`;
+                                $("#uniqueId").text(uniqueId);
+                            });
+                        });
+                    </script>
                     <style>
                         .task-container {
                             padding: 15px;
@@ -451,154 +640,66 @@
                             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
                         }
 
-                        .btn-full {
-                            width: 100%;
-                            height: 100%;
-                        }
-
                         .btn-attempt {
                             color: white;
                             background-color: #007bff;
                         }
+
+                        .form-control {
+                            margin-bottom: 5px;
+                        }
+
+                        #uniqueId {
+                            font-weight: bold;
+                            margin-top: 5px;
+                        }
                     </style>
-
-                    <script>
-                        var isEnabled = false;
-                        var counter = 0;
-
-                        $(document).ready(function () {
-                            $("#btnEnable").click(function () {
-                                isEnabled = true;
-                                alert("Count Enabled 🙌 You can now record clicks 🫡");
-                            });
-                            $("#btnRecord").click(function () {
-                                if (isEnabled) {
-                                    counter++;
-                                    $("#timeClicked").html(counter);
-                                } else {
-                                    alert("Count is not enabled yet 😭, Please click 'Enable Count' button 👈 first.");
-                                }
-                            });
-                        });
-                    </script>
-
-                    <!-- Task 2 -->
-                    <div class="col-12 col-sm-6 col-md-3 mb-4">
-                        <div class="task-container">
-                            <div class="task-heading">Task 2</div>
-                            <ul>
-                                <li>Create Unique Customer Id</li>
-                                <li>Create 4 Text fields to Enter First Name, Middle Name, Last Name, and Mobile No of
-                                    Customer</li>
-                                <li>Create a button <strong>Generate Unique Id</strong></li>
-                                <li>Unique Id => current Date day + First 2 Letters of First Name + Last 2 Letters of
-                                    Last Name + Last 4 Digits of Mobile No - separated by -</li>
-                                <li>On Change of each textbox, Unique Id should be created and displayed in a
-                                    <code>&lt;p&gt;</code> tag below
-                                </li>
-                            </ul>
-                            <div class="row mb-1">
-                                <div class="col-6">
-                                    <input type="text" class="unq form-control" id="txtFName" placeholder="First Name">
-                                </div>
-                                <div class="col-6">
-                                    <input type="text" class="unq form-control" id="txtMName" placeholder="Middle Name">
-                                </div>
-                            </div>
-                            <div class="row mb-1">
-                                <div class="col-6">
-                                    <input type="text" class="unq form-control" id="txtLName" placeholder="Last Name">
-                                </div>
-                                <div class="col-6">
-                                    <input type="text" class="unq form-control" id="txtMOBILE" placeholder="Mobile">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <p id="uniqueId" class="mt-2"></p>
-                                </div>
-                            </div>
-                            <button id="btn9" class="btn btn-attempt btn-block mt-2">Attempt</button>
-                            <script>
-                                $(document).ready(function () {
-                                    $(".unq").on("input", function () {
-                                        const firstName = $("#txtFName").val();
-                                        const lastName = $("#txtLName").val();
-                                        const mobile = $("#txtMOBILE").val();
-                                        const day = new Date().getDate();
-                                        const firstTwoFName = firstName ? firstName.substring(0, 2) : "";
-                                        const lastTwoLName = lastName ? lastName.slice(-2) : "";
-                                        const lastFourMobile = mobile ? mobile.slice(-4) : "";
-                                        const uniqueId = `${day}-${firstTwoFName}-${lastTwoLName}-${lastFourMobile}`;
-                                        $("#uniqueId").text(uniqueId);
-                                    });
-                                });
-                            </script>
-                            <style>
-                                .task-container {
-                                    padding: 15px;
-                                    border: 1px solid #dee2e6;
-                                    border-radius: 5px;
-                                    background-color: #f8f9fa;
-                                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                                }
-
-                                .btn-attempt {
-                                    color: white;
-                                    background-color: #007bff;
-                                }
-
-                                .form-control {
-                                    margin-bottom: 5px;
-                                }
-
-                                #uniqueId {
-                                    font-weight: bold;
-                                    margin-top: 5px;
-                                }
-                            </style>
-                        </div>
+                </div>
+            </div>
+            <!-- Task 3 -->
+            <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task 3</div>
+                    <ul>
+                        <li>
+                            create a varibel store current date into it
+                        </li>
+                        <li>
+                            Add 2 Months into that day & add 6 days into date..then print new Date in
+                            <code>&lt;p&gt;</code> Tag
+                        </li>
+                    </ul>
+                    <div class="text-center">
+                        <button id="btn10" class="btn btn-attempt attepfont">Attempt</button>
                     </div>
-                    <!-- Task 3 -->
-                    <div class="col-12 col-sm-6 col-md-3 mb-4">
-                        <div class="task-container">
-                            <div class="task-heading">Task 3</div>
-                            <ul>
-                                <li>
-                                    create a varibel store current date into it
-                                </li>
-                                <li>
-                                    Add 2 Months into that day & add 6 days into date..then print new Date in
-                                    <code>&lt;p&gt;</code> Tag
-                                </li>
-                            </ul>
-                            <button id="btn10" class="btn btn-attempt">Attempt</button>
-                        </div>
-                    </div>
-
-                    <!-- Task 4 -->
-                    <div class="col-12 col-sm-6 col-md-3 mb-4">
-                        <div class="task-container">
-                            <div class="task-heading">Task 4</div>
-                            <ul>
-                                <li>
-                                    Create a Object to store Employee Details - name, id, city, state etc
-                                </li>
-                                <li>
-                                    we need to print keys we have in object - in <code>&lt;UL&gt;</code> -
-                                    <code>&lt;Li&gt;</code> tag
-                                </li>
-                            </ul>
-                            <button id="btn11" class="btn btn-attempt">Attempt</button>
-                        </div>
-                    </div>
-
                 </div>
             </div>
 
-            <script type="text/javascript" src="../menu.js"></script>
+            <!-- Task 4 -->
+            <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task 4</div>
+                    <ul>
+                        <li>
+                            Create a Object to store Employee Details - name, id, city, state etc
+                        </li>
+                        <li>
+                            we need to print keys we have in object - in <code>&lt;UL&gt;</code> -
+                            <code>&lt;Li&gt;</code> tag
+                        </li>
+                    </ul>
+                    <div class="text-center pt-5">
+                        <button id="btn11" class="btn btn-attempt attepfont">Attempt</button>
+                    </div>
+                </div>
+            </div>
 
-            <!-- <script>
+        </div>
+
+    </div>
+    <script type="text/javascript" src="../menu.js"></script>
+
+    <!-- <script>
         const buttons = document.querySelectorAll('button[id^="btn"]');
 
         buttons.forEach((button) => {
@@ -622,6 +723,7 @@
             });
         });
     </script> -->
+
 </body>
 
 </html>
