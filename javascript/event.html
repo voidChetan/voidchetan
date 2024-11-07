@@ -148,6 +148,10 @@
                 font-size: 8px;
             }
 
+            .form-control::placeholder {
+                font-size: 9px;
+            }
+
         }
     </style>
 
@@ -313,7 +317,7 @@
                     example <br>
                     <div class="row">
                         <div class="col-6">
-                            <select class="checkFruit" id="dplFruits">
+                            <select class="checkFruit form-control" id="dplFruits">
                                 <option>Select Fruit</option>
                                 <option value="Mango">Mango</option>
                                 <option value="Papaya">Papaya</option>
@@ -424,8 +428,6 @@
                         <li>
                             Take a three button click on button and show one alert
                             <br><br>
-
-
                         </li>
                     </ul>
                     <div class="d-flex justify-content-center ">
@@ -463,7 +465,6 @@
                             <input type="text" id="txtPin" class="form-control" placeholder="Pin">
                         </div>
                     </div>
-
                     <div class="row text-center mt-4">
                         <div class="col-12">
                             <button class="btn btn-sm btn-success" onclick="onOperation('address')">Click To Get
@@ -471,7 +472,6 @@
 
                         </div>
                     </div>
-
                     <div class="row mt-2">
                         <div class="col-12">
                             <p id="address"></p>
