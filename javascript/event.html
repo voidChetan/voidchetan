@@ -79,7 +79,12 @@
             height: 40px;
             font-size: 12px;
         }
-
+        .name-place::placeholder{
+            font-size: 13px;
+        }
+        .selector-font{
+                font-size: 12px;
+            }
         /* 
         @media (max-width: 576px) {
             .col-12.col-sm-6.col-md-3 {
@@ -294,7 +299,7 @@
                         </li>
                     </ul>
                     example:
-                    <br> <input type="text" onkeydown="alert('You have pressed a key inside text input!')">
+                    <br> <input type="text" class="form-control" onkeydown="alert('You have pressed a key inside text input!')">
 
                     </ul>
                     <br>
@@ -592,18 +597,18 @@
                     </ul>
                     <div class="row mb-1">
                         <div class="col-6">
-                            <input type="text" class="unq form-control" id="txtFName" placeholder="First Name">
+                            <input type="text" class="unq form-control name-place" id="txtFName" placeholder="First Name">
                         </div>
                         <div class="col-6">
-                            <input type="text" class="unq form-control" id="txtMName" placeholder="Middle Name">
+                            <input type="text" class="unq form-control name-place" id="txtMName" placeholder="Middle Name">
                         </div>
                     </div>
                     <div class="row mb-1">
                         <div class="col-6">
-                            <input type="text" class="unq form-control" id="txtLName" placeholder="Last Name">
+                            <input type="text" class="unq form-control name-place" id="txtLName" placeholder="Last Name">
                         </div>
                         <div class="col-6">
-                            <input type="text" class="unq form-control" id="txtMOBILE" placeholder="Mobile">
+                            <input type="text" class="unq form-control name-place"  id="txtMOBILE" placeholder="Mobile">
                         </div>
                     </div>
                     <div class="row">
