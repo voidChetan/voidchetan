@@ -95,6 +95,15 @@
                 font-size: 16px;
                 color: #007bff;
             }
+
+            .arrya {
+                font-size: 11px;
+
+            }
+
+            .arryacity {
+                font-size: 8px;
+            }
         }
 
         @media (max-width: 425px) {
@@ -115,9 +124,22 @@
             }
 
             .attepfont {
-                font-size: 12px;
+                font-size: 11px;
             }
 
+            .arrya {
+                font-size: 10px;
+            }
+
+            .arryacity {
+                font-size: 5px;
+            }
+        }
+
+        @media (max-width: 425px) {
+            .arrya {
+                font-size: 8px;
+            }
         }
     </style>
     <script>
@@ -295,11 +317,13 @@
                         <li>Create 2 array of integers </li>
                         <li>Get sum of both numbers from array and print it in storng tag. </li>
                     </ul>
-                    <div class="row">
-                        <pre style="text-align: left;">
-<u>Example</u> : 
-let arr_1 = [3,5,22,5,7,2,45,75,89,21,2]; // --> 276
-let arr_2 = [9,2,42,55,71,22,4,5,90,25,26]; // --> 351
+                    <div class="row arrya">
+                        <pre style="text-align: left; ">
+<span>Example</span> : 
+let arr_1 = [3,5,22,5,7,2,45,75,89]; 
+--> 253
+let arr_2 = [9,2,42,55,71,22,4,5,90]; 
+--> 300
                             </pre>
                         <div class="d-flex justify-content-center">
                             <button class="btn btn-success btn-full px-2" onclick="calculateTotalSum()">Calculate Total
@@ -310,8 +334,8 @@ let arr_2 = [9,2,42,55,71,22,4,5,90,25,26]; // --> 351
 
                         <script>
                             function calculateTotalSum() {
-                                let arr_1 = [3, 5, 22, 5, 7, 2, 45, 75, 89, 21, 2];
-                                let arr_2 = [9, 2, 42, 55, 71, 22, 4, 5, 90, 25, 26];
+                                let arr_1 = [3, 5, 22, 5, 7, 2, 45, 75, 89];
+                                let arr_2 = [9, 2, 42, 55, 71, 22, 4, 5, 90];
                                 let sumArray1 = 0;
                                 let sumArray2 = 0;
                                 for (let i = 0; i < arr_1.length; i++) {
@@ -341,9 +365,9 @@ let arr_2 = [9,2,42,55,71,22,4,5,90,25,26]; // --> 351
                     </ul>
                     <div class="row">
                         <div class="col-12">
-                            <pre>
+                            <pre class="arryacity">
 <u>Example</u> : 
-var cityList = ["Pune", "Nagpur", "Thane", "Mumbai"];
+var cityList = ["Pune","Nagpur","Thane","Mumbai"];
                                 </pre>
                         </div>
                     </div>
@@ -453,7 +477,6 @@ var cityList = ["Pune", "Nagpur", "Thane", "Mumbai"];
                         <li>Create a textarea , a textbox to enter a character and button</li>
                         <li>on <code>click</code> of button - check how many times we have that character in
                             textarea and print count in the <code>p</code> tag</li>
-
                     </ul>
                     <div class="text-center">
                         <button id="btn11" class="btn btn-attempt attepfont">Attempt</button>
