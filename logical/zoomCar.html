@@ -16,7 +16,7 @@
 
     <style>
         .task-container {
-            padding: 20px;
+            padding: 16px;
             border: 1px solid #007bff;
             border-radius: 8px;
             background-color: #f9f9f9;
@@ -73,23 +73,85 @@
             cursor: pointer !important;
         }
 
-        @media (max-width: 576px) {
-            .col-12.col-sm-6.col-md-3 {
-                flex-basis: 100%;
-                max-width: 100%;
-            }
+        .myBox {
+            padding: 13px !important;
+            border-color: #007bff !important;
         }
 
-        @media (max-width: 768px) {
-            .col-12.col-sm-6.col-md-3 {
-                flex-basis: 100%;
-                max-width: 100%;
+        @media (max-width: 798px) {
+            .task-container {
+                font-size: smaller;
             }
+
+            .task-list {
+                padding: 10px;
+            }
+
+            .task-heading {
+                font-weight: bold;
+                font-size: 16px;
+                color: #007bff;
+            }
+
+            .form-control::placeholder {
+                font-size: 11px;
+            }
+
+            .selector-font {
+                font-size: 12px;
+            }
+
         }
 
         @media (max-width: 425px) {
+            .task-container {
+                font-size: 11px;
+            }
+
+            .task-list {
+                padding: 10px;
+            }
+
+            .task-heading {
+                font-weight: bold;
+                font-size: 13px;
+                color: #007bff;
+            }
+            .attepfont {
+                font-size: 12px;
+            }
+
             .clearbtn {
                 text-align: center;
+            }
+        }
+
+        @media (max-width: 375px) {
+            .task-container {
+                font-size: 11px;
+            }
+
+            .task-list {
+                padding: 10px;
+            }
+
+            .task-heading {
+                font-weight: bold;
+                font-size: 13px;
+                color: #007bff;
+            }
+            .attepfont {
+                font-size: 14px;
+            }
+
+            .selector-font {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 375px) {
+            .selector-font {
+                font-size: 12px;
             }
         }
     </style>
@@ -97,7 +159,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg voidChetan navbar-dark bg-dark">
+    <!-- <nav class="navbar navbar-expand-lg voidChetan navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.html">taskS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -140,131 +202,126 @@
                 </form>
             </div>
         </div>
-    </nav>
-    <div class="container pt-1">
-        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+    </nav> -->
+    <!-- <div class="container pt-1"> -->
+    <!-- <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
             aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Angular</li>
                 <li class="breadcrumb-item active" aria-current="page">Logical</li>
             </ol>
-        </nav>
-        <div class="container mt-4">
-            <div class="row">
-                <!-- Task 1 -->
-                <div class="col-12 col-sm-12 col-md-12 mb-4">
-                    <div class="task-container">
-                        <div class="task-heading">Task 1</div>
-                        <div class="myBox">
-                            <div class="text-center">
-                                <h3>Zoom Car Rental System</h3>
-                            </div>
-                            <div class="row">
-                                <div class="col-12 col-md-6 col-lg-6 col-sm-12 mb-4 "
-                                    style="background-color: lightgray;">
-                                    <div class="row  text-center">
-                                        <div class="col-12">
-                                            <h6>Admin Panel</h6>
-                                        </div>
+        </nav> -->
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <!-- Task 1 -->
+            <div class="col-12 col-sm-12 col-md-12 mb-4">
+                <div class="task-container">
+                    <div class="task-heading">Task 1</div>
+               
+                        <div class="text-center">
+                            <h3>Zoom Car Rental System</h3>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-md-6 col-lg-6 col-sm-6 " style="background-color: lightgray;">
+                                <div class="row  text-center">
+                                    <div class="col-12">
+                                        <h6>Admin Panel</h6>
                                     </div>
-                                    <div class="row pb-1">
-                                        <div class="col-3 col-md-3 col-sm-3 col-lg-3">
-                                            <input type="text" id="txtCarName" class="form-control"
-                                                placeholder="Car Name">
-                                        </div>
-                                        <div class="col-3 col-md-3 col-sm-3 col-lg-3">
-                                            <input type="text" id="txtRatePerHr" class="form-control"
-                                                placeholder="Rate/hr">
-                                        </div>
-                                        <div class="col-3 col-md-3 col-sm-3 col-lg-3">
-                                            <input type="text" id="txtRatePerDay" class="form-control"
-                                                placeholder="Rate/Day">
-                                        </div>
-                                        <div class="col-3 col-md-3 col-sm-3 col-lg-3">
-                                            <button class="btn btn-sm btn-success" id="btnAdd">Add Car </button>
-                                        </div>
-                                    </div>
-                                    <table class="table table-bordered table-success" id="tblCars">
-                                        <thead>
-                                            <tr>
-                                                <th>Sr No</th>
-                                                <th>Car </th>
-                                                <th class='text-end'>Rate / Hr</th>
-                                                <th class='text-end'>Rate / Day</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        </tbody>
-                                    </table>
                                 </div>
-                                <div class="col-12 col-md-6 col-lg-6 col-sm-12 pt-2 ">
-                                    <div class="row  text-center">
-                                        <div class="col-12">
-                                            <h6>Booking Form </h6>
-                                        </div>
+                                <div class="row pb-1">
+                                    <div class="col-3 col-md-3 col-sm-3 col-lg-3">
+                                        <input type="text" id="txtCarName" class="form-control" placeholder="Car Name">
                                     </div>
-                                    <div class="row">
-                                        <div class="col-6 col-md-6 col-sm-6 col-lg-6">
-                                            <Select id="dpdlCar" class="form-control">
-                                                <option value="">Select Car</option>
-                                            </Select>
-                                        </div>
-                                        <div class="col-6 col-md-6 col-sm-6 col-lg-6">
-                                            <Select id="type" class="form-control">
-                                                <option value="">Select Rent Type</option>
-                                                <option value="Per Day">Per Day</option>
-                                                <option value="Per Hr">Per Hr</option>
-                                            </Select>
-                                        </div>
-                                        <div class="col-4 col-md-4 col-sm-4 col-lg-4 pt-2">
-                                            <input type="text" class="form-control perDay" id="perQuantityDay"
-                                                placeholder="Enter Days">
-                                            <input type="text" class="form-control perHr" id="perQuantityHr"
-                                                placeholder="Enter Hrs">
-                                        </div>
-                                        <div class="col-4 col-md-4 col-sm-4 col-lg-4  pt-2">
-                                            <input type="text" class="form-control" id="txtQty"
-                                                placeholder="No Of Cars">
-                                        </div>
-                                        <div class="col-4 col-md-4 col-sm-4 col-lg-4  pt-2">
-                                            <button class="btn btn-sm btn-success" id="btnAddCars">Add </button>
-                                        </div>
+                                    <div class="col-3 col-md-3 col-sm-3 col-lg-3">
+                                        <input type="text" id="txtRatePerHr" class="form-control" placeholder="Rate/hr">
                                     </div>
-                                    <div class="row mb-4">
-                                        <div class="col-12">
-                                            <ul id="selectedCars">
-                                            </ul>
-                                        </div>
+                                    <div class="col-3 col-md-3 col-sm-3 col-lg-3">
+                                        <input type="text" id="txtRatePerDay" class="form-control"
+                                            placeholder="Rate/Day">
                                     </div>
-                                    <div class="row">
-                                        <div class="col-12 col-md-12 pt-2 clearbtn d-inline">
-                                            <button class="btn btn-sm btn-danger" id="btnClear">Clear</button>
-                                            <button class="btn btn-sm btn-success" id="btnCal">Calculate Bill</button>
-                                        </div>
+                                    <div class="col-3 col-md-3 col-sm-3 col-lg-3">
+                                        <button class="btn btn-sm btn-success" id="btnAdd">Add Car </button>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-12 pt-2">
-                                            <div class="row text-center" id="divBill" style="background-color: teal;">
-                                                <div class="col-12 text-center">
-                                                    <strong>Total Bill Amount </strong> <br>
-                                                    <span id="btnillAmt"></span>
-                                                </div>
+                                </div>
+                                <table class="table table-bordered table-success" id="tblCars">
+                                    <thead>
+                                        <tr>
+                                            <th>Sr No</th>
+                                            <th>Car </th>
+                                            <th class='text-end'>Rate / Hr</th>
+                                            <th class='text-end'>Rate / Day</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-6 col-sm-6 pt-2 ">
+                                <div class="row  text-center">
+                                    <div class="col-12">
+                                        <h6>Booking Form </h6>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6 col-md-6 col-sm-6 col-lg-6">
+                                        <Select id="dpdlCar" class="form-control">
+                                            <option value="">Select Car</option>
+                                        </Select>
+                                    </div>
+                                    <div class="col-6 col-md-6 col-sm-6 col-lg-6">
+                                        <Select id="type" class="form-control">
+                                            <option value="">Select Rent Type</option>
+                                            <option value="Per Day">Per Day</option>
+                                            <option value="Per Hr">Per Hr</option>
+                                        </Select>
+                                    </div>
+                                    <div class="col-4 col-md-4 col-sm-4 col-lg-4 pt-2">
+                                        <input type="text" class="form-control perDay" id="perQuantityDay"
+                                            placeholder="Enter Days">
+                                        <input type="text" class="form-control perHr" id="perQuantityHr"
+                                            placeholder="Enter Hrs">
+                                    </div>
+                                    <div class="col-4 col-md-4 col-sm-4 col-lg-4  pt-2">
+                                        <input type="text" class="form-control" id="txtQty" placeholder="No Of Cars">
+                                    </div>
+                                    <div class="col-4 col-md-4 col-sm-4 col-lg-4  pt-2">
+                                        <button class="btn btn-sm btn-success" id="btnAddCars">Add </button>
+                                    </div>
+                                </div>
+                                <div class="row mb-4">
+                                    <div class="col-12">
+                                        <ul id="selectedCars">
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 col-md-12 pt-2 clearbtn d-inline">
+                                        <button class="btn btn-sm btn-danger" id="btnClear">Clear</button>
+                                        <button class="btn btn-sm btn-success" id="btnCal">Calculate Bill</button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 pt-2">
+                                        <div class="row text-center" id="divBill" style="background-color: teal;">
+                                            <div class="col-12 text-center">
+                                                <strong>Total Bill Amount </strong> <br>
+                                                <span id="btnillAmt"></span>
                                             </div>
                                         </div>
-                                        <div class="pb-5"></div>
                                     </div>
+                                    <div class="pb-5"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="text-center pt-3">
-                            <button id="btn1" class="btn btn-attempt">Attempt</button>
-
-                        </div>
+                  
+                    <div class="text-center pt-3">
+                        <button id="btn1" class="btn btn-attempt">Attempt</button>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     </div>
     <script type="text/javascript" src="../menu.js"></script>
