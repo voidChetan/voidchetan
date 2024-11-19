@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Dynamic Tab with Counter</title>
+    <style>
+        .card {
+            cursor: pointer !important;
+        }
+
+        .task-container {
+            padding: 20px;
+            border: 1px solid #007bff;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+            height: 100%;
+        }
+
+        .task-container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            background-color: #d3ffce;
+        }
+
+        .task-heading {
+            font-size: 15px;
+            color: black;
+        }
+
+        .counter-section {
+            text-align: center;
+            padding: 20px;
+        }
+
+        #counter {
+            font-size: 48px;
+            margin: 20px 0;
+        }
+
+        button,
+        input[type="number"] {
+            font-size: 20px;
+            margin: 5px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button {
+            background-color: cyan;
+            color: black;
+        }
+
+        input[type="number"] {
+            width: 80px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <!-- Task : Counter -->
+            <div class="col-12 col-sm-6 col-md-6 mb-4">
+                <div class="task-container">
+                    <div class="task-heading">
+                        Task 1: Counter
+                        <ul>
+                            <li>Create a variable to store the initial value of the counter as <code>5</code>.</li>
+                            <li>Create two buttons, one to increment and one to decrement the counter by a step value.
+                            </li>
+                            <li>Add an input field to allow users to set the step value (default is 6).</li>
+                            <li>Add a "Reset" button that resets the counter to its initial value and restores the
+                                default step value.</li>
+                            <li>On each button click, dynamically update the displayed counter value.</li>
+                        </ul>
+                    </div>
+                    <div class="counter-section">
+                        <h3>Counter</h3>
+                        <div id="counter">5</div>
+                        <div>
+                            <button id="decrement">-</button>
+                            <button id="increment">+</button>
+                            <input type="number" id="step" value="6">
+                        </div>
+                        <button id="reset">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        //  Counter functionality
+        let counterValue = 5;
+
+        const counterDisplay = document.getElementById('counter');
+        const incrementButton = document.getElementById('increment');
+        const decrementButton = document.getElementById('decrement');
+        const resetButton = document.getElementById('reset');
+        const stepInput = document.getElementById('step');
+
+        function updateCounterDisplay() {
+            counterDisplay.textContent = counterValue;
+        }
+
+        incrementButton.addEventListener('click', () => {
+            const step = parseInt(stepInput.value, 10) || 0;
+            counterValue += step;
+            updateCounterDisplay();
+        });
+
+        decrementButton.addEventListener('click', () => {
+            const step = parseInt(stepInput.value, 10) || 0;
+            counterValue -= step;
+            updateCounterDisplay();
+        });
+
+        resetButton.addEventListener('click', () => {
+            counterValue = 5;
+            stepInput.value = 6;
+            updateCounterDisplay();
+        });
+
+        updateCounterDisplay();
+    </script>
+</body>
+
+</html>
