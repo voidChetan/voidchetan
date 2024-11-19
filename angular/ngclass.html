@@ -3,9 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ng-Class</title>
+    <title>JavaScript Task Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -23,7 +22,7 @@
                 $("#div1").removeClass('bg-success');
                 $("#div1").addClass('bg-danger')
             });
-            
+
             $('#divLanguages').on('click', '.btnLang', function () {
                 $('#divLanguages .btnLang').each(function (idx, itm) {
                     $(itm).removeClass('btn-success');
@@ -33,41 +32,114 @@
             $("#btnAdd").click(function () {
                 ;
                 $("#mainDiv").removeClass('col-12');
-                $("#mainDiv").addClass('col-7'); 
-                $("#sideDiv").show(); 
+                $("#mainDiv").addClass('col-7');
+                $("#sideDiv").show();
             });
             $("#btnClose").click(function () {
                 ;
                 $("#mainDiv").removeClass('col-7');
-                $("#mainDiv").addClass('col-12'); 
-                $("#sideDiv").hide(); 
-            }); 
-            var isToggle= true;
+                $("#mainDiv").addClass('col-12');
+                $("#sideDiv").hide();
+            });
+            var isToggle = true;
             $("#toggleDiv").click(function () {
                 ;
                 $("#div2").removeClass('bg-success');
                 $("#div2").removeClass('bg-danger');
-                if(isToggle) {
+                if (isToggle) {
                     $("#div2").addClass('bg-success');
                 } else {
                     $("#div2").addClass('bg-danger');
-                } 
-                isToggle =! isToggle;
-            }); 
-            $("#tbl-data2 tr").click(function() {
+                }
+                isToggle = !isToggle;
+            });
+            $("#tbl-data2 tr").click(function () {
                 ;
-                $('#tbl-data2 > tbody  > tr').each(function(index, tr) {
+                $('#tbl-data2 > tbody  > tr').each(function (index, tr) {
                     tr.classList.remove("bg-secondary")
                 });
                 $(this).addClass("bg-secondary")
             })
-            
+
         })
     </script>
+    <style>
+        .task-container {
+            padding: 20px;
+            border: 1px solid #007bff;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+            height: 100%;
+        }
+
+        .task-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            background-color: #d3ffce;
+        }
+
+        .task-heading {
+            font-weight: bold;
+            font-size: 20px;
+            color: #007bff;
+        }
+
+        .task-list {
+            text-align: left;
+        }
+
+        .btn-attempt {
+            background-color: #007bff;
+            color: white;
+            border: 2px solid #007bff;
+        }
+
+        .btn-attempting {
+            background-color: #f0ad4e;
+            color: white;
+            border: 2px solid #f0ad4e;
+        }
+
+        .btn-progress {
+            background-color: #5cb85c;
+            color: white;
+            border: 2px solid #5cb85c;
+        }
+
+        .btn:focus {
+            outline: none;
+            border: 2px solid currentColor;
+        }
+
+        .btn:hover {
+            border-width: 2px;
+
+
+
+        }
+
+        @media (max-width: 576px) {
+            .col-12.col-sm-6.col-md-3 {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .col-12.col-sm-6.col-md-3 {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg voidChetan navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.html">taskS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -85,7 +157,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                         </ul>
-                    </li> 
+                    </li>
                     <li class="nav-item dropdown " id="angularUl">
                         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -103,7 +175,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                         </ul>
-                    </li> 
+                    </li>
                 </ul>
                 <form class="d-flex">
                     <a href="https://github.com/voidChetan" target="_blank" class="btn btn-outline-success">Examples</a>
@@ -111,224 +183,251 @@
             </div>
         </div>
     </nav>
-    <div class="container-fluid pt-2">
-        <nav class="voidChetan" style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+    <div class="container pt-2">
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
             aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Angular</li>
-                <li class="breadcrumb-item active" aria-current="page">ng-Class Task</li>
             </ol>
         </nav>
-        <div class="row">
-            <div class="col-3 col-md-3 col-lg-3 col-sm-3 ">
-                <div class="myBox">
-                    <div class="text-center">
-                        <h3>Task 1</h3>
-                    </div>
-                    <ul>
-                       <li>create a varible and store class into it </li>
-                       <li>on page load add that class to a div tag</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-5 col-md-5 col-lg-5 col-sm-5 ">
-                <div class="myBox">
-                    <div class="text-center">
-                        <h3>Task 2</h3>
-                    </div>
-                    <ul>
-                       <li>create a varible and store class into it </li>
-                       <li>create 1 button with name toggle class </li>
-                       <li>on click of button add "bg-success" class to div and again if we click add "bg-danger" class</li>
-                    </ul>
-                    <div class="p-2" id="div2">
-                        MY Div Area
-                    </div>
-                    <button class="btn btn-success btn-sm" id="toggleDiv">Toggle Class</button>
-                </div>
-            </div> 
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 ">
-                <div class="myBox">
-                    <div class="text-center">
-                        <h3>Task 3</h3>
-                    </div>
-                    <ul>
-                        <li> on success btn click add bg-success class & on danger add bg-danger</li>
-                        <li> add button with some languages -on click of language make it selected</li> 
-                    </ul>
-                    <div class="row">
-                        <div class="col-4">
-                            <div class="p-4 rounded" id="div1">
-                                Div - 1
-                            </div>
-                        </div>
-                        <div class="col-8" id="divLanguages">
-                             
-                        </div> 
-                    </div>
-                    <div class="row pt-2">
-                        <div class="col-4">
-                            <button class="btn btn-sm btn-success" id="btnSuccess"> success</button>
-                            <button class="btn btn-sm btn-danger" id="btnDanger"> danger</button>
-                        </div>
-                        
-                    </div>
 
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6">
-                <div class="myBox">
-                    <div class="text-center">
-                        <h3>Task 4</h3>
+        <div class="container mt-4">
+            <div class="row">
+                <!-- Task 1 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 1</div>
+                        <ul class="task-list">
+                            <li>create a varible and store class into it </li>
+                            <li>on page load add that class to a div tag</li>
+                        </ul>
+                        <button id="btn1" class="btn btn-attempt">Attempt</button>
                     </div>
-                    <ul>
-                        <li> on add btn add col-7 class to first div & show 2nd div</li>
-                        <li> on close btn add class col-12 to first div and hide 2nd div </li> 
-                    </ul>
-                     <div class="row">
-                        <div class="col-7" id="mainDiv">
-                            <div class="card">
-                                <div class="card-header bg-success">
-                                    <div class="row">
-                                        <div class="col-6">
-                                            Main Panel
-                                        </div>
-                                        <div class="col-6 text-end">
-                                            <button class="btn btn-sm btn-secondary" id="btnAdd">Add</button>
+                </div>
+
+                <!-- Task 2 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 2</div>
+                        <ul class="task-list">
+                            <li>create a varible and store class into it </li>
+                            <li>create 1 button with name toggle class </li>
+                            <li>on click of button add "bg-success" class to div and again if we click add "bg-danger"
+                                class</li>
+                        </ul>
+                        <div class="p-2" id="div2">
+                            MY Div Area
+                        </div>
+                        <button class="btn btn-success btn-sm" id="toggleDiv">Toggle Class</button>
+                        </ul>
+                        <br><br>
+                        <button id="btn2" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+
+                <!-- Task 3 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 3</div>
+                        <ul class="task-list">
+                            <li> on success btn click add bg-success class & on danger add bg-danger</li>
+                            <li> add button with some languages -on click of language make it selected</li>
+                        </ul>
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="p-4 rounded" id="div1">
+                                    Div - 1
+                                </div>
+                            </div>
+                            <div class="col-8" id="divLanguages">
+
+                            </div>
+                        </div>
+                        <div class="row pt-2">
+                            <div class="col-4">
+                                <button class="btn btn-sm btn-success" id="btnSuccess"> success</button>
+                                <button class="btn btn-sm btn-danger" id="btnDanger"> danger</button>
+                            </div>
+
+                        </div>
+                        <br>
+                        <button id="btn3" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+
+                <!-- Task 4 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 4</div>
+                        <ul class="task-list">
+                            <li> on add btn add col-7 class to first div & show 2nd div</li>
+                            <li> on close btn add class col-12 to first div and hide 2nd div </li>
+                        </ul>
+                        <div class="row">
+                            <div class="col-7" id="mainDiv">
+                                <div class="card">
+                                    <div class="card-header bg-success">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                Main Panel
+                                            </div>
+                                            <div class="col-6 text-end">
+                                                <button class="btn btn-sm btn-secondary" id="btnAdd">Add</button>
+                                            </div>
                                         </div>
                                     </div>
+                                    <div class="card-body p-4">
+                                        Main Panel Content
+                                    </div>
                                 </div>
-                                <div class="card-body p-4">
-                                    Main Panel Content
+                            </div>
+                            <div class="col-5" id="sideDiv">
+                                <div class="card">
+                                    <div class="card-header bg-success">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                Side Panel
+                                            </div>
+                                            <div class="col-6 text-end">
+                                                <button class="btn btn-sm btn-secondary" id="btnClose">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body p-4">
+                                        Side Panel Content
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-5" id="sideDiv">
-                            <div class="card">
-                                <div class="card-header bg-success">
-                                    <div class="row">
-                                        <div class="col-6">
-                                            Side Panel
-                                        </div>
-                                        <div class="col-6 text-end">
-                                            <button class="btn btn-sm btn-secondary" id="btnClose">Close</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body p-4">
-                                    Side Panel Content
-                                </div>
+                        <br>
+                        <button id="btn4" class="btn btn-attempt">Attempt</button>
+                    </div>
+                </div>
+
+                <!-- Task 5 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 5</div>
+                        <ul class="task-list">
+                            <li>Create array of students with fields studId, name, isActive, gender,state</li>
+                            <li> using ngfor show array into table</li>
+                            <li>At a time Only One Row Shoube be selected-</li>
+                            <li>On click of TR we have to add "bg-secondary" class to that tr- See Ex below </li>
+                        </ul>
+                        <div class="row">
+                            <div class="col-12">
+                                <table class="table table-bordered" id="tbl-data2">
+                                    <thead>
+                                        <tr>
+                                            <th>Sr No</th>
+                                            <th>Name</th>
+                                            <th>Gender</th>
+                                            <th>State</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
-                     </div>
+                        <button id="btn5" class="btn btn-attempt">Attempt</button>
+                    </div>
                 </div>
-            </div>
-         
-        
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 ">
-                <div class="myBox">
-                    <div class="text-center">
-                        <h3>Task 5</h3>
+
+                <!-- Task 6 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 6</div>
+                        <ul class="task-list">
+
+                            <li>Create array of students with fields studId, name, isActive, gender,state</li>
+                            <li> using ngfor show array into table</li>
+                            <li>At a time Only One Row Shoube be selected-</li>
+                            <li>On click of TR we have to add "bg-secondary" class to that tr- See Ex below </li>
+                        </ul>
+                        <div class="row">
+                            <div class="col-12">
+                                <table class="table table-bordered" id="tbl-data2">
+                                    <thead>
+                                        <tr>
+                                            <th>Sr No</th>
+                                            <th>Name</th>
+                                            <th>Gender</th>
+                                            <th>State</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <button id="btn6" class="btn btn-attempt">Attempt</button>
                     </div>
-                    <ul>
-                        <li>Create array of students with fields studId, name, isActive, gender,state</li>
-                        <li> using ngfor show array into table</li>
-                        <li>in table using ngclass add "bg-success" class to Tr if isActive is true else add "bg-secondary" class</li> 
-                        <li>in table using ngclass add "bg-white" class to gender td if gender is "Male" else "bg-danger" class</li> 
-                    </ul>
-                    <div class="row">
-                         <div class="col-12">
-                            <table class="table table-bordered" id="tbl-data">
-                                <thead>
-                                    <tr>
-                                        <th>Sr No</th>
-                                        <th>Name</th>
-                                        <th>Gender</th>
-                                        <th>State</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                </tbody>
-                            </table>
-                         </div>
-                    </div>
-                   
                 </div>
+
+
             </div>
-            <div class="col-12 col-md-6 col-lg-6 col-sm-6 ">
-                <div class="myBox">
-                    <div class="text-center">
-                        <h3>Task 6</h3>
-                    </div>
-                    <ul>
-                        <li>Create array of students with fields studId, name, isActive, gender,state</li>
-                        <li> using ngfor show array into table</li>
-                        <li>At a time Only One Row Shoube be selected-</li>
-                        <li>On click of TR we have to add "bg-secondary" class to that tr- See Ex below </li>
-                    </ul>
-                    <div class="row">
-                         <div class="col-12">
-                            <table class="table table-bordered" id="tbl-data2">
-                                <thead>
-                                    <tr>
-                                        <th>Sr No</th>
-                                        <th>Name</th>
-                                        <th>Gender</th>
-                                        <th>State</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                </tbody>
-                            </table>
-                         </div>
-                    </div>
-                   
-                </div>
-            </div>
-         
         </div>
-        
-          
-
-    </div>
-    <script type="text/javascript" src="../menu.js"> </script>
-    <script>
-        languageArray.forEach(element => {
-            const link = "<button class='btn btn-secondary mx-2 mb-1 btnLang' >"+element+" </button>";
-            $("#divLanguages").append(link);
-        });
-        studentList.forEach(element => { 
-            if (element.isActive) {
-                if (element.gender == "Male") {
-                    const tr = "<tr class='bg-success'><td>" + element.studId + "</td><td>" +
-                         element.name + "</td><td class='bg-white'>" + element.gender + "</td><td>" + element.state + "</td></tr>";
-                    $("#tbl-data tbody").append(tr);
+        <script type="text/javascript" src="../menu.js"></script>
+        <script>
+            languageArray.forEach(element => {
+                const link = "<button class='btn btn-secondary mx-2 mb-1 btnLang' >" + element + " </button>";
+                $("#divLanguages").append(link);
+            });
+            studentList.forEach(element => {
+                if (element.isActive) {
+                    if (element.gender == "Male") {
+                        const tr = "<tr class='bg-success'><td>" + element.studId + "</td><td>" +
+                            element.name + "</td><td class='bg-white'>" + element.gender + "</td><td>" + element.state + "</td></tr>";
+                        $("#tbl-data tbody").append(tr);
+                    } else {
+                        const tr = "<tr class='bg-success'><td>" + element.studId + "</td><td>" +
+                            element.name + "</td><td  class='bg-danger'>" + element.gender + "</td><td>" + element.state + "</td></tr>";
+                        $("#tbl-data tbody").append(tr);
+                    }
                 } else {
-                    const tr = "<tr class='bg-success'><td>" + element.studId + "</td><td>" +
-                         element.name + "</td><td  class='bg-danger'>" + element.gender + "</td><td>" + element.state + "</td></tr>";
-                    $("#tbl-data tbody").append(tr);
-                } 
-            } else {
-                if (element.gender == "Male") {
-                    const tr = "<tr class='bg-secondary'><td>" + element.studId + "</td><td>" +
-                         element.name + "</td><td class='bg-white'>" + element.gender + "</td><td>" + element.state + "</td></tr>";
-                    $("#tbl-data tbody").append(tr);
-                } else {
-                    const tr = "<tr class='bg-secondary'><td>" + element.studId + "</td><td>" +
-                         element.name + "</td><td  class='bg-danger'>" + element.gender + "</td><td>" + element.state + "</td></tr>";
-                    $("#tbl-data tbody").append(tr);
-                } 
-            } 
-            const tr = "<tr class=''><td>" + element.studId + "</td><td>" +
-                         element.name + "</td><td class=''>" + element.gender + "</td><td>" + element.state + "</td></tr>";
-                    $("#tbl-data2").append(tr);
-            index++; 
-        });
+                    if (element.gender == "Male") {
+                        const tr = "<tr class='bg-secondary'><td>" + element.studId + "</td><td>" +
+                            element.name + "</td><td class='bg-white'>" + element.gender + "</td><td>" + element.state + "</td></tr>";
+                        $("#tbl-data tbody").append(tr);
+                    } else {
+                        const tr = "<tr class='bg-secondary'><td>" + element.studId + "</td><td>" +
+                            element.name + "</td><td  class='bg-danger'>" + element.gender + "</td><td>" + element.state + "</td></tr>";
+                        $("#tbl-data tbody").append(tr);
+                    }
+                }
+                const tr = "<tr class=''><td>" + element.studId + "</td><td>" +
+                    element.name + "</td><td class=''>" + element.gender + "</td><td>" + element.state + "</td></tr>";
+                $("#tbl-data2").append(tr);
+                index++;
+            });
 
-        
-        
-    </script>
+
+
+        </script>
+        <!-- <script>
+            const buttons = document.querySelectorAll('button[id^="btn"]');
+
+            buttons.forEach((button) => {
+                let currentState = 'attempt';
+
+                button.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    if (currentState === 'attempt') {
+                        button.textContent = 'Attempting';
+                        button.className = 'btn btn-attempting';
+                        currentState = 'attempting';
+                    } else if (currentState === 'attempting') {
+                        button.textContent = 'Attempt in Progress';
+                        button.className = 'btn btn-progress';
+                        currentState = 'progress';
+                    } else {
+                        button.textContent = 'Attempt';
+                        button.className = 'btn btn-attempt';
+                        currentState = 'attempt';
+                    }
+                });
+            });
+        </script> -->
 </body>
 
 </html>
