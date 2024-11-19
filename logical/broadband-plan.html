@@ -131,6 +131,16 @@
             .attepfont {
                 font-size: 12px;
             }
+            .fonticon {
+                font-size: 2rem;
+
+            }
+            .btnfont{
+                font-size: 11px;
+            }
+            .mobilefont{
+                font-size: 10px;
+            }
         }
 
         @media (max-width: 375px) {
@@ -162,6 +172,9 @@
 
             h4 {
                 font-size: 12px;
+            }
+            .colchange{
+                width: 100%;
             }
         }
     </style>
@@ -272,7 +285,7 @@
         <div class="container-fluid mt-4">
             <div class="row">
                 <!-- Task 1 -->
-                <div class="col-12 col-sm-6 col-md-6 mb-4 ">
+                <div class="col-6 col-sm-6 col-md-6 mb-4  pe-1 colchange">
                     <div class="task-container">
                         <div class="task-heading">Task 1</div>
                         <!-- <div class="myBox"> -->
@@ -306,7 +319,7 @@
                                         More</button>
                                 </div>
                             </div>
-                            <div class="row pt-5">
+                            <div class="row pt-2">
                                 <div class="col-12">
                                     <div class="text-center" id="divMobile">
                                         <p>Free SIM, calls, and SMS with invaluable digital experiences.</p>
@@ -329,7 +342,7 @@
                     </div>
                 </div>
                 <!-- Task 2 -->
-                <div class="col-12 col-sm-6 col-md-6 mb-4">
+                <div class="col-6 col-sm-6 col-md-6 mb-4 ps-1 colchange">
                     <div class="task-container">
                         <div class="task-heading">Task 2</div>
                         <div class="" style="position: relative;">
@@ -337,13 +350,13 @@
                                 <h3> Plan Selection</h3>
                                 <h6>JavaScript, Angular, Reactjs</h6>
                             </div>
-                            <ul>
+                            <ul class="task-list">
                                 <li> On Continue Show Selected Plan</li>
                                 <li> If No Plan Selected Ask to select Plan</li>
                                 <li> On Reset - Remove Selected Plan & Hide Plan Div</li>
                             </ul>
                             <div class="h6">Select Plan</div>
-                            <div class="row text-center">
+                            <div class="row text-center mobilefont">
                                 <div class="col-md-3 col-3 col-sm-3 col-lg-3">
                                     <label>Mobile Plan </label><br />
                                     <input type="radio" name="radioCheck" id="radio4" value="Mobile Plan">
