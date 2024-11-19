@@ -15,8 +15,65 @@
     <title>Scenario - 1</title>
 
 
-
     <style>
+        .task-container {
+            padding: 10px;
+            border: 1px solid #007bff;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+            height: 100%;
+        }
+
+        .task-container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            background-color: #d3ffce;
+        }
+
+        .task-heading {
+            font-weight: bold;
+            font-size: 20px;
+            color: #007bff;
+        }
+
+        .task-list {
+            text-align: left;
+        }
+
+        .btn-attempt {
+            background-color: #007bff;
+            color: white;
+            border: 2px solid #007bff;
+        }
+
+        .btn-attempting {
+            background-color: #f0ad4e;
+            color: white;
+            border: 2px solid #f0ad4e;
+        }
+
+        .btn-progress {
+            background-color: #5cb85c;
+            color: white;
+            border: 2px solid #5cb85c;
+        }
+
+        .btn:focus {
+            outline: none;
+            border: 2px solid currentColor;
+        }
+
+        .btn:hover {
+            border-width: 2px;
+
+
+        }
+
+
+
         .card {
             cursor: pointer !important;
         }
@@ -62,11 +119,59 @@
             font-weight: bold;
             cursor: pointer;
         }
+        @media (max-width: 798px) {
+            .task-container {
+                font-size: smaller;
+            }
+
+            .task-list {
+                padding: 10px;
+            }
+
+            .task-heading {
+                font-weight: bold;
+                font-size: 16px;
+                color: #007bff;
+            }
+
+        
+        }
+
+        @media (max-width: 425px) {
+            .task-container {
+                font-size: 11px;
+            }
+
+            .task-list {
+                padding: 10px;
+            }
+
+            .task-heading {
+                font-weight: bold;
+                font-size: 13px;
+                color: #007bff;
+            }
+
+            .attepfont {
+                font-size: 12px;
+            }
+        }
+
+        /* @media (max-width: 375px) {
+            .task-container {
+                font-size: 11px;
+            }
+
+            .attepfont {
+                font-size: 11px;
+            }
+        } */
+         
     </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg voidChetan navbar-dark bg-dark">
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.html">taskS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -110,267 +215,315 @@
                 </form>
             </div>
         </div>
-    </nav>
+    </nav> -->
 
-    <div class="container pt-1">
-        <nav class="voidChetan" style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+    <!-- <div class="container pt-1">
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
             aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Angular</li>
                 <li class="breadcrumb-item active" aria-current="page">Logical</li>
             </ol>
-        </nav>
-        <div class="row">
-            <div class="col-4">
-                <div class="text-center">
-                    <h3>Dynamic UI Selection </h3>
-                </div>
-                <ul>
-                    <li>Top tabs should be dynamic </li>
-                    <li>on Click of top tab - side menu should change and that tab should have selected color</li>
-                    <li>on click of side menu - respective UI should be visible and that side menu should have selected
-                        color </li>
-                </ul>
-            </div>
-            <div class="col-8">
-                <div class="row">
-                    <!-- Buttons container -->
-                    <div class="col-12">
-                        <div class="d-flex" id="button-container"></div>
+        </nav> -->
+
+        <div class="container-fluid mt-4">
+            <div class="row">
+                <!-- Task 1 -->
+                <div class="col-12 col-sm-12 col-md-12 mb-4">
+                    <div class="task-container">
+                        <div class="task-heading">Task 1</div>
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-12">
+                                <div class="text-center">
+                                    <h3>Dynamic UI Selection </h3>
+                                </div>
+                                <ul>
+                                    <li>Top tabs should be dynamic </li>
+                                    <li>on Click of top tab - side menu should change and that tab should have selected color</li>
+                                    <li>on click of side menu - respective UI should be visible and that side menu should have selected
+                                        color </li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-12">
+                                <div class="row">
+                                    <!-- Buttons container -->
+                                    <div class="col-12">
+                                        <div class="d-flex " id="button-container"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-3">
+                                        <div class="sidebar" id="sidebar">
+                                            <!-- Sidebar Menus -->
+                                            <div class="text-white mt-2 d-grid gap-1 sidefont" id="submenu-container"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-9">
+                                        <!-- Basic Information -->
+                                        <div class="mt-4" id="information">
+                                            <h5>Basic Information</h4>
+                                                <form>
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <label>Name :</label>
+                                                            <input type="text" name="name" id="userName" class="form-control">
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <label>DOB :</label>
+                                                            <input type="date" name="dob" id="userName" class="form-control">
+                                                        </div>
+                                                       
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <label class="mt-4">Contact</label>
+                                                            <input type="text" name="contact" id="userName" class="form-control">
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <label class="mt-4">Gender :</label>
+                                                            <input type="radio" class="mx-2" name="gender" id="userName"
+                                                                value="Male"><span>Male</span>
+                                                            <input type="radio" class="mx-2" name="gender" id="userName"
+                                                                value="Female"><span>Female</span>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                        </div>
+                                        <!-- Address -->
+                                        <div class="mt-1" id="address">
+                                            <h5>Address</h4>
+                                                <form>
+                                                    <div class="row">
+                                                        <div class="col-7">
+                                                            <label>Address :</label>
+                                                            <textarea name="address" id="addre" cols="5" rows="5"
+                                                                class="form-control"></textarea>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <label>City :</label>
+                                                            <input type="text" name="city" class="form-control">
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <label class="mt-4">State :</label>
+                                                            <input type="text" name="state" class="form-control">
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <label class="mt-4">Pincode :</label>
+                                                            <input type="text" name="pincode" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                        </div>
+                                        <!-- Company Details -->
+                                        <div class="mt-1" id="address">
+                                            <h5>Company Details</h4>
+                                                <form>
+                                                    <div class="row">
+                                                        <div class="col-4">
+                                                            <label>Company Name :</label>
+                                                            <input type="text" name="company" class="form-control">
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <label>Company Location :</label>
+                                                            <input type="text" name="location" class="form-control">
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <label class="mt-4">Position :</label>
+                                                            <input type="text" name="Position" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                        </div>
+                                        <!-- work Experience -->
+                
+                                        <div class="mt-1" id="address">
+                                            <h5>Work Experience</h4>
+                                                <form>
+                                                    <div class="row">
+                                                        <div class="col-7">
+                                                            <label>Roles and Responsibilty :</label>
+                                                            <textarea name="roles" id="roles" cols="5" rows="5"
+                                                                class="form-control"></textarea>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <label>Technologies Used :</label>
+                                                            <input type="text" name="location" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                        </div>
+                                        <!-- Project -->
+                                        <div class="mt-1" id="address">
+                                            <h5>Project Details</h4>
+                                                <form>
+                                                    <div class="row">
+                                                        <div class="col-4">
+                                                            <label>Project Name :</label>
+                                                            <input type="text" name="Projectname" class="form-control">
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <label>Project Duration :</label>
+                                                            <input type="text" name="Duration" class="form-control">
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <label>Technologies Used :</label>
+                                                            <input type="text" name="Technologies" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                        </div>
+                
+                                        <!-- Project description -->
+                                        <div class="mt-1" id="address">
+                                            <h5>Project Details</h4>
+                                                <form>
+                                                    <div class="row">
+                                                        <div class="col-8">
+                                                            <label>Project Description :</label>
+                                                            <textarea name="Description" id="" cols="5" rows="5"
+                                                                class="form-control"></textarea>
+                                                        </div>
+                
+                                                    </div>
+                                                </form>
+                                        </div>
+                                        <!-- Project Live links -->
+                                        <div class="mt-1" id="address">
+                                            <h5>Project Live Links</h4>
+                                                <form>
+                                                    <div class="row">
+                                                        <div class="col-8">
+                                                            <label>Project Links :</label>
+                                                            <input type="text" name="Links" class="form-control">
+                                                        </div>
+                
+                                                    </div>
+                                                </form>
+                                        </div>
+                                        <!-- Project Live links -->
+                                        <div class="mt-1" id="address">
+                                            <h5>Project Skills</h4>
+                                                <form>
+                                                    <div class="row">
+                                                        <div class="col-8">
+                                                            <label>Project Skills :</label>
+                                                            <input type="text" name="Skills" class="form-control">
+                                                        </div>
+                                                        <div class="col-8">
+                                                            <label>Project Roles and responsibility :</label>
+                                                            <textarea name="responsibility" class="form-control" cols="5"
+                                                                rows="5"></textarea>
+                                                        </div>
+                
+                                                    </div>
+                                                </form>
+                                        </div>
+                
+                                    </div>
+                                    <script>
+                                        // Button names and corresponding submenu items
+                                        var buttonSubmenuMap = {
+                                            "Personal Details": ["Basic Information", "Address",],
+                                            "Job History": ["Company Details", "Experience"],
+                                            "Project": ["Project Details", "Description", "Live Link", "Skills"],
+                                            "Domain": [, "Domain Name", "Type Of Domain"],
+                                        };
+                
+                                        // Function to create buttons
+                                        function createButtons(names) {
+                                            var container = document.getElementById("button-container");
+                                            names.forEach(function (name) {
+                                                var button = document.createElement("button");
+                                                button.textContent = name;
+                                                button.className = "dynamic-button";
+                                                button.onclick = function () {
+                                                    showSubmenu(name);
+                                                };
+                                                container.appendChild(button);
+                                            });
+                                        }
+                
+                                        // Function to show submenu for a specific button
+                                        function showSubmenu(buttonName) {
+                                            var submenuItems = buttonSubmenuMap[buttonName];
+                                            var submenuContainer = document.getElementById("submenu-container");
+                                            submenuContainer.innerHTML = ""; // Clear previous submenu
+                
+                                            if (submenuItems) {
+                                                submenuItems.forEach(function (item) {
+                                                    var menuItem = document.createElement("button");
+                                                    menuItem.textContent = item;
+                                                    menuItem.className = "btn btn-primary btn-block mb-2";
+                                                    submenuContainer.appendChild(menuItem);
+                                                });
+                                            }
+                                        }
+                
+                                        // Call the function to create buttons
+                                        createButtons(Object.keys(buttonSubmenuMap));
+                                        function isDevToolsOpen() {
+                                            let widthThreshold = window.outerWidth - window.innerWidth > 160;
+                                            let heightThreshold = window.outerHeight - window.innerHeight > 160;
+                
+                                            if (widthThreshold || heightThreshold) {
+                                               alert('Developer tools may be open.');
+                                            } else {
+                                                alert('Developer tools are closed.');
+                                            }
+                                            
+                                        }
+                
+                                        // Usage
+                                       
+                
+                                    </script>
+                                </div>
+                            </div>
+                            <div class="container-fluid">
+    
+                                <button class="btn btn-success" onclick="isDevToolsOpen()">check</button>
+                    
+                            </div>
+    
+                        </div>
+                     <div class="text-center py-2">
+                        <button id="btn1" class="btn btn-attempt attepfont">Attempt</button>
+
+                     </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-3">
-                        <div class="sidebar" id="sidebar">
-                            <!-- Sidebar Menus -->
-                            <div class="text-white mt-2 d-grid gap-2" id="submenu-container"></div>
-                        </div>
-                    </div>
-                    <div class="col-9">
-                        <!-- Basic Information -->
-                        <div class="mt-1" id="information">
-                            <h5>Basic Information</h4>
-                                <form>
-                                    <div class="row">
-                                        <div class="col-4">
-                                            <label>Name :</label>
-                                            <input type="text" name="name" id="userName" class="form-control">
-                                        </div>
-                                        <div class="col-4">
-                                            <label>DOB :</label>
-                                            <input type="date" name="dob" id="userName" class="form-control">
-                                        </div>
-                                        <div class="col-6">
-                                            <label class="mt-4">Contact</label>
-                                            <input type="text" name="contact" id="userName" class="form-control">
-                                        </div>
-                                        <div class="col-6">
-                                            <label class="mt-1">Gender :</label>
-                                            <input type="radio" class="mx-2" name="gender" id="userName"
-                                                value="Male"><span>Male</span>
-                                            <input type="radio" class="mx-2" name="gender" id="userName"
-                                                value="Female"><span>Female</span>
-                                        </div>
-                                    </div>
-                                </form>
-                        </div>
-                        <!-- Address -->
-                        <div class="mt-1" id="address">
-                            <h5>Address</h4>
-                                <form>
-                                    <div class="row">
-                                        <div class="col-7">
-                                            <label>Address :</label>
-                                            <textarea name="address" id="addre" cols="5" rows="5"
-                                                class="form-control"></textarea>
-                                        </div>
-                                        <div class="col-4">
-                                            <label>City :</label>
-                                            <input type="text" name="city" class="form-control">
-                                        </div>
-                                        <div class="col-6">
-                                            <label class="mt-4">State :</label>
-                                            <input type="text" name="state" class="form-control">
-                                        </div>
-                                        <div class="col-6">
-                                            <label class="mt-4">Pincode :</label>
-                                            <input type="text" name="pincode" class="form-control">
-                                        </div>
-                                    </div>
-                                </form>
-                        </div>
-                        <!-- Company Details -->
-                        <div class="mt-1" id="address">
-                            <h5>Company Details</h4>
-                                <form>
-                                    <div class="row">
-                                        <div class="col-4">
-                                            <label>Company Name :</label>
-                                            <input type="text" name="company" class="form-control">
-                                        </div>
-                                        <div class="col-4">
-                                            <label>Company Location :</label>
-                                            <input type="text" name="location" class="form-control">
-                                        </div>
-                                        <div class="col-6">
-                                            <label class="mt-4">Position :</label>
-                                            <input type="text" name="Position" class="form-control">
-                                        </div>
-                                    </div>
-                                </form>
-                        </div>
-                        <!-- work Experience -->
 
-                        <div class="mt-1" id="address">
-                            <h5>Work Experience</h4>
-                                <form>
-                                    <div class="row">
-                                        <div class="col-7">
-                                            <label>Roles and Responsibilty :</label>
-                                            <textarea name="roles" id="roles" cols="5" rows="5"
-                                                class="form-control"></textarea>
-                                        </div>
-                                        <div class="col-4">
-                                            <label>Technologies Used :</label>
-                                            <input type="text" name="location" class="form-control">
-                                        </div>
-                                    </div>
-                                </form>
-                        </div>
-                        <!-- Project -->
-                        <div class="mt-1" id="address">
-                            <h5>Project Details</h4>
-                                <form>
-                                    <div class="row">
-                                        <div class="col-4">
-                                            <label>Project Name :</label>
-                                            <input type="text" name="Projectname" class="form-control">
-                                        </div>
-                                        <div class="col-4">
-                                            <label>Project Duration :</label>
-                                            <input type="text" name="Duration" class="form-control">
-                                        </div>
-                                        <div class="col-4">
-                                            <label>Technologies Used :</label>
-                                            <input type="text" name="Technologies" class="form-control">
-                                        </div>
-                                    </div>
-                                </form>
-                        </div>
-
-                        <!-- Project description -->
-                        <div class="mt-1" id="address">
-                            <h5>Project Details</h4>
-                                <form>
-                                    <div class="row">
-                                        <div class="col-8">
-                                            <label>Project Description :</label>
-                                            <textarea name="Description" id="" cols="5" rows="5"
-                                                class="form-control"></textarea>
-                                        </div>
-
-                                    </div>
-                                </form>
-                        </div>
-                        <!-- Project Live links -->
-                        <div class="mt-1" id="address">
-                            <h5>Project Live Links</h4>
-                                <form>
-                                    <div class="row">
-                                        <div class="col-8">
-                                            <label>Project Links :</label>
-                                            <input type="text" name="Links" class="form-control">
-                                        </div>
-
-                                    </div>
-                                </form>
-                        </div>
-                        <!-- Project Live links -->
-                        <div class="mt-1" id="address">
-                            <h5>Project Skills</h4>
-                                <form>
-                                    <div class="row">
-                                        <div class="col-8">
-                                            <label>Project Skills :</label>
-                                            <input type="text" name="Skills" class="form-control">
-                                        </div>
-                                        <div class="col-8">
-                                            <label>Project Roles and responsibility :</label>
-                                            <textarea name="responsibility" class="form-control" cols="5"
-                                                rows="5"></textarea>
-                                        </div>
-
-                                    </div>
-                                </form>
-                        </div>
-
-                    </div>
-                    <script>
-                        // Button names and corresponding submenu items
-                        var buttonSubmenuMap = {
-                            "Personal Details": ["Basic Information", "Address",],
-                            "Job History": ["Company Details", "Experience"],
-                            "Project": ["Project Details", "Description", "Live Link", "Skills"],
-                            "Domain": [, "Domain Name", "Type Of Domain"],
-                        };
-
-                        // Function to create buttons
-                        function createButtons(names) {
-                            var container = document.getElementById("button-container");
-                            names.forEach(function (name) {
-                                var button = document.createElement("button");
-                                button.textContent = name;
-                                button.className = "dynamic-button";
-                                button.onclick = function () {
-                                    showSubmenu(name);
-                                };
-                                container.appendChild(button);
-                            });
-                        }
-
-                        // Function to show submenu for a specific button
-                        function showSubmenu(buttonName) {
-                            var submenuItems = buttonSubmenuMap[buttonName];
-                            var submenuContainer = document.getElementById("submenu-container");
-                            submenuContainer.innerHTML = ""; // Clear previous submenu
-
-                            if (submenuItems) {
-                                submenuItems.forEach(function (item) {
-                                    var menuItem = document.createElement("button");
-                                    menuItem.textContent = item;
-                                    menuItem.className = "btn btn-primary btn-block mb-2";
-                                    submenuContainer.appendChild(menuItem);
-                                });
-                            }
-                        }
-
-                        // Call the function to create buttons
-                        createButtons(Object.keys(buttonSubmenuMap));
-                        function isDevToolsOpen() {
-                            let widthThreshold = window.outerWidth - window.innerWidth > 160;
-                            let heightThreshold = window.outerHeight - window.innerHeight > 160;
-
-                            if (widthThreshold || heightThreshold) {
-                               alert('Developer tools may be open.');
-                            } else {
-                                alert('Developer tools are closed.');
-                            }
-                            
-                        }
-
-                        // Usage
-                       
-
-                    </script>
-                </div>
+                
             </div>
         </div>
-        <div class="container-fluid">
+     </div>
+        <script type="text/javascript" src="../menu.js"></script>
 
-            <button onclick="isDevToolsOpen()">check</button>
+        <script>
+            const buttons = document.querySelectorAll('button[id^="btn"]');
 
-        </div>
+            buttons.forEach((button) => {
+                let currentState = 'attempt';
+
+                button.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    if (currentState === 'attempt') {
+                        button.textContent = 'Attempting';
+                        button.className = 'btn btn-attempting attepfont';
+                        currentState = 'attempting';
+                    } else if (currentState === 'attempting') {
+                        button.textContent = 'Attempt in Progress attepfont';
+                        button.className = 'btn btn-progress';
+                        currentState = 'progress';
+                    } else {
+                        button.textContent = 'Attempt';
+                        button.className = 'btn btn-attempt attepfont';
+                        currentState = 'attempt';
+                    }
+                });
+            });
+        </script>
 
     </div>
     <script type="text/javascript" src="../menu.js"> </script>

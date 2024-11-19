@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../custom.css">
     <style>
         .task-container {
-            padding: 20px;
+            padding: 10px;
             border: 1px solid #007bff;
             border-radius: 8px;
             background-color: #f9f9f9;
@@ -22,7 +22,7 @@
         }
 
         .task-container:hover {
-            transform: scale(1.05);
+              transform: scale(1.02);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
             background-color: #d3ffce;
         }
@@ -66,19 +66,58 @@
 
 
         }
-
-        @media (max-width: 576px) {
-            .col-12.col-sm-6.col-md-3 {
-                flex-basis: 100%;
-                max-width: 100%;
+        .form-control::placeholder {
+                font-size: 13px;
             }
+
+        @media (max-width: 798px) {
+            .task-container {
+                font-size: smaller;
+
+            }
+
+            .task-list {
+                /* text-align: left; */
+                padding: 10px;
+            }
+
+            .task-heading {
+                font-weight: bold;
+                font-size: 16px;
+                color: #007bff;
+            }
+
+            .btnCount {
+                font-size: 10px;
+            }
+            .editable-input::placeholder {
+             font-size: 11px;
+            }   
+         
         }
 
-        @media (max-width: 768px) {
-            .col-12.col-sm-6.col-md-3 {
-                flex-basis: 100%;
-                max-width: 100%;
+        @media (max-width: 425px) {
+            .task-container {
+                font-size: 11px;
+
             }
+
+            .task-list {
+                /* text-align: left; */
+                padding: 10px;
+            }
+
+            .task-heading {
+                font-weight: bold;
+                font-size: 13px;
+                color: #007bff;
+            }
+
+            .attepfont {
+                font-size: 12px;
+            }
+
+           
         }
     </style>
     <script>
@@ -105,7 +144,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg voidChetan navbar-dark bg-dark">
+    <!-- <nav class="navbar navbar-expand-lg voidChetan navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.html">taskS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -157,12 +196,12 @@
                 <li class="breadcrumb-item active" aria-current="page">JavaScript</li>
                 <li class="breadcrumb-item active" aria-current="page">Dynamic Css</li>
             </ol>
-        </nav>
+        </nav> -->
 
-        <div class="container mt-4">
+        <div class="container-fluid mt-4">
             <div class="row">
                 <!-- Task 1 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
                     <div class="task-container">
                         <div class="task-heading">Task 1 - Dynamic Background Color
                         </div>
@@ -200,17 +239,19 @@
                         </div>
                         </ul>
                         <br>
-                        <button id="btn1" class="btn btn-attempt">Attempt</button>
+                        <div class="text-center"> 
+                        <button id="btn1" class=" btn btn-attempt  attepfont">Attempt</button>
+                    </div>
                     </div>
                 </div>
 
                 <!-- Task 2 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
                     <div class="task-container">
                         <div class="task-heading">Task 2 - div with <br>dynamic css
                         </div>
                         <br>
-                        <ul>
+                         <ul class="task-list">
                             <li>
                                 Create a Div add id to that div.
                             </li>
@@ -234,23 +275,23 @@
                         </div>
                         <div class="row">
                             <div class="col-4 mb-2">
-                                <input type="text" class="form-control" id="txtHeight" placeholder="Height" />
+                                <input type="text" class="form-control editable-input"  id="txtHeight" placeholder="Height" />
                             </div>
                             <div class="col-4 mb-2">
-                                <input type="text" class="form-control" id="txtWidth" placeholder="Width" />
+                                <input type="text" class="form-control editable-input" id="txtWidth" placeholder="Width" />
                             </div>
                             <div class="col-4 d-flex justify-content-center align-items-center mb-2">
-                                <input type="color" class="form-control" id="txtColor" placeholder="Color" />
+                                <input type="color" class="form-control editable-input" id="txtColor" placeholder="Color" />
                             </div>
                             <div class="col-4 d-flex justify-content-center align-items-center mb-2">
-                                <input type="color" class="form-control" id="txtBackgroundColor"
+                                <input type="color" class="form-control editable-input" id="txtBackgroundColor"
                                     placeholder="Background-Color" />
                             </div>
                             <div class="col-4 mb-2">
-                                <input type="text" class="form-control" id="txtFont" placeholder="Font-size" />
+                                <input type="text" class="form-control editable-input" id="txtFont" placeholder="Font-size" />
                             </div>
                             <div class="col-4 mb-2">
-                                <input type="text" class="form-control" id="txtradius" placeholder="Border-radius" />
+                                <input type="text" class="form-control editable-input" id="txtradius" placeholder="Border-radius" />
                             </div>
 
 
@@ -270,22 +311,29 @@
                                     $("#divPer").css('width', event.value)
                                 }
                             </script>
-                            <div class="col-4">
-                                <button class="btn btn-sm btn-warning" onclick="addCss()">Add Css</button>
-                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <button class="btn btn-sm btn-warning w-100" onclick="addCss()">Add Css</button>
+                                </div>
+                                 </div>
+                          
                         </div>
                         <br>
-                        <button id="btn2" class="btn btn-attempt">Attempt</button>
+                    <div class="text-center">
+                         
+                
+                        <button id="btn2" class=" btn btn-attempt  attepfont">Attempt</button>
+                    </div>
                     </div>
                 </div>
 
                 <!-- Task 3 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
                     <div class="task-container">
                         <div class="task-heading">Task 3 - change Font-color on mouseHover
                         </div>
                         <br>
-                        <ul>
+                         <ul class="task-list">
                             <li>
                                 create a paragraph with some text
                             </li>
@@ -304,17 +352,19 @@
                                     functionality</p>
                             </div>
                         </div>
-                        <button id="btn3" class="btn btn-attempt">Attempt</button>
+                        <div class="text-center">
+                        <button id="btn3" class=" btn btn-attempt  attepfont">Attempt</button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Task 4 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
                     <div class="task-container">
                         <div class="task-heading">Task 4 - boostrap Progress Bar
                         </div>
                         <br>
-                        <ul>
+                         <ul class="task-list">
                             <li>
                                 Create Bootstrap progress bar
                             </li>
@@ -345,7 +395,9 @@
                         </div>
                         <br>
                         <br>
-                        <button id="btn4" class="btn btn-attempt">Attempt</button>
+                        <div class="text-center">
+                        <button id="btn4" class=" btn btn-attempt  attepfont">Attempt</button>
+                        </div>
                     </div>
                 </div>
                 <script type="text/javascript" src="../menu.js"></script>
@@ -360,7 +412,7 @@
                             event.preventDefault();
                             if (currentState === 'attempt') {
                                 button.textContent = 'Attempting';
-                                button.className = 'btn btn-attempting';
+                                button.className = ' btn btn-attempt  attepfonting';
                                 currentState = 'attempting';
                             } else if (currentState === 'attempting') {
                                 button.textContent = 'Attempt in Progress';
@@ -368,7 +420,7 @@
                                 currentState = 'progress';
                             } else {
                                 button.textContent = 'Attempt';
-                                button.className = 'btn btn-attempt';
+                                button.className = ' btn btn-attempt  attepfont';
                                 currentState = 'attempt';
                             }
                         });

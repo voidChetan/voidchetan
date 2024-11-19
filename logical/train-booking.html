@@ -15,7 +15,7 @@
     <title>Train Booking - 1</title>
     <style>
         .task-container {
-            padding: 20px;
+            padding: 10px;
             border: 1px solid #007bff;
             border-radius: 8px;
             background-color: #f9f9f9;
@@ -26,7 +26,7 @@
         }
 
         .task-container:hover {
-            transform: scale(1.05);
+            transform: scale(1.02);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
             background-color: #d3ffce;
         }
@@ -68,17 +68,77 @@
             border-width: 2px;
         }
 
-        @media (max-width: 576px) {
-            .col-12.col-sm-6.col-md-3 {
-                flex-basis: 100%;
-                max-width: 100%;
+
+
+        @media (max-width: 798px) {
+            .task-container {
+                font-size: smaller;
+            }
+
+            .task-list {
+                /* text-align: left; */
+                padding: 10px;
+            }
+
+            .task-heading {
+                font-weight: bold;
+                font-size: 16px;
+                color: #007bff;
+            }
+
+            .selector-font {
+                font-size: 16px;
+            }
+
+        }
+
+        @media (max-width: 425px) {
+            .task-container {
+                font-size: 11px;
+            }
+
+            .task-list {
+                /* text-align: left; */
+                padding: 10px;
+            }
+            .task-heading {
+                font-weight: bold;
+                font-size: 13px;
+                color: #007bff;
+            }
+            .attepfont {
+                font-size: 12px;
             }
         }
 
-        @media (max-width: 768px) {
-            .col-12.col-sm-6.col-md-3 {
-                flex-basis: 100%;
-                max-width: 100%;
+        @media (max-width: 375px) {
+            .task-container {
+                font-size: 11px;
+            }
+
+            .task-list {
+                /* text-align: left; */
+                padding: 10px;
+            }
+
+            .task-heading {
+                font-weight: bold;
+                font-size: 13px;
+                color: #007bff;
+            }
+
+            .attepfont {
+                font-size: 14px;
+            }
+
+            .selector-font {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 375px) {
+            .selector-font {
+                font-size: 12px;
             }
         }
     </style>
@@ -129,7 +189,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg voidChetan navbar-dark bg-dark">
+    <!-- <nav class="navbar navbar-expand-lg voidChetan navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.html">taskS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -172,94 +232,89 @@
                 </form>
             </div>
         </div>
-    </nav>
-    <div class="container pt-2">
-        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+    </nav> -->
+    <!-- <div class="container pt-2"> -->
+    <!-- <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
             aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Angular</li>
                 <li class="breadcrumb-item active" aria-current="page">ng-For Task</li>
             </ol>
-        </nav>
+        </nav> -->
 
-        <div class="container mt-4">
-            <div class="row d-flex justify-content-center">
-                <!-- Task 1 -->
-                <div class="col-12 col-sm-12 col-md-8 mb-4">
-                    <div class="task-container">
-                        <div class="task-heading">Task 1</div>
-                        <div class="myBox">
-                            <div class="text-center">
-                                <h3>Train Booking Form</h3>
-                            </div>
-                            <ul>
-                                <li>Create City Array Bind that to Dropdown</li>
-                                <li>Search - Check If Journey details are provided</li>
-                                <li> Search - If From n To City are Same Show Alert</li>
-                                <li>on Exchange - Exchnage From n to Stations</li>
-                                <li> Search - Show Selected Details in below Box</li>
-                                <li> Clear - Clear Booking Form n Hide Journey Details Info</li>
-                            </ul>
+    <div class="container-fluid mt-4">
+        <div class="row d-flex justify-content-center">
+            <!-- Task 1 -->
+            <div class="col-12 col-sm-12 col-md-12 mb-4">
+                <div class="task-container">
+                    <div class="task-heading">Task 1</div>
+                    <div class="text-center">
+                        <h3>Train Booking Form</h3>
+                    </div>
+                    <ul>
+                        <li>Create City Array Bind that to Dropdown</li>
+                        <li>Search - Check If Journey details are provided</li>
+                        <li> Search - If From n To City are Same Show Alert</li>
+                        <li>on Exchange - Exchnage From n to Stations</li>
+                        <li> Search - Show Selected Details in below Box</li>
+                        <li> Clear - Clear Booking Form n Hide Journey Details Info</li>
+                    </ul>
+                    <div class="row">
+                        <div class="col-5 col-sm-5 col-md-5">
+                            <label for=""> From Station</label>
+                            <select name="" id="dpdlFrom" class="form-control selector-font">
+                                <option value="">From Station</option>
+                            </select>
+                        </div>
+                        <div class="col-2 col-sm-2 col-md-1 pt-4 text-center">
+                            <i class="fa fa-exchange" id="exchange" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-5 col-sm-5 col-md-5">
+                            <label for=""> To Station</label>
+                            <select name="" id="dpdlTo" class="form-control selector-font">
+                                <option value="">To Station</option>
+                            </select>
+                        </div>
+                        <div class="col-6 col-sm-6 col-md-5">
+                            <label for="">Journey Date</label>
+                            <input type="date" id="txtDate" class="form-control">
+                        </div>
+                        <div class="col-6 col-sm-6 col-md-5">
                             <div class="row">
-                                <div class="col-5 col-sm-5 col-md-5">
-                                    <label for=""> From Station</label>
-                                    <select name="" id="dpdlFrom" class="form-control">
-                                        <option value="">From Station</option>
-                                    </select>
+                                <div class="col-6 text-end">
+                                    <button class="btn btn-sm btn-primary mt-4" id="btnSearch">Search</button>
                                 </div>
-                                <div class="col-2 col-sm-2 col-md-1 pt-4 text-center">
-                                    <i class="fa fa-exchange" id="exchange" aria-hidden="true"></i>
+                                <div class="col-6 text-start"> <button class="btn btn-sm btn-success mt-4"
+                                        id="btnClear">Clear</button>
                                 </div>
-                                <div class="col-5 col-sm-5 col-md-5">
-                                    <label for=""> To Station</label>
-                                    <select name="" id="dpdlTo" class="form-control">
-                                        <option value="">To Station</option>
-                                    </select>
-                                </div>
-
-                                <div class="col-6 col-sm-6 col-md-5">
-                                    <label for="">Journey Date</label>
-                                    <input type="date" id="txtDate" class="form-control">
-                                </div>
-                                <div class="col-6 col-sm-6 col-md-5">
-                                    <div class="row">
-                                        <div class="col-6 text-end">
-                                            <button class="btn btn-sm btn-primary mt-4" id="btnSearch">Search</button>
-
-                                        </div>
-                                        <div class="col-6 text-start"> <button class="btn btn-sm btn-success mt-4"
-                                                id="btnClear">Clear</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row pt-5 journey">
-                                <div class="col-8">
-                                    <h4>Selected Journey Details</h4>
-                                </div>
-                            </div>
-                            <div class="row journey">
-                                <div class="col-4 col-sm-4 col-md-4">
-                                    Date: <strong id="dateText"></strong>
-                                </div>
-                                <div class="col-4 col-sm-4 col-md-4">
-                                    From: <strong id="fromText"></strong>
-                                </div>
-                                <div class="col-4 col-sm-4 col-md-4">
-                                    From: <strong id="toText"></strong>
-                                </div>
-
-                            </div>
-                            <div class="text-center pt-3">
-                                <button id="btn1" class="btn btn-attempt">Attempt</button>
                             </div>
                         </div>
+                    </div>
+                    <div class="row pt-5 journey">
+                        <div class="col-8">
+                            <h4>Selected Journey Details</h4>
+                        </div>
+                    </div>
+                    <div class="row journey">
+                        <div class="col-4 col-sm-4 col-md-4">
+                            Date: <strong id="dateText"></strong>
+                        </div>
+                        <div class="col-4 col-sm-4 col-md-4">
+                            From: <strong id="fromText"></strong>
+                        </div>
+                        <div class="col-4 col-sm-4 col-md-4">
+                            From: <strong id="toText"></strong>
+                        </div>
+                    </div>
+                    <div class="text-center py-3">
+                        <button id="btn1" class="btn btn-attempt attepfont">Attempt</button>
                     </div>
                 </div>
             </div>
         </div>
-        <script type="text/javascript" src="../menu.js"></script>
+    </div>
+    <script type="text/javascript" src="../menu.js"></script>
     </div>
     <script>
         const buttons = document.querySelectorAll('button[id^="btn"]');
@@ -271,15 +326,15 @@
                 event.preventDefault();
                 if (currentState === 'attempt') {
                     button.textContent = 'Attempting';
-                    button.className = 'btn btn-attempting';
+                    button.className = 'btn btn-attempting attepfont';
                     currentState = 'attempting';
                 } else if (currentState === 'attempting') {
-                    button.textContent = 'Attempt in Progress';
-                    button.className = 'btn btn-progress';
+                    button.textContent = 'Attempt in Progress ';
+                    button.className = 'btn btn-progress attepfont';
                     currentState = 'progress';
                 } else {
                     button.textContent = 'Attempt';
-                    button.className = 'btn btn-attempt';
+                    button.className = 'btn btn-attempt attepfont';
                     currentState = 'attempt';
                 }
             });

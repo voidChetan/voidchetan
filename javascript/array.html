@@ -64,7 +64,7 @@
             border-width: 2px;
         }
 
-        @media (max-width: 576px) {
+        /* @media (max-width: 576px) {
             .col-12.col-sm-6.col-md-3 {
                 flex-basis: 100%;
                 max-width: 100%;
@@ -76,6 +76,45 @@
                 flex-basis: 50%;
                 max-width: 50%;
             }
+        } */
+        @media (max-width: 798px) {
+            .task-container {
+                font-size: smaller;
+            }
+
+            .task-list {
+                /* text-align: left; */
+                padding: 10px;
+            }
+
+            .task-heading {
+                font-weight: bold;
+                font-size: 16px;
+                color: #007bff;
+            }
+        }
+
+        @media (max-width: 425px) {
+            .task-container {
+                font-size: 11px;
+
+            }
+
+            .task-list {
+                /* text-align: left; */
+                padding: 10px;
+            }
+
+            .task-heading {
+                font-weight: bold;
+                font-size: 13px;
+                color: #007bff;
+            }
+
+            .attepfont {
+                font-size: 12px;
+            }
+
         }
     </style>
     <script>
@@ -172,7 +211,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg voidChetan navbar-dark bg-dark">
+    <!-- <nav class="navbar navbar-expand-lg voidChetan navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.html">taskS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -224,208 +263,236 @@
                 <li class="breadcrumb-item active" aria-current="page">JavaScript</li>
                 <li class="breadcrumb-item active" aria-current="page">Array</li>
             </ol>
-        </nav>
+        </nav> -->
 
-        <div class="container mt-4">
-            <div class="row">
-                <!-- Task 1 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
-                    <div class="task-container">
-                        <div class="task-heading">Task 1</div>
-                        <ul class="task-list">
-                            <li>Create an array of Cities</li>
-                            <li>Print the length of the array in the console</li>
-                            <li>Print the 3rd element from the array</li>
-                        </ul>
-                        <button id="btn1" class="btn btn-attempt">Attempt</button>
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <!-- Task 1 -->
+            <div class="  col-6 col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task 1</div>
+                    <ul class="task-list">
+                        <li>Create an array of Cities</li>
+                        <li>Print the length of the array in the console</li>
+                        <li>Print the 3rd element from the array</li>
+                    </ul>
+                    <div class="text-center">
+                        <button id="btn1" class="btn btn-attempt attepfont">Attempt</button>
                     </div>
                 </div>
-
-                <!-- Task 2 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
-                    <div class="task-container">
-                        <div class="task-heading">Task 2</div>
-                        <ul class="task-list">
-                            <li>Create an array of RollNos</li>
-                            <li>Print the length in an alert</li>
-                            <li>Print the 2nd element</li>
-                        </ul>
-                        <button id="btn2" class="btn btn-attempt">Attempt</button>
-                    </div>
-                </div>
-
-                <!-- Task 3 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
-                    <div class="task-container">
-                        <div class="task-heading">Task 3</div>
-                        <ul class="task-list">
-                            <li>Create an array of StudentList</li>
-                            <li>Add functionality to push an entered student name into the array using a button</li>
-                        </ul>
-                        <button id="btn3" class="btn btn-attempt">Attempt</button>
-                    </div>
-                </div>
-
-                <!-- Task 4 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
-                    <div class="task-container">
-                        <div class="task-heading">Task 4</div>
-                        <ul class="task-list">
-                            <li>Create an array of Numbers</li>
-                            <li>Implement push, pop, shift, and unshift operations using buttons</li>
-                        </ul>
-                        <button id="btn4" class="btn btn-attempt">Attempt</button>
-                    </div>
-                </div>
-
-                <!-- Task 5 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
-                    <div class="task-container">
-                        <div class="task-heading">Task 5</div>
-                        <ul class="task-list">
-                            <li>Create an array of RollNos</li>
-                            <li>Allow the user to get an element by entering an index number</li>
-                        </ul>
-                        <button id="btn5" class="btn btn-attempt">Attempt</button>
-                    </div>
-                </div>
-
-                <!-- Task 6 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
-                    <div class="task-container">
-                        <div class="task-heading">Task 6</div>
-                        <ul class="task-list">
-                            <li>Create an array of RollNos</li>
-                            <li>Add a button to print the length of the array in a strong tag</li>
-                        </ul>
-                        <button id="btn6" class="btn btn-attempt">Attempt</button>
-                    </div>
-                </div>
-
-                <!-- Task 7 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
-                    <div class="task-container">
-                        <div class="task-heading">Task 7</div>
-                        <ul class="task-list">
-                            <li>Add entered City to a dropdown</li>
-                            <li>Ensure no duplicate cities are allowed</li>
-                            <li>Show the count of cities</li>
-                        </ul>
-                        <button id="btn7" class="btn btn-attempt">Attempt</button>
-                    </div>
-                </div>
-
-                <!-- Task 8 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
-                    <div class="task-container">
-                        <div class="task-heading">Task 8</div>
-                        <ul class="task-list">
-                            <li>Create a function to check if two passed parameters are the same (different data types)
-                            </li>
-                        </ul>
-                        <button id="btn8" class="btn btn-attempt">Attempt</button>
-                    </div>
-                </div>
-
-                <!-- Task 9 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
-                    <div class="task-container">
-                        <div class="task-heading">Task 9</div>
-                        <ul class="task-list">
-                            <li>Create a function to check if a key exists in an object</li>
-                        </ul>
-                        <button id="btn9" class="btn btn-attempt">Attempt</button>
-                    </div>
-                </div>
-
-                <!-- Task 10 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
-                    <div class="task-container">
-                        <div class="task-heading">Task 10</div>
-                        <ul class="task-list">
-                            <li>Create a button to start a timer from 10 to 0</li>
-                            <li>Update the timer every second</li>
-                        </ul>
-                        <button id="btn10" class="btn btn-attempt">Attempt</button>
-                    </div>
-                </div>
-
-                <!-- Task 11 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
-                    <div class="task-container">
-                        <div class="task-heading">Task 11</div>
-                        <ul class="task-list">
-                            <li>Create a 'Schedule Message' feature using setTimeout</li>
-                            <li>Schedule message based on specified time</li>
-                        </ul>
-                        <button id="btn11" class="btn btn-attempt">Attempt</button>
-                    </div>
-                </div>
-
-                <!-- Task 12 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
-                    <div class="task-container">
-                        <div class="task-heading">Task 12</div>
-                        <ul class="task-list">
-                            <li>Implement a city search functionality in an array of cities</li>
-                            <li>Show if the city is found</li>
-                        </ul>
-                        <button id="btn12" class="btn btn-attempt">Attempt</button>
-                    </div>
-                </div>
-
-                <!-- Task 13 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
-                    <div class="task-container">
-                        <div class="task-heading">Task 13</div>
-                        <ul class="task-list">
-                            <li>Create a dynamic table from an object of student details</li>
-                        </ul>
-                        <button id="btn13" class="btn btn-attempt">Attempt</button>
-                    </div>
-                </div>
-
-                <!-- Task 14 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
-                    <div class="task-container">
-                        <div class="task-heading">Task 14</div>
-                        <ul class="task-list">
-                            <li>Create a state list array</li>
-                            <li>Sort it using a button</li>
-                            <li>Display the sorted array</li>
-                        </ul>
-                        <button id="btn14" class="btn btn-attempt">Attempt</button>
-                    </div>
-                </div>
-
             </div>
+
+            <!-- Task 2 -->
+            <div class="  col-6 col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task 2</div>
+                    <ul class="task-list">
+                        <li>Create an array of RollNos</li>
+                        <li>Print the length in an alert</li>
+                        <li>Print the 2nd element</li>
+                    </ul>
+                    <div class="text-center">
+                        <button id="btn2" class="btn btn-attempt attepfont">Attempt</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Task 3 -->
+            <div class="  col-6 col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task 3</div>
+                    <ul class="task-list">
+                        <li>Create an array of StudentList</li>
+                        <li>Add functionality to push an entered student name into the array using a button</li>
+                    </ul>
+                    <button id="btn3" class="btn btn-attempt attepfont">Attempt</button>
+                </div>
+            </div>
+
+            <!-- Task 4 -->
+            <div class="  col-6 col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task 4</div>
+                    <ul class="task-list">
+                        <li>Create an array of Numbers</li>
+                        <li>Implement push, pop, shift, and unshift operations using buttons</li>
+                    </ul>
+                    <div class="text-center">
+                        <button id="btn4" class="btn btn-attempt attepfont">Attempt</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Task 5 -->
+            <div class="  col-6 col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task 5</div>
+                    <ul class="task-list">
+                        <li>Create an array of RollNos</li>
+                        <li>Allow the user to get an element by entering an index number</li>
+                    </ul>
+                    <div class="text-center">
+                        <button id="btn5" class="btn btn-attempt attepfont">Attempt</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Task 6 -->
+            <div class="  col-6 col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task 6</div>
+                    <ul class="task-list">
+                        <li>Create an array of RollNos</li>
+                        <li>Add a button to print the length of the array in a strong tag</li>
+                    </ul>
+                    <div class="text-center">
+                        <button id="btn6" class="btn btn-attempt attepfont">Attempt</button>
+                    </div>
+                </div>
+            </div>
+            
+
+            <!-- Task 7 -->
+            <div class="  col-6 col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task 7</div>
+                    <ul class="task-list">
+                        <li>Add entered City to a dropdown</li>
+                        <li>Ensure no duplicate cities are allowed</li>
+                        <li>Show the count of cities</li>
+                    </ul>
+                    <div class="text-center">
+                        <button id="btn7" class="btn btn-attempt attepfont">Attempt</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Task 8 -->
+            <div class="  col-6 col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task 8</div>
+                    <ul class="task-list">
+                        <li>Create a function to check if two passed parameters are the same (different data types)
+                        </li>
+                    </ul>
+                    <div class="text-center">
+                        <button id="btn8" class="btn btn-attempt attepfont">Attempt</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Task 9 -->
+            <div class="  col-6 col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task 9</div>
+                    <ul class="task-list">
+                        <li>Create a function to check if a key exists in an object</li>
+                    </ul>
+                    <div class="text-center">
+                        <button id="btn9" class="btn btn-attempt attepfont">Attempt</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Task 10 -->
+            <div class="  col-6 col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task 10</div>
+                    <ul class="task-list">
+                        <li>Create a button to start a timer from 10 to 0</li>
+                        <li>Update the timer every second</li>
+                    </ul>
+                    <div class="text-center">
+                        <button id="btn10" class="btn btn-attempt attepfont">Attempt</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Task 11 -->
+            <div class="  col-6 col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task 11</div>
+                    <ul class="task-list">
+                        <li>Create a 'Schedule Message' feature using setTimeout</li>
+                        <li>Schedule message based on specified time</li>
+                    </ul>
+                    <div class="text-center">
+                        <button id="btn11" class="btn btn-attempt attepfont">Attempt</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Task 12 -->
+            <div class="  col-6 col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task 12</div>
+                    <ul class="task-list">
+                        <li>Implement a city search functionality in an array of cities</li>
+                        <li>Show if the city is found</li>
+                    </ul>
+                    <div class="text-center">
+                        <button id="btn12" class="btn btn-attempt attepfont">Attempt</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Task 13 -->
+            <div class="  col-6 col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task 13</div>
+                    <ul class="task-list">
+                        <li>Create a dynamic table from an object of student details</li>
+
+                    </ul>
+                    <div class="text-center">
+                        <button id="btn13" class="btn btn-attempt attepfont">Attempt</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Task 14 -->
+            <div class="  col-6 col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task 14</div>
+                    <ul class="task-list">
+                        <li>Create a state list array</li>
+                        <li>Sort it using a button</li>
+                        <li>Display the sorted array</li>
+                    </ul>
+                    <div class="text-center">
+                        <button id="btn14" class="btn btn-attempt attepfont">Attempt</button>
+                    </div>
+                </div>
+            </div>
+
         </div>
-        <script type="text/javascript" src="../menu.js"></script>
+    </div>
+    <script type="text/javascript" src="../menu.js"></script>
 
-        <script>
-            const buttons = document.querySelectorAll('button[id^="btn"]');
+    <script>
+        const buttons = document.querySelectorAll('button[id^="btn"]');
 
-            buttons.forEach((button) => {
-                let currentState = 'attempt';
+        buttons.forEach((button) => {
+            let currentState = 'attempt';
 
-                button.addEventListener('click', function (event) {
-                    event.preventDefault();
-                    if (currentState === 'attempt') {
-                        button.textContent = 'Attempting';
-                        button.className = 'btn btn-attempting';
-                        currentState = 'attempting';
-                    } else if (currentState === 'attempting') {
-                        button.textContent = 'Attempt in Progress';
-                        button.className = 'btn btn-progress';
-                        currentState = 'progress';
-                    } else {
-                        button.textContent = 'Attempt';
-                        button.className = 'btn btn-attempt';
-                        currentState = 'attempt';
-                    }
-                });
+            button.addEventListener('click', function (event) {
+                event.preventDefault();
+                if (currentState === 'attempt') {
+                    button.textContent = 'Attempting';
+                    button.className = 'btn btn-attempt attepfonting';
+                    currentState = 'attempting';
+                } else if (currentState === 'attempting') {
+                    button.textContent = 'Attempt in Progress';
+                    button.className = 'btn btn-progress';
+                    currentState = 'progress';
+                } else {
+                    button.textContent = 'Attempt';
+                    button.className = 'btn btn-attempt attepfont';
+                    currentState = 'attempt';
+                }
             });
-        </script>
+        });
+    </script>
 </body>
 
 </html>

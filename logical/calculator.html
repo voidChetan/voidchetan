@@ -13,10 +13,46 @@
     <link rel="stylesheet" href="../custom.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Scenario - 1</title>
-    
+
 
 
     <style>
+        .task-container {
+            padding: 10px;
+            border: 1px solid #007bff;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+            height: 100%;
+        }
+
+        .task-container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            background-color: #d3ffce;
+        }
+
+        .task-heading {
+            font-weight: bold;
+            font-size: 20px;
+            color: #007bff;
+        }
+
+        .task-list {
+            text-align: left;
+        }
+
+        .btn:focus {
+            outline: none;
+            border: 2px solid currentColor;
+        }
+
+        .btn:hover {
+            border-width: 2px;
+        }
+
         .calculadora {
             margin-top: 40px;
             border: solid 1px #000;
@@ -57,7 +93,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg voidChetan navbar-dark bg-dark">
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.html">taskS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -102,19 +138,22 @@
         </div>
     </nav>
     <div class="container pt-1">
-        <nav class="voidChetan" style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
             aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Angular</li>
                 <li class="breadcrumb-item active" aria-current="page">Logical</li>
             </ol>
-        </nav>
-        <div class="row">
-            <div class="col-6">
-                <div class="myBox">
-                    <div class="text-center">
-                        <h3>Calculator  </h3>
+        </nav> -->
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-center pt-3">
+            <!-- Task 1 -->
+            <div class="col-12 col-sm-12 col-md-12 mb-4  ">
+                <div class="task-container">
+                    <div class="task-heading">Task 1</div>
+                    <div class="text-center pb-5">
+                        <h3>Calculator </h3>
                     </div>
                     <ul>
                         <li>Create UI design like below or Copy Paste UI</li>
@@ -125,7 +164,6 @@
                             <div class="row">
                                 <div class="col d-flex justify-content-center">
                                     <br />
-
                                     <div class="calculadora">
                                         <input type="text" id="resultado" class="form-control resultado" placeholder="0"
                                             disabled="disabled" />
@@ -206,18 +244,14 @@
                             // valor = value.  I couldn't use the same name for value as the value, so I used in Portuguese to work well.
                             //using type as tipo worked fine as well
                         </script>
+
                     </div>
-                    <script>
-
-                    </script>
-                    
                 </div>
-
-
             </div>
 
         </div>
-        <script type="text/javascript" src="../menu.js"> </script>
+        <script type="text/javascript" src="../menu.js"></script>
+    </div>
 </body>
 
 </html>

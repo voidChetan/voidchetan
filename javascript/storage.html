@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../custom.css">
     <style>
         .task-container {
-            padding: 20px;
+            padding: 10px;
             border: 1px solid #007bff;
             border-radius: 8px;
             background-color: #f9f9f9;
@@ -22,7 +22,7 @@
         }
 
         .task-container:hover {
-            transform: scale(1.05);
+              transform: scale(1.02);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
             background-color: #d3ffce;
         }
@@ -67,18 +67,60 @@
 
         }
 
-        @media (max-width: 576px) {
-            .col-12.col-sm-6.col-md-3 {
-                flex-basis: 100%;
-                max-width: 100%;
+        @media (max-width: 798px) {
+            .task-container {
+                font-size: smaller;
+
             }
+
+            .task-list {
+                /* text-align: left; */
+                padding: 10px;
+            }
+
+            .task-heading {
+                font-weight: bold;
+                font-size: 16px;
+                color: #007bff;
+            }
+            .form-control::placeholder {
+                font-size: 11px;
+            }
+.city{
+    font-size: 11px;
+}
+
         }
 
-        @media (max-width: 768px) {
-            .col-12.col-sm-6.col-md-3 {
-                flex-basis: 100%;
-                max-width: 100%;
+        @media (max-width: 425px) {
+            .task-container {
+                font-size: 11px;
+
             }
+
+            .task-list {
+                /* text-align: left; */
+                padding: 10px;
+            }
+
+            .task-heading {
+                font-weight: bold;
+                font-size: 13px;
+                color: #007bff;
+            }
+
+            .attepfont {
+                font-size: 12px;
+            }
+            .form-control::placeholder {
+                font-size: 8px;
+            }
+.city{
+    font-size: 8px;
+}
+
+       
+
         }
     </style>
     <script>
@@ -173,7 +215,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg voidChetan navbar-dark bg-dark">
+    <!-- <nav class="navbar navbar-expand-lg voidChetan navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.html">taskS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -222,11 +264,11 @@
                 <li class="breadcrumb-item active" aria-current="page">JavaScript</li>
                 <li class="breadcrumb-item active" aria-current="page">Storage</li>
             </ol>
-        </nav>
-        <div class="container mt-4">
+        </nav> -->
+        <div class="container-fluid mt-4">
             <div class="row">
                 <!-- Task 1 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
                     <div class="task-container">
                         <div class="task-heading">Task 1</div>
                         <ul class="task-list">
@@ -262,7 +304,10 @@
                                 <label for="" id="lblLName"></label>
                             </div>
                         </div>
-                        <button id="btn1" class="btn btn-attempt">Attempt</button>
+                        <div class="text-center">
+                            <button id="btn1" class=" btn btn-attempt  attepfont">Attempt</button>
+
+                        </div>
                     </div>
                     <script>
                         $(document).ready(function () {
@@ -289,7 +334,7 @@
                     </script>
                 </div>
                 <!-- Task 2 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
                     <div class="task-container">
                         <div class="task-heading">Task 2</div>
                         <ul class="task-list">
@@ -321,13 +366,15 @@
                                 <button class="btn btn-sm btn-success" id="btnSaveEmp"> Save Data</button>
                                 <br>
                                 <br>
-                                <button id="btn2" class="btn btn-attempt">Attempt</button>
+                                <div class="text-center">
+                                <button id="btn2" class=" btn btn-attempt  attepfont">Attempt</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Task 3 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
                     <div class="task-container">
                         <div class="task-heading">Task 3</div>
                         <ul class="task-list">
@@ -347,19 +394,22 @@
                         </div>
                         <div class="row pt-3">
                             <div class="col-6">
-                                <select name="" id="dpdlCity" class="form-control">
+                                <select name="" id="dpdlCity" class="form-control city">
                                     <option value="">Select City</option>
                                 </select>
                             </div>
                         </div>
                         <br> <br>
-                        <br><button id="btn3" class="btn btn-attempt">Attempt</button>
+                        <br>
+                        <div class="text-center">
+                        <button id="btn3" class=" btn btn-attempt  attepfont">Attempt</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <script type="text/javascript" src="../menu.js"></script>
-        <!-- <script>
+        <script>
             const buttons = document.querySelectorAll('button[id^="btn"]');
 
             buttons.forEach((button) => {
@@ -369,7 +419,7 @@
                     event.preventDefault();
                     if (currentState === 'attempt') {
                         button.textContent = 'Attempting';
-                        button.className = 'btn btn-attempting';
+                        button.className = ' btn btn-attempt  attepfonting';
                         currentState = 'attempting';
                     } else if (currentState === 'attempting') {
                         button.textContent = 'Attempt in Progress';
@@ -377,12 +427,12 @@
                         currentState = 'progress';
                     } else {
                         button.textContent = 'Attempt';
-                        button.className = 'btn btn-attempt';
+                        button.className = ' btn btn-attempt  attepfont';
                         currentState = 'attempt';
                     }
                 });
             });
-        </script> -->
+        </script>
 </body>
 
 </html>

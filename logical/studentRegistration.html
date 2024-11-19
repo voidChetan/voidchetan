@@ -14,13 +14,89 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Studetn Registration</title>
     <script type="text/javascript" src="../menu.js"> </script>
-
-    <script>
-
-    </script>
     <style>
         .card {
             cursor: pointer !important;
+        }
+
+        .task-container {
+            padding: 10px;
+            border: 1px solid #007bff;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+            height: 100%;
+        }
+
+        .task-container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            background-color: #d3ffce;
+        }
+
+        .task-heading {
+            font-weight: bold;
+            font-size: 20px;
+            color: #007bff;
+        }
+
+        .task-list {
+            text-align: left;
+        }
+
+        .btn-attempt {
+            background-color: #007bff;
+            color: white;
+            border: 2px solid #007bff;
+        }
+
+        .btn-attempting {
+            background-color: #f0ad4e;
+            color: white;
+            border: 2px solid #f0ad4e;
+        }
+
+        .btn-progress {
+            background-color: #5cb85c;
+            color: white;
+            border: 2px solid #5cb85c;
+        }
+
+        .btn:focus {
+            outline: none;
+            border: 2px solid currentColor;
+        }
+
+        .btn:hover {
+            border-width: 2px;
+        }
+
+        @media (max-width: 425px) {
+            .attepfont {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 375px) {
+            .attepfont {
+                font-size: 11px;
+            }
+
+            label {
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width: 375px) {
+            .attepfont {
+                font-size: 12px;
+            }
+
+            label {
+                font-size: 11px;
+            }
         }
     </style>
 </head>
@@ -28,36 +104,32 @@
 <body>
     <script>
         $(document).ready(function () {
-            $(".name").change(function () { 
+            $(".name").change(function () {
                 console.log("asdasd")
-                $("#txtFullname").val($("#txtFname").val() + " "+$("#txtMname").val() + " "+$("#txtLname").val())
+                $("#txtFullname").val($("#txtFname").val() + " " + $("#txtMname").val() + " " + $("#txtLname").val())
             })
-            $("#dpdlCaste").change(function () { 
-                if($(this).val()  == "other") {
+            $("#dpdlCaste").change(function () {
+                if ($(this).val() == "other") {
                     $("#otherCaste").show()
                 } else {
                     $("#otherCaste").hide()
                 }
             })
-            $(".per").change(function () { 
+            $(".per").change(function () {
                 console.log("asdasd")
                 let tenth = Number($("#txttenthth").val());
                 let tewleth = Number($("#txttewleth").val());
                 let gradu = Number($("#txtGraduation").val());
-                $("#txtAvarage").val(((tenth+tewleth+gradu)/3).toFixed(2))
+                $("#txtAvarage").val(((tenth + tewleth + gradu) / 3).toFixed(2))
             })
-            $("#txtMobile").change(function () { 
+            $("#txtMobile").change(function () {
                 let fname = $("#txtFname").val();
                 let mobil = $("#txtMobile").val().substr($("#txtMobile").val().length - 4);
-                $("#txtRegistartionNo").val(fname+ mobil);
-
-
+                $("#txtRegistartionNo").val(fname + mobil);
             })
-            
-            
         })
     </script>
-    <nav class="navbar navbar-expand-lg voidChetan navbar-dark bg-dark">
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.html">taskS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -102,50 +174,55 @@
         </div>
     </nav>
     <div class="container pt-1">
-        <nav class="voidChetan" style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
             aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Logical</li>
                 <li class="breadcrumb-item active" aria-current="page">Student Registration</li>
             </ol>
-        </nav>
+        </nav> -->
+    <div class="container-fluid mt-4">
         <div class="row">
-            <div class="col-12">
-                <div class="myBox">
+            <!-- Task 1 -->
+            <div class="col-12 col-sm-12 col-md-12 mb-4">
+                <div class="task-container">
+                    <div class="task-heading">Task 1</div>
                     <div class="text-center">
                         <h3>Student Registration Form</h3>
                     </div>
-                    <ul>
+                    <ul class="task-list">
                         <li>Create Full name using fName,mName,lName</li>
                         <li>if caste other is selecetd then only show Other caste textbox</li>
                         <li>calculate avarage % of 10th, 12th & graduation and show in avarage textbox</li>
-                        <li>create Registration no by using firstname + last 4 digit of mobile no mean <br>if name is
+                        <li>create Registration no by using firstname + last 4 digit of mobile no mean <br>if name
+                            is
                             chetan & mobile no is 1122334455 so registration no will be <strong>chetan4455</strong>
                         </li>
+
                     </ul>
                     <div class="row text-center">
-                        <div class="col-4 col-sm-4 col-md-3 col-lg-3">
+                        <div class=" col-sm-4 col-md-4 col-lg-4 col-4">
                             <label for="">First Name</label>
                             <input type="text" class="form-control name" id="txtFname">
                         </div>
-                        <div class="col-4 col-sm-4 col-md-3 col-lg-3">
+                        <div class=" col-sm-4 col-md-4 col-lg-4 col-4">
                             <label for="">Middle Name</label>
                             <input type="text" class="form-control name" id="txtMname">
                         </div>
-                        <div class="col-4 col-sm-4 col-md-3 col-lg-3">
+                        <div class=" col-sm-4 col-md-4 col-lg-4 col-4">
                             <label for="">Last Name</label>
                             <input type="text" class="form-control name" id="txtLname">
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-8 col-md-4 col-sm-8">
+                        <div class="col-md-4 col-sm-12">
                             <label for="">Full Name</label>
                             <input type="text" disabled class="form-control" id="txtFullname">
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-6 col-sm-6 col-md-3 col-lg-3">
+                        <div class=" col-sm-6 col-md-6 col-lg-6">
                             <label for="">Select Caste</label>
                             <select name="" id="dpdlCaste" class="form-control">
                                 <option value="">Select Caste</option>
@@ -155,25 +232,25 @@
                                 <option value="other">OTHER</option>
                             </select>
                         </div>
-                        <div id="otherCaste" class="col-6 col-sm-6 col-md-3 col-lg-3" style="display: none;">
+                        <div id="otherCaste" class=" col-sm-6 col-md-6 col-lg-6" style="display: none;">
                             <label for="">Enter Other Caste</label>
                             <input type="text" class="form-control" id="txtOtherCaste">
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-3 col-sm-3 col-md-3 col-lg-3">
+                        <div class=" col-sm-6 col-md-3 col-lg-3 col-6">
                             <label for="">Enter 10th %</label>
                             <input type="text" class="form-control per" id="txttenthth">
                         </div>
-                        <div class="col-3 col-sm-3 col-md-3 col-lg-3">
+                        <div class="col-sm-6 col-md-3 col-lg-3 col-6">
                             <label for="">Enter 12th %</label>
                             <input type="text" class="form-control per" id="txttewleth">
                         </div>
-                        <div class="col-3 col-sm-3 col-md-3 col-lg-3">
+                        <div class="col-sm-3 col-md-3 col-lg-3 col-6">
                             <label for=""> Graduation %</label>
                             <input type="text" class="form-control per" id="txtGraduation">
                         </div>
-                        <div class="col-3 col-sm-3 col-md-3 col-lg-3">
+                        <div class="col-sm-3 col-md-3 col-lg-3 col-6">
                             <label for="">Avarage</label>
                             <input type="text" disabled class="form-control" id="txtAvarage">
                         </div>
@@ -187,14 +264,15 @@
                             <label for="">Registration No</label>
                             <input type="text" disabled class="form-control" id="txtRegistartionNo">
                         </div>
-                    </div> 
-
+                    </div>
+                    <div class="text-center pt-3">
+                        <button id="btn1" class="btn btn-attempt attepfont">Attempt</button>
+                    </div>
                 </div>
             </div>
-
-
         </div>
-
+    </div>
+    </div>
     </div>
     <script>
 
@@ -203,6 +281,32 @@
             $("#divMovies").append(movie);
         });
 
+    </script>
+    <script type="text/javascript" src="../menu.js"></script>
+
+    <script>
+        const buttons = document.querySelectorAll('button[id^="btn"]');
+
+        buttons.forEach((button) => {
+            let currentState = 'attempt';
+
+            button.addEventListener('click', function (event) {
+                event.preventDefault();
+                if (currentState === 'attempt') {
+                    button.textContent = 'Attempting';
+                    button.className = 'btn btn-attempting';
+                    currentState = 'attempting';
+                } else if (currentState === 'attempting') {
+                    button.textContent = 'Attempt in Progress';
+                    button.className = 'btn btn-progress';
+                    currentState = 'progress';
+                } else {
+                    button.textContent = 'Attempt';
+                    button.className = 'btn btn-attempt';
+                    currentState = 'attempt';
+                }
+            });
+        });
     </script>
 </body>
 
