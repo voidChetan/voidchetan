@@ -78,98 +78,96 @@
             <div class="row">
                 <!-- Task 1 -->
                 <div class="col-12 col-sm-12 col-md-12 mb-12">
-                    <div class="task-container">
-                        <div class="task-heading">Task 1</div>
-                        <ul class="task-list">
-                            <li>Create object with fields name, personType, gender, age</li>
-                            <li>On print button click, provide values to all fields based on button selection</li>
-                            <li>On reset, form should reset</li>
-                        </ul>
-                        <div class="row mb-3">
-                            <div class="col-12">
-                                <label for="txtName">Your Name</label>
-                                <input type="text" class="form-control" id="txtName">
-                            </div>
+                    <div class="task-heading">Task 1</div>
+                    <ul class="task-list">
+                        <li>Create object with fields name, personType, gender, age</li>
+                        <li>On print button click, provide values to all fields based on button selection</li>
+                        <li>On reset, form should reset</li>
+                    </ul>
+                    <div class="row mb-3">
+                        <div class="col-12">
+                            <label for="txtName">Your Name</label>
+                            <input type="text" class="form-control" id="txtName">
                         </div>
+                    </div>
 
-                        <!-- Who Are You -->
-                        <h6>Who Are You</h6>
-                        <div class="row">
-                            <div class="col-3">
-                                <div class="selectCard" data-name="Sport Person">
-                                    <i class="fa fa-bicycle fa-2x"></i>
-                                    <span>Sport Person</span>
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <div class="selectCard" data-name="Teacher">
-                                    <i class="fa fa-id-card fa-2x"></i>
-                                    <span>Teacher</span>
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <div class="selectCard" data-name="Banker">
-                                    <i class="fa fa-university fa-2x"></i>
-                                    <span>Banker</span>
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <div class="selectCard" data-name="Musician">
-                                    <i class="fa fa-video-camera fa-2x"></i>
-                                    <span>Musician</span>
-                                </div>
+                    <!-- Who Are You -->
+                    <h6>Who Are You</h6>
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="selectCard" data-name="Sport Person">
+                                <i class="fa fa-bicycle fa-2x"></i>
+                                <span>Sport Person</span>
                             </div>
                         </div>
+                        <div class="col-3">
+                            <div class="selectCard" data-name="Teacher">
+                                <i class="fa fa-id-card fa-2x"></i>
+                                <span>Teacher</span>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="selectCard" data-name="Banker">
+                                <i class="fa fa-university fa-2x"></i>
+                                <span>Banker</span>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="selectCard" data-name="Musician">
+                                <i class="fa fa-video-camera fa-2x"></i>
+                                <span>Musician</span>
+                            </div>
+                        </div>
+                    </div>
 
-                        <!-- Gender -->
-                        <h6 class="mt-3">Gender</h6>
-                        <div class="row">
-                            <div class="col-3">
-                                <div class="genderselectCard" data-gender="Male">
-                                    <i class="fa fa-male fa-2x"></i>
-                                    <span>Male</span>
+                    <!-- Gender -->
+                    <h6 class="mt-3">Gender</h6>
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="genderselectCard" data-gender="Male">
+                                <i class="fa fa-male fa-2x"></i>
+                                <span>Male</span>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="genderselectCard" data-gender="Female">
+                                <i class="fa fa-female fa-2x"></i>
+                                <span>Female</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Age -->
+                    <h6 class="mt-3">Your Age</h6>
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="row align-items-center">
+                                <div class="col-2 text-center">
+                                    <i class="fa fa-minus fa-2x"></i>
+                                </div>
+                                <div class="col-2">
+                                    <h3 class="text-primary">0</h3>
+                                </div>
+                                <div class="col-2 text-center">
+                                    <i class="fa fa-plus fa-2x"></i>
                                 </div>
                             </div>
-                            <div class="col-3">
-                                <div class="genderselectCard" data-gender="Female">
-                                    <i class="fa fa-female fa-2x"></i>
-                                    <span>Female</span>
-                                </div>
-                            </div>
                         </div>
+                    </div>
 
-                        <!-- Age -->
-                        <h6 class="mt-3">Your Age</h6>
-                        <div class="row">
-                            <div class="col-5">
-                                <div class="row align-items-center">
-                                    <div class="col-2 text-center">
-                                        <i class="fa fa-minus fa-2x"></i>
-                                    </div>
-                                    <div class="col-2">
-                                        <h3 class="text-primary">0</h3>
-                                    </div>
-                                    <div class="col-2 text-center">
-                                        <i class="fa fa-plus fa-2x"></i>
-                                    </div>
-                                </div>
-                            </div>
+                    <!-- Buttons -->
+                    <div class="row mt-3">
+                        <div class="col-6">
+                            <button class="btn btn-secondary" id="btnReset">Reset</button>
                         </div>
+                        <div class="col-6">
+                            <button class="btn btn-success" id="btnPrint">Print Object</button>
+                        </div>
+                    </div>
 
-                        <!-- Buttons -->
-                        <div class="row mt-3">
-                            <div class="col-6">
-                                <button class="btn btn-secondary" id="btnReset">Reset</button>
-                            </div>
-                            <div class="col-6">
-                                <button class="btn btn-success" id="btnPrint">Print Object</button>
-                            </div>
-                        </div>
-
-                        <!-- Output -->
-                        <div class="row mt-3">
-                            <div class="col-12" id="divPrint"></div>
-                        </div>
+                    <!-- Output -->
+                    <div class="row mt-3">
+                        <div class="col-12" id="divPrint"></div>
                     </div>
                 </div>
             </div>
