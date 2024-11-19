@@ -16,7 +16,7 @@
 
     <style>
         .task-container {
-            padding: 20px;
+            padding: 10px;
             border: 1px solid #007bff;
             border-radius: 8px;
             background-color: #f9f9f9;
@@ -27,7 +27,7 @@
         }
 
         .task-container:hover {
-            transform: scale(1.05);
+            transform: scale(1.02);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
             background-color: #d3ffce;
         }
@@ -73,28 +73,93 @@
             font-size: 13px;
         }
 
-        @media (max-width: 576px) {
-            .col-12.col-sm-6.col-md-3 {
-                flex-basis: 100%;
-                max-width: 100%;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .col-12.col-sm-6.col-md-3 {
-                flex-basis: 100%;
-                max-width: 100%;
-            }
-        }
 
         .card {
             cursor: pointer !important;
+        }
+
+        .myBox {
+            border-color: #007bff !important;
+
+        }
+
+        @media (max-width: 798px) {
+            .task-container {
+                font-size: smaller;
+            }
+
+            .task-list {
+                /* text-align: left; */
+                padding: 10px;
+            }
+
+            .task-heading {
+                font-weight: bold;
+                font-size: 16px;
+                color: #007bff;
+            }
+
+            .selector-font {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 425px) {
+            .task-container {
+                font-size: 11px;
+            }
+
+            .task-list {
+                padding: 10px;
+            }
+
+            .task-heading {
+                font-weight: bold;
+                font-size: 13px;
+                color: #007bff;
+            }
+
+            .attepfont {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 375px) {
+            .task-container {
+                font-size: 11px;
+            }
+
+            .task-list {
+                padding: 10px;
+            }
+
+            .task-heading {
+                font-weight: bold;
+                font-size: 13px;
+                color: #007bff;
+            }
+            .attepfont {
+                font-size: 11px;
+            }
+            .form-control::placeholder {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 375px) {
+            .attepfont {
+                font-size: 12px;
+            }
+
+            h4 {
+                font-size: 12px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg voidChetan navbar-dark bg-dark">
+    <!-- <nav class="navbar navbar-expand-lg voidChetan navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.html">taskS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -137,8 +202,8 @@
                 </form>
             </div>
         </div>
-    </nav>
-    <div class="container pt-1">
+    </nav> -->
+    <!-- <div class="container pt-1">
         <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
             aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -146,89 +211,86 @@
                 <li class="breadcrumb-item active" aria-current="page">Angular</li>
                 <li class="breadcrumb-item active" aria-current="page">Logical</li>
             </ol>
-        </nav>
-        <div class="container mt-4">
-            <div class="row d-flex justify-content-center">
-                <!-- Task 1 -->
-                <div class="col-12 col-sm-12 col-md-8 mb-4">
-                    <div class="task-container">
-                        <div class="myBox">
-                            <div class="task-heading">Task 1</div>
-                            <div class="text-center">
-                                <h3>Hotel Order System </h3>
-                            </div>
-                            <ul class="task-list">
-                                <li>Create Array of Food Itmes </li>
-                                <li>Display Menu in dropdown and Create Dynamic Dropdown</li>
-                                <li>On Add - add Item with Qty</li>
-                                <li>if item already added Increment quantity </li>
-                                <li>On Clear - Clear all data</li>
-                            </ul>
-                            <div class="row text-center">
-                                <div class="col-4 bg-success p-2">
-                                    <h4>Tea </h4>
-                                    <p>(10 Rs)</p>
+        </nav> -->
+    <div class="container-fluid mt-4">
+        <div class="row d-flex justify-content-center">
+            <!-- Task 1 -->
+            <div class="col-12 col-sm-12 col-md-12 mb-4">
+                <div class="task-container">
+                    <div class="task-heading">Task 1</div>
+                    <div class="text-center">
+                        <h3>Hotel Order System </h3>
+                    </div>
+                    <ul class="task-list">
+                        <li>Create Array of Food Itmes </li>
+                        <li>Display Menu in dropdown and Create Dynamic Dropdown</li>
+                        <li>On Add - add Item with Qty</li>
+                        <li>if item already added Increment quantity </li>
+                        <li>On Clear - Clear all data</li>
+                    </ul>
+                    <div class="row text-center px-2">
+                        <div class="col-4 bg-success p-2">
+                            <h4>Tea </h4>
+                            <p>(10 Rs)</p>
+                        </div>
+                        <div class="col-4 bg-secondary p-2">
+                            <h4>Coffee </h4>
+                            <p>(15 Rs)</p>
+                        </div>
+                        <div class="col-4 bg-primary p-2">
+                            <h4>Sandwich</h4>
+                            <p>(25 Rs)</p>
+                        </div>
+                    </div>
+                    <div class="row pt-2">
+                        <div class="col-12 col-sm-12 col-md-8">
+                            <div class="row">
+                                <div class="col-5 col-md-5 col-sm-5 col-lg-5">
+                                    <Select id="dpdlItem" class="form-control">
+                                        <option value="">Select Item</option>
+                                    </Select>
                                 </div>
-                                <div class="col-4 bg-secondary p-2">
-                                    <h4>Coffee </h4>
-                                    <p>(15 Rs)</p>
+                                <div class="col-5 col-md-5 col-sm-5 col-lg-5">
+                                    <input type="text" id="txtQuantity" class="form-control"
+                                        placeholder="Enter Quantity">
                                 </div>
-                                <div class="col-4 bg-primary p-2">
-                                    <h4>Sandwich</h4>
-                                    <p>(25 Rs)</p>
-                                </div>
-                            </div>
-                            <div class="row pt-2">
-                                <div class="col-12 col-sm-12 col-md-8">
-                                    <div class="row">
-                                        <div class="col-5 col-md-5 col-sm-5 col-lg-5">
-                                            <Select id="dpdlItem" class="form-control">
-                                                <option value="">Select Item</option>
-                                            </Select>
-                                        </div>
-                                        <div class="col-5 col-md-5 col-sm-5 col-lg-5">
-                                            <input type="text" id="txtQuantity" class="form-control"
-                                                placeholder="Enter Quantity">
-                                        </div>
-                                        <div class="col-2  col-md-2 col-sm-2 col-lg-2 px-0">
-                                            <div class="">
-                                                <button class="btn btn-sm btn-success" id="btnAdd">Add </button>
-                                            </div>
-                                        </div>
+                                <div class="col-2  col-md-2 col-sm-2 col-lg-2 px-0">
+                                    <div class="">
+                                        <button class="btn btn-sm btn-success" id="btnAdd">Add </button>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row pt-2">
-                                <div class="col-12">
-                                    <ul id="ulItems">
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="row text-center">
-                                <div class="col-4 text-end">
-                                    <button class="btn btn-danger btnclear" id="btnClear">Clear</button>
-                                </div>
-                                <div class="col-6 text-start">
-                                    <button class="btn btn-success btnclear" id="btnCalCulate">Calculate Bill</button>
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-4 col-md-4 pt-2">
-                                <div class="row" id="divBill" style="background-color: lightgray;">
-                                    <div class="col-12 text-center">
-                                        <strong>Total Bill Amount </strong> <br>
-                                        <span id="btnillAmt"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="text-center pt-5">
-                                <button id="btn1" class="btn btn-attempt w-50">Attempt</button>
                             </div>
                         </div>
                     </div>
+                    <div class="row pt-2">
+                        <div class="col-12">
+                            <ul id="ulItems">
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-4 text-end">
+                            <button class="btn btn-danger btnclear" id="btnClear">Clear</button>
+                        </div>
+                        <div class="col-6 text-start">
+                            <button class="btn btn-success btnclear" id="btnCalCulate">Calculate Bill</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4 col-md-4 pt-2">
+                        <div class="row" id="divBill" style="background-color: lightgray;">
+                            <div class="col-12 text-center">
+                                <strong>Total Bill Amount </strong> <br>
+                                <span id="btnillAmt"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center py-3">
+                        <button id="btn1" class="btn btn-attempt w-50 attepfont">Attempt</button>
+                    </div>
                 </div>
-
             </div>
         </div>
+    </div>
     </div>
     <script type="text/javascript" src="../menu.js"></script>
     <script>
@@ -298,14 +360,14 @@
                 if (currentState === 'attempt') {
                     button.textContent = 'Attempting';
                     button.className = 'btn btn-attempting';
-                    currentState = 'attempting';
+                    currentState = 'attempting attepfont';
                 } else if (currentState === 'attempting') {
                     button.textContent = 'Attempt in Progress';
-                    button.className = 'btn btn-progress';
+                    button.className = 'btn btn-progress attepfont';
                     currentState = 'progress';
                 } else {
                     button.textContent = 'Attempt';
-                    button.className = 'btn btn-attempt';
+                    button.className = 'btn btn-attempt attepfont';
                     currentState = 'attempt';
                 }
             });

@@ -26,7 +26,7 @@
         }
 
         .task-container:hover {
-            transform: scale(1.05);
+            transform: scale(1.02);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
             background-color: #d3ffce;
         }
@@ -67,21 +67,6 @@
         .btn:hover {
             border-width: 2px;
         }
-
-        @media (max-width: 576px) {
-            .col-12.col-sm-6.col-md-3 {
-                flex-basis: 100%;
-                max-width: 100%;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .col-12.col-sm-6.col-md-3 {
-                flex-basis: 100%;
-                max-width: 100%;
-            }
-        }
-
         .card {
             cursor: pointer !important;
         }
@@ -89,11 +74,87 @@
         .table {
             border-color: #144f8a !important;
         }
+
+        @media (max-width: 798px) {
+            .task-container {
+                font-size: smaller;
+            }
+
+            .task-list {
+                /* text-align: left; */
+                padding: 10px;
+            }
+
+            .task-heading {
+                font-weight: bold;
+                font-size: 16px;
+                color: #007bff;
+            }
+
+            .selector-font {
+                font-size: 16px;
+            }
+
+        }
+
+        @media (max-width: 425px) {
+            .task-container {
+                font-size: 11px;
+            }
+
+            .task-list {
+                /* text-align: left; */
+                padding: 10px;
+            }
+
+            .task-heading {
+                font-weight: bold;
+                font-size: 13px;
+                color: #007bff;
+            }
+
+            .attepfont {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 375px) {
+            .task-container {
+                font-size: 11px;
+            }
+
+            .task-list {
+                /* text-align: left; */
+                padding: 10px;
+            }
+
+            .task-heading {
+                font-weight: bold;
+                font-size: 13px;
+                color: #007bff;
+            }
+
+            .attepfont {
+                font-size: 11px;
+            }
+            .form-control::placeholder {
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width:320px) {
+            .form-control::placeholder {
+                font-size: 10px;
+            }
+            .selector-font {
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg voidChetan navbar-dark bg-dark">
+    <!-- <nav class="navbar navbar-expand-lg voidChetan navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.html">taskS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -147,73 +208,73 @@
                 <li class="breadcrumb-item active" aria-current="page">Logical</li>
             </ol>
         </nav>
-    </div>
-    <div class="container mt-4">
+    </div> -->
+    <div class="container-fluid mt-4">
         <div class="row d-flex justify-content-center">
             <!-- Task 1 -->
-            <div class="col-12 col-sm-12 col-md-8 mb-4">
+            <div class="col-12 col-sm-12 col-md-12 mb-4">
                 <div class="task-container">
-                    <div class="myBox">
-                        <div class="task-heading">Task 1</div>
-                        <div class="text-center">
-                            <h3>grocery List </h3>
-                        </div>
-                        <ul>
-                            <li>Create Array of Grocery Items with their Prices</li>
-                            <li>Show grocery item in dropdown and add textbox & button to Add Them </li>
-                            <li>on Add- Create Object of Grocery Item with Quantity and add it to New Array CartItems
-                            </li>
-                            <li>if item already added Increment quantity </li>
-                            <li>Use For Loop on CartItems to Display Cart Items in Table </li>
-                        </ul>
-                        <div class="row">
-                            <div class="col-12 col-sm-12 col-md-8">
-                                <div class="row">
-                                    <div class="col-5 col-md-5 col-sm-5 col-lg-5">
-                                        <Select id="dpdlItem" class="form-control">
-                                            <option value="">Select Item</option>
-                                        </Select>
-                                    </div>
-                                    <div class="col-5 col-md-5 col-sm-5 col-lg-5">
-                                        <input type="text" id="txtQuantity" class="form-control"
-                                            placeholder="Enter Quantity">
-                                    </div>
-                                    <div class="col-2  col-md-2 col-sm-2 col-lg-2 px-0">
-                                        <button class="btn btn-sm btn-success" id="btnAdd">Add </button>
-                                    </div>
+                    <!-- <div class="myBox"> -->
+                    <div class="task-heading">Task 1</div>
+                    <div class="text-center">
+                        <h3>grocery List </h3>
+                    </div>
+                    <ul>
+                        <li>Create Array of Grocery Items with their Prices</li>
+                        <li>Show grocery item in dropdown and add textbox & button to Add Them </li>
+                        <li>on Add- Create Object of Grocery Item with Quantity and add it to New Array CartItems
+                        </li>
+                        <li>if item already added Increment quantity </li>
+                        <li>Use For Loop on CartItems to Display Cart Items in Table </li>
+                    </ul>
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-12">
+                            <div class="row">
+                                <div class="col-5 col-md-5 col-sm-5 col-lg-5">
+                                    <Select id="dpdlItem" class="form-control selector-font">
+                                        <option value="">Select Item</option>
+                                    </Select>
+                                </div>
+                                <div class="col-5 col-md-5 col-sm-5 col-lg-5">
+                                    <input type="text" id="txtQuantity" class="form-control"
+                                        placeholder="Enter Quantity">
+                                </div>
+                                <div class="col-2  col-md-2 col-sm-2 col-lg-2 px-0">
+                                    <button class="btn btn-sm btn-success" id="btnAdd">Add </button>
                                 </div>
                             </div>
                         </div>
-                        <div class="row pt-2">
-                            <div class="col-12">
-                                <table class="table table-bordered" id="tableItems">
-                                    <thead>
-                                        <tr>
-                                            <th>Sr No</th>
-                                            <th>Item Name</th>
-                                            <th>Quantity</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <td class="text-end bg-secondary" colspan="2">Total</td>
-                                            <td class="text-end bg-secondary">
-                                                <strong id="tot">00.00</strong>
-                                            </td>
-                                        </tr>
-                                    </tfoot>
-                                </table>
-                            </div>
+                    </div>
+                    <div class="row pt-2">
+                        <div class="col-12">
+                            <table class="table table-bordered" id="tableItems">
+                                <thead>
+                                    <tr>
+                                        <th>Sr No</th>
+                                        <th>Item Name</th>
+                                        <th>Quantity</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td class="text-end bg-secondary" colspan="2">Total</td>
+                                        <td class="text-end bg-secondary">
+                                            <strong id="tot">00.00</strong>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
                         </div>
                     </div>
+                    <!-- </div> -->
                     <ul class="task-list">
                         <li>Create an array of Cities</li>
                         <li>Print the length of the array in the console</li>
                         <li>Print the 3rd element from the array</li>
                     </ul>
-                    <div class="text-center"> <button id="btn1" class="btn btn-attempt">Attempt</button>
+                    <div class="text-center py-3"> <button id="btn1" class="btn btn-attempt attepfont ">Attempt</button>
                     </div>
                 </div>
             </div>
@@ -285,15 +346,15 @@
                 event.preventDefault();
                 if (currentState === 'attempt') {
                     button.textContent = 'Attempting';
-                    button.className = 'btn btn-attempting';
+                    button.className = 'btn btn-attempting attepfont';
                     currentState = 'attempting';
                 } else if (currentState === 'attempting') {
-                    button.textContent = 'Attempt in Progress';
+                    button.textContent = 'Attempt in Progress attepfont';
                     button.className = 'btn btn-progress';
                     currentState = 'progress';
                 } else {
                     button.textContent = 'Attempt';
-                    button.className = 'btn btn-attempt';
+                    button.className = 'btn btn-attempt attepfont';
                     currentState = 'attempt';
                 }
             });

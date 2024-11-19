@@ -16,7 +16,7 @@
 
     <style>
         .task-container {
-            padding: 20px;
+            padding: 10px;
             border: 1px solid #007bff;
             border-radius: 8px;
             background-color: #f9f9f9;
@@ -27,7 +27,7 @@
         }
 
         .task-container:hover {
-            transform: scale(1.05);
+            transform: scale(1.02);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
             background-color: #d3ffce;
         }
@@ -73,6 +73,8 @@
             cursor: pointer !important;
         }
 
+      
+
         @media (max-width: 576px) {
             .col-12.col-sm-6.col-md-3 {
                 flex-basis: 100%;
@@ -80,11 +82,65 @@
             }
         }
 
-        @media (max-width: 768px) {
-            .col-12.col-sm-6.col-md-3 {
-                flex-basis: 100%;
-                max-width: 100%;
+
+        @media (max-width: 425px) {
+            .task-container {
+                font-size: 11px;
             }
+
+            .task-list {
+                /* text-align: left; */
+                padding: 10px;
+            }
+
+            .task-heading {
+                font-weight: bold;
+                font-size: 13px;
+                color: #007bff;
+            }
+
+            .attepfont {
+                font-size: 12px;
+            }
+
+            .form-control::placeholder {
+                font-size: 11px;
+            }
+
+            .bookbtn {
+                font-size: 11x;
+            }
+
+        }
+
+        @media (max-width: 375px) {
+            .task-container {
+                font-size: 11px;
+            }
+
+            .task-list {
+
+                padding: 10px;
+            }
+
+            .task-heading {
+                font-weight: bold;
+                font-size: 13px;
+                color: #007bff;
+            }
+
+            .attepfont {
+                font-size: 11px;
+            }
+
+            .form-control::placeholder {
+                font-size: 9px;
+            }
+
+            .bookbtn {
+                font-size: 10px;
+            }
+
         }
     </style>
     <script>
@@ -152,7 +208,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg voidChetan navbar-dark bg-dark">
+    <!-- <nav class="navbar navbar-expand-lg voidChetan navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.html">taskS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -194,8 +250,8 @@
                 </form>
             </div>
         </div>
-    </nav>
-    <div class="container pt-1">
+    </nav> -->
+    <!-- <div class="container pt-1">
         <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
             aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -203,101 +259,100 @@
                 <li class="breadcrumb-item active" aria-current="page">Angular</li>
                 <li class="breadcrumb-item active" aria-current="page">ng-For Task</li>
             </ol>
-        </nav>
-        <div class="container mt-4">
-            <div class="row">
-                <!-- Task 1 -->
-                <div class="col-12 col-sm-12 col-md-12 mb-4">
-                    <div class="task-container">
-                        <div class="task-heading">Task 1</div>
-                        <div class="myBox">
-                            <div class="text-center">
-                                <h3>Movie Ticket Booking</h3>
+        </nav> -->
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <!-- Task 1 -->
+            <div class="col-12 col-sm-12 col-md-12 mb-4">
+                <div class="task-container">
+                    <div class="task-heading">Task 1</div>
+                 
+                        <div class="text-center">
+                            <h3>Movie Ticket Booking</h3>
+                        </div>
+                        <ul>
+                            <li>create movie array of obj like</li>
+                            <li> {movieName: "",desc: "", rate : "",
+                                shows - ["2-5 pm","5-8 pm"]}</li>
+                            <li>Create Dynamic UI like below by iterating array</li>
+                            <li>on Click of Movie show selcted moview show at bottom</li>
+                            <li>add color to selected movie</li>
+                            <li>user shoud be able to select show time</li>
+                            <li>if only single show is there make it default selected</li>
+                        </ul>
+                        <div class="container">
+                            <div class="row text-center" id="divMovies">
                             </div>
-                            <ul>
-                                <li>create movie array of obj like</li>
-                                <li> {movieName: "",desc: "", rate : "",
-                                    shows - ["2-5 pm","5-8 pm"]}</li>
-                                <li>Create Dynamic UI like below by iterating array</li>
-                                <li>on Click of Movie show selcted moview show at bottom</li>
-                                <li>add color to selected movie</li>
-                                <li>user shoud be able to select show time</li>
-                                <li>if only single show is there make it default selected</li>
-                            </ul>
-                            <div class="container">
-                                <div class="row text-center" id="divMovies">
-                                </div>
+                        </div>
+                        <hr>
+                        <div class="container">
+                            <h5>Available shows</h5>
+                        </div>
+                        <div class="container">
+                            <div class="row" id="divShows">
                             </div>
-                            <hr>
-                            <div class="container">
-                                <h5>Available shows</h5>
-                            </div>
-                            <div class="container">
-                                <div class="row" id="divShows">
-                                </div>
-                            </div>
-                            <div class="container ticketDiv pt-2">
-                                <div class="row">
-                                    <div class="col-6 col-sm-12 col-md-6 my-4">
-                                        <div class="row">
-                                            <div class="col-8 col-md-7 col-sm-8 col-lg-7">
-                                                <input type="text" id="txtNoOfTicket" class="form-control"
-                                                    placeholder="No Of Tickets">
-                                            </div>
-                                            <div class="col-4 col-md-5 col-sm-4 col-lg-5">
-                                                <button class="btn btn-primary" id="btnBook">Book </button>
-                                            </div>
+                        </div>
+                        <div class="container ticketDiv pt-2">
+                            <div class="row">
+                                <div class="col-6 col-sm-12 col-md-6 my-4">
+                                    <div class="row">
+                                        <div class="col-8 col-md-7 col-sm-8 col-lg-7">
+                                            <input type="text" id="txtNoOfTicket" class="form-control"
+                                                placeholder="No Of Tickets">
+                                        </div>
+                                        <div class="col-4 col-md-5 col-sm-4 col-lg-5">
+                                            <button class="btn btn-primary bookbtn " id="btnBook">Book </button>
                                         </div>
                                     </div>
-                                    <div class="col-6  col-sm-12 col-md-6 my-4">
-                                        <p> Movie: <strong id="selecetdMoview"></strong></p>
-                                        <p> ( <strong id="selecetdShow"></strong>)</p>
-                                        <p>For <span id="noticket"></span> Cost will Be <strong
-                                                id="totalAmount"></strong></p>
-                                    </div>
+                                </div>
+                                <div class="col-6  col-sm-12 col-md-6 my-4 ps-5">
+                                    <p> Movie: <strong id="selecetdMoview"></strong></p>
+                                    <p> ( <strong id="selecetdShow"></strong>)</p>
+                                    <p>For <span id="noticket"></span> Cost will Be <strong id="totalAmount"></strong>
+                                    </p>
                                 </div>
                             </div>
-                            <div style="padding-bottom: 200px;">
-                            </div>
                         </div>
-                        <div class="text-center">
-                            <button id="btn1" class="btn btn-attempt w-25">Attempt</button>
                         </div>
-                    </div>
+                        <div class="text-center py-3">
+                            <button id="btn1" class="btn btn-attempt attepfont w-25">Attempt</button>
+                        </div>
+           
                 </div>
             </div>
         </div>
-        <script type="text/javascript" src="../menu.js"></script>
+    </div>
+    <script type="text/javascript" src="../menu.js"></script>
 
-        <script>
-            const buttons = document.querySelectorAll('button[id^="btn1"]');
+    <script>
+        const buttons = document.querySelectorAll('button[id^="btn1"]');
 
-            buttons.forEach((button) => {
-                let currentState = 'attempt';
+        buttons.forEach((button) => {
+            let currentState = 'attempt';
 
-                button.addEventListener('click', function (event) {
-                    event.preventDefault();
-                    if (currentState === 'attempt') {
-                        button.textContent = 'Attempting';
-                        button.className = 'btn btn-attempting';
-                        currentState = 'attempting';
-                    } else if (currentState === 'attempting') {
-                        button.textContent = 'Attempt in Progress';
-                        button.className = 'btn btn-progress';
-                        currentState = 'progress';
-                    } else {
-                        button.textContent = 'Attempt';
-                        button.className = 'btn btn-attempt';
-                        currentState = 'attempt';
-                    }
-                });
+            button.addEventListener('click', function (event) {
+                event.preventDefault();
+                if (currentState === 'attempt') {
+                    button.textContent = 'Attempting';
+                    button.className = 'btn btn-attempting attepfont';
+                    currentState = 'attempting';
+                } else if (currentState === 'attempting') {
+                    button.textContent = 'Attempt in Progress';
+                    button.className = 'btn btn-progress attepfont';
+                    currentState = 'progress';
+                } else {
+                    button.textContent = 'Attempt';
+                    button.className = 'btn btn-attempt attepfont';
+                    currentState = 'attempt';
+                }
             });
-        </script>
+        });
+    </script>
     </div>
     <script type="text/javascript" src="../menu.js"> </script>
     <script>
         movieArray.forEach(element => {
-            let movie = "<div class='col-12 col-md-3 col-sm-12 col-lg-3 pt-2' data-name='" + element.movieName + "'> <div class='card' data-name='" + element.movieName + "'> <div class='card-header' title='" + element.movieName + "' data-name='" + element.movieName + "'> " + element.movieName.substring(0, 10) + " </div> <div class='card-body' title='" + element.description + "'> " + element.description.substring(0, 50) + "... </div> <div class='card-footer'>₹ " + element.ticketRate + " </div> </div> </div>";
+            let movie = "<div class='col-6 col-md-3 col-sm-6 col-lg-3 pt-2' data-name='" + element.movieName + "'> <div class='card' data-name='" + element.movieName + "'> <div class='card-header' title='" + element.movieName + "' data-name='" + element.movieName + "'> " + element.movieName.substring(0, 10) + " </div> <div class='card-body' title='" + element.description + "'> " + element.description.substring(0, 50) + "... </div> <div class='card-footer'>₹ " + element.ticketRate + " </div> </div> </div>";
             $("#divMovies").append(movie);
         }); 
     </script>
