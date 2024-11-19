@@ -62,9 +62,6 @@
 
         .btn:hover {
             border-width: 2px;
-
-
-
         }
 
         @media (max-width: 576px) {
@@ -83,35 +80,29 @@
     </style>
     <script>
         $(document).ready(function () {
-
             $("#btnSuccess").click(function () {
-                ;
-                $("#div1").addClass('bg-success');
-                $("#div1").removeClass('bg-danger');
+                $("#div1").addClass('bg-success').removeClass('bg-danger');
             });
             $("#btnDanger").click(function () {
-                ;
-                $("#div1").removeClass('bg-success');
-                $("#div1").addClass('bg-danger')
+                $("#div1").removeClass('bg-success').addClass('bg-danger');
             });
             $("#btnCircle").click(function () {
-                ;
-                $("#div2").css('width', $("#txtWidth").val());
-                $("#div2").css('height', $("#txtHeight").val());
-                $("#div2").css('border-radius', $("#txtRadius").val());
-                $("#div2").css('background-color', $("#txtBgColor").val());
+                $("#div2").css({
+                    'width': $("#txtWidth").val(),
+                    'height': $("#txtHeight").val(),
+                    'border-radius': $("#txtRadius").val(),
+                    'background-color': $("#txtBgColor").val()
+                });
             });
 
             $('#txtPer').on('input', function () {
-                $('.progress-bar').css('width', $('#txtPer').val() + '%')
+                $('.progress-bar').css('width', $('#txtPer').val() + '%');
             });
-
-        })
+        });
     </script>
 </head>
 
 <body>
-
     <div class="container pt-2">
         <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
             aria-label="breadcrumb">
@@ -122,35 +113,29 @@
         <div class="container mt-4">
             <div class="row">
                 <!-- Task 1 -->
-                <div class="col-12 col-sm-12 col-md-12 mb-12">
+                <div class="col-12 mb-4">
                     <div class="task-container">
                         <div class="task-heading">Task 1</div>
                         <ul class="task-list">
-                            <li> on success btn click add bg-success class & on danger add bg-danger</li>
-                            <li> on Circle btn add dynaic class with</li>
-                            <li> Show count of Added Cities beside dropdown</li>
+                            <li>On success btn click add bg-success class & on danger add bg-danger</li>
+                            <li>On Circle btn add dynamic class with styles</li>
+                            <li>Show count of Added Cities beside dropdown</li>
                         </ul>
                         <div class="row">
                             <div class="col-4">
-                                <div class="p-4 rounded" id="div1">
-                                    Div - 1
-                                </div>
+                                <div class="p-4 rounded" id="div1">Div - 1</div>
                             </div>
                             <div class="col-4">
-                                <div class="p-4" id="div2">
-                                    Div - 2
-                                </div>
+                                <div class="p-4" id="div2">Div - 2</div>
                             </div>
                             <div class="col-4">
-                                <div class="p-4 rounded" id="div3">
-
-                                </div>
+                                <div class="p-4 rounded" id="div3"></div>
                             </div>
                         </div>
                         <div class="row pt-2">
                             <div class="col-4">
-                                <button class="btn btn-sm btn-success" id="btnSuccess"> success</button>
-                                <button class="btn btn-sm btn-danger" id="btnDanger"> danger</button>
+                                <button class="btn btn-sm btn-success" id="btnSuccess">Success</button>
+                                <button class="btn btn-sm btn-danger" id="btnDanger">Danger</button>
                             </div>
                             <div class="col-4">
                                 <div class="row">
@@ -177,23 +162,19 @@
                                 </div>
                             </div>
                             <div class="col-4">
-                                <div class="p-4" id="div3">
-
-                                </div>
+                                <div class="p-4" id="div3"></div>
                             </div>
                         </div>
                         <button id="btn1" class="btn btn-attempt">Attempt</button>
                     </div>
                 </div>
-                <br>
-                <br>
                 <!-- Task 2 -->
-                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                <div class="col-12 col-sm-6 col-md-3">
                     <div class="task-container">
                         <div class="task-heading">Task 2</div>
                         <ul class="task-list">
-                            <li> create bootstrap progress bar</li>
-                            <li> add width dynamic to progress bar by reading value from textbox</li>
+                            <li>Create Bootstrap progress bar</li>
+                            <li>Add width dynamically to progress bar by reading value from textbox</li>
                         </ul>
                         <div class="row">
                             <div class="col-12">
@@ -211,36 +192,9 @@
                         <button id="btn2" class="btn btn-attempt">Attempt</button>
                     </div>
                 </div>
-
-
             </div>
         </div>
-        <script type="text/javascript" src="../menu.js"></script>
-
-        <!-- <script>
-            const buttons = document.querySelectorAll('button[id^="btn"]');
-
-            buttons.forEach((button) => {
-                let currentState = 'attempt';
-
-                button.addEventListener('click', function (event) {
-                    event.preventDefault();
-                    if (currentState === 'attempt') {
-                        button.textContent = 'Attempting';
-                        button.className = 'btn btn-attempting';
-                        currentState = 'attempting';
-                    } else if (currentState === 'attempting') {
-                        button.textContent = 'Attempt in Progress';
-                        button.className = 'btn btn-progress';
-                        currentState = 'progress';
-                    } else {
-                        button.textContent = 'Attempt';
-                        button.className = 'btn btn-attempt';
-                        currentState = 'attempt';
-                    }
-                });
-            });
-        </script> -->
+    </div>
 </body>
 
 </html>
