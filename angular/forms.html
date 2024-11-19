@@ -86,7 +86,7 @@
                             <li>On reset, form should reset</li>
                         </ul>
                         <div class="row mb-3">
-                            <div class="col-12">
+                            <div class="col-2">
                                 <label for="txtName">Your Name</label>
                                 <input type="text" class="form-control" id="txtName">
                             </div>
@@ -107,6 +107,8 @@
                                     <span>Teacher</span>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row mt-2">
                             <div class="col-3">
                                 <div class="selectCard" data-name="Banker">
                                     <i class="fa fa-university fa-2x"></i>
@@ -174,49 +176,50 @@
                 </div>
             </div>
         </div>
+    </div>
 
-        <script>
-            $(document).ready(function () {
-                let obj = { name: '', personType: '', gender: '', age: 0 };
+    <script>
+        $(document).ready(function () {
+            let obj = { name: '', personType: '', gender: '', age: 0 };
 
-                $(".selectCard").click(function () {
-                    $(".selectCard").removeClass("cardActive");
-                    $(this).addClass("cardActive");
-                    obj.personType = $(this).attr("data-name");
-                    console.log(obj);
-                });
-
-                $(".genderselectCard").click(function () {
-                    $(".genderselectCard").removeClass("cardActive");
-                    $(this).addClass("cardActive");
-                    obj.gender = $(this).attr("data-gender");
-                    console.log(obj);
-                });
-
-                $(".fa-minus").click(function () {
-                    if (obj.age > 0) obj.age--;
-                    $(".text-primary").html(obj.age);
-                });
-
-                $(".fa-plus").click(function () {
-                    obj.age++;
-                    $(".text-primary").html(obj.age);
-                });
-
-                $("#btnPrint").click(function () {
-                    obj.name = $("#txtName").val();
-                    $("#divPrint").html(JSON.stringify(obj));
-                });
-
-                $("#btnReset").click(function () {
-                    obj = { name: '', personType: '', gender: '', age: 0 };
-                    $(".selectCard, .genderselectCard").removeClass("cardActive");
-                    $(".text-primary").html(obj.age);
-                    $("#txtName").val("");
-                    $("#divPrint").html("");
-                });
+            $(".selectCard").click(function () {
+                $(".selectCard").removeClass("cardActive");
+                $(this).addClass("cardActive");
+                obj.personType = $(this).attr("data-name");
+                console.log(obj);
             });
-        </script>
+
+            $(".genderselectCard").click(function () {
+                $(".genderselectCard").removeClass("cardActive");
+                $(this).addClass("cardActive");
+                obj.gender = $(this).attr("data-gender");
+                console.log(obj);
+            });
+
+            $(".fa-minus").click(function () {
+                if (obj.age > 0) obj.age--;
+                $(".text-primary").html(obj.age);
+            });
+
+            $(".fa-plus").click(function () {
+                obj.age++;
+                $(".text-primary").html(obj.age);
+            });
+
+            $("#btnPrint").click(function () {
+                obj.name = $("#txtName").val();
+                $("#divPrint").html(JSON.stringify(obj));
+            });
+
+            $("#btnReset").click(function () {
+                obj = { name: '', personType: '', gender: '', age: 0 };
+                $(".selectCard, .genderselectCard").removeClass("cardActive");
+                $(".text-primary").html(obj.age);
+                $("#txtName").val("");
+                $("#divPrint").html("");
+            });
+        });
+    </script>
 </body>
 
 </html>
