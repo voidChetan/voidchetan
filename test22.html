@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Fees - List</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      background-color: #F5F7FA;
+      color: #212121;
+      font-family: "Segoe UI", sans-serif;
+    }
+    .navbar {
+      background-color: #1976D2;
+    }
+    .navbar-brand, .nav-link, .navbar-text {
+      color: white !important;
+      font-weight: 500;
+    }
+    .card {
+      border: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+    .btn-primary {
+      background-color: #1565C0;
+      border: none;
+    }
+    .btn-primary:hover {
+      background-color: #1976D2;
+    }
+    th {
+      background-color: #1976D2;
+      color: white;
+    }
+    .table-striped > tbody > tr:nth-of-type(odd) {
+      background-color: #E3F2FD;
+    }
+    .fa-edit {
+      color: #1976D2;
+      cursor: pointer;
+    }
+    .fa-trash {
+      color: #E53935;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Fees Admin</a>
+      <div class="d-flex">
+        <button class="btn btn-light btn-sm">
+          <i class="fa fa-user"></i> Admin
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container py-4">
+    <div class="card p-3">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h4 class="mb-0"><i class="fa fa-list"></i> Student Fees List</h4>
+        <a href="fees-student-form.html" class="btn btn-primary">
+          <i class="fa fa-plus"></i> Add Student
+        </a>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-striped align-middle text-center">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Contact</th>
+              <th>Email</th>
+              <th>City</th>
+              <th>College</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Rahul Sharma</td>
+              <td>9876543210</td>
+              <td>rahul@gmail.com</td>
+              <td>Pune</td>
+              <td>MIT College</td>
+              <td>
+                <i class="fa fa-edit me-3"></i>
+                <i class="fa fa-trash"></i>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Priya Patel</td>
+              <td>9988776655</td>
+              <td>priya@gmail.com</td>
+              <td>Mumbai</td>
+              <td>SP College</td>
+              <td>
+                <i class="fa fa-edit me-3"></i>
+                <i class="fa fa-trash"></i>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

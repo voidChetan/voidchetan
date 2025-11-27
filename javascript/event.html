@@ -22,7 +22,7 @@
         }
 
         .task-container:hover {
-              transform: scale(1.02);
+            transform: scale(1.02);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
             background-color: #d3ffce;
         }
@@ -79,12 +79,15 @@
             height: 40px;
             font-size: 12px;
         }
-        .name-place::placeholder{
+
+        .name-place::placeholder {
             font-size: 13px;
         }
-        .selector-font{
-                font-size: 12px;
-            }
+
+        .selector-font {
+            font-size: 12px;
+        }
+
         /* 
         @media (max-width: 576px) {
             .col-12.col-sm-6.col-md-3 {
@@ -156,7 +159,8 @@
             .form-control::placeholder {
                 font-size: 9px;
             }
-            .selector-font{
+
+            .selector-font {
                 font-size: 11px;
             }
 
@@ -299,7 +303,8 @@
                         </li>
                     </ul>
                     example:
-                    <br> <input type="text" class="form-control" onkeydown="alert('You have pressed a key inside text input!')">
+                    <br> <input type="text" class="form-control"
+                        onkeydown="alert('You have pressed a key inside text input!')">
 
                     </ul>
                     <br>
@@ -597,18 +602,21 @@
                     </ul>
                     <div class="row mb-1">
                         <div class="col-6">
-                            <input type="text" class="unq form-control name-place" id="txtFName" placeholder="First Name">
+                            <input type="text" class="unq form-control name-place" id="txtFName"
+                                placeholder="First Name">
                         </div>
                         <div class="col-6">
-                            <input type="text" class="unq form-control name-place" id="txtMName" placeholder="Middle Name">
+                            <input type="text" class="unq form-control name-place" id="txtMName"
+                                placeholder="Middle Name">
                         </div>
                     </div>
                     <div class="row mb-1">
                         <div class="col-6">
-                            <input type="text" class="unq form-control name-place" id="txtLName" placeholder="Last Name">
+                            <input type="text" class="unq form-control name-place" id="txtLName"
+                                placeholder="Last Name">
                         </div>
                         <div class="col-6">
-                            <input type="text" class="unq form-control name-place"  id="txtMOBILE" placeholder="Mobile">
+                            <input type="text" class="unq form-control name-place" id="txtMOBILE" placeholder="Mobile">
                         </div>
                     </div>
                     <div class="row">
@@ -694,6 +702,76 @@
                     <div class="text-center pt-5">
                         <button id="btn11" class="btn btn-attempt attepfont">Attempt</button>
                     </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task - Real-time Form Validation</div>
+                    <ul class="task-list">
+                        <li>Create form with fields: email, phone, password, confirm password</li>
+                        <li>On each onchange/blur event:
+                            <ul>
+                                <li>Email: validate format, show valid/invalid icon</li>
+                                <li>Phone: validate 10 digits only, show count/validation</li>
+                                <li>Password: show strength indicator (Weak/Good/Strong)</li>
+                                <li>Compare passwords, show match status</li>
+                            </ul>
+                        </li>
+                        <li>Enable "Submit" button only when all fields are valid</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task - RGB Color Picker</div>
+                    <ul class="task-list">
+                        <li>Create 3 sliders for Red, Green, Blue (0-255)</li>
+                        <li>On oninput event:
+                            <ul>
+                                <li>Update preview div background with RGB color</li>
+                                <li>Display RGB values in real-time</li>
+                                <li>Show hex code equivalent</li>
+                                <li>Show color name (if common color)</li>
+                            </ul>
+                        </li>
+                        <li>Add "Copy Color Code" button that copies hex code</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task - Advanced Character Counter</div>
+                    <ul class="task-list">
+                        <li>Create textarea with character limit (100 chars)</li>
+                        <li>On onkeyup event:
+                            <ul>
+                                <li>Count characters remaining</li>
+                                <li>Count words</li>
+                                <li>Count sentences</li>
+                                <li>Change color based on usage: Green (0-50%), Yellow (50-80%), Red (80-100%)</li>
+                            </ul>
+                        </li>
+                        <li>Display statistics below textarea in real-time</li>
+                        <li>Add button to clear and reset counter</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task - Live Search with Suggestions</div>
+                    <ul class="task-list">
+                        <li>Create array of cities/countries</li>
+                        <li>Create search textbox with oninput event</li>
+                        <li>As user types:
+                            <ul>
+                                <li>Filter matching suggestions</li>
+                                <li>Display top 5 suggestions in dropdown</li>
+                                <li>Highlight matching characters</li>
+                                <li>On click, populate selected suggestion</li>
+                            </ul>
+                        </li>
+                        <li>Add loading indicator while searching</li>
+                    </ul>
                 </div>
             </div>
 

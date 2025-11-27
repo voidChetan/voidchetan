@@ -22,7 +22,7 @@
         }
 
         .task-container:hover {
-              transform: scale(1.02);
+            transform: scale(1.02);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
             background-color: #d3ffce;
         }
@@ -110,6 +110,7 @@
             .attepfont {
                 font-size: 12px;
             }
+
             .selector-font {
                 font-size: 11px;
             }
@@ -387,7 +388,57 @@
                     </div>
                 </div>
             </div>
-
+            <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task - BMI Calculator</div>
+                    <ul class="task-list">
+                        <li>Create textboxes for weight (kg) and height (m)</li>
+                        <li>Calculate BMI: weight / (height × height)</li>
+                        <li>Determine category:
+                            <ul>
+                                <li>BMI < 18.5: Underweight</li>
+                                <li>18.5 <= BMI < 25: Normal</li>
+                                <li>25 <= BMI < 30: Overweight</li>
+                                <li>BMI >= 30: Obese</li>
+                            </ul>
+                        </li>
+                        <li>Display category with health recommendations</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task - Discount Eligibility</div>
+                    <ul class="task-list">
+                        <li>Create textboxes for purchase amount and customer type (regular/premium/vip)</li>
+                        <li>Apply discount logic:
+                            <ul>
+                                <li>Regular: < 1000=5%,>= 1000 = 10%</li>
+                                <li>Premium: < 1000=10%,>= 1000 = 15%</li>
+                                <li>VIP: 20% always</li>
+                            </ul>
+                        </li>
+                        <li>Calculate and display: Original Amount, Discount, Final Amount</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task - Time Period Identifier</div>
+                    <ul class="task-list">
+                        <li>Create a textbox to enter hour (0-23)</li>
+                        <li>Identify time period:
+                            <ul>
+                                <li>0-5: Night</li>
+                                <li>6-11: Morning</li>
+                                <li>12-17: Afternoon</li>
+                                <li>18-23: Evening</li>
+                            </ul>
+                        </li>
+                        <li>Display appropriate greeting message with emoji</li>
+                    </ul>
+                </div>
+            </div>
             <!-- <style>
                     .task-container {
                         padding: 10px;
@@ -576,29 +627,29 @@
     <script type="text/javascript" src="../menu.js"></script>
 
     <script>
-            const buttons = document.querySelectorAll('button[id^="btn"]');
+        const buttons = document.querySelectorAll('button[id^="btn"]');
 
-            buttons.forEach((button) => {
-                let currentState = 'attempt';
+        buttons.forEach((button) => {
+            let currentState = 'attempt';
 
-                button.addEventListener('click', function (event) {
-                    event.preventDefault();
-                    if (currentState === 'attempt') {
-                        button.textContent = 'Attempting';
-                        button.className = 'btn btn-attempt  attepfonting';
-                        currentState = 'attempting';
-                    } else if (currentState === 'attempting') {
-                        button.textContent = 'Attempt in Progress';
-                        button.className = 'btn btn-progress';
-                        currentState = 'progress';
-                    } else {
-                        button.textContent = 'Attempt';
-                        button.className = 'btn btn-attempt  attepfont';
-                        currentState = 'attempt';
-                    }
-                });
+            button.addEventListener('click', function (event) {
+                event.preventDefault();
+                if (currentState === 'attempt') {
+                    button.textContent = 'Attempting';
+                    button.className = 'btn btn-attempt  attepfonting';
+                    currentState = 'attempting';
+                } else if (currentState === 'attempting') {
+                    button.textContent = 'Attempt in Progress';
+                    button.className = 'btn btn-progress';
+                    currentState = 'progress';
+                } else {
+                    button.textContent = 'Attempt';
+                    button.className = 'btn btn-attempt  attepfont';
+                    currentState = 'attempt';
+                }
             });
-        </script>
+        });
+    </script>
 </body>
 
 </html>

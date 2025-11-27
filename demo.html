@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var name = "asdas";
+    </script>
+    <style>
+        .text-primary {
+            color: blue;;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="text-primary" id="myH1"> Hello </h1>
+    <input type="text" id="txtName" />
+
+    <button onclick="readValue()">Read Value</button>
+
+    <script>
+         var student = {
+            name: 'Chetan',
+            rollNo: 123
+         };
+
+
+         console.log(student.rollNo);
+         console.log(student['rollNo'])
+
+         var keyName = "rollNo";
+         console.log(student[keyName])
+
+
+    </script>
+</body>
+</html>

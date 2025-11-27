@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const employees = [
+            { id: 1, name: 'Amit Sharma', age: 28, city: 'Pune', state: 'Maharashtra', department: 'IT', salary: 55000 },
+            { id: 2, name: 'Sneha Patel', age: 32, city: 'Ahmedabad', state: 'Gujarat', department: 'HR', salary: 48000 },
+            { id: 3, name: 'Ravi Mehta', age: 26, city: 'Indore', state: 'Madhya Pradesh', department: 'Sales', salary: 40000 },
+            { id: 4, name: 'Pooja Nair', age: 30, city: 'Bangalore', state: 'Karnataka', department: 'Finance', salary: 60000 },
+            { id: 5, name: 'Karan Verma', age: 29, city: 'Mumbai', state: 'Maharashtra', department: 'IT', salary: 52000 },
+            { id: 6, name: 'Divya Iyer', age: 35, city: 'Pune', state: 'Maharashtra', department: 'Operations', salary: 62000 },
+            { id: 7, name: 'Rohit Singh', age: 27, city: 'Jaipur', state: 'Rajasthan', department: 'Sales', salary: 43000 }
+        ];
+
+
+        const mahOnly = employees.filter(m => m.state == 'Maharashtra')
+        const mahPuneOnly = employees.filter(m => m.state == "Maharashtra" && m.city == "Pune")
+        console.log(mahOnly)
+        console.log(mahPuneOnly)
+
+        const mahRajEmp = employees.filter(x => x.state == "Maharashtra" || x.state == "Rajasthan")
+        console.log(mahRajEmp);
+
+
+        const rollNumbers = [104, 105, 108, 110, 114, 120, 125, 105];
+
+
+        const is101Find = rollNumbers.find(m => m == 101);
+        console.log(is101Find);
+
+        const indexof101 = rollNumbers.findIndex(m => m == 101);
+        console.log(indexof101);
+
+        const is101Exist = rollNumbers.includes(101);
+        console.log(is101Exist)
+
+        const is101Filter = rollNumbers.filter(m => m == 101).length;
+        console.log(is101Filter)
+
+        const products = [
+            { id: 1, name: 'Laptop Pro 15"', price: 55000, inStock: true, category: 'Electronics' },
+            { id: 2, name: 'Laptop Air 13"', price: 48000, inStock: true, category: 'Electronics' },
+            { id: 3, name: 'Mouse Wireless', price: 800, inStock: false, category: 'Accessories' },
+            { id: 4, name: 'Keyboard Mechanical', price: 1200, inStock: true, category: 'Accessories' },
+            { id: 5, name: 'Monitor HD 24"', price: 9000, inStock: true, category: 'Electronics' },
+            { id: 6, name: 'Mobile Charger', price: 600, inStock: false, category: 'Mobile' },
+            { id: 7, name: 'Mobile Earphones', price: 1500, inStock: true, category: 'Mobile' },
+            { id: 8, name: 'Smart Watch', price: 7000, inStock: true, category: 'Wearable' }
+        ];
+        
+
+        const productwithMO =  products.filter(m=> m.name.startsWith('Mo'));
+        console.log(productwithMO)
+
+
+        //helper => ??
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

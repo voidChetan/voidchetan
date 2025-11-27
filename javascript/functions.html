@@ -22,7 +22,7 @@
         }
 
         .task-container:hover {
-              transform: scale(1.02);
+            transform: scale(1.02);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
             background-color: #d3ffce;
         }
@@ -115,7 +115,8 @@
             .attepfont {
                 font-size: 12px;
             }
-            .taskfont{
+
+            .taskfont {
                 font-size: 9px;
             }
 
@@ -268,6 +269,73 @@
                     </div>
                 </div>
             </div>
+            <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task - Password Validator Function</div>
+                    <ul class="task-list">
+                        <li>Create function validatePassword(password) that checks:
+                            <ul>
+                                <li>Length >= 8 characters</li>
+                                <li>Contains at least one uppercase letter</li>
+                                <li>Contains at least one number</li>
+                                <li>Contains at least one special character (@#$%)</li>
+                            </ul>
+                        </li>
+                        <li>Return object: {isValid: true/false, message: "Password strength: Weak/Good/Strong"}</li>
+                        <li>Create textbox and button to test function</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task - Email Formatter Function</div>
+                    <ul class="task-list">
+                        <li>Create function formatEmail(fullName) that:
+                            <ul>
+                                <li>Takes full name as parameter</li>
+                                <li>Converts to lowercase and removes spaces</li>
+                                <li>Returns formatted email: name@company.com</li>
+                            </ul>
+                        </li>
+                        <li>Ex: "John Doe" => "johndoe@company.com"</li>
+                        <li>Create textbox input with real-time email generation display</li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task - Calculator Function</div>
+                    <ul class="task-list">
+                        <li>Create function calculate(num1, num2, operation) where operation can be:
+                            <ul>
+                                <li>"add", "subtract", "multiply", "divide", "modulo", "power"</li>
+                            </ul>
+                        </li>
+                        <li>Return result with proper error handling for division by zero</li>
+                        <li>Create 2 textboxes, dropdown for operation, button "Calculate"</li>
+                        <li>Display result in a styled alert and paragraph tag</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task - Text Analysis Function</div>
+                    <ul class="task-list">
+                        <li>Create function analyzeText(text) that returns object with:
+                            <ul>
+                                <li>Total characters (including spaces)</li>
+                                <li>Total characters (excluding spaces)</li>
+                                <li>Total words</li>
+                                <li>Total sentences</li>
+                                <li>Most repeated character</li>
+                            </ul>
+                        </li>
+                        <li>Create textarea for input, button "Analyze"</li>
+                        <li>Display results in a formatted table</li>
+                    </ul>
+                </div>
+            </div>
 
         </div>
         <hr>
@@ -277,7 +345,7 @@
             <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
                 <div class="task-container">
                     <div class="task-heading">Task 1</div>
-                           <ul class="task-list">
+                    <ul class="task-list">
                         <li>
                             Create a function which has a parameter where we can send a word as parameter.
                         </li>
@@ -294,7 +362,7 @@
             <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
                 <div class="task-container">
                     <div class="task-heading">Task 2</div>
-                           <ul class="task-list">
+                    <ul class="task-list">
                         <li>
                             Create a function which has a parameter and converts the first letter of each word into
                             upper case and Return New String
@@ -325,7 +393,7 @@
             <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
                 <div class="task-container">
                     <div class="task-heading">Task 3</div>
-                           <ul class="task-list">
+                    <ul class="task-list">
                         <li>
                             Create a function which accept any no of parameter - it should return sum all
                             parameeter.
@@ -358,7 +426,7 @@
             <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
                 <div class="task-container">
                     <div class="task-heading">Task 5</div>
-                           <ul class="task-list">
+                    <ul class="task-list">
                         <li>
                             Create a function with a parameter which will tell you DataType of any parametr value
                             you passed to the function
@@ -427,14 +495,14 @@
             <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
                 <div class="task-container taskfont">
                     <div class="task-heading">Task 9</div>
-                           <ul class="task-list">
+                    <ul class="task-list">
                         <li>
                             Create a function which has a parameter - if parameter has string data -
                             create an array of words that we have in parameter to this function n return array of
                             string else show alert as "NO String Found"
                         </li>
                         <li> Ex: testFun("This is my Word") output :
-                             ["This","is","my","Word"]</li>
+                            ["This","is","my","Word"]</li>
                         <li> Ex: testFun("Welcome to My Channel") output : ["Welcome","to","My","Channel"]</li>
                         <li> Ex: testFun(23123) output : "NO String Found"</li>
                     </ul>

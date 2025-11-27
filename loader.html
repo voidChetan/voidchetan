@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Skeleton Loader</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #f5f5f5;
+    }
+
+    .card {
+      width: 350px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      padding: 15px;
+    }
+
+    /* Skeleton base */
+    .skeleton {
+      background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: -200% 0;
+      }
+
+      100% {
+        background-position: 200% 0;
+      }
+    }
+
+    /* Skeleton placeholders */
+    .skeleton-img {
+      width: 100%;
+      height: 180px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .skeleton-title {
+      width: 60%;
+      height: 18px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+    }
+
+    .skeleton-line {
+      width: 40%;
+      height: 14px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+    }
+
+    .skeleton-footer {
+      display: flex;
+      gap: 10px;
+    }
+
+    .skeleton-badge {
+      flex: 1;
+      height: 14px;
+      border-radius: 6px;
+    }
+
+    /* Actual content */
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <!-- Skeleton -->
+    <div class="skeleton-wrapper" id="skeleton">
+      <div class="skeleton skeleton-img"></div>
+      <div class="skeleton skeleton-title"></div>
+      <div class="skeleton skeleton-line"></div>
+      <div class="skeleton-footer">
+        <div class="skeleton skeleton-badge"></div>
+        <div class="skeleton skeleton-badge"></div>
+        <div class="skeleton skeleton-badge"></div>
+      </div>
+    </div>
+
+    <!-- Actual Content -->
+    <div class="content hidden" id="content">
+      <img src="https://via.placeholder.com/350x180.png?text=Course+Image" style="width:100%; border-radius:10px;">
+      <h3>Full Stack Web Developer</h3>
+      <p>⭐ 4.7 &nbsp;&nbsp; 454K ratings &nbsp;&nbsp; 87.9 total hours</p>
+    </div>
+  </div>
+
+  <script>
+    // Simulate loading
+    setTimeout(() => {
+      document.getElementById("skeleton").classList.add("hidden");
+      document.getElementById("content").classList.remove("hidden");
+    }, 2500); // 2.5 sec loading effect
+  </script>
+
+
+  <script>
+    var a = 10;
+    console.log(a);
+    function fn() {
+      console.log(a);
+      var a = 20;
+      a++;
+      console.log(a);
+      if (a) {
+        var a = 30;
+        a++;
+        console.log(a);
+      }
+      console.log(a);
+    }
+    fn();
+    console.log(a);
+  </script>
+
+
+</body>
+
+</html>

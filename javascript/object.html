@@ -22,7 +22,7 @@
         }
 
         .task-container:hover {
-              transform: scale(1.02);
+            transform: scale(1.02);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
             background-color: #d3ffce;
         }
@@ -124,10 +124,12 @@
                 font-size: 13px;
                 color: #007bff;
             }
+
             .attepfont {
                 font-size: 12px;
             }
-            .objbtn{
+
+            .objbtn {
                 font-size: 10px;
             }
 
@@ -418,6 +420,86 @@
                     </div>
                 </div>
             </div>
+            <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task - User Profile Manager</div>
+                    <ul class="task-list">
+                        <li>Create object to store user profile:
+                            <ul>
+                                <li>Basic info: firstName, lastName, email, phone</li>
+                                <li>Address: street, city, state, pincode</li>
+                                <li>Preferences: theme, language, notifications</li>
+                            </ul>
+                        </li>
+                        <li>Create form with fields for each property</li>
+                        <li>Buttons: "Save Profile", "View Profile", "Update Field", "Clear All"</li>
+                        <li>Display profile in JSON format in console and formatted HTML</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task - Book Library Catalog</div>
+                    <ul class="task-list">
+                        <li>Create array of book objects:
+                            <ul>
+                                <li>{title, author, isbn, pages, publishYear, genre, available}</li>
+                            </ul>
+                        </li>
+                        <li>Create functions to:
+                            <ul>
+                                <li>Search book by title or author</li>
+                                <li>Filter available books</li>
+                                <li>Get books by genre</li>
+                                <li>Add new book to catalog</li>
+                            </ul>
+                        </li>
+                        <li>Display results in a table with action buttons</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task - Restaurant Menu System</div>
+                    <ul class="task-list">
+                        <li>Create menu object with categories:
+                            <ul>
+                                <li>Starters, Main Course, Desserts, Beverages</li>
+                                <li>Each item: {name, price, description, vegan, spicy}</li>
+                            </ul>
+                        </li>
+                        <li>Create dynamic menu display with filters:
+                            <ul>
+                                <li>Filter by category</li>
+                                <li>Filter vegan items only</li>
+                                <li>Sort by price</li>
+                            </ul>
+                        </li>
+                        <li>Add items to cart and calculate total</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-4 mb-4 px-1">
+                <div class="task-container">
+                    <div class="task-heading">Task - Employee Payroll Calculator</div>
+                    <ul class="task-list">
+                        <li>Create employee object:
+                            <ul>
+                                <li>{empId, name, department, baseSalary, bonus, deductions}</li>
+                            </ul>
+                        </li>
+                        <li>Calculate:
+                            <ul>
+                                <li>Gross salary = baseSalary + bonus</li>
+                                <li>Net salary = Gross - deductions</li>
+                                <li>Tax = Gross × 10%</li>
+                                <li>Final take-home = Net - Tax</li>
+                            </ul>
+                        </li>
+                        <li>Create form to enter details and display payslip</li>
+                    </ul>
+                </div>
+            </div>
             <hr>
             <h4>Advance Task</h4>
             <hr>
@@ -499,29 +581,29 @@
     <script type="text/javascript" src="../menu.js"></script>
 
     <script>
-            const buttons = document.querySelectorAll('button[id^="btn"]');
+        const buttons = document.querySelectorAll('button[id^="btn"]');
 
-            buttons.forEach((button) => {
-                let currentState = 'attempt';
+        buttons.forEach((button) => {
+            let currentState = 'attempt';
 
-                button.addEventListener('click', function (event) {
-                    event.preventDefault();
-                    if (currentState === 'attempt') {
-                        button.textContent = 'Attempting';
-                        button.className = 'btn btn-attempt attepfonting';
-                        currentState = 'attempting';
-                    } else if (currentState === 'attempting') {
-                        button.textContent = 'Attempt in Progress';
-                        button.className = 'btn btn-progress';
-                        currentState = 'progress';
-                    } else {
-                        button.textContent = 'Attempt';
-                        button.className = 'btn btn-attempt attepfont';
-                        currentState = 'attempt';
-                    }
-                });
+            button.addEventListener('click', function (event) {
+                event.preventDefault();
+                if (currentState === 'attempt') {
+                    button.textContent = 'Attempting';
+                    button.className = 'btn btn-attempt attepfonting';
+                    currentState = 'attempting';
+                } else if (currentState === 'attempting') {
+                    button.textContent = 'Attempt in Progress';
+                    button.className = 'btn btn-progress';
+                    currentState = 'progress';
+                } else {
+                    button.textContent = 'Attempt';
+                    button.className = 'btn btn-attempt attepfont';
+                    currentState = 'attempt';
+                }
             });
-        </script>
+        });
+    </script>
 </body>
 
 </html>
