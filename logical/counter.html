@@ -4,137 +4,253 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Dynamic Tab with Counter</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Counter Task</title>
     <style>
-        .card {
-            cursor: pointer !important;
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
         }
 
         .task-container {
             padding: 20px;
-            border: 1px solid #007bff;
+            border: 2px solid #007bff;
             border-radius: 8px;
-            background-color: #f9f9f9;
+            background-color: #fff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-            text-align: left;
-            height: 100%;
+            margin: 20px auto;
+            max-width: 600px;
         }
 
-        .task-container:hover {
-            transform: scale(1.02);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-            background-color: #d3ffce;
-        }
-
-        .task-heading {
-            font-size: 15px;
-            color: black;
-        }
-
-        .counter-section {
+        h3 {
             text-align: center;
-            padding: 20px;
+            color: #007bff;
         }
 
-        #counter {
-            font-size: 48px;
-            margin: 20px 0;
+        .details {
+            font-size: 14px;
+            margin-bottom: 20px;
+            text-align: justify;
         }
 
-        button,
-        input[type="number"] {
-            font-size: 20px;
-            margin: 5px;
+        .tasks {
+            margin-bottom: 20px;
+        }
+
+        .tasks ul {
+            padding-left: 20px;
+        }
+
+        .tasks ul li {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .counter-display {
+            font-size: 36px;
+            font-weight: bold;
+            color: #007bff;
+            border: 2px solid #007bff;
+            border-radius: 8px;
             padding: 10px 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .button-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+            align-items: center;
+        }
+
+        button {
+            font-size: 16px;
+            padding: 8px 10px;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            background-color: #e6f7ff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .number-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .number-container button {
+            background-color: #007bff;
+            color: white;
+            font-size: 12px;
+            width: 25px;
+            height: 25px;
+            border-radius: 5px;
             border: none;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .number-container button:hover {
+            background-color: #0056b3;
+        }
+
+        .reset-button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #ffcccc;
+            font-weight: bold;
+            color: #cc0000;
+            border: 2px solid #cc0000;
             border-radius: 5px;
             cursor: pointer;
         }
 
-        button {
-            background-color: cyan;
-            color: black;
+        .reset-button:hover {
+            background-color: #cc0000;
+            color: white;
+        }
+
+        .reset-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .reset-container button,
+        .reset-container input {
+            width: 48%;
         }
 
         input[type="number"] {
-            width: 80px;
+            width: 160px;
+            height: 35px;
             text-align: center;
+            font-size: 18px;
+            padding: 8px;
+            border-radius: 5px;
+            border: 2px solid #007bff;
         }
     </style>
 </head>
 
 <body>
-    <div class="container-fluid mt-4">
-        <div class="row">
-            <!-- Task : Counter -->
-            <div class="col-12 col-sm-6 col-md-6 mb-4">
-                <div class="task-container">
-                    <div class="task-heading">
-                        Task 1: Counter
-                        <ul>
-                            <li>Create a variable to store the initial value of the counter as <code>5</code>.</li>
-                            <li>Create two buttons, one to increment and one to decrement the counter by a step value.
-                            </li>
-                            <li>Add an input field to allow users to set the step value (default is 6).</li>
-                            <li>Add a "Reset" button that resets the counter to its initial value and restores the
-                                default step value.</li>
-                            <li>On each button click, dynamically update the displayed counter value.</li>
-                        </ul>
-                    </div>
-                    <div class="counter-section">
-                        <h3>Counter</h3>
-                        <div id="counter">5</div>
-                        <div>
-                            <button id="decrement">-</button>
-                            <button id="increment">+</button>
-                            <input type="number" id="step" value="6">
-                        </div>
-                        <button id="reset">Reset</button>
-                    </div>
-                </div>
+    <div class="task-container">
+        <div class="details">
+            <strong>Task Details:</strong> The goal of this task is to implement a functional counter with the following
+            features:
+        </div>
+        <div class="tasks">
+            <h4>Key Features of the Task:</h4>
+            <ul>
+                <li>Input the step value to dynamically adjust the operation value.</li>
+                <li>Use buttons for Add, Subtract, Multiply, and Divide functionalities.</li>
+                <li>Ensure the counter updates in real-time.</li>
+                <li>Reset the counter and step input to their default states.</li>
+            </ul>
+        </div>
+
+        <div class="counter-display" id="counter-display">1</div>
+
+        <div class="button-grid">
+            <button id="add">Add</button>
+            <button id="subtract">Subtract</button>
+            <button id="multiply">Multiply</button>
+            <button id="divide">Divide</button>
+        </div>
+
+        <div class="reset-container">
+            <button class="reset-button" id="reset">Reset</button>
+            <div class="number-container">
+                <button id="decrement">-</button>
+                <input type="number" id="step" value="1">
+                <button id="increment">+</button>
             </div>
         </div>
     </div>
 
     <script>
-        //  Counter functionality
-        let counterValue = 5;
+        let counterValue = 1;
 
-        const counterDisplay = document.getElementById('counter');
-        const incrementButton = document.getElementById('increment');
-        const decrementButton = document.getElementById('decrement');
+        const counterDisplay = document.getElementById('counter-display');
+        const addButton = document.getElementById('add');
+        const subtractButton = document.getElementById('subtract');
+        const multiplyButton = document.getElementById('multiply');
+        const divideButton = document.getElementById('divide');
         const resetButton = document.getElementById('reset');
         const stepInput = document.getElementById('step');
+        const incrementButton = document.getElementById('increment');
+        const decrementButton = document.getElementById('decrement');
 
+        // Update the counter display function
         function updateCounterDisplay() {
             counterDisplay.textContent = counterValue;
         }
 
-        incrementButton.addEventListener('click', () => {
-            const step = parseInt(stepInput.value, 10) || 0;
+        // Add operation
+        addButton.addEventListener('click', () => {
+            const step = parseInt(stepInput.value, 10) || 1;
             counterValue += step;
             updateCounterDisplay();
         });
 
-        decrementButton.addEventListener('click', () => {
-            const step = parseInt(stepInput.value, 10) || 0;
+        // Subtract operation
+        subtractButton.addEventListener('click', () => {
+            const step = parseInt(stepInput.value, 10) || 1;
             counterValue -= step;
             updateCounterDisplay();
         });
 
-        resetButton.addEventListener('click', () => {
-            counterValue = 5;
-            stepInput.value = 6;
+        // Multiply operation
+        multiplyButton.addEventListener('click', () => {
+            const step = parseInt(stepInput.value, 10) || 1;
+            counterValue *= step;
             updateCounterDisplay();
         });
 
+        // Divide operation
+        divideButton.addEventListener('click', () => {
+            const step = parseInt(stepInput.value, 10) || 1;
+            if (step !== 0) {
+                counterValue /= step;
+                counterValue = parseFloat(counterValue.toFixed(2)); // Limiting to 2 decimals
+                updateCounterDisplay();
+            } else {
+                alert("Division by zero is not allowed.");
+            }
+        });
+
+        // Reset functionality
+        resetButton.addEventListener('click', () => {
+            counterValue = 1;
+            stepInput.value = 1;
+            updateCounterDisplay();
+        });
+
+        // Increment step value
+        incrementButton.addEventListener('click', () => {
+            let step = parseInt(stepInput.value, 10);
+            stepInput.value = step + 1;
+        });
+
+        // Decrement step value
+        decrementButton.addEventListener('click', () => {
+            let step = parseInt(stepInput.value, 10);
+            stepInput.value = step - 1;
+        });
+
+        // Initialize display
         updateCounterDisplay();
     </script>
 </body>
